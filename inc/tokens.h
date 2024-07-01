@@ -69,7 +69,7 @@ int			calc_stack_size(t_token *stack);
 char		**list_to_array(t_token *head);
 void		build_linked_list(t_token **tokens, char **argv);
 void		handle_quotes(char **tokens, int *pos, char **input);
-void		handle_special_chars(char **str, t_token **tokens);
+void		handle_special_chars(char **str, t_token **tokens, int *quote_count);
 void		handle_regular_chars(char **tokens, int *pos, char **input, \
 		char *delim);
 void		skip_delimiters(char **input, char *delim);
@@ -90,9 +90,7 @@ void		execute_command(char **parsed_text, t_token **tokens);
 void		print_maxishell(void);
 int			input_error_checks(const char *str);
 t_token		*tokenise(char *str);
-void		print_tokens(t_token *tokens);
 t_ast		*parse_tokens(t_token **tokens);
-void		print_tokens(t_token *tokens);
 void		visualize_ast(t_ast *root);
 void		free_ast(t_ast *node);
 void		free_all_tokens(t_token *tokens);
