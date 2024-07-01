@@ -102,5 +102,6 @@ void	print_ast_graphical(t_ast *node, int depth, char *prefix, int is_left)
 
 void	print_ast_root(t_ast *root)
 {
-	print_ast_graphical(root, 0, "", 0);
+	if (root)
+		print_ast_graphical(root, 0, "", 0);
 }
