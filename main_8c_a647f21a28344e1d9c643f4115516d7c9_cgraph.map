@@ -28,11 +28,11 @@
 <area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="590,51,664,62,664,67,589,56"/>
 <area shape="rect" id="Node000013" href="$ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="834,731,902,756"/>
 <area shape="poly" id="edge11_Node000011_Node000013" title=" " alt="" coords="754,78,775,94,792,126,803,170,814,277,818,386,824,470,864,715,859,716,818,470,813,386,809,277,798,171,787,128,771,97,750,82"/>
-<area shape="rect" id="Node000016" href="$execute_8c.html#ace4c3a2246919797e40140123d79596a" title=" " alt="" coords="304,480,395,506"/>
+<area shape="rect" id="Node000016" href="$execute_8c.html#ace4c3a2246919797e40140123d79596a" title="execute Abstract Syntax Tree" alt="" coords="304,480,395,506"/>
 <area shape="poly" id="edge14_Node000015_Node000016" title=" " alt="" coords="211,351,237,364,267,388,293,415,333,465,329,469,289,418,263,392,235,368,209,355"/>
 <area shape="rect" id="Node000053" href="$prompt_8c.html#a4c523064ece03ba20eb609b52253b88e" title=" " alt="" coords="291,617,409,643"/>
 <area shape="poly" id="edge35_Node000015_Node000053" title=" " alt="" coords="211,348,238,364,253,383,263,402,270,437,274,474,286,517,310,563,333,603,329,605,305,566,282,519,269,475,265,437,258,403,249,386,234,368,209,352"/>
-<area shape="rect" id="Node000055" href="$execute_2utils_8c.html#a8f9d65fb9405c61cf1e58b429f4f5728" title=" " alt="" coords="293,716,406,742"/>
+<area shape="rect" id="Node000055" href="$execute_2utils_8c.html#a8f9d65fb9405c61cf1e58b429f4f5728" title="close temporary file descriptor if it is open" alt="" coords="293,716,406,742"/>
 <area shape="poly" id="edge38_Node000015_Node000055" title=" " alt="" coords="211,347,226,354,238,364,254,387,264,409,273,452,271,494,263,536,255,577,252,618,261,660,271,681,286,703,287,704,283,708,282,706,267,684,256,662,247,619,249,576,257,535,265,494,268,452,259,411,249,389,234,368,223,358,209,351"/>
 <area shape="rect" id="Node000056" href="$input__checker_8c.html#a8ba7929cbd2a023ebba26c83879e553c" title=" " alt="" coords="284,908,415,934"/>
 <area shape="poly" id="edge39_Node000015_Node000056" title=" " alt="" coords="211,347,226,354,238,365,255,398,266,443,272,496,275,554,278,667,281,716,287,754,311,830,338,892,333,894,306,832,281,755,275,716,273,668,270,554,267,497,261,444,250,400,234,368,223,358,209,351"/>
@@ -48,19 +48,19 @@
 <area shape="poly" id="edge58_Node000015_Node000099" title=" " alt="" coords="210,345,300,357,299,362,210,350"/>
 <area shape="rect" id="Node000106" href="$input__checker__helpers_8c.html#ad85feb33dfe75120540e2bc4dc28209a" title=" " alt="" coords="311,667,389,692"/>
 <area shape="poly" id="edge63_Node000015_Node000106" title=" " alt="" coords="211,347,226,354,238,364,261,402,270,439,269,476,263,511,257,546,256,582,264,617,286,654,298,664,294,668,282,657,259,619,251,582,252,546,257,510,263,475,264,440,256,404,234,368,223,358,209,352"/>
-<area shape="rect" id="Node000017" href="$pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title=" " alt="" coords="493,531,580,556"/>
+<area shape="rect" id="Node000017" href="$pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title="execute pipe when | is found in the command" alt="" coords="493,531,580,556"/>
 <area shape="poly" id="edge15_Node000016_Node000017" title=" " alt="" coords="396,503,479,525,478,530,395,508"/>
-<area shape="rect" id="Node000021" href="$execute_8c.html#a825187f25304f9bd1a3e7a5e97327801" title=" " alt="" coords="503,632,570,658"/>
+<area shape="rect" id="Node000021" href="$execute_8c.html#a825187f25304f9bd1a3e7a5e97327801" title="execute distribution function checks if the command is a builtin or a new process" alt="" coords="503,632,570,658"/>
 <area shape="poly" id="edge22_Node000016_Node000021" title=" " alt="" coords="363,504,404,555,433,584,465,611,490,625,488,630,462,615,429,588,400,558,358,508"/>
-<area shape="rect" id="Node000049" href="$redirect__in_8c.html#a2635bab3d0023f67288d2832903bdbd9" title=" " alt="" coords="496,429,577,455"/>
+<area shape="rect" id="Node000049" href="$redirect__in_8c.html#a2635bab3d0023f67288d2832903bdbd9" title="redirection input in context of executing AST" alt="" coords="496,429,577,455"/>
 <area shape="poly" id="edge30_Node000016_Node000049" title=" " alt="" coords="395,486,495,458,496,463,396,491"/>
-<area shape="rect" id="Node000051" href="$redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title=" " alt="" coords="671,383,760,408"/>
+<area shape="rect" id="Node000051" href="$redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title="redirect out in the context of executing AST" alt="" coords="671,383,760,408"/>
 <area shape="poly" id="edge32_Node000016_Node000051" title=" " alt="" coords="396,495,442,496,497,493,554,484,608,465,623,455,632,443,641,431,656,417,663,413,666,418,659,422,645,434,637,447,627,459,611,470,555,489,497,499,442,501,396,500"/>
-<area shape="rect" id="Node000018" href="$execute_2utils_8c.html#a3efc1daab192679556df183345e1c83d" title=" " alt="" coords="829,383,906,408"/>
+<area shape="rect" id="Node000018" href="$execute_2utils_8c.html#a3efc1daab192679556df183345e1c83d" title="close two file descriptors" alt="" coords="829,383,906,408"/>
 <area shape="poly" id="edge16_Node000017_Node000018" title=" " alt="" coords="551,528,579,501,607,466,621,438,626,413,635,389,656,368,677,358,699,353,744,352,788,361,826,374,824,379,787,366,744,357,699,358,679,363,659,372,639,392,631,414,626,440,612,469,583,504,555,532"/>
-<area shape="rect" id="Node000019" href="$pipe_8c.html#a3a1c19716357baba879b799300b3c077" title=" " alt="" coords="665,432,766,458"/>
+<area shape="rect" id="Node000019" href="$pipe_8c.html#a3a1c19716357baba879b799300b3c077" title="execute child process in the pipe context" alt="" coords="665,432,766,458"/>
 <area shape="poly" id="edge17_Node000017_Node000019" title=" " alt="" coords="571,528,608,509,632,492,656,475,674,463,677,468,659,479,635,497,611,514,573,532"/>
-<area shape="rect" id="Node000020" href="$execute_2utils_8c.html#aedc550f2251badad69cf4b6dfda183ef" title=" " alt="" coords="833,432,902,458"/>
+<area shape="rect" id="Node000020" href="$execute_2utils_8c.html#aedc550f2251badad69cf4b6dfda183ef" title="return error message and exit" alt="" coords="833,432,902,458"/>
 <area shape="poly" id="edge21_Node000017_Node000020" title=" " alt="" coords="579,528,817,457,819,462,581,533"/>
 <area shape="poly" id="edge19_Node000019_Node000016" title=" " alt="" coords="706,460,655,525,611,571,571,586,538,589,504,583,462,571,414,548,374,518,378,514,416,543,464,566,505,578,538,584,570,580,608,567,651,521,702,457"/>
 <area shape="poly" id="edge18_Node000019_Node000018" title=" " alt="" coords="757,429,813,410,815,415,758,434"/>
