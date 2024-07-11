@@ -129,7 +129,7 @@ Include dependency graph for ft_is_double.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae16fec1d497ae2334d6a0582ed73e5bb" id="r_ae16fec1d497ae2334d6a0582ed73e5bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__is__double_8c.html#ae16fec1d497ae2334d6a0582ed73e5bb">ft_is_double</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>)</td></tr>
+<tr class="memitem:ae16fec1d497ae2334d6a0582ed73e5bb" id="r_ae16fec1d497ae2334d6a0582ed73e5bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__is__double_8c.html#ae16fec1d497ae2334d6a0582ed73e5bb">ft_is_double</a> (const char *n)</td></tr>
 <tr class="separator:ae16fec1d497ae2334d6a0582ed73e5bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -140,9 +140,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a> ft_is_double </td>
+          <td class="memname">int ft_is_double </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>n</em></td><td>)</td>
           <td></td>
         </tr>
@@ -151,36 +151,35 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ft__is__double_8c_source.html#l00015">15</a> of file <a class="el" href="ft__is__double_8c_source.html">ft_is_double.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>   <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>;</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">int</span>             <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">p</a>;</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>   i;</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">int</span>             p;</div>
 <div class="line"><span class="lineno">   19</span> </div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a> = 0;</div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">while</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] &amp;&amp; (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;\t&#39;</span> || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;\n&#39;</span> || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;\v&#39;</span></div>
-<div class="line"><span class="lineno">   22</span>            || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;\f&#39;</span> || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;\r&#39;</span> || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39; &#39;</span>))</div>
-<div class="line"><span class="lineno">   23</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>++;</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] &amp;&amp; (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;+&#39;</span> || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;-&#39;</span>))</div>
-<div class="line"><span class="lineno">   25</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>++;</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>])</div>
+<div class="line"><span class="lineno">   20</span>    i = 0;</div>
+<div class="line"><span class="lineno">   21</span>    <span class="keywordflow">while</span> (n[i] &amp;&amp; (n[i] == <span class="charliteral">&#39;\t&#39;</span> || n[i] == <span class="charliteral">&#39;\n&#39;</span> || n[i] == <span class="charliteral">&#39;\v&#39;</span></div>
+<div class="line"><span class="lineno">   22</span>            || n[i] == <span class="charliteral">&#39;\f&#39;</span> || n[i] == <span class="charliteral">&#39;\r&#39;</span> || n[i] == <span class="charliteral">&#39; &#39;</span>))</div>
+<div class="line"><span class="lineno">   23</span>        i++;</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (n[i] &amp;&amp; (n[i] == <span class="charliteral">&#39;+&#39;</span> || n[i] == <span class="charliteral">&#39;-&#39;</span>))</div>
+<div class="line"><span class="lineno">   25</span>        i++;</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (!n[i])</div>
 <div class="line"><span class="lineno">   27</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);</div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">p</a> = <a class="code hl_define" href="libft_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>])</div>
+<div class="line"><span class="lineno">   28</span>    p = <a class="code hl_define" href="libft_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span> (n[i])</div>
 <div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a2cf15b8a1a277d1e2ce3654101a2003d">ft_isdigit</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>]) &amp;&amp; <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] != <span class="charliteral">&#39;.&#39;</span> &amp;&amp; <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] != <span class="charliteral">&#39;,&#39;</span>)</div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a2cf15b8a1a277d1e2ce3654101a2003d">ft_isdigit</a>(n[i]) &amp;&amp; n[i] != <span class="charliteral">&#39;.&#39;</span> &amp;&amp; n[i] != <span class="charliteral">&#39;,&#39;</span>)</div>
 <div class="line"><span class="lineno">   32</span>            <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">if</span> ((<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;.&#39;</span> || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;,&#39;</span>) &amp;&amp; <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">p</a> == <a class="code hl_define" href="libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">if</span> ((n[i] == <span class="charliteral">&#39;.&#39;</span> || n[i] == <span class="charliteral">&#39;,&#39;</span>) &amp;&amp; p == <a class="code hl_define" href="libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</div>
 <div class="line"><span class="lineno">   34</span>            <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>);</div>
-<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;.&#39;</span> || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;,&#39;</span>)</div>
-<div class="line"><span class="lineno">   36</span>            <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">p</a> = <a class="code hl_define" href="libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>++;</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (n[i] == <span class="charliteral">&#39;.&#39;</span> || n[i] == <span class="charliteral">&#39;,&#39;</span>)</div>
+<div class="line"><span class="lineno">   36</span>            p = <a class="code hl_define" href="libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><span class="lineno">   37</span>        i++;</div>
 <div class="line"><span class="lineno">   38</span>    }</div>
 <div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
 <div class="line"><span class="lineno">   40</span>}</div>
 <div class="ttc" id="alibft_8h_html_a2cf15b8a1a277d1e2ce3654101a2003d"><div class="ttname"><a href="libft_8h.html#a2cf15b8a1a277d1e2ce3654101a2003d">ft_isdigit</a></div><div class="ttdeci">int ft_isdigit(int c)</div><div class="ttdef"><b>Definition</b> <a href="ft__isdigit_8c_source.html#l00013">ft_isdigit.c:13</a></div></div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
-<div class="ttc" id="alibft_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00095">libft.h:95</a></div></div>
-<div class="ttc" id="alibft_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="libft_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00096">libft.h:96</a></div></div>
+<div class="ttc" id="alibft_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00096">libft.h:96</a></div></div>
+<div class="ttc" id="alibft_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="libft_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00097">libft.h:97</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="libft_8h_source.html#l00096">FALSE</a>, <a class="el" href="ft__isdigit_8c_source.html#l00013">ft_isdigit()</a>, and <a class="el" href="libft_8h_source.html#l00095">TRUE</a>.</p>
+<p class="reference">References <a class="el" href="libft_8h_source.html#l00097">FALSE</a>, <a class="el" href="ft__isdigit_8c_source.html#l00013">ft_isdigit()</a>, and <a class="el" href="libft_8h_source.html#l00096">TRUE</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

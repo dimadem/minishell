@@ -146,7 +146,7 @@ Include dependency graph for stack_control_2.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abe6ee9afbff4acb27c42380ff770c52a" id="r_abe6ee9afbff4acb27c42380ff770c52a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack__control__2_8c.html#abe6ee9afbff4acb27c42380ff770c52a">build_linked_list</a> (<a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> **tokens, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> **<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">argv</a>)</td></tr>
+<tr class="memitem:abe6ee9afbff4acb27c42380ff770c52a" id="r_abe6ee9afbff4acb27c42380ff770c52a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stack__control__2_8c.html#abe6ee9afbff4acb27c42380ff770c52a">build_linked_list</a> (<a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> **tokens, char **argv)</td></tr>
 <tr class="separator:abe6ee9afbff4acb27c42380ff770c52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -157,7 +157,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> build_linked_list </td>
+          <td class="memname">void build_linked_list </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> **&#160;</td>
           <td class="paramname"><em>tokens</em>, </td>
@@ -165,7 +165,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> **&#160;</td>
+          <td class="paramtype">char **&#160;</td>
           <td class="paramname"><em>argv</em>&#160;</td>
         </tr>
         <tr>
@@ -178,19 +178,18 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="stack__control__2_8c_source.html#l00015">15</a> of file <a class="el" href="stack__control__2_8c_source.html">stack_control_2.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">int</span> <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>;</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a> = 0;</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">while</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">argv</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>])</div>
+<div class="line"><span class="lineno">   19</span>    i = 0;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">while</span> (argv[i])</div>
 <div class="line"><span class="lineno">   21</span>    {</div>
-<div class="line"><span class="lineno">   22</span>        <a class="code hl_function" href="tokens_8h.html#ad3cb8fb50ea5bbd7019b2480704d8e4e">add_node</a>(tokens, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">argv</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>]);   </div>
-<div class="line"><span class="lineno">   23</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>++;</div>
+<div class="line"><span class="lineno">   22</span>        <a class="code hl_function" href="tokens_8h.html#ad3cb8fb50ea5bbd7019b2480704d8e4e">add_node</a>(tokens, argv[i]);   </div>
+<div class="line"><span class="lineno">   23</span>        i++;</div>
 <div class="line"><span class="lineno">   24</span>    }</div>
 <div class="line"><span class="lineno">   25</span>}</div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 <div class="ttc" id="atokens_8h_html_ad3cb8fb50ea5bbd7019b2480704d8e4e"><div class="ttname"><a href="tokens_8h.html#ad3cb8fb50ea5bbd7019b2480704d8e4e">add_node</a></div><div class="ttdeci">void add_node(t_token **head, char *str)</div><div class="ttdef"><b>Definition</b> <a href="stack__control_8c_source.html#l00015">stack_control.c:15</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="stack__control_8c_source.html#l00015">add_node()</a>, and <a class="el" href="libft_8h_source.html#l00025">BUFFER_SIZE</a>.</p>
+<p class="reference">References <a class="el" href="stack__control_8c_source.html#l00015">add_node()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

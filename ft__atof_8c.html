@@ -129,7 +129,7 @@ Include dependency graph for ft_atof.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afca08c39a126e18b2cec12b916ff212f" id="r_afca08c39a126e18b2cec12b916ff212f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">double</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__atof_8c.html#afca08c39a126e18b2cec12b916ff212f">ft_atof</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>)</td></tr>
+<tr class="memitem:afca08c39a126e18b2cec12b916ff212f" id="r_afca08c39a126e18b2cec12b916ff212f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__atof_8c.html#afca08c39a126e18b2cec12b916ff212f">ft_atof</a> (const char *str)</td></tr>
 <tr class="separator:afca08c39a126e18b2cec12b916ff212f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -140,9 +140,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">double</a> ft_atof </td>
+          <td class="memname">double ft_atof </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
@@ -151,33 +151,32 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ft__atof_8c_source.html#l00015">15</a> of file <a class="el" href="ft__atof_8c_source.html">ft_atof.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">double</span>  <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">res</a>;</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">double</span>  <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">neg</a>;</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">double</span>  <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">divider</a>;</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordtype">size_t</span>  <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>;</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">double</span>  res;</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordtype">double</span>  neg;</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordtype">double</span>  divider;</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordtype">size_t</span>  i;</div>
 <div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">divider</a> = 0.1;</div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">res</a> = 0;</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">neg</a> = 1;</div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a> = -1;</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">while</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] &lt; <span class="charliteral">&#39;0&#39;</span> || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] &gt; <span class="charliteral">&#39;9&#39;</span>)</div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">if</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>++] == <span class="charliteral">&#39;-&#39;</span>)</div>
-<div class="line"><span class="lineno">   28</span>            <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">neg</a> = -1;</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
+<div class="line"><span class="lineno">   22</span>    divider = 0.1;</div>
+<div class="line"><span class="lineno">   23</span>    res = 0;</div>
+<div class="line"><span class="lineno">   24</span>    neg = 1;</div>
+<div class="line"><span class="lineno">   25</span>    i = -1;</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">while</span> (str[i] &lt; <span class="charliteral">&#39;0&#39;</span> || str[i] &gt; <span class="charliteral">&#39;9&#39;</span>)</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">if</span> (str[i++] == <span class="charliteral">&#39;-&#39;</span>)</div>
+<div class="line"><span class="lineno">   28</span>            neg = -1;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span> (str[i] &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; str[i] &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
 <div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">res</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">res</a> * 10 + <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>++] - 48;</div>
+<div class="line"><span class="lineno">   31</span>        res = res * 10 + str[i++] - 48;</div>
 <div class="line"><span class="lineno">   32</span>    }</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;.&#39;</span> || <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] == <span class="charliteral">&#39;,&#39;</span>)</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>++;</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">while</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (str[i] == <span class="charliteral">&#39;.&#39;</span> || str[i] == <span class="charliteral">&#39;,&#39;</span>)</div>
+<div class="line"><span class="lineno">   34</span>        i++;</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">while</span> (str[i] &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; str[i] &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
 <div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">res</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">res</a> + (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] - 48) * <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">divider</a>;</div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">divider</a> /= 10;</div>
-<div class="line"><span class="lineno">   39</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>++;</div>
+<div class="line"><span class="lineno">   37</span>        res = res + (str[i] - 48) * divider;</div>
+<div class="line"><span class="lineno">   38</span>        divider /= 10;</div>
+<div class="line"><span class="lineno">   39</span>        i++;</div>
 <div class="line"><span class="lineno">   40</span>    }</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">res</a> * <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">neg</a>);</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> (res * neg);</div>
 <div class="line"><span class="lineno">   42</span>}</div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -129,7 +129,7 @@ Include dependency graph for ft_exclude_delimiters.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1678f2722c7a602695a99e3edd948d35" id="r_a1678f2722c7a602695a99e3edd948d35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__exclude__delimiters_8c.html#a1678f2722c7a602695a99e3edd948d35">ft_exclude_delimiters</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">delims</a>)</td></tr>
+<tr class="memitem:a1678f2722c7a602695a99e3edd948d35" id="r_a1678f2722c7a602695a99e3edd948d35"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__exclude__delimiters_8c.html#a1678f2722c7a602695a99e3edd948d35">ft_exclude_delimiters</a> (const char *str, char *delims)</td></tr>
 <tr class="separator:a1678f2722c7a602695a99e3edd948d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -140,15 +140,15 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> * ft_exclude_delimiters </td>
+          <td class="memname">const char * ft_exclude_delimiters </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>str</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>delims</em>&#160;</td>
         </tr>
         <tr>
@@ -161,11 +161,10 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ft__exclude__delimiters_8c_source.html#l00015">15</a> of file <a class="el" href="ft__exclude__delimiters_8c_source.html">ft_exclude_delimiters.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">while</span> (*<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a> &amp;&amp; (<a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">delims</a>, *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>) != <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>))</div>
-<div class="line"><span class="lineno">   18</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>++;</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">str</a>);</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">while</span> (*str &amp;&amp; (<a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(delims, *str) != NULL))</div>
+<div class="line"><span class="lineno">   18</span>        str++;</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> (str);</div>
 <div class="line"><span class="lineno">   20</span>}</div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 <div class="ttc" id="alibft_8h_html_aa6d0c2d180f32ee585485e1a1ce3d55d"><div class="ttname"><a href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a></div><div class="ttdeci">char * ft_strchr(const char *s, int c)</div><div class="ttdef"><b>Definition</b> <a href="ft__strchr_8c_source.html#l00025">ft_strchr.c:25</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__strchr_8c_source.html#l00025">ft_strchr()</a>.</p>

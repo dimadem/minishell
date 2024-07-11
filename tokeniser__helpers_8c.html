@@ -146,9 +146,9 @@ Include dependency graph for tokeniser_helpers.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a07793427f42bd19d0f4ea6771441be99" id="r_a07793427f42bd19d0f4ea6771441be99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokeniser__helpers_8c.html#a07793427f42bd19d0f4ea6771441be99">new_token</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *value, <a class="el" href="tokens_8h.html#aaa12264c004e358b28290c09bb20969a">t_token_type</a> type)</td></tr>
+<tr class="memitem:a07793427f42bd19d0f4ea6771441be99" id="r_a07793427f42bd19d0f4ea6771441be99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokeniser__helpers_8c.html#a07793427f42bd19d0f4ea6771441be99">new_token</a> (char *value, <a class="el" href="tokens_8h.html#aaa12264c004e358b28290c09bb20969a">t_token_type</a> type)</td></tr>
 <tr class="separator:a07793427f42bd19d0f4ea6771441be99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c482f0c73f7263b3253aaa8e1bd4fb6" id="r_a6c482f0c73f7263b3253aaa8e1bd4fb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokeniser__helpers_8c.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a> (<a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> **tokens, <a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> *<a class="el" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>)</td></tr>
+<tr class="memitem:a6c482f0c73f7263b3253aaa8e1bd4fb6" id="r_a6c482f0c73f7263b3253aaa8e1bd4fb6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tokeniser__helpers_8c.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a> (<a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> **tokens, <a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> *<a class="el" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>)</td></tr>
 <tr class="separator:a6c482f0c73f7263b3253aaa8e1bd4fb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -159,7 +159,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> append_token </td>
+          <td class="memname">void append_token </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> **&#160;</td>
           <td class="paramname"><em>tokens</em>, </td>
@@ -248,7 +248,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="tokens_8h.html#aead06bc7a81ebdd60cbdcf6b3b8e51d4">t_token</a> * new_token </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>value</em>, </td>
         </tr>
         <tr>
@@ -267,23 +267,24 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="tokeniser__helpers_8c_source.html#l00015">15</a> of file <a class="el" href="tokeniser__helpers_8c_source.html">tokeniser_helpers.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">token</a>;</div>
+<div class="line"><span class="lineno">   17</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *token;</div>
 <div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">token</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">malloc</a>(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__token.html">t_token</a>));</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">token</a>)</div>
-<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>);</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">token</a>-&gt;data = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(value);</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">token</a>-&gt;data)</div>
+<div class="line"><span class="lineno">   19</span>    token = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__token.html">t_token</a>));</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!token)</div>
+<div class="line"><span class="lineno">   21</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   22</span>    token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a> = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(value);</div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">if</span> (!token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>)</div>
 <div class="line"><span class="lineno">   24</span>    {</div>
-<div class="line"><span class="lineno">   25</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">free</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">token</a>);</div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>);</div>
+<div class="line"><span class="lineno">   25</span>        free(token);</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> (NULL);</div>
 <div class="line"><span class="lineno">   27</span>    }</div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">token</a>-&gt;type = type;</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">token</a>-&gt;next = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>;</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">token</a>);</div>
+<div class="line"><span class="lineno">   28</span>    token-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> = type;</div>
+<div class="line"><span class="lineno">   29</span>    token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a> = NULL;</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> (token);</div>
 <div class="line"><span class="lineno">   31</span>}</div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 <div class="ttc" id="alibft_8h_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00023">ft_strdup.c:23</a></div></div>
+<div class="ttc" id="astructs__token_html_a350680c70abb7e7173240477e92dc0a3"><div class="ttname"><a href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">s_token::type</a></div><div class="ttdeci">t_token_type type</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00042">tokens.h:42</a></div></div>
+<div class="ttc" id="astructs__token_html_afe30f6c413b34095d2a562e112a52e9a"><div class="ttname"><a href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">s_token::data</a></div><div class="ttdeci">char * data</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00043">tokens.h:43</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="tokens_8h_source.html#l00043">s_token::data</a>, <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>, <a class="el" href="tokens_8h_source.html#l00044">s_token::next</a>, and <a class="el" href="tokens_8h_source.html#l00042">s_token::type</a>.</p>
 

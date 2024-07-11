@@ -158,9 +158,9 @@ Include dependency graph for pipe_test.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4e02daca82e791c68ff9bf7c0ad25030" id="r_a4e02daca82e791c68ff9bf7c0ad25030"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pipe__test_8c.html#a4e02daca82e791c68ff9bf7c0ad25030">builtin_pipe_test</a> (<a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data)</td></tr>
+<tr class="memitem:a4e02daca82e791c68ff9bf7c0ad25030" id="r_a4e02daca82e791c68ff9bf7c0ad25030"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pipe__test_8c.html#a4e02daca82e791c68ff9bf7c0ad25030">builtin_pipe_test</a> (<a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data)</td></tr>
 <tr class="separator:a4e02daca82e791c68ff9bf7c0ad25030"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86787b58c336d2fef7bad648f36a0d81" id="r_a86787b58c336d2fef7bad648f36a0d81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81">pipe_tests</a> (<a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data)</td></tr>
+<tr class="memitem:a86787b58c336d2fef7bad648f36a0d81" id="r_a86787b58c336d2fef7bad648f36a0d81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81">pipe_tests</a> (<a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data)</td></tr>
 <tr class="separator:a86787b58c336d2fef7bad648f36a0d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -171,7 +171,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> builtin_pipe_test </td>
+          <td class="memname">void builtin_pipe_test </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
@@ -184,13 +184,12 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
 <div class="line"><span class="lineno">   34</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a> = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(<span class="stringliteral">&quot;ls -l | wc -l&quot;</span>, <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line"><span class="lineno">   35</span>    <span class="comment">// builtin_pipe(node, data);</span></div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">assert</a>(data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a> != <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>);</div>
+<div class="line"><span class="lineno">   36</span>    assert(data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a> != NULL);</div>
 <div class="line"><span class="lineno">   37</span>}</div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 <div class="ttc" id="alibft_8h_html_aa65c9de65051c8c589286cf133c4a1f4"><div class="ttname"><a href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a></div><div class="ttdeci">char ** ft_split(char const *s, char c)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00095">ft_split.c:95</a></div></div>
 <div class="ttc" id="astructs__minishell__data_html_aeb4af268850af7d0f6d0c64f2bfefdea"><div class="ttname"><a href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">s_minishell_data::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00020">shell.h:20</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="shell_8h_source.html#l00020">s_minishell_data::args</a>, <a class="el" href="libft_8h_source.html#l00025">BUFFER_SIZE</a>, and <a class="el" href="ft__split_8c_source.html#l00095">ft_split()</a>.</p>
+<p class="reference">References <a class="el" href="shell_8h_source.html#l00020">s_minishell_data::args</a>, and <a class="el" href="ft__split_8c_source.html#l00095">ft_split()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="pipe__test_8c_source.html#l00022">pipe_tests()</a>.</p>
 <div class="dynheader">
@@ -233,7 +232,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> pipe_tests </td>
+          <td class="memname">void pipe_tests </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
@@ -244,16 +243,16 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="pipe__test_8c_source.html#l00022">22</a> of file <a class="el" href="pipe__test_8c_source.html">pipe_test.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;\nPIPE TESTS\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   24</span>    printf(<span class="stringliteral">&quot;\nPIPE TESTS\n&quot;</span>);</div>
 <div class="line"><span class="lineno">   25</span>    <a class="code hl_function" href="pipe__test_8c.html#a4e02daca82e791c68ff9bf7c0ad25030">builtin_pipe_test</a>(data);</div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;\033[0m&quot;</span>);</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;\033[0;32m&quot;</span>);</div>
-<div class="line"><span class="lineno">   28</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;pipe_test    -&gt; OK\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;\033[0m&quot;</span>);</div>
+<div class="line"><span class="lineno">   26</span>    printf(<span class="stringliteral">&quot;\033[0m&quot;</span>);</div>
+<div class="line"><span class="lineno">   27</span>    printf(<span class="stringliteral">&quot;\033[0;32m&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>    printf(<span class="stringliteral">&quot;pipe_test    -&gt; OK\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   29</span>    printf(<span class="stringliteral">&quot;\033[0m&quot;</span>);</div>
 <div class="line"><span class="lineno">   30</span>}</div>
 <div class="ttc" id="apipe__test_8c_html_a4e02daca82e791c68ff9bf7c0ad25030"><div class="ttname"><a href="pipe__test_8c.html#a4e02daca82e791c68ff9bf7c0ad25030">builtin_pipe_test</a></div><div class="ttdeci">void builtin_pipe_test(t_minishell_data *data)</div><div class="ttdef"><b>Definition</b> <a href="pipe__test_8c_source.html#l00032">pipe_test.c:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="libft_8h_source.html#l00025">BUFFER_SIZE</a>, and <a class="el" href="pipe__test_8c_source.html#l00032">builtin_pipe_test()</a>.</p>
+<p class="reference">References <a class="el" href="pipe__test_8c_source.html#l00032">builtin_pipe_test()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="test_2main_8c_source.html#l00018">main()</a>.</p>
 <div class="dynheader">

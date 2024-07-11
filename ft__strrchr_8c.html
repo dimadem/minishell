@@ -129,7 +129,7 @@ Include dependency graph for ft_strrchr.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a49c260cf80f9997975d6f3ec74ead582" id="r_a49c260cf80f9997975d6f3ec74ead582"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__strrchr_8c.html#a49c260cf80f9997975d6f3ec74ead582">ft_strrchr</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">c</a>)</td></tr>
+<tr class="memitem:a49c260cf80f9997975d6f3ec74ead582" id="r_a49c260cf80f9997975d6f3ec74ead582"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__strrchr_8c.html#a49c260cf80f9997975d6f3ec74ead582">ft_strrchr</a> (const char *s, int c)</td></tr>
 <tr class="separator:a49c260cf80f9997975d6f3ec74ead582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -140,15 +140,15 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> * ft_strrchr </td>
+          <td class="memname">char * ft_strrchr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>s</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>c</em>&#160;</td>
         </tr>
         <tr>
@@ -161,22 +161,21 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ft__strrchr_8c_source.html#l00024">24</a> of file <a class="el" href="ft__strrchr_8c_source.html">ft_strrchr.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">uc</a>;</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>      *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">last_occurrence</a>;</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   uc;</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>      *last_occurrence;</div>
 <div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">last_occurrence</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>;</div>
-<div class="line"><span class="lineno">   30</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">uc</a> = (<span class="keywordtype">unsigned</span> <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a>)<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">c</a>;</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">while</span> (*<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a> != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   29</span>    last_occurrence = NULL;</div>
+<div class="line"><span class="lineno">   30</span>    uc = (<span class="keywordtype">unsigned</span> char)c;</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">while</span> (*s != <span class="charliteral">&#39;\0&#39;</span>)</div>
 <div class="line"><span class="lineno">   32</span>    {</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">if</span> (*<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a> == <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">uc</a>)</div>
-<div class="line"><span class="lineno">   34</span>            <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">last_occurrence</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>;</div>
-<div class="line"><span class="lineno">   35</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>++;</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">if</span> (*s == uc)</div>
+<div class="line"><span class="lineno">   34</span>            last_occurrence = s;</div>
+<div class="line"><span class="lineno">   35</span>        s++;</div>
 <div class="line"><span class="lineno">   36</span>    }</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (*<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a> == <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">uc</a>)</div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">return</span> ((<span class="keywordtype">char</span> *)<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>);</div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> ((<span class="keywordtype">char</span> *)<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">last_occurrence</a>);</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span> (*s == uc)</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">return</span> ((<span class="keywordtype">char</span> *)s);</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">return</span> ((<span class="keywordtype">char</span> *)last_occurrence);</div>
 <div class="line"><span class="lineno">   40</span>}</div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

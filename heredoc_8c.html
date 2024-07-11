@@ -146,9 +146,9 @@ Include dependency graph for heredoc.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4e1b3e73a18dd66697cd7eac990b0363" id="r_a4e1b3e73a18dd66697cd7eac990b0363"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heredoc_8c.html#a4e1b3e73a18dd66697cd7eac990b0363">check_heredoc</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>)</td></tr>
+<tr class="memitem:a4e1b3e73a18dd66697cd7eac990b0363" id="r_a4e1b3e73a18dd66697cd7eac990b0363"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heredoc_8c.html#a4e1b3e73a18dd66697cd7eac990b0363">check_heredoc</a> (char *line)</td></tr>
 <tr class="separator:a4e1b3e73a18dd66697cd7eac990b0363"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a132ce43db3d4fba988a166e932845375" id="r_a132ce43db3d4fba988a166e932845375"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heredoc_8c.html#a132ce43db3d4fba988a166e932845375">heredoc</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">eof</a>)</td></tr>
+<tr class="memitem:a132ce43db3d4fba988a166e932845375" id="r_a132ce43db3d4fba988a166e932845375"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="heredoc_8c.html#a132ce43db3d4fba988a166e932845375">heredoc</a> (char *eof)</td></tr>
 <tr class="separator:a132ce43db3d4fba988a166e932845375"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -159,9 +159,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> * check_heredoc </td>
+          <td class="memname">char * check_heredoc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>line</em></td><td>)</td>
           <td></td>
         </tr>
@@ -170,17 +170,16 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="heredoc_8c_source.html#l00015">15</a> of file <a class="el" href="heredoc_8c_source.html">heredoc.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">char</span>    **<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">parsed</a>;</div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">char</span>    **parsed;</div>
 <div class="line"><span class="lineno">   18</span> </div>
-<div class="line"><span class="lineno">   19</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">parsed</a> = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>, <span class="charliteral">&#39; &#39;</span>);</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">parsed</a>[0], <span class="stringliteral">&quot;cat&quot;</span>) &amp;&amp; !<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">parsed</a>[1], <span class="stringliteral">&quot;&lt;&lt;&quot;</span>))</div>
+<div class="line"><span class="lineno">   19</span>    parsed = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(line, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><span class="lineno">   20</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(parsed[0], <span class="stringliteral">&quot;cat&quot;</span>) &amp;&amp; !<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(parsed[1], <span class="stringliteral">&quot;&lt;&lt;&quot;</span>))</div>
 <div class="line"><span class="lineno">   21</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="heredoc_8c.html#a132ce43db3d4fba988a166e932845375">heredoc</a>(<span class="stringliteral">&quot;EOF&quot;</span>));</div>
 <div class="line"><span class="lineno">   22</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>);</div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">return</span> (line);</div>
 <div class="line"><span class="lineno">   24</span>}</div>
 <div class="ttc" id="aheredoc_8c_html_a132ce43db3d4fba988a166e932845375"><div class="ttname"><a href="heredoc_8c.html#a132ce43db3d4fba988a166e932845375">heredoc</a></div><div class="ttdeci">char * heredoc(char *eof)</div><div class="ttdef"><b>Definition</b> <a href="heredoc_8c_source.html#l00026">heredoc.c:26</a></div></div>
 <div class="ttc" id="alibft_8h_html_a1f2ff2312e5994560c9537cd9173be94"><div class="ttname"><a href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a></div><div class="ttdeci">int ft_strcmp(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strcmp_8c_source.html#l00024">ft_strcmp.c:24</a></div></div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 <div class="ttc" id="alibft_8h_html_aa65c9de65051c8c589286cf133c4a1f4"><div class="ttname"><a href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a></div><div class="ttdeci">char ** ft_split(char const *s, char c)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00095">ft_split.c:95</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__split_8c_source.html#l00095">ft_split()</a>, <a class="el" href="ft__strcmp_8c_source.html#l00024">ft_strcmp()</a>, and <a class="el" href="heredoc_8c_source.html#l00026">heredoc()</a>.</p>
@@ -221,9 +220,9 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> * heredoc </td>
+          <td class="memname">char * heredoc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>eof</em></td><td>)</td>
           <td></td>
         </tr>
@@ -232,17 +231,17 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="heredoc_8c_source.html#l00026">26</a> of file <a class="el" href="heredoc_8c_source.html">heredoc.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">char</span>    *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>;</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">char</span>    *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">comb</a>;</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">char</span>    *line;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">char</span>    *comb;</div>
 <div class="line"><span class="lineno">   30</span> </div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">comb</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><span class="lineno">   31</span>    comb = <span class="stringliteral">&quot;&quot;</span>;</div>
 <div class="line"><span class="lineno">   32</span>    <span class="keywordflow">while</span> (1)</div>
 <div class="line"><span class="lineno">   33</span>    {</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">readline</a>(<span class="stringliteral">&quot;heredoc&gt;&quot;</span>);</div>
-<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">eof</a>))</div>
-<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">comb</a>);</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">comb</a> = <a class="code hl_function" href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(<a class="code hl_function" href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">comb</a>, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>), <span class="stringliteral">&quot;\n&quot;</span>);</div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">free</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>);</div>
+<div class="line"><span class="lineno">   34</span>        line = readline(<span class="stringliteral">&quot;heredoc&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   35</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(line, eof))</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordflow">return</span> (comb);</div>
+<div class="line"><span class="lineno">   37</span>        comb = <a class="code hl_function" href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(<a class="code hl_function" href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a>(comb, line), <span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   38</span>        free(line);</div>
 <div class="line"><span class="lineno">   39</span>    }</div>
 <div class="line"><span class="lineno">   40</span>}</div>
 <div class="ttc" id="alibft_8h_html_a91e6e3e428bcc9f2291b700e1829b82b"><div class="ttname"><a href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a></div><div class="ttdeci">char * ft_strjoin(char const *s1, char const *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strjoin_8c_source.html#l00023">ft_strjoin.c:23</a></div></div>

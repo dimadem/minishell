@@ -129,7 +129,7 @@ Include dependency graph for ft_strjoin.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a91e6e3e428bcc9f2291b700e1829b82b" id="r_a91e6e3e428bcc9f2291b700e1829b82b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s1</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s2</a>)</td></tr>
+<tr class="memitem:a91e6e3e428bcc9f2291b700e1829b82b" id="r_a91e6e3e428bcc9f2291b700e1829b82b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__strjoin_8c.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a> (char const *s1, char const *s2)</td></tr>
 <tr class="separator:a91e6e3e428bcc9f2291b700e1829b82b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -140,15 +140,15 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> * ft_strjoin </td>
+          <td class="memname">char * ft_strjoin </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> *&#160;</td>
+          <td class="paramtype">char const *&#160;</td>
           <td class="paramname"><em>s1</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> *&#160;</td>
+          <td class="paramtype">char const *&#160;</td>
           <td class="paramname"><em>s2</em>&#160;</td>
         </tr>
         <tr>
@@ -161,27 +161,26 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ft__strjoin_8c_source.html#l00023">23</a> of file <a class="el" href="ft__strjoin_8c_source.html">ft_strjoin.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">size_t</span>  <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">len</a>;</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">char</span>    *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">pt</a>;</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">char</span>    *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">result</a>;</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">size_t</span>  len;</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">char</span>    *pt;</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">char</span>    *result;</div>
 <div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s1</a> || !<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s2</a>)</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>);</div>
-<div class="line"><span class="lineno">   31</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">len</a> = <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s1</a>) + <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s2</a>) + 1;</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">len</a> == 0)</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>);</div>
-<div class="line"><span class="lineno">   34</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">pt</a> = (<span class="keywordtype">char</span> *)<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">malloc</a>(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">len</a>);</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">pt</a>)</div>
-<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>);</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">result</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">pt</a>;</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">while</span> (*<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s1</a>)</div>
-<div class="line"><span class="lineno">   39</span>        *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">pt</a>++ = *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s1</a>++;</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">while</span> (*<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s2</a>)</div>
-<div class="line"><span class="lineno">   41</span>        *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">pt</a>++ = *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s2</a>++;</div>
-<div class="line"><span class="lineno">   42</span>    *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">pt</a> = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">result</a>);</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!s1 || !s2)</div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   31</span>    len = <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(s1) + <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a> (s2) + 1;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (len == 0)</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   34</span>    pt = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * len);</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> (!pt)</div>
+<div class="line"><span class="lineno">   36</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   37</span>    result = pt;</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">while</span> (*s1)</div>
+<div class="line"><span class="lineno">   39</span>        *pt++ = *s1++;</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">while</span> (*s2)</div>
+<div class="line"><span class="lineno">   41</span>        *pt++ = *s2++;</div>
+<div class="line"><span class="lineno">   42</span>    *pt = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> (result);</div>
 <div class="line"><span class="lineno">   44</span>}</div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 <div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__strlen_8c_source.html#l00015">ft_strlen()</a>.</p>
@@ -202,51 +201,53 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="ft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b_icgraph.png" border="0" usemap="#aft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b_icgraph" alt=""/></div>
 <map name="aft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b_icgraph" id="aft__strjoin_8c_a91e6e3e428bcc9f2291b700e1829b82b_icgraph">
-<area shape="rect" title=" " alt="" coords="940,228,1012,254"/>
-<area shape="rect" href="env_2utils_8c.html#a19f3a9e73371c1cfb3db076f94d33830" title=" " alt="" coords="766,203,861,228"/>
-<area shape="poly" title=" " alt="" coords="925,236,861,226,862,220,926,230"/>
-<area shape="rect" href="utils__0_8c.html#a3de2eb0e796441d7b827cf213bd8d789" title="function find the full path of the executed command" alt="" coords="770,153,858,179"/>
-<area shape="poly" title=" " alt="" coords="942,222,891,193,857,180,859,175,893,188,945,217"/>
-<area shape="rect" href="prompt_8c.html#a5663e22274d85c42c9c7f51e22afc301" title=" " alt="" coords="735,252,892,278"/>
-<area shape="poly" title=" " alt="" coords="926,251,893,256,892,250,925,246"/>
-<area shape="rect" href="heredoc_8c.html#a132ce43db3d4fba988a166e932845375" title=" " alt="" coords="780,301,847,327"/>
-<area shape="poly" title=" " alt="" coords="944,265,893,293,849,308,847,303,891,288,942,260"/>
-<area shape="rect" href="execute_8c.html#a82e1e73d725f74b5fdad62dd3a99bab5" title="executes a new process" alt="" coords="583,153,682,179"/>
-<area shape="poly" title=" " alt="" coords="750,201,681,182,683,177,752,196"/>
-<area shape="rect" href="env__test_8c.html#acac11373a53e4554ff03dd0e197c767b" title=" " alt="" coords="585,203,680,228"/>
-<area shape="poly" title=" " alt="" coords="751,218,680,218,680,213,751,213"/>
-<area shape="rect" href="execute_8c.html#a825187f25304f9bd1a3e7a5e97327801" title="execute distribution function checks if the command is a builtin or a new process" alt="" coords="457,153,524,179"/>
-<area shape="poly" title=" " alt="" coords="567,169,524,169,524,164,567,164"/>
-<area shape="rect" href="execute_8c.html#ace4c3a2246919797e40140123d79596a" title="execute Abstract Syntax Tree" alt="" coords="312,153,403,179"/>
-<area shape="poly" title=" " alt="" coords="442,169,404,169,404,164,442,164"/>
-<area shape="rect" href="pipe_8c.html#a3a1c19716357baba879b799300b3c077" title="execute child process in the pipe context" alt="" coords="152,55,252,80"/>
-<area shape="poly" title=" " alt="" coords="330,145,299,119,263,94,241,83,243,78,265,89,302,115,334,141"/>
-<area shape="rect" href="main_8c.html#abaf800210325f066cb9289aaae9e2c86" title=" " alt="" coords="162,5,242,31"/>
-<area shape="poly" title=" " alt="" coords="340,141,308,92,287,67,262,44,241,32,244,28,266,40,291,63,313,89,345,138"/>
-<area shape="rect" href="redirect__append_8c.html#a780ae5fe0eba6dcc6cab3a347507d636" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="145,104,259,130"/>
-<area shape="poly" title=" " alt="" coords="296,158,224,133,226,128,298,153"/>
-<area shape="rect" href="redirect__heredoc_8c.html#a0dc55a5a9752d658c1b8b6e3760f5813" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="140,153,264,179"/>
-<area shape="poly" title=" " alt="" coords="296,178,264,178,264,172,296,172"/>
-<area shape="rect" href="redirect__in_8c.html#a2635bab3d0023f67288d2832903bdbd9" title="redirection input in context of executing AST" alt="" coords="161,203,243,228"/>
-<area shape="poly" title=" " alt="" coords="322,188,243,213,242,208,320,183"/>
-<area shape="rect" href="redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="157,252,247,278"/>
-<area shape="poly" title=" " alt="" coords="335,190,314,204,300,217,291,230,281,242,266,255,248,265,246,260,262,251,277,238,286,226,296,214,310,200,332,186"/>
-<area shape="rect" href="pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title="execute pipe when | is found in the command" alt="" coords="5,179,92,204"/>
-<area shape="poly" title=" " alt="" coords="148,90,141,94,116,114,94,138,61,180,57,176,89,134,112,110,138,89,145,85"/>
-<area shape="poly" title=" " alt="" coords="67,216,98,256,118,274,141,288,175,301,203,307,231,303,263,288,275,278,282,267,288,243,293,216,300,202,310,188,324,177,327,182,314,192,304,205,299,218,293,244,287,270,279,282,265,292,233,308,203,312,173,306,138,293,115,278,94,259,63,220"/>
-<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="24,5,73,31"/>
-<area shape="poly" title=" " alt="" coords="146,21,74,21,74,16,146,16"/>
-<area shape="poly" title=" " alt="" coords="274,128,336,150,334,155,272,133"/>
-<area shape="poly" title=" " alt="" coords="279,155,312,155,312,161,279,160"/>
-<area shape="poly" title=" " alt="" coords="238,194,311,170,312,175,239,199"/>
-<area shape="poly" title=" " alt="" coords="231,243,263,227,277,214,286,203,309,177,313,180,290,206,281,218,265,231,233,248"/>
-<area shape="rect" href="env__test_8c.html#ac2c82e11f71bdaefecc5df644f06d7c9" title=" " alt="" coords="451,203,530,228"/>
-<area shape="poly" title=" " alt="" coords="569,218,530,218,530,213,569,213"/>
-<area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="333,203,382,228"/>
-<area shape="poly" title=" " alt="" coords="436,218,383,218,383,213,436,213"/>
-<area shape="poly" title=" " alt="" coords="754,169,682,169,682,164,754,164"/>
-<area shape="rect" href="heredoc_8c.html#a4e1b3e73a18dd66697cd7eac990b0363" title=" " alt="" coords="578,301,687,327"/>
-<area shape="poly" title=" " alt="" coords="764,317,688,317,688,312,764,312"/>
+<area shape="rect" title=" " alt="" coords="967,280,1039,306"/>
+<area shape="rect" href="env_2utils_8c.html#a19f3a9e73371c1cfb3db076f94d33830" title=" " alt="" coords="793,255,888,280"/>
+<area shape="poly" title=" " alt="" coords="952,288,888,278,889,272,953,282"/>
+<area shape="rect" href="utils__0_8c.html#a3de2eb0e796441d7b827cf213bd8d789" title="function find the full path of the executed command" alt="" coords="797,205,885,231"/>
+<area shape="poly" title=" " alt="" coords="969,274,918,245,884,232,886,227,920,240,972,269"/>
+<area shape="rect" href="prompt_8c.html#a5663e22274d85c42c9c7f51e22afc301" title=" " alt="" coords="762,304,919,330"/>
+<area shape="poly" title=" " alt="" coords="953,303,920,308,919,302,952,298"/>
+<area shape="rect" href="heredoc_8c.html#a132ce43db3d4fba988a166e932845375" title=" " alt="" coords="807,353,874,379"/>
+<area shape="poly" title=" " alt="" coords="971,317,920,345,876,360,874,355,918,340,969,312"/>
+<area shape="rect" href="execute_8c.html#a3cfa5b6ea734d8db61dd8be0e0aa9ca8" title="executes a new process" alt="" coords="610,205,709,231"/>
+<area shape="poly" title=" " alt="" coords="777,253,708,234,710,229,779,248"/>
+<area shape="rect" href="env__test_8c.html#acac11373a53e4554ff03dd0e197c767b" title=" " alt="" coords="612,255,707,280"/>
+<area shape="poly" title=" " alt="" coords="778,270,707,270,707,265,778,265"/>
+<area shape="rect" href="execute_8c.html#ae9738c8104774062bc2934b701fe96d9" title="execute distribution function" alt="" coords="484,205,551,231"/>
+<area shape="poly" title=" " alt="" coords="594,221,551,221,551,216,594,216"/>
+<area shape="rect" href="execute_8c.html#ace4c3a2246919797e40140123d79596a" title="execute Abstract Syntax Tree" alt="" coords="339,205,430,231"/>
+<area shape="poly" title=" " alt="" coords="469,221,431,221,431,216,469,216"/>
+<area shape="rect" href="redirect__heredoc_8c.html#a0a43624bb8557b365fdd6406f70e97ed" title=" " alt="" coords="184,55,285,80"/>
+<area shape="poly" title=" " alt="" coords="365,193,333,148,289,102,262,83,265,79,293,97,337,145,369,190"/>
+<area shape="rect" href="pipe_8c.html#a3a1c19716357baba879b799300b3c077" title="execute child process in the pipe context" alt="" coords="184,356,285,382"/>
+<area shape="poly" title=" " alt="" coords="342,243,341,244,325,268,317,290,310,314,293,339,268,358,264,353,289,335,305,311,312,289,320,265,337,240,339,239"/>
+<area shape="rect" href="main_8c.html#abaf800210325f066cb9289aaae9e2c86" title=" " alt="" coords="194,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="373,192,343,119,319,79,289,44,273,33,276,29,293,40,324,76,348,117,378,189"/>
+<area shape="rect" href="redirect__append_8c.html#a780ae5fe0eba6dcc6cab3a347507d636" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="178,156,291,182"/>
+<area shape="poly" title=" " alt="" coords="323,210,255,185,257,180,325,205"/>
+<area shape="rect" href="redirect__in_8c.html#a2635bab3d0023f67288d2832903bdbd9" title="redirection input in context of executing AST" alt="" coords="194,205,275,231"/>
+<area shape="poly" title=" " alt="" coords="323,230,275,229,275,224,323,224"/>
+<area shape="rect" href="redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="190,255,279,280"/>
+<area shape="poly" title=" " alt="" coords="350,240,280,264,278,259,348,235"/>
+<area shape="rect" href="redirect__heredoc_8c.html#a0dc55a5a9752d658c1b8b6e3760f5813" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="5,80,130,106"/>
+<area shape="poly" title=" " alt="" coords="169,80,131,86,130,81,168,75"/>
+<area shape="poly" title=" " alt="" coords="146,99,218,114,292,141,338,172,373,203,369,207,335,176,290,146,217,119,145,104"/>
+<area shape="rect" href="pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title="execute pipe when | is found in the command" alt="" coords="24,331,111,356"/>
+<area shape="poly" title=" " alt="" coords="169,362,110,353,111,347,170,356"/>
+<area shape="poly" title=" " alt="" coords="126,337,206,323,249,309,290,291,305,279,314,267,323,254,337,240,354,229,357,234,341,244,327,258,318,270,308,283,292,295,251,314,208,328,127,342"/>
+<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="43,5,92,31"/>
+<area shape="poly" title=" " alt="" coords="179,21,93,21,93,16,179,16"/>
+<area shape="poly" title=" " alt="" coords="307,181,364,202,362,207,305,186"/>
+<area shape="poly" title=" " alt="" coords="291,207,339,207,339,212,291,212"/>
+<area shape="poly" title=" " alt="" coords="269,246,338,222,339,227,271,251"/>
+<area shape="rect" href="env__test_8c.html#ac2c82e11f71bdaefecc5df644f06d7c9" title=" " alt="" coords="478,255,557,280"/>
+<area shape="poly" title=" " alt="" coords="596,270,557,270,557,265,596,265"/>
+<area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="360,255,409,280"/>
+<area shape="poly" title=" " alt="" coords="463,270,410,270,410,265,463,265"/>
+<area shape="poly" title=" " alt="" coords="781,221,709,221,709,216,781,216"/>
+<area shape="rect" href="heredoc_8c.html#a4e1b3e73a18dd66697cd7eac990b0363" title=" " alt="" coords="605,353,714,379"/>
+<area shape="poly" title=" " alt="" coords="791,369,715,369,715,364,791,364"/>
 </map>
 </div>
 

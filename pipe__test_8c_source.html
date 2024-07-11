@@ -122,12 +122,12 @@ $(document).ready(function(){initNavTree('pipe__test_8c_source.html',''); initRe
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81">   22</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81">pipe_tests</a>(<a class="code hl_struct" href="structs__minishell__data.html">t_minishell_data</a> *data)</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;\nPIPE TESTS\n&quot;</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    printf(<span class="stringliteral">&quot;\nPIPE TESTS\n&quot;</span>);</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="pipe__test_8c.html#a4e02daca82e791c68ff9bf7c0ad25030">builtin_pipe_test</a>(data);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;\033[0m&quot;</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;\033[0;32m&quot;</span>);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;pipe_test    -&gt; OK\n&quot;</span>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;\033[0m&quot;</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    printf(<span class="stringliteral">&quot;\033[0m&quot;</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    printf(<span class="stringliteral">&quot;\033[0;32m&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    printf(<span class="stringliteral">&quot;pipe_test    -&gt; OK\n&quot;</span>);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    printf(<span class="stringliteral">&quot;\033[0m&quot;</span>);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
@@ -136,11 +136,10 @@ $(document).ready(function(){initNavTree('pipe__test_8c_source.html',''); initRe
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a> = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(<span class="stringliteral">&quot;ls -l | wc -l&quot;</span>, <span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// builtin_pipe(node, data);</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">assert</a>(data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a> != <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    assert(data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a> != NULL);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 </div>
 <div class="ttc" id="alibft_8h_html"><div class="ttname"><a href="libft_8h.html">libft.h</a></div></div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 <div class="ttc" id="alibft_8h_html_aa65c9de65051c8c589286cf133c4a1f4"><div class="ttname"><a href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a></div><div class="ttdeci">char ** ft_split(char const *s, char c)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00095">ft_split.c:95</a></div></div>
 <div class="ttc" id="apipe_8h_html"><div class="ttname"><a href="pipe_8h.html">pipe.h</a></div></div>
 <div class="ttc" id="apipe__test_8c_html_a4e02daca82e791c68ff9bf7c0ad25030"><div class="ttname"><a href="pipe__test_8c.html#a4e02daca82e791c68ff9bf7c0ad25030">builtin_pipe_test</a></div><div class="ttdeci">void builtin_pipe_test(t_minishell_data *data)</div><div class="ttdef"><b>Definition</b> <a href="pipe__test_8c_source.html#l00032">pipe_test.c:32</a></div></div>

@@ -146,7 +146,7 @@ Include dependency graph for aux.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a94ee21f550bbf6448142ec3102526dde" id="r_a94ee21f550bbf6448142ec3102526dde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aux_8c.html#a94ee21f550bbf6448142ec3102526dde">make_history</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>)</td></tr>
+<tr class="memitem:a94ee21f550bbf6448142ec3102526dde" id="r_a94ee21f550bbf6448142ec3102526dde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="aux_8c.html#a94ee21f550bbf6448142ec3102526dde">make_history</a> (char *line)</td></tr>
 <tr class="separator:a94ee21f550bbf6448142ec3102526dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -157,9 +157,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> make_history </td>
+          <td class="memname">void make_history </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>line</em></td><td>)</td>
           <td></td>
         </tr>
@@ -168,15 +168,14 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="aux_8c_source.html#l00015">15</a> of file <a class="el" href="aux_8c_source.html">aux.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   16</span>{</div>
-<div class="line"><span class="lineno">   17</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;line: %s\n&quot;</span>, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>);</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">if</span> (*<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>)</div>
-<div class="line"><span class="lineno">   19</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">add_history</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">line</a>);</div>
-<div class="line"><span class="lineno">   20</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">write_history</a>(<a class="code hl_define" href="tokens_8h.html#a32f7389f2a161bbbb128130ca37ef8e1">HISTORY_PATH</a>);</div>
+<div class="line"><span class="lineno">   17</span>    printf(<span class="stringliteral">&quot;line: %s\n&quot;</span>, line);</div>
+<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">if</span> (*line)</div>
+<div class="line"><span class="lineno">   19</span>        add_history(line);</div>
+<div class="line"><span class="lineno">   20</span>    write_history(<a class="code hl_define" href="tokens_8h.html#a32f7389f2a161bbbb128130ca37ef8e1">HISTORY_PATH</a>);</div>
 <div class="line"><span class="lineno">   21</span>}</div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 <div class="ttc" id="atokens_8h_html_a32f7389f2a161bbbb128130ca37ef8e1"><div class="ttname"><a href="tokens_8h.html#a32f7389f2a161bbbb128130ca37ef8e1">HISTORY_PATH</a></div><div class="ttdeci">#define HISTORY_PATH</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00027">tokens.h:27</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="libft_8h_source.html#l00025">BUFFER_SIZE</a>, and <a class="el" href="tokens_8h_source.html#l00027">HISTORY_PATH</a>.</p>
+<p class="reference">References <a class="el" href="tokens_8h_source.html#l00027">HISTORY_PATH</a>.</p>
 
 </div>
 </div>

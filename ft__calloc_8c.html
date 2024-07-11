@@ -129,7 +129,7 @@ Include dependency graph for ft_calloc.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae0a6807f9f78ed4bf4f958323582d22f" id="r_ae0a6807f9f78ed4bf4f958323582d22f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__calloc_8c.html#ae0a6807f9f78ed4bf4f958323582d22f">ft_calloc</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size_t</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">count</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size_t</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size</a>)</td></tr>
+<tr class="memitem:ae0a6807f9f78ed4bf4f958323582d22f" id="r_ae0a6807f9f78ed4bf4f958323582d22f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__calloc_8c.html#ae0a6807f9f78ed4bf4f958323582d22f">ft_calloc</a> (size_t count, size_t size)</td></tr>
 <tr class="separator:ae0a6807f9f78ed4bf4f958323582d22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -140,15 +140,15 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> * ft_calloc </td>
+          <td class="memname">void * ft_calloc </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>count</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
@@ -161,18 +161,17 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ft__calloc_8c_source.html#l00023">23</a> of file <a class="el" href="ft__calloc_8c_source.html">ft_calloc.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">void</span>    *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">ptr</a>;</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">void</span>    *ptr;</div>
 <div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size</a> != 0 &amp;&amp; <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">count</a> &gt; <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">SIZE_MAX</a> / <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size</a>)</div>
-<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>);</div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">ptr</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">malloc</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">count</a> * <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size</a>);</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">ptr</a>)</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">NULL</a>);</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="libft_8h.html#a557de65a3f3e16f953f5dae59cdb6106">ft_memset</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">ptr</a>, 0, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">count</a> * <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size</a>);</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">ptr</a>);</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (size != 0 &amp;&amp; count &gt; SIZE_MAX / size)</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   29</span>    ptr = malloc(count * size);</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!ptr)</div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_function" href="libft_8h.html#a557de65a3f3e16f953f5dae59cdb6106">ft_memset</a>(ptr, 0, count * size);</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> (ptr);</div>
 <div class="line"><span class="lineno">   34</span>}</div>
 <div class="ttc" id="alibft_8h_html_a557de65a3f3e16f953f5dae59cdb6106"><div class="ttname"><a href="libft_8h.html#a557de65a3f3e16f953f5dae59cdb6106">ft_memset</a></div><div class="ttdeci">void * ft_memset(void *s, int c, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__memset_8c_source.html#l00028">ft_memset.c:28</a></div></div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__memset_8c_source.html#l00028">ft_memset()</a>.</p>
 <div class="dynheader">

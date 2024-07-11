@@ -123,7 +123,7 @@ Include dependency graph for main.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a647f21a28344e1d9c643f4115516d7c9" id="r_a647f21a28344e1d9c643f4115516d7c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">argc</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> **<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">argv</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> **envp)</td></tr>
+<tr class="memitem:a647f21a28344e1d9c643f4115516d7c9" id="r_a647f21a28344e1d9c643f4115516d7c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a> (int argc, char **argv, char **envp)</td></tr>
 <tr class="separator:a647f21a28344e1d9c643f4115516d7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -134,21 +134,21 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a> main </td>
+          <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>argc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> **&#160;</td>
+          <td class="paramtype">char **&#160;</td>
           <td class="paramname"><em>argv</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> **&#160;</td>
+          <td class="paramtype">char **&#160;</td>
           <td class="paramname"><em>envp</em>&#160;</td>
         </tr>
         <tr>
@@ -163,21 +163,20 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   19</span>{</div>
 <div class="line"><span class="lineno">   20</span>    <a class="code hl_struct" href="structs__minishell__data.html">t_minishell_data</a>    data;</div>
 <div class="line"><span class="lineno">   21</span> </div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">argc</a> &gt; 1)</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (argc &gt; 1)</div>
 <div class="line"><span class="lineno">   23</span>    {</div>
-<div class="line"><span class="lineno">   24</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">printf</a>(<span class="stringliteral">&quot;Usage: %s\n&quot;</span>, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">argv</a>[0]);</div>
-<div class="line"><span class="lineno">   25</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">exit</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">EXIT_FAILURE</a>);</div>
+<div class="line"><span class="lineno">   24</span>        printf(<span class="stringliteral">&quot;Usage: %s\n&quot;</span>, argv[0]);</div>
+<div class="line"><span class="lineno">   25</span>        exit(EXIT_FAILURE);</div>
 <div class="line"><span class="lineno">   26</span>    }</div>
 <div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81">pipe_tests</a>(&amp;data);</div>
 <div class="line"><span class="lineno">   28</span>    <a class="code hl_function" href="env__test_8c.html#ac2c82e11f71bdaefecc5df644f06d7c9">env_tests</a>(&amp;data, envp);</div>
 <div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> (0);</div>
 <div class="line"><span class="lineno">   30</span>}</div>
 <div class="ttc" id="aenv__test_8c_html_ac2c82e11f71bdaefecc5df644f06d7c9"><div class="ttname"><a href="env__test_8c.html#ac2c82e11f71bdaefecc5df644f06d7c9">env_tests</a></div><div class="ttdeci">void env_tests(t_minishell_data *data, char **envp)</div><div class="ttdef"><b>Definition</b> <a href="env__test_8c_source.html#l00025">env_test.c:25</a></div></div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 <div class="ttc" id="apipe__test_8c_html_a86787b58c336d2fef7bad648f36a0d81"><div class="ttname"><a href="pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81">pipe_tests</a></div><div class="ttdeci">void pipe_tests(t_minishell_data *data)</div><div class="ttdef"><b>Definition</b> <a href="pipe__test_8c_source.html#l00022">pipe_test.c:22</a></div></div>
 <div class="ttc" id="astructs__minishell__data_html"><div class="ttname"><a href="structs__minishell__data.html">s_minishell_data</a></div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00018">shell.h:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="libft_8h_source.html#l00025">BUFFER_SIZE</a>, <a class="el" href="env__test_8c_source.html#l00025">env_tests()</a>, and <a class="el" href="pipe__test_8c_source.html#l00022">pipe_tests()</a>.</p>
+<p class="reference">References <a class="el" href="env__test_8c_source.html#l00025">env_tests()</a>, and <a class="el" href="pipe__test_8c_source.html#l00022">pipe_tests()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

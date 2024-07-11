@@ -129,7 +129,7 @@ Include dependency graph for ft_striteri.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ada722cffd2c6c8169ae339afd0f9763c" id="r_ada722cffd2c6c8169ae339afd0f9763c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__striteri_8c.html#ada722cffd2c6c8169ae339afd0f9763c">ft_striteri</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a>(*<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">f</a>)(<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">unsigned</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *))</td></tr>
+<tr class="memitem:ada722cffd2c6c8169ae339afd0f9763c" id="r_ada722cffd2c6c8169ae339afd0f9763c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__striteri_8c.html#ada722cffd2c6c8169ae339afd0f9763c">ft_striteri</a> (char *s, void(*f)(unsigned int, char *))</td></tr>
 <tr class="separator:ada722cffd2c6c8169ae339afd0f9763c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -140,15 +140,15 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> ft_striteri </td>
+          <td class="memname">void ft_striteri </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *&#160;</td>
+          <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>s</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a>(*)(<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">unsigned</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">int</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">char</a> *)&#160;</td>
+          <td class="paramtype">void(*)(unsigned int, char *)&#160;</td>
           <td class="paramname"><em>f</em>&#160;</td>
         </tr>
         <tr>
@@ -161,18 +161,17 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ft__striteri_8c_source.html#l00028">28</a> of file <a class="el" href="ft__striteri_8c_source.html">ft_striteri.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   29</span>{</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>;</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>    i;</div>
 <div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a> = 0;</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (!<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a> || !<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">f</a>)</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">return</a> ;</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">while</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>] != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   32</span>    i = 0;</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (!s || !f)</div>
+<div class="line"><span class="lineno">   34</span>        return ;</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">while</span> (s[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
 <div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">f</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>, &amp;<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>[<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>]);</div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">i</a>++;</div>
+<div class="line"><span class="lineno">   37</span>        f(i, &amp;s[i]);</div>
+<div class="line"><span class="lineno">   38</span>        i++;</div>
 <div class="line"><span class="lineno">   39</span>    }</div>
 <div class="line"><span class="lineno">   40</span>}</div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

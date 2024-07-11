@@ -129,7 +129,7 @@ Include dependency graph for ft_memmove.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a69673d42c601e17a8e682b592167c775" id="r_a69673d42c601e17a8e682b592167c775"><td class="memItemLeft" align="right" valign="top"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__memmove_8c.html#a69673d42c601e17a8e682b592167c775">ft_memmove</a> (<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">dest</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> *<a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">src</a>, <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size_t</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>)</td></tr>
+<tr class="memitem:a69673d42c601e17a8e682b592167c775" id="r_a69673d42c601e17a8e682b592167c775"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ft__memmove_8c.html#a69673d42c601e17a8e682b592167c775">ft_memmove</a> (void *dest, const void *src, size_t n)</td></tr>
 <tr class="separator:a69673d42c601e17a8e682b592167c775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -140,21 +140,21 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> * ft_memmove </td>
+          <td class="memname">void * ft_memmove </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> *&#160;</td>
+          <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>dest</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">const</a> <a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">void</a> *&#160;</td>
+          <td class="paramtype">const void *&#160;</td>
           <td class="paramname"><em>src</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">size_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>n</em>&#160;</td>
         </tr>
         <tr>
@@ -167,26 +167,25 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ft__memmove_8c_source.html#l00024">24</a> of file <a class="el" href="ft__memmove_8c_source.html">ft_memmove.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">char</span>            *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">d</a>;</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>      *<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>;</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">char</span>            *d;</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>      *s;</div>
 <div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">d</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">dest</a>;</div>
-<div class="line"><span class="lineno">   30</span>    <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a> = <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">src</a>;</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">d</a> == <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>)</div>
-<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">dest</a>);</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">d &lt; s || d &gt;</a>= <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a> + <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>)</div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_function" href="libft_8h.html#a41a6f05af30cf85ff63a08e383826322">ft_memcpy</a>(<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">d</a>, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>, <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>);</div>
+<div class="line"><span class="lineno">   29</span>    d = dest;</div>
+<div class="line"><span class="lineno">   30</span>    s = src;</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (d == s)</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span> (dest);</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (d &lt; s || d &gt;= s + n)</div>
+<div class="line"><span class="lineno">   34</span>        <a class="code hl_function" href="libft_8h.html#a41a6f05af30cf85ff63a08e383826322">ft_memcpy</a>(d, s, n);</div>
 <div class="line"><span class="lineno">   35</span>    <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">d</a> += <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>;</div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a> += <a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>;</div>
-<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">while</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">n</a>--)</div>
-<div class="line"><span class="lineno">   40</span>            *(--<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">d</a>) = *(--<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">s</a>);</div>
+<div class="line"><span class="lineno">   37</span>        d += n;</div>
+<div class="line"><span class="lineno">   38</span>        s += n;</div>
+<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">while</span> (n--)</div>
+<div class="line"><span class="lineno">   40</span>            *(--d) = *(--s);</div>
 <div class="line"><span class="lineno">   41</span>    }</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">dest</a>);</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> (dest);</div>
 <div class="line"><span class="lineno">   43</span>}</div>
 <div class="ttc" id="alibft_8h_html_a41a6f05af30cf85ff63a08e383826322"><div class="ttname"><a href="libft_8h.html#a41a6f05af30cf85ff63a08e383826322">ft_memcpy</a></div><div class="ttdeci">void * ft_memcpy(void *dest, const void *src, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__memcpy_8c_source.html#l00022">ft_memcpy.c:22</a></div></div>
-<div class="ttc" id="alibft_8h_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="libft_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00025">libft.h:25</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__memcpy_8c_source.html#l00022">ft_memcpy()</a>.</p>
 <div class="dynheader">
