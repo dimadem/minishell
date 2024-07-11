@@ -1,26 +1,32 @@
 <map id="redirect_in" name="redirect_in">
-<area shape="rect" id="Node000001" title="redirection input in context of executing AST" alt="" coords="478,156,560,182"/>
-<area shape="rect" id="Node000002" href="$execute_8c.html#ace4c3a2246919797e40140123d79596a" title="execute Abstract Syntax Tree" alt="" coords="339,156,430,182"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="463,180,431,180,431,175,463,175"/>
-<area shape="poly" id="edge12_Node000002_Node000001" title=" " alt="" coords="446,157,478,158,478,163,446,163"/>
-<area shape="rect" id="Node000003" href="$redirect__heredoc_8c.html#a0a43624bb8557b365fdd6406f70e97ed" title=" " alt="" coords="184,107,285,132"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="328,153,275,135,277,130,330,148"/>
-<area shape="rect" id="Node000005" href="$pipe_8c.html#a3a1c19716357baba879b799300b3c077" title="execute child process in the pipe context" alt="" coords="184,255,285,280"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="360,194,329,220,292,246,272,257,269,252,290,241,325,216,356,190"/>
-<area shape="rect" id="Node000007" href="$main_8c.html#abaf800210325f066cb9289aaae9e2c86" title=" " alt="" coords="194,5,275,31"/>
-<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="365,144,333,99,289,52,262,34,265,29,293,48,337,95,369,141"/>
-<area shape="rect" id="Node000009" href="$redirect__append_8c.html#a780ae5fe0eba6dcc6cab3a347507d636" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="178,156,291,182"/>
-<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="323,180,291,180,291,175,323,175"/>
-<area shape="rect" id="Node000010" href="$redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="190,205,279,231"/>
-<area shape="poly" id="edge13_Node000002_Node000010" title=" " alt="" coords="350,191,280,214,278,209,348,186"/>
-<area shape="rect" id="Node000004" href="$redirect__heredoc_8c.html#a0dc55a5a9752d658c1b8b6e3760f5813" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="5,81,130,107"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="168,112,130,106,131,101,169,107"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="145,79,217,78,255,82,292,92,317,104,341,121,374,154,371,158,337,125,315,109,290,97,254,87,217,83,145,84"/>
-<area shape="rect" id="Node000006" href="$pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title="execute pipe when | is found in the command" alt="" coords="24,280,111,306"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="170,280,111,289,110,284,169,275"/>
-<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="126,304,164,309,206,310,249,304,290,290,321,267,346,237,364,206,376,181,381,183,369,209,350,240,325,271,292,295,251,310,207,315,164,314,125,309"/>
-<area shape="rect" id="Node000008" href="$main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="43,5,92,31"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="179,21,93,21,93,16,179,16"/>
-<area shape="poly" id="edge11_Node000009_Node000002" title=" " alt="" coords="307,157,339,158,339,163,306,163"/>
-<area shape="poly" id="edge14_Node000010_Node000002" title=" " alt="" coords="269,196,338,173,339,178,271,201"/>
+<area shape="rect" id="Node000001" title="redirection input in context of executing AST" alt="" coords="868,156,950,182"/>
+<area shape="rect" id="Node000002" href="$execute_8c.html#ace4c3a2246919797e40140123d79596a" title="execute Abstract Syntax Tree" alt="" coords="729,156,820,182"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="853,180,821,180,821,175,853,175"/>
+<area shape="poly" id="edge15_Node000002_Node000001" title=" " alt="" coords="836,157,868,158,868,163,836,163"/>
+<area shape="rect" id="Node000003" href="$redirect__heredoc_8c.html#a0a43624bb8557b365fdd6406f70e97ed" title=" " alt="" coords="574,107,675,132"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="718,153,665,135,667,130,720,148"/>
+<area shape="rect" id="Node000005" href="$pipe_8c.html#a3a1c19716357baba879b799300b3c077" title="execute child process in the pipe context" alt="" coords="574,255,675,280"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="750,194,719,220,682,246,662,257,659,252,680,241,715,216,746,190"/>
+<area shape="rect" id="Node000010" href="$main_8c.html#abaf800210325f066cb9289aaae9e2c86" title=" " alt="" coords="584,5,665,31"/>
+<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="755,144,723,99,679,52,652,34,655,29,683,48,727,95,759,141"/>
+<area shape="rect" id="Node000012" href="$redirect__append_8c.html#a780ae5fe0eba6dcc6cab3a347507d636" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="568,156,681,182"/>
+<area shape="poly" id="edge13_Node000002_Node000012" title=" " alt="" coords="713,180,681,180,681,175,713,175"/>
+<area shape="rect" id="Node000013" href="$redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="580,205,669,231"/>
+<area shape="poly" id="edge16_Node000002_Node000013" title=" " alt="" coords="740,191,670,214,668,209,738,186"/>
+<area shape="rect" id="Node000004" href="$redirect__heredoc_8c.html#a0dc55a5a9752d658c1b8b6e3760f5813" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="395,81,520,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="558,112,520,106,521,101,559,107"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="535,79,607,78,645,82,682,92,707,104,731,121,764,154,761,158,727,125,705,109,680,97,644,87,607,83,535,84"/>
+<area shape="rect" id="Node000006" href="$pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title="execute pipe when | is found in the command" alt="" coords="414,280,501,306"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="560,280,501,289,500,284,559,275"/>
+<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="516,304,554,309,596,310,639,304,680,290,711,267,736,237,754,206,766,181,771,183,759,209,740,240,715,271,682,295,641,310,597,315,554,314,515,309"/>
+<area shape="rect" id="Node000007" href="$pipe__test_8c.html#a4e02daca82e791c68ff9bf7c0ad25030" title=" " alt="" coords="232,280,347,306"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="399,296,348,296,348,290,399,290"/>
+<area shape="rect" id="Node000008" href="$pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81" title=" " alt="" coords="103,280,184,306"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="216,296,185,296,185,290,216,290"/>
+<area shape="rect" id="Node000009" href="$test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,280,55,306"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="87,296,55,296,55,290,87,290"/>
+<area shape="rect" id="Node000011" href="$main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="433,5,482,31"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="569,21,483,21,483,16,569,16"/>
+<area shape="poly" id="edge14_Node000012_Node000002" title=" " alt="" coords="697,157,729,158,729,163,696,163"/>
+<area shape="poly" id="edge17_Node000013_Node000002" title=" " alt="" coords="659,196,728,173,729,178,661,201"/>
 </map>
