@@ -6,5 +6,6 @@ var dir_bfccd401955b95cf8c75461437045ac0 =
     [ "pipe.h", "pipe_8h.html", "pipe_8h" ],
     [ "redirection.h", "redirection_8h.html", "redirection_8h" ],
     [ "shell.h", "shell_8h.html", "shell_8h" ],
+    [ "signals.h", "signals_8h.html", "signals_8h" ],
     [ "tokens.h", "tokens_8h.html", "tokens_8h" ]
 ];
