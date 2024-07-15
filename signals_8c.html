@@ -91,25 +91,43 @@ $(document).ready(function(){initNavTree('signals_8c.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">signals.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;signal.h&gt;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="signals_8h_source.html">signals.h</a>&quot;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;bits/sigaction.h&gt;</code><br />
+<code>#include &lt;asm-generic/signal-defs.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for signals.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="signals_8c__incl.png" border="0" usemap="#a_2github_2workspace_2src_2signals_2signals_8c" alt=""/></div>
 <map name="a_2github_2workspace_2src_2signals_2signals_8c" id="a_2github_2workspace_2src_2signals_2signals_8c">
-<area shape="rect" title=" " alt="" coords="50,5,199,46"/>
-<area shape="rect" title=" " alt="" coords="5,94,71,120"/>
-<area shape="poly" title=" " alt="" coords="105,48,64,85,61,81,101,44"/>
-<area shape="rect" title=" " alt="" coords="95,94,154,120"/>
-<area shape="poly" title=" " alt="" coords="127,46,127,78,122,78,122,46"/>
-<area shape="rect" href="signals_8h.html" title=" " alt="" coords="178,94,250,120"/>
-<area shape="poly" title=" " alt="" coords="149,44,191,82,187,86,145,48"/>
+<area shape="rect" title=" " alt="" coords="191,5,340,46"/>
+<area shape="rect" title=" " alt="" coords="5,102,65,127"/>
+<area shape="poly" title=" " alt="" coords="207,49,77,96,75,97,73,93,75,92,205,44"/>
+<area shape="rect" title=" " alt="" coords="89,102,155,127"/>
+<area shape="poly" title=" " alt="" coords="234,49,156,96,153,91,232,44"/>
+<area shape="rect" href="signals_8h.html" title=" " alt="" coords="230,102,302,127"/>
+<area shape="poly" title=" " alt="" coords="268,47,268,86,263,86,263,47"/>
+<area shape="rect" title=" " alt="" coords="160,183,225,208"/>
+<area shape="poly" title=" " alt="" coords="251,48,235,70,220,95,207,133,199,168,194,167,202,131,215,93,230,67,247,45"/>
+<area shape="rect" title=" " alt="" coords="326,102,387,127"/>
+<area shape="poly" title=" " alt="" coords="288,45,335,89,331,93,284,48"/>
+<area shape="rect" title=" " alt="" coords="410,102,519,127"/>
+<area shape="poly" title=" " alt="" coords="312,44,424,92,421,97,310,49"/>
+<area shape="rect" title=" " alt="" coords="543,94,674,135"/>
+<area shape="poly" title=" " alt="" coords="342,43,529,90,527,95,340,48"/>
+<area shape="poly" title=" " alt="" coords="256,129,216,173,212,169,253,126"/>
+<area shape="rect" href="shell_8h.html" title=" " alt="" coords="249,183,307,208"/>
+<area shape="poly" title=" " alt="" coords="270,127,276,167,271,168,265,128"/>
+<area shape="rect" href="env_8h.html" title=" " alt="" coords="252,256,304,282"/>
+<area shape="poly" title=" " alt="" coords="280,209,280,241,275,241,275,209"/>
 </map>
 </div>
 </div>
@@ -119,6 +137,11 @@ Include dependency graph for signals.c:</div>
 Functions</h2></td></tr>
 <tr class="memitem:afd158db0fdf5c339444025f59e081561" id="r_afd158db0fdf5c339444025f59e081561"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signals_8c.html#afd158db0fdf5c339444025f59e081561">init_signals</a> ()</td></tr>
 <tr class="separator:afd158db0fdf5c339444025f59e081561"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a563bdcdeb9eedd67561c029f11028a68" id="r_a563bdcdeb9eedd67561c029f11028a68"><td class="memItemLeft" align="right" valign="top">volatile sig_atomic_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signals_8c.html#a563bdcdeb9eedd67561c029f11028a68">g_signo</a> = 0</td></tr>
+<tr class="separator:a563bdcdeb9eedd67561c029f11028a68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="afd158db0fdf5c339444025f59e081561" name="afd158db0fdf5c339444025f59e081561"></a>
@@ -136,35 +159,41 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="signals_8c_source.html#l00005">5</a> of file <a class="el" href="signals_8c_source.html">signals.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>{</div>
-<div class="line"><span class="lineno">    7</span>    <span class="keyword">struct </span>sigaction sa;</div>
-<div class="line"><span class="lineno">    8</span> </div>
-<div class="line"><span class="lineno">    9</span>    sa.sa_handler = <a class="code hl_function" href="signals_8h.html#a4b515337891f74ebd79cb307db16bf33">sigint_handler</a>;</div>
-<div class="line"><span class="lineno">   10</span>    sigemptyset(&amp;sa.sa_mask);</div>
-<div class="line"><span class="lineno">   11</span>    sa.sa_flags = SA_RESTART;</div>
-<div class="line"><span class="lineno">   12</span> </div>
-<div class="line"><span class="lineno">   13</span>    <span class="keywordflow">if</span>(sigaction(SIGINT, &amp;sa, NULL) == -1)</div>
-<div class="line"><span class="lineno">   14</span>    {</div>
-<div class="line"><span class="lineno">   15</span>        perror(<span class="stringliteral">&quot;Error: cannot handle SIGINT&quot;</span>);</div>
-<div class="line"><span class="lineno">   16</span>    }</div>
-<div class="line"><span class="lineno">   17</span>    signal(SIGQUIT, SIG_IGN);</div>
-<div class="line"><span class="lineno">   18</span>}</div>
-<div class="ttc" id="asignals_8h_html_a4b515337891f74ebd79cb307db16bf33"><div class="ttname"><a href="signals_8h.html#a4b515337891f74ebd79cb307db16bf33">sigint_handler</a></div><div class="ttdeci">void sigint_handler(int signo)</div><div class="ttdef"><b>Definition</b> <a href="signals_2utils_8c_source.html#l00007">utils.c:7</a></div></div>
+<p class="definition">Definition at line <a class="el" href="signals_8c_source.html#l00011">11</a> of file <a class="el" href="signals_8c_source.html">signals.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>    <span class="keyword">struct </span>sigaction signal_action;</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    signal_action.sa_handler = <a class="code hl_function" href="signals_8h.html#a4b515337891f74ebd79cb307db16bf33">sigint_handler</a>;</div>
+<div class="line"><span class="lineno">   16</span>    sigemptyset(&amp;signal_action.sa_mask);</div>
+<div class="line"><span class="lineno">   17</span>    signal_action.sa_flags = SA_RESTART;</div>
+<div class="line"><span class="lineno">   18</span> </div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (sigaction(SIGINT, &amp;signal_action, NULL) == -1)</div>
+<div class="line"><span class="lineno">   20</span>    {</div>
+<div class="line"><span class="lineno">   21</span>        perror(<span class="stringliteral">&quot;Error: cannot handle SIGINT&quot;</span>);</div>
+<div class="line"><span class="lineno">   22</span>    }</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    signal_action.sa_handler = <a class="code hl_function" href="signals_8h.html#a09e0a77b8f5ab56cfe46fecde32b06dd">sigquit_handler</a>;</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">if</span> (sigaction(SIGQUIT, &amp;signal_action, NULL) == -1)</div>
+<div class="line"><span class="lineno">   26</span>    {</div>
+<div class="line"><span class="lineno">   27</span>        perror(<span class="stringliteral">&quot;Error: cannot handle SIGQUIT&quot;</span>);</div>
+<div class="line"><span class="lineno">   28</span>    }</div>
+<div class="line"><span class="lineno">   29</span>}</div>
+<div class="ttc" id="asignals_8h_html_a09e0a77b8f5ab56cfe46fecde32b06dd"><div class="ttname"><a href="signals_8h.html#a09e0a77b8f5ab56cfe46fecde32b06dd">sigquit_handler</a></div><div class="ttdeci">void sigquit_handler(int signo)</div><div class="ttdef"><b>Definition</b> <a href="signals_2utils_8c_source.html#l00038">utils.c:38</a></div></div>
+<div class="ttc" id="asignals_8h_html_a4b515337891f74ebd79cb307db16bf33"><div class="ttname"><a href="signals_8h.html#a4b515337891f74ebd79cb307db16bf33">sigint_handler</a></div><div class="ttdeci">void sigint_handler(int signo)</div><div class="ttdef"><b>Definition</b> <a href="signals_2utils_8c_source.html#l00033">utils.c:33</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="signals_2utils_8c_source.html#l00007">sigint_handler()</a>.</p>
+<p class="reference">References <a class="el" href="signals_2utils_8c_source.html#l00033">sigint_handler()</a>, and <a class="el" href="signals_2utils_8c_source.html#l00038">sigquit_handler()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00054">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00065">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="signals_8c_afd158db0fdf5c339444025f59e081561_cgraph.png" border="0" usemap="#asignals_8c_afd158db0fdf5c339444025f59e081561_cgraph" alt=""/></div>
 <map name="asignals_8c_afd158db0fdf5c339444025f59e081561_cgraph" id="asignals_8c_afd158db0fdf5c339444025f59e081561_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,92,31"/>
-<area shape="rect" href="signals_2utils_8c.html#a4b515337891f74ebd79cb307db16bf33" title=" " alt="" coords="140,5,241,31"/>
-<area shape="poly" title=" " alt="" coords="92,16,124,16,124,21,92,21"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="289,5,357,31"/>
-<area shape="poly" title=" " alt="" coords="242,16,274,16,274,21,242,21"/>
+<area shape="rect" title=" " alt="" coords="5,31,92,56"/>
+<area shape="rect" href="signals_2utils_8c.html#a4b515337891f74ebd79cb307db16bf33" title=" " alt="" coords="143,5,245,31"/>
+<area shape="poly" title=" " alt="" coords="92,33,127,27,128,32,93,39"/>
+<area shape="rect" href="signals_2utils_8c.html#a09e0a77b8f5ab56cfe46fecde32b06dd" title=" " alt="" coords="140,55,248,80"/>
+<area shape="poly" title=" " alt="" coords="93,48,125,53,124,59,92,53"/>
 </map>
 </div>
 <div class="dynheader">
@@ -177,6 +206,25 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>
 </div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a563bdcdeb9eedd67561c029f11028a68" name="a563bdcdeb9eedd67561c029f11028a68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a563bdcdeb9eedd67561c029f11028a68">&#9670;&#160;</a></span>g_signo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile sig_atomic_t g_signo = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="signals_8c_source.html#l00009">9</a> of file <a class="el" href="signals_8c_source.html">signals.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00030">main_loop()</a>, <a class="el" href="signals_2utils_8c_source.html#l00033">sigint_handler()</a>, <a class="el" href="signals_2utils_8c_source.html#l00013">signals_handler()</a>, and <a class="el" href="signals_2utils_8c_source.html#l00038">sigquit_handler()</a>.</p>
 
 </div>
 </div>
