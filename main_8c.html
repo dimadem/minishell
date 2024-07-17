@@ -204,19 +204,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00059">59</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>{</div>
-<div class="line"><span class="lineno">   61</span>    <a class="code hl_struct" href="structs__minishell__data.html">t_minishell_data</a>    data;</div>
-<div class="line"><span class="lineno">   62</span>    <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a>         loop_data;</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    <a class="code hl_function" href="tokens_8h.html#a4e673b7c7d3f45e10377ab9f537b8bf9">print_maxishell</a>();</div>
-<div class="line"><span class="lineno">   65</span>    <a class="code hl_function" href="tokens_8h.html#ab7986766cca35553aa796f6a732d856a">init_minishell_data</a>(&amp;data, envp);</div>
-<div class="line"><span class="lineno">   66</span>    <a class="code hl_function" href="signals_8h.html#a1de31bdef82f181f8045b94ae0933916">init_signals</a>();</div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="tokens_8h.html#a41e7a8e4355566996a5984b4a31fb8fe">initialise</a>(argc, argv);</div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_function" href="main_8c.html#abaf800210325f066cb9289aaae9e2c86">main_loop</a>(&amp;data, &amp;loop_data);</div>
-<div class="line"><span class="lineno">   69</span>    <a class="code hl_function" href="tokens_8h.html#a16d324fdb41b45b7e59af5eaab2e56bd">free_minishell_data</a>(&amp;data);</div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><span class="lineno">   71</span>}</div>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00060">60</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
+<div class="line"><span class="lineno">   62</span>    <a class="code hl_struct" href="structs__minishell__data.html">t_minishell_data</a>    data;</div>
+<div class="line"><span class="lineno">   63</span>    <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a>         loop_data;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_function" href="tokens_8h.html#a4e673b7c7d3f45e10377ab9f537b8bf9">print_maxishell</a>();</div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_function" href="tokens_8h.html#ab7986766cca35553aa796f6a732d856a">init_minishell_data</a>(&amp;data, envp);</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="signals_8h.html#a1de31bdef82f181f8045b94ae0933916">init_signals</a>();</div>
+<div class="line"><span class="lineno">   68</span>    <a class="code hl_function" href="tokens_8h.html#a41e7a8e4355566996a5984b4a31fb8fe">initialise</a>(argc, argv);</div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_function" href="main_8c.html#abaf800210325f066cb9289aaae9e2c86">main_loop</a>(&amp;data, &amp;loop_data);</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_function" href="tokens_8h.html#a16d324fdb41b45b7e59af5eaab2e56bd">free_minishell_data</a>(&amp;data);</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   72</span>}</div>
 <div class="ttc" id="amain_8c_html_abaf800210325f066cb9289aaae9e2c86"><div class="ttname"><a href="main_8c.html#abaf800210325f066cb9289aaae9e2c86">main_loop</a></div><div class="ttdeci">void main_loop(t_minishell_data *data, t_loop_data *loop_data)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00030">main.c:30</a></div></div>
 <div class="ttc" id="asignals_8h_html_a1de31bdef82f181f8045b94ae0933916"><div class="ttname"><a href="signals_8h.html#a1de31bdef82f181f8045b94ae0933916">init_signals</a></div><div class="ttdeci">void init_signals(void)</div><div class="ttdef"><b>Definition</b> <a href="signals_8c_source.html#l00023">signals.c:23</a></div></div>
 <div class="ttc" id="astructs__loop__data_html"><div class="ttname"><a href="structs__loop__data.html">s_loop_data</a></div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00056">tokens.h:57</a></div></div>
@@ -408,7 +408,8 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   54</span>                    loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a55b11635c9e942224b6fd0e2b149b250">prompt</a>, loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a>);</div>
 <div class="line"><span class="lineno">   55</span>        }</div>
 <div class="line"><span class="lineno">   56</span>    }</div>
-<div class="line"><span class="lineno">   57</span>}</div>
+<div class="line"><span class="lineno">   57</span>    free(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a55b11635c9e942224b6fd0e2b149b250">prompt</a>);</div>
+<div class="line"><span class="lineno">   58</span>}</div>
 <div class="ttc" id="aexecute_8h_html_a6f45c6b2374dd1d4eea803d3ba8879b2"><div class="ttname"><a href="execute_8h.html#a6f45c6b2374dd1d4eea803d3ba8879b2">handle_io_fd</a></div><div class="ttdeci">void handle_io_fd(t_minishell_data *data)</div><div class="ttdoc">close temporary input/output file descriptors and reset them to -1</div><div class="ttdef"><b>Definition</b> <a href="utils__0_8c_source.html#l00069">utils_0.c:69</a></div></div>
 <div class="ttc" id="aexecute_8h_html_ace4c3a2246919797e40140123d79596a"><div class="ttname"><a href="execute_8h.html#ace4c3a2246919797e40140123d79596a">execute_ast</a></div><div class="ttdeci">int execute_ast(t_ast *node, t_minishell_data *data)</div><div class="ttdoc">execute Abstract Syntax Tree</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l00037">execute.c:37</a></div></div>
 <div class="ttc" id="amain_8c_html_aa58ce868c4a816bbe301da3bd43f1157"><div class="ttname"><a href="main_8c.html#aa58ce868c4a816bbe301da3bd43f1157">status_handler</a></div><div class="ttdeci">int status_handler(int status, t_loop_data *loop_data)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00019">main.c:19</a></div></div>
@@ -428,7 +429,7 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="execute_8c_source.html#l00037">execute_ast()</a>, <a class="el" href="prompt_8c_source.html#l00031">generate_prompt()</a>, <a class="el" href="utils__0_8c_source.html#l00069">handle_io_fd()</a>, <a class="el" href="tokens_8h_source.html#l00059">s_loop_data::input</a>, <a class="el" href="input__checker_8c_source.html#l00099">input_error_checks()</a>, <a class="el" href="clean__general_8c_source.html#l00059">loop_cleanup()</a>, <a class="el" href="aux_8c_source.html#l00015">make_history()</a>, <a class="el" href="parser__utils_8c_source.html#l00017">parse_tokens()</a>, <a class="el" href="visualiser_8c_source.html#l00103">print_ast_root()</a>, <a class="el" href="tokens_8h_source.html#l00058">s_loop_data::prompt</a>, <a class="el" href="main_8c_source.html#l00019">status_handler()</a>, <a class="el" href="tokeniser_8c_source.html#l00106">tokenise()</a>, <a class="el" href="tokens_8h_source.html#l00061">s_loop_data::tokens</a>, <a class="el" href="tokens_8h_source.html#l00062">s_loop_data::tree</a>, <a class="el" href="input__checker__helpers_8c_source.html#l00015">trim_input()</a>, and <a class="el" href="tokens_8h_source.html#l00060">s_loop_data::trimmed_input</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00059">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00060">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
