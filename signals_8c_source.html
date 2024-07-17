@@ -98,43 +98,44 @@ $(document).ready(function(){initNavTree('signals_8c_source.html',''); initResiz
   <div class="headertitle"><div class="title">signals.c</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="signals_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="signals_8h.html">signals.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;signal.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;errno.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;bits/sigaction.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;asm-generic/signal-defs.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="signals_8h.html#a563bdcdeb9eedd67561c029f11028a68">    9</a></span><span class="keyword">volatile</span> sig_atomic_t <a class="code hl_variable" href="signals_8c.html#a563bdcdeb9eedd67561c029f11028a68">g_signo</a> = 0;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="signals_8h.html#afd158db0fdf5c339444025f59e081561">   11</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="signals_8c.html#afd158db0fdf5c339444025f59e081561">init_signals</a>()</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">struct </span>sigaction signal_action;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    signal_action.sa_handler = <a class="code hl_function" href="signals_8h.html#a4b515337891f74ebd79cb307db16bf33">sigint_handler</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    sigemptyset(&amp;signal_action.sa_mask);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    signal_action.sa_flags = SA_RESTART;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> (sigaction(SIGINT, &amp;signal_action, NULL) == -1)</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        perror(<span class="stringliteral">&quot;Error: cannot handle SIGINT&quot;</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    signal_action.sa_handler = <a class="code hl_function" href="signals_8h.html#a09e0a77b8f5ab56cfe46fecde32b06dd">sigquit_handler</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (sigaction(SIGQUIT, &amp;signal_action, NULL) == -1)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        perror(<span class="stringliteral">&quot;Error: cannot handle SIGQUIT&quot;</span>);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<a href="signals_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* ************************************************************************** */</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">/*                                                                            */</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">/*                                                        :::      ::::::::   */</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">/*   signals.c                                          :+:      :+:    :+:   */</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/*                                                    +:+ +:+         +:+     */</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*   By: dmdemirk &lt;dmdemirk@student.42london.c      +#+  +:+       +#+        */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/*   Created: 2024/07/17 13:59:59 by dmdemirk          #+#    #+#             */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2024/07/17 14:33:29 by dmdemirk         ###   ########.fr       */</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;signal.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;errno.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;bits/sigaction.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;asm-generic/signal-defs.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="signals_8h.html">signals.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="signals_8h.html#a563bdcdeb9eedd67561c029f11028a68">   21</a></span><span class="keyword">volatile</span> sig_atomic_t   <a class="code hl_variable" href="signals_8c.html#a563bdcdeb9eedd67561c029f11028a68">g_signo</a> = 0;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="signals_8h.html#a1de31bdef82f181f8045b94ae0933916">   23</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="signals_8c.html#a1de31bdef82f181f8045b94ae0933916">init_signals</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">struct </span>sigaction    signal_action;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    signal_action.sa_handler = <a class="code hl_function" href="signals_8h.html#a282d6c9466dbd9e7233711419add0774">signal_handler</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    sigemptyset(&amp;signal_action.sa_mask);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    signal_action.sa_flags = SA_RESTART;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    sigaction(SIGINT, &amp;signal_action, NULL);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    sigaction(SIGQUIT, &amp;signal_action, NULL);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="ttc" id="asignals_8c_html_a563bdcdeb9eedd67561c029f11028a68"><div class="ttname"><a href="signals_8c.html#a563bdcdeb9eedd67561c029f11028a68">g_signo</a></div><div class="ttdeci">volatile sig_atomic_t g_signo</div><div class="ttdef"><b>Definition</b> <a href="signals_8c_source.html#l00009">signals.c:9</a></div></div>
-<div class="ttc" id="asignals_8c_html_afd158db0fdf5c339444025f59e081561"><div class="ttname"><a href="signals_8c.html#afd158db0fdf5c339444025f59e081561">init_signals</a></div><div class="ttdeci">void init_signals()</div><div class="ttdef"><b>Definition</b> <a href="signals_8c_source.html#l00011">signals.c:11</a></div></div>
+<div class="ttc" id="asignals_8c_html_a1de31bdef82f181f8045b94ae0933916"><div class="ttname"><a href="signals_8c.html#a1de31bdef82f181f8045b94ae0933916">init_signals</a></div><div class="ttdeci">void init_signals(void)</div><div class="ttdef"><b>Definition</b> <a href="signals_8c_source.html#l00023">signals.c:23</a></div></div>
+<div class="ttc" id="asignals_8c_html_a563bdcdeb9eedd67561c029f11028a68"><div class="ttname"><a href="signals_8c.html#a563bdcdeb9eedd67561c029f11028a68">g_signo</a></div><div class="ttdeci">volatile sig_atomic_t g_signo</div><div class="ttdef"><b>Definition</b> <a href="signals_8c_source.html#l00021">signals.c:21</a></div></div>
 <div class="ttc" id="asignals_8h_html"><div class="ttname"><a href="signals_8h.html">signals.h</a></div></div>
-<div class="ttc" id="asignals_8h_html_a09e0a77b8f5ab56cfe46fecde32b06dd"><div class="ttname"><a href="signals_8h.html#a09e0a77b8f5ab56cfe46fecde32b06dd">sigquit_handler</a></div><div class="ttdeci">void sigquit_handler(int signo)</div><div class="ttdef"><b>Definition</b> <a href="signals_2utils_8c_source.html#l00038">utils.c:38</a></div></div>
-<div class="ttc" id="asignals_8h_html_a4b515337891f74ebd79cb307db16bf33"><div class="ttname"><a href="signals_8h.html#a4b515337891f74ebd79cb307db16bf33">sigint_handler</a></div><div class="ttdeci">void sigint_handler(int signo)</div><div class="ttdef"><b>Definition</b> <a href="signals_2utils_8c_source.html#l00033">utils.c:33</a></div></div>
+<div class="ttc" id="asignals_8h_html_a282d6c9466dbd9e7233711419add0774"><div class="ttname"><a href="signals_8h.html#a282d6c9466dbd9e7233711419add0774">signal_handler</a></div><div class="ttdeci">void signal_handler(int signo)</div><div class="ttdef"><b>Definition</b> <a href="signals_2utils_8c_source.html#l00018">utils.c:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
