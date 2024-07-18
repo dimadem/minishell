@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['grn_0',['GRN',['../libft_8h.html#aea69ffbacdcdf16c21b8c9961df84448',1,'libft.h']]]
+  ['false_0',['FALSE',['../libft_8h.html#aa93f0eb578d23995850d61f7d61c55c1',1,'libft.h']]]
 ];

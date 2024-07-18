@@ -1,9 +1,10 @@
 var signals_8h =
 [
+    [ "_GNU_SOURCE", "signals_8h.html#a369266c24eacffb87046522897a570d5", null ],
     [ "ft_perror", "signals_8h.html#aedc550f2251badad69cf4b6dfda183ef", null ],
-    [ "init_signals", "signals_8h.html#a1de31bdef82f181f8045b94ae0933916", null ],
-    [ "sigint_handler", "signals_8h.html#a4b515337891f74ebd79cb307db16bf33", null ],
-    [ "signal_handler", "signals_8h.html#a282d6c9466dbd9e7233711419add0774", null ],
-    [ "sigquit_handler", "signals_8h.html#a09e0a77b8f5ab56cfe46fecde32b06dd", null ],
-    [ "g_signo", "signals_8h.html#a563bdcdeb9eedd67561c029f11028a68", null ]
+    [ "set_signals_interactive", "signals_8h.html#ad1f9f08c1be9b75c04d8106fca567d81", null ],
+    [ "set_signals_noninteractive", "signals_8h.html#afd0647d7ceec9dffa4574570d3961baa", null ],
+    [ "signal_print_newline", "signals_8h.html#a6a1ea8f5a6ae40f6634d669b9b7da57b", null ],
+    [ "signal_reset_prompt", "signals_8h.html#a91667c64fa54105e91f53584dfeccadb", null ],
+    [ "sigquit_ignore", "signals_8h.html#af69c0c08bae2bf92ef029d5394cdea24", null ]
 ];
