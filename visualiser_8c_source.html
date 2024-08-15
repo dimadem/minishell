@@ -211,8 +211,10 @@ $(document).ready(function(){initNavTree('visualiser_8c_source.html',''); initRe
 <div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="tokens_8h.html#a16c146658d86ab8fa44a3af94804c5a9">  103</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="visualiser_8c.html#a16c146658d86ab8fa44a3af94804c5a9">print_ast_root</a>(<a class="code hl_struct" href="structs__ast.html">t_ast</a> *root)</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_function" href="visualiser_8c.html#ac38cad433d858a530a7d7479f134f81c">print_ast_graphical</a>(root, 0, <span class="stringliteral">&quot;&quot;</span>, 0);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">if</span> (!root)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        return ;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_function" href="visualiser_8c.html#ac38cad433d858a530a7d7479f134f81c">print_ast_graphical</a>(root, 0, <span class="stringliteral">&quot;&quot;</span>, 0);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
 </div>
 <div class="ttc" id="astructs__ast_html"><div class="ttname"><a href="structs__ast.html">s_ast</a></div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00048">tokens.h:49</a></div></div>
 <div class="ttc" id="astructs__ast_html_ab62d177d86a1908cf5bbdb5cf6e978f8"><div class="ttname"><a href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">s_ast::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00051">tokens.h:51</a></div></div>

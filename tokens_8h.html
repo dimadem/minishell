@@ -2725,8 +2725,10 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="visualiser_8c_source.html#l00103">103</a> of file <a class="el" href="visualiser_8c_source.html">visualiser.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  104</span>{</div>
-<div class="line"><span class="lineno">  105</span>    <a class="code hl_function" href="visualiser_8c.html#ac38cad433d858a530a7d7479f134f81c">print_ast_graphical</a>(root, 0, <span class="stringliteral">&quot;&quot;</span>, 0);</div>
-<div class="line"><span class="lineno">  106</span>}</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> (!root)</div>
+<div class="line"><span class="lineno">  106</span>        return ;</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_function" href="visualiser_8c.html#ac38cad433d858a530a7d7479f134f81c">print_ast_graphical</a>(root, 0, <span class="stringliteral">&quot;&quot;</span>, 0);</div>
+<div class="line"><span class="lineno">  108</span>}</div>
 <div class="ttc" id="avisualiser_8c_html_ac38cad433d858a530a7d7479f134f81c"><div class="ttname"><a href="visualiser_8c.html#ac38cad433d858a530a7d7479f134f81c">print_ast_graphical</a></div><div class="ttdeci">void print_ast_graphical(t_ast *node, int depth, char *prefix, int is_left)</div><div class="ttdef"><b>Definition</b> <a href="visualiser_8c_source.html#l00091">visualiser.c:91</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="visualiser_8c_source.html#l00091">print_ast_graphical()</a>.</p>
