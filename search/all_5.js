@@ -18,5 +18,6 @@ var searchData=
   ['execute_5ftree_15',['execute_tree',['../tokens_8h.html#a394ad19d95bb23401e65ced6a300ebf4',1,'tokens.h']]],
   ['exit_2ec_16',['exit.c',['../exit_8c.html',1,'']]],
   ['exit_5fstatus_17',['exit_status',['../structs__minishell__data.html#a978016fddb1d9faa4fbda6859a9a199e',1,'s_minishell_data']]],
-  ['export_2ec_18',['export.c',['../export_8c.html',1,'']]]
+  ['expand_5fenv_5fvar_18',['expand_env_var',['../parser__helpers_8c.html#a01a7c588206ed08be26bd39f3b8f6e0c',1,'parser_helpers.c']]],
+  ['export_2ec_19',['export.c',['../export_8c.html',1,'']]]
 ];
