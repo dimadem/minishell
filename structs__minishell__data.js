@@ -7,6 +7,5 @@ var structs__minishell__data =
     [ "local_env", "structs__minishell__data.html#a46b92ee58356d0f35174a79ed568253b", null ],
     [ "std_err", "structs__minishell__data.html#a5122e3a902d8f28e8b69576175f28c2b", null ],
     [ "std_in", "structs__minishell__data.html#a9ed5685097b7e4b55c3c1307b70869ef", null ],
-    [ "std_out", "structs__minishell__data.html#ac90001aa8bc9a89b165ee6bca5f05ef3", null ],
-    [ "terminal", "structs__minishell__data.html#a157178f3cba247288cb2fdf7da40c1a8", null ]
+    [ "std_out", "structs__minishell__data.html#ac90001aa8bc9a89b165ee6bca5f05ef3", null ]
 ];

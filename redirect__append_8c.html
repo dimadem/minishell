@@ -164,13 +164,13 @@ Include dependency graph for redirect_append.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a780ae5fe0eba6dcc6cab3a347507d636" id="r_a780ae5fe0eba6dcc6cab3a347507d636"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="redirect__append_8c.html#a780ae5fe0eba6dcc6cab3a347507d636">redirect_append</a> (<a class="el" href="tokens_8h.html#a5fd329b243c6cd036f7b9ecbc86a9344">t_ast</a> *node, <a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data)</td></tr>
-<tr class="memdesc:a780ae5fe0eba6dcc6cab3a347507d636"><td class="mdescLeft">&#160;</td><td class="mdescRight">redirect append "&gt;&gt;" to the end of the file output  <br /></td></tr>
-<tr class="separator:a780ae5fe0eba6dcc6cab3a347507d636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae321b86988fd0e2a4802f9f36285b9a7" id="r_ae321b86988fd0e2a4802f9f36285b9a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7">redirect_append</a> (<a class="el" href="tokens_8h.html#a5fd329b243c6cd036f7b9ecbc86a9344">t_ast</a> *node, <a class="el" href="shell_8h.html#ac2ad4684aec6733ad84ec1416727ccde">t_ms_data</a> *data)</td></tr>
+<tr class="memdesc:ae321b86988fd0e2a4802f9f36285b9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">redirect append "&gt;&gt;" to the end of the file output  <br /></td></tr>
+<tr class="separator:ae321b86988fd0e2a4802f9f36285b9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a780ae5fe0eba6dcc6cab3a347507d636" name="a780ae5fe0eba6dcc6cab3a347507d636"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a780ae5fe0eba6dcc6cab3a347507d636">&#9670;&#160;</a></span>redirect_append()</h2>
+<a id="ae321b86988fd0e2a4802f9f36285b9a7" name="ae321b86988fd0e2a4802f9f36285b9a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae321b86988fd0e2a4802f9f36285b9a7">&#9670;&#160;</a></span>redirect_append()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +184,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="shell_8h.html#ac2ad4684aec6733ad84ec1416727ccde">t_ms_data</a> *&#160;</td>
           <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>
@@ -227,48 +227,48 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   38</span>        <span class="keywordflow">return</span> (1);</div>
 <div class="line"><span class="lineno">   39</span>    <span class="keywordflow">if</span> (pid == 0)</div>
 <div class="line"><span class="lineno">   40</span>    {</div>
-<div class="line"><span class="lineno">   41</span>        data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#ac90001aa8bc9a89b165ee6bca5f05ef3">std_out</a> = <a class="code hl_function" href="redirection_8h.html#a2fe566529f8c7046fe274f2b3a35b39b">open_file</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a>, <span class="stringliteral">&quot;&gt;&gt;&quot;</span>);</div>
-<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#ac90001aa8bc9a89b165ee6bca5f05ef3">std_out</a> == -1)</div>
+<div class="line"><span class="lineno">   41</span>        data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> = <a class="code hl_function" href="redirection_8h.html#a2fe566529f8c7046fe274f2b3a35b39b">open_file</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a>, <span class="stringliteral">&quot;&gt;&gt;&quot;</span>);</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> == -1)</div>
 <div class="line"><span class="lineno">   43</span>            <span class="keywordflow">return</span> (1);</div>
-<div class="line"><span class="lineno">   44</span>        <a class="code hl_function" href="execute_8h.html#ace4c3a2246919797e40140123d79596a">execute_ast</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a>, data);</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_function" href="execute_8h.html#a18f57d723990aa716495663fbe9e4610">execute_ast</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a>, data);</div>
 <div class="line"><span class="lineno">   45</span>        exit(0);</div>
 <div class="line"><span class="lineno">   46</span>    }</div>
 <div class="line"><span class="lineno">   47</span>    waitpid(pid, &amp;status, 0);</div>
 <div class="line"><span class="lineno">   48</span>    <span class="keywordflow">return</span> (WEXITSTATUS(status));</div>
 <div class="line"><span class="lineno">   49</span>}</div>
-<div class="ttc" id="aexecute_8h_html_ace4c3a2246919797e40140123d79596a"><div class="ttname"><a href="execute_8h.html#ace4c3a2246919797e40140123d79596a">execute_ast</a></div><div class="ttdeci">int execute_ast(t_ast *node, t_minishell_data *data)</div><div class="ttdoc">execute Abstract Syntax Tree</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l00037">execute.c:37</a></div></div>
+<div class="ttc" id="aexecute_8h_html_a18f57d723990aa716495663fbe9e4610"><div class="ttname"><a href="execute_8h.html#a18f57d723990aa716495663fbe9e4610">execute_ast</a></div><div class="ttdeci">int execute_ast(t_ast *node, t_ms_data *data)</div><div class="ttdoc">execute Abstract Syntax Tree</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l00037">execute.c:37</a></div></div>
 <div class="ttc" id="aredirection_8h_html_a2fe566529f8c7046fe274f2b3a35b39b"><div class="ttname"><a href="redirection_8h.html#a2fe566529f8c7046fe274f2b3a35b39b">open_file</a></div><div class="ttdeci">int open_file(t_ast *node, char *direction)</div><div class="ttdoc">open file in the context of redirection</div><div class="ttdef"><b>Definition</b> <a href="redirection_2utils_8c_source.html#l00032">utils.c:32</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac2c9513b20e9351e45d9bc6361095f7b"><div class="ttname"><a href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">s_ast::right</a></div><div class="ttdeci">struct s_ast * right</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00053">tokens.h:53</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac3be51aa6a7ae13bd16b6ad0c7ac843c"><div class="ttname"><a href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">s_ast::left</a></div><div class="ttdeci">struct s_ast * left</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00052">tokens.h:52</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_ac90001aa8bc9a89b165ee6bca5f05ef3"><div class="ttname"><a href="structs__minishell__data.html#ac90001aa8bc9a89b165ee6bca5f05ef3">s_minishell_data::std_out</a></div><div class="ttdeci">int std_out</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00027">shell.h:27</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_a68d87458c3e4250e56a66c8ece61d5a5"><div class="ttname"><a href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">s_ms_data::std_out</a></div><div class="ttdeci">int std_out</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00027">shell.h:27</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="execute_8c_source.html#l00037">execute_ast()</a>, <a class="el" href="tokens_8h_source.html#l00052">s_ast::left</a>, <a class="el" href="redirection_2utils_8c_source.html#l00032">open_file()</a>, <a class="el" href="tokens_8h_source.html#l00053">s_ast::right</a>, and <a class="el" href="shell_8h_source.html#l00027">s_minishell_data::std_out</a>.</p>
+<p class="reference">References <a class="el" href="execute_8c_source.html#l00037">execute_ast()</a>, <a class="el" href="tokens_8h_source.html#l00052">s_ast::left</a>, <a class="el" href="redirection_2utils_8c_source.html#l00032">open_file()</a>, <a class="el" href="tokens_8h_source.html#l00053">s_ast::right</a>, and <a class="el" href="shell_8h_source.html#l00027">s_ms_data::std_out</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00037">execute_ast()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="redirect__append_8c_a780ae5fe0eba6dcc6cab3a347507d636_cgraph.png" border="0" usemap="#aredirect__append_8c_a780ae5fe0eba6dcc6cab3a347507d636_cgraph" alt=""/></div>
-<map name="aredirect__append_8c_a780ae5fe0eba6dcc6cab3a347507d636_cgraph" id="aredirect__append_8c_a780ae5fe0eba6dcc6cab3a347507d636_cgraph">
+<div class="center"><img src="redirect__append_8c_ae321b86988fd0e2a4802f9f36285b9a7_cgraph.png" border="0" usemap="#aredirect__append_8c_ae321b86988fd0e2a4802f9f36285b9a7_cgraph" alt=""/></div>
+<map name="aredirect__append_8c_ae321b86988fd0e2a4802f9f36285b9a7_cgraph" id="aredirect__append_8c_ae321b86988fd0e2a4802f9f36285b9a7_cgraph">
 <area shape="rect" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="5,377,119,402"/>
-<area shape="rect" href="execute_8c.html#ace4c3a2246919797e40140123d79596a" title="execute Abstract Syntax Tree" alt="" coords="167,377,258,402"/>
+<area shape="rect" href="execute_8c.html#a18f57d723990aa716495663fbe9e4610" title="execute Abstract Syntax Tree" alt="" coords="167,377,258,402"/>
 <area shape="poly" title=" " alt="" coords="119,395,151,396,151,401,119,401"/>
 <area shape="rect" href="redirection_2utils_8c.html#a2fe566529f8c7046fe274f2b3a35b39b" title="open file in the context of redirection" alt="" coords="493,395,565,421"/>
 <area shape="poly" title=" " alt="" coords="90,400,151,427,235,454,283,465,332,470,382,470,430,461,458,448,494,427,496,432,460,453,431,467,382,475,332,475,282,470,234,460,149,432,88,405"/>
 <area shape="poly" title=" " alt="" coords="166,384,134,383,134,378,166,378"/>
-<area shape="rect" href="pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title="execute pipe when | is found in the command" alt="" coords="325,275,411,301"/>
+<area shape="rect" href="pipe_8c.html#a49a58fe1a0102ba36ade8eecf94bf283" title="execute pipe when | is found in the command" alt="" coords="325,275,411,301"/>
 <area shape="poly" title=" " alt="" coords="228,374,305,318,324,306,327,311,307,322,231,378"/>
-<area shape="rect" href="execute_8c.html#ae9738c8104774062bc2934b701fe96d9" title="execute distribution function" alt="" coords="335,647,401,673"/>
+<area shape="rect" href="execute_8c.html#a1334f84cc9186c9e7ff98820ca188f24" title="execute distribution function" alt="" coords="335,647,401,673"/>
 <area shape="poly" title=" " alt="" coords="224,401,354,633,350,635,219,404"/>
-<area shape="rect" href="redirect__heredoc_8c.html#a0dc55a5a9752d658c1b8b6e3760f5813" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="306,138,430,164"/>
+<area shape="rect" href="redirect__heredoc_8c.html#af7acc822769ea3cda07222328febe924" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="306,138,430,164"/>
 <area shape="poly" title=" " alt="" coords="215,375,245,294,271,242,304,193,328,171,332,175,308,196,275,245,249,296,220,377"/>
-<area shape="rect" href="redirect__in_8c.html#a2635bab3d0023f67288d2832903bdbd9" title="redirection input in context of executing AST" alt="" coords="328,377,409,402"/>
+<area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title="redirection input in context of executing AST" alt="" coords="328,377,409,402"/>
 <area shape="poly" title=" " alt="" coords="258,395,312,395,312,401,258,400"/>
-<area shape="rect" href="redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="324,426,413,452"/>
+<area shape="rect" href="redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="324,426,413,452"/>
 <area shape="poly" title=" " alt="" coords="236,400,309,426,307,431,234,405"/>
 <area shape="rect" href="utils__0_8c.html#ab9bcddf9275f12cc49348081000beb62" title="close two file descriptors" alt="" coords="646,295,723,321"/>
 <area shape="poly" title=" " alt="" coords="412,288,630,302,630,307,412,293"/>
-<area shape="rect" href="pipe_8c.html#a3a1c19716357baba879b799300b3c077" title="execute child process in the pipe context" alt="" coords="479,346,579,372"/>
+<area shape="rect" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="479,346,579,372"/>
 <area shape="poly" title=" " alt="" coords="401,299,485,337,483,342,399,304"/>
 <area shape="rect" href="utils__0_8c.html#aedc550f2251badad69cf4b6dfda183ef" title="return error message and exit" alt="" coords="650,245,719,270"/>
 <area shape="poly" title=" " alt="" coords="412,281,634,259,634,265,412,287"/>
@@ -276,23 +276,23 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="570,343,630,323,632,328,572,348"/>
 <area shape="poly" title=" " alt="" coords="543,344,580,313,626,280,636,275,639,280,629,285,583,317,546,348"/>
 <area shape="poly" title=" " alt="" coords="372,646,409,571,439,524,477,482,504,465,530,458,554,450,578,432,591,412,597,394,601,357,604,320,612,301,626,281,634,273,638,277,630,284,616,303,610,322,606,358,602,395,595,415,582,435,556,455,531,463,506,470,480,486,443,527,413,573,377,648"/>
-<area shape="rect" href="cd_8c.html#a90c33b349e024075c96efdc320f7138f" title=" " alt="" coords="646,697,723,722"/>
+<area shape="rect" href="cd_8c.html#a4d4e8fa49d5f59f4085cfb719ad92819" title=" " alt="" coords="646,697,723,722"/>
 <area shape="poly" title=" " alt="" coords="402,666,479,683,631,702,631,707,478,688,401,671"/>
 <area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="997,597,1073,622"/>
 <area shape="poly" title=" " alt="" coords="383,645,424,613,477,583,516,570,551,563,611,560,671,556,703,547,740,531,754,520,762,507,772,494,788,483,827,468,861,461,894,465,931,483,944,494,952,506,958,532,963,558,969,571,979,583,985,588,982,592,975,587,964,574,958,560,953,533,947,508,940,498,928,488,892,471,861,467,829,473,790,488,775,498,767,510,758,523,742,536,705,552,672,561,612,566,551,568,517,575,479,588,427,618,386,649"/>
-<area shape="rect" href="echo_8c.html#a9c4bf413cef22ef46427c4026734a97d" title=" " alt="" coords="814,1147,904,1173"/>
+<area shape="rect" href="echo_8c.html#aad8cf30ea2aff3ab849f3f9cc156bc65" title=" " alt="" coords="814,1147,904,1173"/>
 <area shape="poly" title=" " alt="" coords="374,673,385,756,407,880,422,945,439,1003,458,1051,480,1082,515,1109,554,1130,597,1145,640,1155,726,1164,798,1163,799,1169,726,1170,640,1160,595,1150,552,1135,512,1114,476,1086,454,1053,434,1005,416,946,402,881,380,757,368,674"/>
-<area shape="rect" href="builtins_2env_8c.html#adfc1db1f94cf16d71aea54b09370c032" title=" " alt="" coords="487,497,571,522"/>
+<area shape="rect" href="builtins_2env_8c.html#ab5d4a1b659839e18383cc87ef060ace2" title=" " alt="" coords="487,497,571,522"/>
 <area shape="poly" title=" " alt="" coords="378,645,419,596,477,539,491,529,494,533,480,543,423,600,382,648"/>
-<area shape="rect" href="exit_8c.html#a6a7d93447961b415c9c16ebdfcd3d5fa" title=" " alt="" coords="994,1186,1076,1212"/>
+<area shape="rect" href="exit_8c.html#a4178e67f38b6049c1778b1d470fd3bba" title=" " alt="" coords="994,1186,1076,1212"/>
 <area shape="poly" title=" " alt="" coords="373,673,383,767,403,909,417,983,435,1051,456,1106,480,1142,507,1165,536,1183,599,1211,668,1228,738,1235,807,1234,872,1229,978,1210,979,1215,873,1234,808,1239,738,1240,667,1233,598,1216,533,1188,504,1169,476,1146,451,1108,430,1052,412,984,397,910,377,767,368,673"/>
-<area shape="rect" href="export_8c.html#a9e6f1e14f0125cd68c70e8e31ef606aa" title=" " alt="" coords="480,647,578,673"/>
+<area shape="rect" href="export_8c.html#af769fa05852c4852c6d064d88ee9ea61" title=" " alt="" coords="480,647,578,673"/>
 <area shape="poly" title=" " alt="" coords="402,657,464,657,464,663,402,663"/>
-<area shape="rect" href="pwd_8c.html#aa9f1acae4ed9a914564af529571db30a" title=" " alt="" coords="486,1046,572,1072"/>
+<area shape="rect" href="pwd_8c.html#a42c3233709760074e11fb0fccba213e9" title=" " alt="" coords="486,1046,572,1072"/>
 <area shape="poly" title=" " alt="" coords="374,672,384,728,404,813,435,911,456,960,481,1007,503,1034,499,1037,476,1009,451,963,430,913,398,815,378,729,369,673"/>
-<area shape="rect" href="unset_8c.html#aa04be64406f96e5ae8f361421bf72cec" title=" " alt="" coords="482,970,576,996"/>
+<area shape="rect" href="unset_8c.html#a4bd04cc81f319fd2b866b8a164069d72" title=" " alt="" coords="482,970,576,996"/>
 <area shape="poly" title=" " alt="" coords="378,672,517,955,512,957,374,675"/>
-<area shape="rect" href="execute_8c.html#a3cfa5b6ea734d8db61dd8be0e0aa9ca8" title="executes a new process" alt="" coords="480,598,578,624"/>
+<area shape="rect" href="execute_8c.html#ab14e094344a3a3583cf1ef7d86ac05f2" title="executes a new process" alt="" coords="480,598,578,624"/>
 <area shape="poly" title=" " alt="" coords="401,647,469,626,471,631,403,652"/>
 <area shape="rect" href="ft__putstr__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="816,1049,903,1074"/>
 <area shape="poly" title=" " alt="" coords="700,721,723,749,743,784,756,822,760,857,757,918,756,947,759,976,770,1005,791,1036,803,1046,800,1050,787,1039,765,1007,754,977,750,947,751,918,754,857,750,823,739,786,718,752,696,724"/>
@@ -315,7 +315,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="builtins_2env_8c.html#a5b5d29d406a0fad6272b33c03b7793b4" title=" " alt="" coords="628,495,741,521"/>
 <area shape="poly" title=" " alt="" coords="571,506,612,506,612,511,571,512"/>
 <area shape="poly" title=" " alt="" coords="1048,1183,1150,1082,1154,1086,1052,1187"/>
-<area shape="rect" href="export_8c.html#a9572a06bde314d79d284738ffef37d8d" title=" " alt="" coords="649,597,720,622"/>
+<area shape="rect" href="export_8c.html#ac06cae6d0181226dcb4191fd6531713e" title=" " alt="" coords="649,597,720,622"/>
 <area shape="poly" title=" " alt="" coords="570,644,633,623,635,628,572,649"/>
 <area shape="rect" href="ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc" title=" " alt="" coords="818,747,901,773"/>
 <area shape="poly" title=" " alt="" coords="544,671,580,703,604,719,629,732,673,746,719,754,803,759,802,765,718,760,671,751,627,737,601,724,577,707,541,675"/>
@@ -366,7 +366,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="380,136,420,97,448,76,477,58,531,31,576,14,623,5,683,3,861,3,885,6,902,16,931,52,976,115,1008,172,1031,226,1047,278,1069,391,1095,534,1102,581,1105,640,1108,780,1111,852,1117,921,1128,982,1146,1032,1140,1034,1123,984,1112,922,1105,852,1102,780,1099,641,1096,582,1090,535,1064,392,1042,280,1026,228,1003,175,971,118,927,55,899,20,883,11,860,8,683,8,623,10,577,19,533,36,480,62,451,80,424,101,383,139"/>
 <area shape="poly" title=" " alt="" coords="431,135,502,126,541,126,580,129,693,146,740,156,783,168,822,187,859,212,895,248,932,295,952,334,959,372,958,408,953,443,949,477,949,512,958,547,979,584,986,590,982,594,975,587,953,549,944,512,943,477,948,442,953,408,954,372,947,336,927,297,891,251,856,216,820,191,781,173,739,161,692,152,579,135,541,131,503,132,431,140"/>
 <area shape="poly" title=" " alt="" coords="385,135,425,108,451,95,478,85,578,66,711,52,778,51,840,55,892,66,931,86,956,118,977,167,994,228,1007,296,1026,431,1035,532,1029,532,1020,432,1002,297,988,230,972,169,951,121,928,90,891,71,839,61,778,56,711,57,579,71,479,91,453,100,428,113,388,139"/>
-<area shape="rect" href="redirect__heredoc_8c.html#a0a43624bb8557b365fdd6406f70e97ed" title=" " alt="" coords="479,194,579,220"/>
+<area shape="rect" href="redirect__heredoc_8c.html#a79ffb6362b8f0c6960e7fe77f93d8888" title=" " alt="" coords="479,194,579,220"/>
 <area shape="poly" title=" " alt="" coords="408,162,476,186,475,191,406,167"/>
 <area shape="rect" href="redirect__heredoc_8c.html#a15cf53350eb2877438bf504bd85fc36a" title=" " alt="" coords="478,145,580,170"/>
 <area shape="poly" title=" " alt="" coords="431,151,463,152,463,157,431,156"/>
@@ -384,31 +384,31 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="redirect__append_8c_a780ae5fe0eba6dcc6cab3a347507d636_icgraph.png" border="0" usemap="#aredirect__append_8c_a780ae5fe0eba6dcc6cab3a347507d636_icgraph" alt=""/></div>
-<map name="aredirect__append_8c_a780ae5fe0eba6dcc6cab3a347507d636_icgraph" id="aredirect__append_8c_a780ae5fe0eba6dcc6cab3a347507d636_icgraph">
+<div class="center"><img src="redirect__append_8c_ae321b86988fd0e2a4802f9f36285b9a7_icgraph.png" border="0" usemap="#aredirect__append_8c_ae321b86988fd0e2a4802f9f36285b9a7_icgraph" alt=""/></div>
+<map name="aredirect__append_8c_ae321b86988fd0e2a4802f9f36285b9a7_icgraph" id="aredirect__append_8c_ae321b86988fd0e2a4802f9f36285b9a7_icgraph">
 <area shape="rect" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="855,156,969,182"/>
-<area shape="rect" href="execute_8c.html#ace4c3a2246919797e40140123d79596a" title="execute Abstract Syntax Tree" alt="" coords="716,156,807,182"/>
+<area shape="rect" href="execute_8c.html#a18f57d723990aa716495663fbe9e4610" title="execute Abstract Syntax Tree" alt="" coords="716,156,807,182"/>
 <area shape="poly" title=" " alt="" coords="840,180,808,180,808,175,840,175"/>
 <area shape="poly" title=" " alt="" coords="823,157,855,157,855,163,823,163"/>
-<area shape="rect" href="redirect__heredoc_8c.html#a0a43624bb8557b365fdd6406f70e97ed" title=" " alt="" coords="568,107,668,132"/>
+<area shape="rect" href="redirect__heredoc_8c.html#a79ffb6362b8f0c6960e7fe77f93d8888" title=" " alt="" coords="568,107,668,132"/>
 <area shape="poly" title=" " alt="" coords="707,153,657,135,659,130,709,148"/>
-<area shape="rect" href="pipe_8c.html#a3a1c19716357baba879b799300b3c077" title="execute child process in the pipe context" alt="" coords="568,255,668,280"/>
+<area shape="rect" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="568,255,668,280"/>
 <area shape="poly" title=" " alt="" coords="737,194,669,246,650,256,648,252,667,241,733,190"/>
-<area shape="rect" href="main_8c.html#abaf800210325f066cb9289aaae9e2c86" title=" " alt="" coords="578,5,658,31"/>
+<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="578,5,658,31"/>
 <area shape="poly" title=" " alt="" coords="742,145,709,99,666,52,641,34,644,29,670,48,713,96,746,141"/>
-<area shape="rect" href="redirect__in_8c.html#a2635bab3d0023f67288d2832903bdbd9" title="redirection input in context of executing AST" alt="" coords="577,156,659,182"/>
+<area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title="redirection input in context of executing AST" alt="" coords="577,156,659,182"/>
 <area shape="poly" title=" " alt="" coords="701,180,659,180,659,174,701,175"/>
-<area shape="rect" href="redirect__out_8c.html#a13afb8e911eca2b32bd9e843eda752a5" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="573,205,663,231"/>
+<area shape="rect" href="redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="573,205,663,231"/>
 <area shape="poly" title=" " alt="" coords="728,191,664,214,662,209,726,186"/>
-<area shape="rect" href="redirect__heredoc_8c.html#a0dc55a5a9752d658c1b8b6e3760f5813" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="395,81,520,107"/>
+<area shape="rect" href="redirect__heredoc_8c.html#af7acc822769ea3cda07222328febe924" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="395,81,520,107"/>
 <area shape="poly" title=" " alt="" coords="552,112,520,107,521,101,552,107"/>
 <area shape="poly" title=" " alt="" coords="535,79,601,79,636,83,669,92,694,104,718,121,751,154,748,158,714,125,692,109,667,97,635,88,601,84,535,85"/>
-<area shape="rect" href="pipe_8c.html#a7947b63271b47934f419fe6d217bf8df" title="execute pipe when | is found in the command" alt="" coords="414,280,501,306"/>
+<area shape="rect" href="pipe_8c.html#a49a58fe1a0102ba36ade8eecf94bf283" title="execute pipe when | is found in the command" alt="" coords="414,280,501,306"/>
 <area shape="poly" title=" " alt="" coords="553,280,502,289,501,283,552,275"/>
 <area shape="poly" title=" " alt="" coords="516,303,552,308,591,308,630,303,667,290,698,267,723,237,741,206,753,181,758,183,746,209,727,240,702,271,669,295,631,309,591,314,551,313,516,309"/>
-<area shape="rect" href="pipe__test_8c.html#a4e02daca82e791c68ff9bf7c0ad25030" title=" " alt="" coords="232,280,347,306"/>
+<area shape="rect" href="pipe__test_8c.html#a449dfac66dec53a70df96bedf109ec59" title=" " alt="" coords="232,280,347,306"/>
 <area shape="poly" title=" " alt="" coords="399,296,348,296,348,290,399,290"/>
-<area shape="rect" href="pipe__test_8c.html#a86787b58c336d2fef7bad648f36a0d81" title=" " alt="" coords="103,280,184,306"/>
+<area shape="rect" href="pipe__test_8c.html#a496f242b556b98e53271f0733b16a77e" title=" " alt="" coords="103,280,184,306"/>
 <area shape="poly" title=" " alt="" coords="216,296,185,296,185,290,216,290"/>
 <area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,280,55,306"/>
 <area shape="poly" title=" " alt="" coords="87,296,55,296,55,290,87,290"/>

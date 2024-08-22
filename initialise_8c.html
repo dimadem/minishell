@@ -159,22 +159,22 @@ Include dependency graph for initialise.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab7986766cca35553aa796f6a732d856a" id="r_ab7986766cca35553aa796f6a732d856a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initialise_8c.html#ab7986766cca35553aa796f6a732d856a">init_minishell_data</a> (<a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *data, char **envp)</td></tr>
-<tr class="separator:ab7986766cca35553aa796f6a732d856a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1893ac59b9c42732ea38e02f340f98c9" id="r_a1893ac59b9c42732ea38e02f340f98c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initialise_8c.html#a1893ac59b9c42732ea38e02f340f98c9">init_ms_data</a> (<a class="el" href="shell_8h.html#ac2ad4684aec6733ad84ec1416727ccde">t_ms_data</a> *data, char **envp)</td></tr>
+<tr class="separator:a1893ac59b9c42732ea38e02f340f98c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41e7a8e4355566996a5984b4a31fb8fe" id="r_a41e7a8e4355566996a5984b4a31fb8fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="initialise_8c.html#a41e7a8e4355566996a5984b4a31fb8fe">initialise</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a41e7a8e4355566996a5984b4a31fb8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab7986766cca35553aa796f6a732d856a" name="ab7986766cca35553aa796f6a732d856a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7986766cca35553aa796f6a732d856a">&#9670;&#160;</a></span>init_minishell_data()</h2>
+<a id="a1893ac59b9c42732ea38e02f340f98c9" name="a1893ac59b9c42732ea38e02f340f98c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1893ac59b9c42732ea38e02f340f98c9">&#9670;&#160;</a></span>init_ms_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void init_minishell_data </td>
+          <td class="memname">void init_ms_data </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="shell_8h.html#a163dfbd200eaf940e5a56fd45345ff72">t_minishell_data</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="shell_8h.html#ac2ad4684aec6733ad84ec1416727ccde">t_ms_data</a> *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
@@ -193,57 +193,57 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="initialise_8c_source.html#l00017">17</a> of file <a class="el" href="initialise_8c_source.html">initialise.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
-<div class="line"><span class="lineno">   19</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">args</a> = NULL;</div>
-<div class="line"><span class="lineno">   20</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a8a0b3f50c8893e061062e93115f3d723">envp</a> = NULL;</div>
-<div class="line"><span class="lineno">   21</span>    <a class="code hl_function" href="env_8h.html#a2344221e4d3b1327b956157b837a727b">init_env</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a8a0b3f50c8893e061062e93115f3d723">envp</a>, envp);</div>
-<div class="line"><span class="lineno">   22</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a46b92ee58356d0f35174a79ed568253b">local_env</a> = NULL;</div>
-<div class="line"><span class="lineno">   23</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a147731c1cf1a04c1fc1b85e6343cc7cc">current_dir</a> = getcwd(NULL, 0);</div>
-<div class="line"><span class="lineno">   24</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a978016fddb1d9faa4fbda6859a9a199e">exit_status</a> = 0;</div>
-<div class="line"><span class="lineno">   25</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a9ed5685097b7e4b55c3c1307b70869ef">std_in</a> = -1;</div>
-<div class="line"><span class="lineno">   26</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#ac90001aa8bc9a89b165ee6bca5f05ef3">std_out</a> = -1;</div>
-<div class="line"><span class="lineno">   27</span>    data-&gt;<a class="code hl_variable" href="structs__minishell__data.html#a5122e3a902d8f28e8b69576175f28c2b">std_err</a> = 2;</div>
+<div class="line"><span class="lineno">   19</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a> = NULL;</div>
+<div class="line"><span class="lineno">   20</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">envp</a> = NULL;</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_function" href="env_8h.html#a2344221e4d3b1327b956157b837a727b">init_env</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">envp</a>, envp);</div>
+<div class="line"><span class="lineno">   22</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae3a38c68c37305c2aad70950bd7df1e8">local_env</a> = NULL;</div>
+<div class="line"><span class="lineno">   23</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6f321ac15871c8170ab3e3b451016da5">current_dir</a> = getcwd(NULL, 0);</div>
+<div class="line"><span class="lineno">   24</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7">exit_status</a> = 0;</div>
+<div class="line"><span class="lineno">   25</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae8d3099bc1be72bf3921ffadb2452ddd">std_in</a> = -1;</div>
+<div class="line"><span class="lineno">   26</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> = -1;</div>
+<div class="line"><span class="lineno">   27</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a57bf5c645546459cd84ea8c616b0029a">std_err</a> = 2;</div>
 <div class="line"><span class="lineno">   28</span>}</div>
 <div class="ttc" id="aenv_8h_html_a2344221e4d3b1327b956157b837a727b"><div class="ttname"><a href="env_8h.html#a2344221e4d3b1327b956157b837a727b">init_env</a></div><div class="ttdeci">void init_env(t_env **data_envp, char **envp)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00024">env.c:24</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a147731c1cf1a04c1fc1b85e6343cc7cc"><div class="ttname"><a href="structs__minishell__data.html#a147731c1cf1a04c1fc1b85e6343cc7cc">s_minishell_data::current_dir</a></div><div class="ttdeci">char * current_dir</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00029">shell.h:29</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a46b92ee58356d0f35174a79ed568253b"><div class="ttname"><a href="structs__minishell__data.html#a46b92ee58356d0f35174a79ed568253b">s_minishell_data::local_env</a></div><div class="ttdeci">t_env * local_env</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00025">shell.h:25</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a5122e3a902d8f28e8b69576175f28c2b"><div class="ttname"><a href="structs__minishell__data.html#a5122e3a902d8f28e8b69576175f28c2b">s_minishell_data::std_err</a></div><div class="ttdeci">int std_err</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00028">shell.h:28</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a8a0b3f50c8893e061062e93115f3d723"><div class="ttname"><a href="structs__minishell__data.html#a8a0b3f50c8893e061062e93115f3d723">s_minishell_data::envp</a></div><div class="ttdeci">t_env * envp</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00024">shell.h:24</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a978016fddb1d9faa4fbda6859a9a199e"><div class="ttname"><a href="structs__minishell__data.html#a978016fddb1d9faa4fbda6859a9a199e">s_minishell_data::exit_status</a></div><div class="ttdeci">int exit_status</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00030">shell.h:30</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_a9ed5685097b7e4b55c3c1307b70869ef"><div class="ttname"><a href="structs__minishell__data.html#a9ed5685097b7e4b55c3c1307b70869ef">s_minishell_data::std_in</a></div><div class="ttdeci">int std_in</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00026">shell.h:26</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_ac90001aa8bc9a89b165ee6bca5f05ef3"><div class="ttname"><a href="structs__minishell__data.html#ac90001aa8bc9a89b165ee6bca5f05ef3">s_minishell_data::std_out</a></div><div class="ttdeci">int std_out</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00027">shell.h:27</a></div></div>
-<div class="ttc" id="astructs__minishell__data_html_aeb4af268850af7d0f6d0c64f2bfefdea"><div class="ttname"><a href="structs__minishell__data.html#aeb4af268850af7d0f6d0c64f2bfefdea">s_minishell_data::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00023">shell.h:23</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_a2d3fc4d4c5f229fd50f00571565c3cb7"><div class="ttname"><a href="structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7">s_ms_data::exit_status</a></div><div class="ttdeci">int exit_status</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00030">shell.h:30</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_a4e5d14d7076b0165b2f3f5766b7e7159"><div class="ttname"><a href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">s_ms_data::envp</a></div><div class="ttdeci">t_env * envp</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00024">shell.h:24</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_a57bf5c645546459cd84ea8c616b0029a"><div class="ttname"><a href="structs__ms__data.html#a57bf5c645546459cd84ea8c616b0029a">s_ms_data::std_err</a></div><div class="ttdeci">int std_err</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00028">shell.h:28</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_a68d87458c3e4250e56a66c8ece61d5a5"><div class="ttname"><a href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">s_ms_data::std_out</a></div><div class="ttdeci">int std_out</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00027">shell.h:27</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_a6f321ac15871c8170ab3e3b451016da5"><div class="ttname"><a href="structs__ms__data.html#a6f321ac15871c8170ab3e3b451016da5">s_ms_data::current_dir</a></div><div class="ttdeci">char * current_dir</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00029">shell.h:29</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_ae0f3cfd0ab25ca9b6a5c9c1697e1692a"><div class="ttname"><a href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">s_ms_data::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00023">shell.h:23</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_ae3a38c68c37305c2aad70950bd7df1e8"><div class="ttname"><a href="structs__ms__data.html#ae3a38c68c37305c2aad70950bd7df1e8">s_ms_data::local_env</a></div><div class="ttdeci">t_env * local_env</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00025">shell.h:25</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_ae8d3099bc1be72bf3921ffadb2452ddd"><div class="ttname"><a href="structs__ms__data.html#ae8d3099bc1be72bf3921ffadb2452ddd">s_ms_data::std_in</a></div><div class="ttdeci">int std_in</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00026">shell.h:26</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_minishell_data::args</a>, <a class="el" href="shell_8h_source.html#l00029">s_minishell_data::current_dir</a>, <a class="el" href="shell_8h_source.html#l00024">s_minishell_data::envp</a>, <a class="el" href="shell_8h_source.html#l00030">s_minishell_data::exit_status</a>, <a class="el" href="env_2env_8c_source.html#l00024">init_env()</a>, <a class="el" href="shell_8h_source.html#l00025">s_minishell_data::local_env</a>, <a class="el" href="shell_8h_source.html#l00028">s_minishell_data::std_err</a>, <a class="el" href="shell_8h_source.html#l00026">s_minishell_data::std_in</a>, and <a class="el" href="shell_8h_source.html#l00027">s_minishell_data::std_out</a>.</p>
+<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_ms_data::args</a>, <a class="el" href="shell_8h_source.html#l00029">s_ms_data::current_dir</a>, <a class="el" href="shell_8h_source.html#l00024">s_ms_data::envp</a>, <a class="el" href="shell_8h_source.html#l00030">s_ms_data::exit_status</a>, <a class="el" href="env_2env_8c_source.html#l00024">init_env()</a>, <a class="el" href="shell_8h_source.html#l00025">s_ms_data::local_env</a>, <a class="el" href="shell_8h_source.html#l00028">s_ms_data::std_err</a>, <a class="el" href="shell_8h_source.html#l00026">s_ms_data::std_in</a>, and <a class="el" href="shell_8h_source.html#l00027">s_ms_data::std_out</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00062">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="initialise_8c_ab7986766cca35553aa796f6a732d856a_cgraph.png" border="0" usemap="#ainitialise_8c_ab7986766cca35553aa796f6a732d856a_cgraph" alt=""/></div>
-<map name="ainitialise_8c_ab7986766cca35553aa796f6a732d856a_cgraph" id="ainitialise_8c_ab7986766cca35553aa796f6a732d856a_cgraph">
-<area shape="rect" title=" " alt="" coords="5,55,134,80"/>
-<area shape="rect" href="env_2env_8c.html#a2344221e4d3b1327b956157b837a727b" title=" " alt="" coords="182,55,248,80"/>
-<area shape="poly" title=" " alt="" coords="134,65,166,65,166,70,134,70"/>
-<area shape="rect" href="env_2env_8c.html#aa2e361e75c8c044d588ec5c07b560659" title=" " alt="" coords="296,55,401,80"/>
-<area shape="poly" title=" " alt="" coords="249,65,280,65,280,70,249,70"/>
-<area shape="rect" href="env_2utils_8c.html#a67c3dca975ac3373851ded9534701bf5" title=" " alt="" coords="449,5,529,31"/>
-<area shape="poly" title=" " alt="" coords="387,52,435,34,437,39,389,57"/>
-<area shape="rect" href="ft__strchr_8c.html#aa6d0c2d180f32ee585485e1a1ce3d55d" title=" " alt="" coords="454,55,524,80"/>
-<area shape="poly" title=" " alt="" coords="402,65,439,65,439,70,402,70"/>
-<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="453,104,525,130"/>
-<area shape="poly" title=" " alt="" coords="389,78,439,97,437,102,387,83"/>
-<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="577,79,651,104"/>
-<area shape="poly" title=" " alt="" coords="525,107,561,99,562,105,526,112"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="580,128,648,154"/>
-<area shape="poly" title=" " alt="" coords="526,121,565,129,564,134,525,126"/>
+<div class="center"><img src="initialise_8c_a1893ac59b9c42732ea38e02f340f98c9_cgraph.png" border="0" usemap="#ainitialise_8c_a1893ac59b9c42732ea38e02f340f98c9_cgraph" alt=""/></div>
+<map name="ainitialise_8c_a1893ac59b9c42732ea38e02f340f98c9_cgraph" id="ainitialise_8c_a1893ac59b9c42732ea38e02f340f98c9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,101,80"/>
+<area shape="rect" href="env_2env_8c.html#a2344221e4d3b1327b956157b837a727b" title=" " alt="" coords="149,55,215,80"/>
+<area shape="poly" title=" " alt="" coords="101,65,133,65,133,70,101,70"/>
+<area shape="rect" href="env_2env_8c.html#aa2e361e75c8c044d588ec5c07b560659" title=" " alt="" coords="263,55,368,80"/>
+<area shape="poly" title=" " alt="" coords="216,65,247,65,247,70,216,70"/>
+<area shape="rect" href="env_2utils_8c.html#a67c3dca975ac3373851ded9534701bf5" title=" " alt="" coords="416,5,496,31"/>
+<area shape="poly" title=" " alt="" coords="354,52,402,34,404,39,356,57"/>
+<area shape="rect" href="ft__strchr_8c.html#aa6d0c2d180f32ee585485e1a1ce3d55d" title=" " alt="" coords="421,55,491,80"/>
+<area shape="poly" title=" " alt="" coords="369,65,406,65,406,70,369,70"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="420,104,492,130"/>
+<area shape="poly" title=" " alt="" coords="356,78,406,97,404,102,354,83"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="544,79,618,104"/>
+<area shape="poly" title=" " alt="" coords="492,107,528,99,529,105,493,112"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="547,128,615,154"/>
+<area shape="poly" title=" " alt="" coords="493,121,532,129,531,134,492,126"/>
 </map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="initialise_8c_ab7986766cca35553aa796f6a732d856a_icgraph.png" border="0" usemap="#ainitialise_8c_ab7986766cca35553aa796f6a732d856a_icgraph" alt=""/></div>
-<map name="ainitialise_8c_ab7986766cca35553aa796f6a732d856a_icgraph" id="ainitialise_8c_ab7986766cca35553aa796f6a732d856a_icgraph">
-<area shape="rect" title=" " alt="" coords="103,5,231,31"/>
+<div class="center"><img src="initialise_8c_a1893ac59b9c42732ea38e02f340f98c9_icgraph.png" border="0" usemap="#ainitialise_8c_a1893ac59b9c42732ea38e02f340f98c9_icgraph" alt=""/></div>
+<map name="ainitialise_8c_a1893ac59b9c42732ea38e02f340f98c9_icgraph" id="ainitialise_8c_a1893ac59b9c42732ea38e02f340f98c9_icgraph">
+<area shape="rect" title=" " alt="" coords="103,5,198,31"/>
 <area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,5,55,31"/>
 <area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>
