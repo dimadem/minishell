@@ -270,7 +270,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="174,385,282,142,310,125,339,113,401,101,462,98,516,103,516,108,462,104,401,106,340,118,312,130,286,145,179,387"/>
 <area shape="rect" href="aux_8c.html#a94ee21f550bbf6448142ec3102526dde" title=" " alt="" coords="323,156,421,182"/>
 <area shape="poly" title=" " alt="" coords="174,385,222,283,253,227,282,191,306,177,309,182,286,195,257,230,226,285,179,387"/>
-<area shape="rect" href="parser__utils_8c.html#a171ed3b5a6467eddcde6183a461caf02" title=" " alt="" coords="322,255,421,280"/>
+<area shape="rect" href="parser__utils_8c.html#a805e05c05a863c75ce3f684b3dc2ab7a" title=" " alt="" coords="322,255,421,280"/>
 <area shape="poly" title=" " alt="" coords="179,384,221,338,250,312,283,289,306,279,308,284,285,294,253,316,225,342,183,388"/>
 <area shape="rect" href="visualiser_8c.html#a16c146658d86ab8fa44a3af94804c5a9" title=" " alt="" coords="322,304,422,330"/>
 <area shape="poly" title=" " alt="" coords="192,384,233,361,283,338,305,330,307,336,285,343,236,366,194,389"/>
@@ -326,7 +326,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="clean__tree_8c.html#a0a4196019426e41a9f5ec36835396e81" title=" " alt="" coords="725,116,794,142"/>
 <area shape="poly" title=" " alt="" coords="630,117,710,123,709,128,629,123"/>
 <area shape="poly" title=" " alt="" coords="733,117,728,107,731,98,742,92,759,89,778,92,788,99,785,103,776,97,759,95,744,97,735,101,734,107,738,114"/>
-<area shape="rect" href="parser_8c.html#a42a514028763c0c9c9f12226556407fe" title=" " alt="" coords="531,177,630,203"/>
+<area shape="rect" href="parser_8c.html#aea3d48e2358c0ee6995adc2def5cbfbf" title=" " alt="" coords="531,177,630,203"/>
 <area shape="poly" title=" " alt="" coords="421,254,458,241,482,227,506,212,518,206,521,211,509,217,485,231,460,246,423,259"/>
 <area shape="poly" title=" " alt="" coords="550,178,544,169,548,159,560,153,581,151,602,153,614,160,611,164,600,158,580,156,562,158,552,163,550,168,555,176"/>
 <area shape="rect" href="visualiser_8c.html#ac38cad433d858a530a7d7479f134f81c" title=" " alt="" coords="515,251,646,276"/>
@@ -398,7 +398,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   46</span>        loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a5f49d9840e1d54bc67a8cfe91aa9123d">trimmed_input</a> = <a class="code hl_function" href="tokens_8h.html#ad85feb33dfe75120540e2bc4dc28209a">trim_input</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#aa4db2151823e8c8b49c2251837a7e367">input</a>);</div>
 <div class="line"><span class="lineno">   47</span>        <a class="code hl_function" href="tokens_8h.html#a8ba7929cbd2a023ebba26c83879e553c">input_error_checks</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a5f49d9840e1d54bc67a8cfe91aa9123d">trimmed_input</a>);</div>
 <div class="line"><span class="lineno">   48</span>        loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a9b704dd9ec48db6a19721c14de0cb40b">tokens</a> = <a class="code hl_function" href="tokens_8h.html#a5482db056a3edf1a61079f863ba7dc99">tokenise</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a5f49d9840e1d54bc67a8cfe91aa9123d">trimmed_input</a>);</div>
-<div class="line"><span class="lineno">   49</span>        loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a> = <a class="code hl_function" href="tokens_8h.html#a171ed3b5a6467eddcde6183a461caf02">parse_tokens</a>(&amp;loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a9b704dd9ec48db6a19721c14de0cb40b">tokens</a>);</div>
+<div class="line"><span class="lineno">   49</span>        loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a> = <a class="code hl_function" href="tokens_8h.html#a805e05c05a863c75ce3f684b3dc2ab7a">parse_tokens</a>(&amp;loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a9b704dd9ec48db6a19721c14de0cb40b">tokens</a>, data);</div>
 <div class="line"><span class="lineno">   50</span>        <a class="code hl_function" href="tokens_8h.html#a16c146658d86ab8fa44a3af94804c5a9">print_ast_root</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a>);</div>
 <div class="line"><span class="lineno">   51</span>        status = <a class="code hl_function" href="execute_8h.html#ace4c3a2246919797e40140123d79596a">execute_ast</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a>, data);</div>
 <div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="main_8c.html#aa58ce868c4a816bbe301da3bd43f1157">status_handler</a>(status, loop_data))</div>
@@ -421,10 +421,10 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="astructs__loop__data_html_aa4db2151823e8c8b49c2251837a7e367"><div class="ttname"><a href="structs__loop__data.html#aa4db2151823e8c8b49c2251837a7e367">s_loop_data::input</a></div><div class="ttdeci">char * input</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00059">tokens.h:59</a></div></div>
 <div class="ttc" id="astructs__loop__data_html_ac27fcff1e53a529b5f6a27dd21a28a91"><div class="ttname"><a href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">s_loop_data::tree</a></div><div class="ttdeci">t_ast * tree</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00062">tokens.h:62</a></div></div>
 <div class="ttc" id="atokens_8h_html_a16c146658d86ab8fa44a3af94804c5a9"><div class="ttname"><a href="tokens_8h.html#a16c146658d86ab8fa44a3af94804c5a9">print_ast_root</a></div><div class="ttdeci">void print_ast_root(t_ast *root)</div><div class="ttdef"><b>Definition</b> <a href="visualiser_8c_source.html#l00103">visualiser.c:103</a></div></div>
-<div class="ttc" id="atokens_8h_html_a171ed3b5a6467eddcde6183a461caf02"><div class="ttname"><a href="tokens_8h.html#a171ed3b5a6467eddcde6183a461caf02">parse_tokens</a></div><div class="ttdeci">t_ast * parse_tokens(t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="parser__utils_8c_source.html#l00017">parser_utils.c:17</a></div></div>
 <div class="ttc" id="atokens_8h_html_a3f6fbbc61bc797c26b4ece51216fbb67"><div class="ttname"><a href="tokens_8h.html#a3f6fbbc61bc797c26b4ece51216fbb67">loop_cleanup</a></div><div class="ttdeci">void loop_cleanup(char *line, t_token *tokens, char *prompt, t_ast *tree)</div><div class="ttdef"><b>Definition</b> <a href="clean__general_8c_source.html#l00059">clean_general.c:59</a></div></div>
 <div class="ttc" id="atokens_8h_html_a4c523064ece03ba20eb609b52253b88e"><div class="ttname"><a href="tokens_8h.html#a4c523064ece03ba20eb609b52253b88e">generate_prompt</a></div><div class="ttdeci">char * generate_prompt(t_minishell_data *data)</div><div class="ttdef"><b>Definition</b> <a href="prompt_8c_source.html#l00032">prompt.c:32</a></div></div>
 <div class="ttc" id="atokens_8h_html_a5482db056a3edf1a61079f863ba7dc99"><div class="ttname"><a href="tokens_8h.html#a5482db056a3edf1a61079f863ba7dc99">tokenise</a></div><div class="ttdeci">t_token * tokenise(char *str)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00106">tokeniser.c:106</a></div></div>
+<div class="ttc" id="atokens_8h_html_a805e05c05a863c75ce3f684b3dc2ab7a"><div class="ttname"><a href="tokens_8h.html#a805e05c05a863c75ce3f684b3dc2ab7a">parse_tokens</a></div><div class="ttdeci">t_ast * parse_tokens(t_token **tokens, t_minishell_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser__utils_8c_source.html#l00017">parser_utils.c:17</a></div></div>
 <div class="ttc" id="atokens_8h_html_a8ba7929cbd2a023ebba26c83879e553c"><div class="ttname"><a href="tokens_8h.html#a8ba7929cbd2a023ebba26c83879e553c">input_error_checks</a></div><div class="ttdeci">int input_error_checks(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="input__checker_8c_source.html#l00099">input_checker.c:99</a></div></div>
 <div class="ttc" id="atokens_8h_html_a94ee21f550bbf6448142ec3102526dde"><div class="ttname"><a href="tokens_8h.html#a94ee21f550bbf6448142ec3102526dde">make_history</a></div><div class="ttdeci">void make_history(char *line)</div><div class="ttdef"><b>Definition</b> <a href="aux_8c_source.html#l00015">aux.c:15</a></div></div>
 <div class="ttc" id="atokens_8h_html_ad85feb33dfe75120540e2bc4dc28209a"><div class="ttname"><a href="tokens_8h.html#ad85feb33dfe75120540e2bc4dc28209a">trim_input</a></div><div class="ttdeci">char * trim_input(char *str)</div><div class="ttdef"><b>Definition</b> <a href="input__checker__helpers_8c_source.html#l00015">input_checker_helpers.c:15</a></div></div>
@@ -450,7 +450,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="55,963,87,930,108,913,133,901,164,892,197,887,263,887,325,896,377,908,376,913,324,901,262,892,197,892,165,897,135,906,111,918,90,934,59,967"/>
 <area shape="rect" href="aux_8c.html#a94ee21f550bbf6448142ec3102526dde" title=" " alt="" coords="172,965,271,991"/>
 <area shape="poly" title=" " alt="" coords="86,975,157,975,157,981,86,981"/>
-<area shape="rect" href="parser__utils_8c.html#a171ed3b5a6467eddcde6183a461caf02" title=" " alt="" coords="172,1015,271,1040"/>
+<area shape="rect" href="parser__utils_8c.html#a805e05c05a863c75ce3f684b3dc2ab7a" title=" " alt="" coords="172,1015,271,1040"/>
 <area shape="poly" title=" " alt="" coords="87,987,134,1001,157,1007,156,1012,133,1006,85,992"/>
 <area shape="rect" href="visualiser_8c.html#a16c146658d86ab8fa44a3af94804c5a9" title=" " alt="" coords="171,1064,272,1090"/>
 <area shape="poly" title=" " alt="" coords="60,989,92,1020,135,1050,157,1060,155,1065,132,1055,89,1024,57,993"/>
@@ -536,7 +536,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="clean__tree_8c.html#a0a4196019426e41a9f5ec36835396e81" title=" " alt="" coords="567,916,636,942"/>
 <area shape="poly" title=" " alt="" coords="479,926,552,926,552,931,479,931"/>
 <area shape="poly" title=" " alt="" coords="578,917,573,907,576,898,586,891,602,889,618,892,627,899,624,903,616,897,601,895,588,896,580,901,579,907,582,914"/>
-<area shape="rect" href="parser_8c.html#a42a514028763c0c9c9f12226556407fe" title=" " alt="" coords="381,989,479,1015"/>
+<area shape="rect" href="parser_8c.html#aea3d48e2358c0ee6995adc2def5cbfbf" title=" " alt="" coords="381,989,479,1015"/>
 <area shape="poly" title=" " alt="" coords="271,1019,366,1007,366,1012,272,1024"/>
 <area shape="poly" title=" " alt="" coords="401,990,395,981,399,971,411,965,430,963,451,965,462,972,459,976,449,970,430,968,412,970,403,974,401,980,406,987"/>
 <area shape="rect" href="visualiser_8c.html#ac38cad433d858a530a7d7479f134f81c" title=" " alt="" coords="365,1063,495,1088"/>
