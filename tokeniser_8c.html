@@ -585,7 +585,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   97</span>    token = tokens;</div>
 <div class="line"><span class="lineno">   98</span>    <span class="keywordflow">while</span> (token != NULL)</div>
 <div class="line"><span class="lineno">   99</span>    {</div>
-<div class="line"><span class="lineno">  100</span>        printf(<span class="stringliteral">&quot;input[%d] -&gt;  %s \n&quot;</span>, i, token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
+<div class="line"><span class="lineno">  100</span>        <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;input[%d] -&gt;  %s \n&quot;</span>, i, token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
 <div class="line"><span class="lineno">  101</span>        token = token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
 <div class="line"><span class="lineno">  102</span>        i++;</div>
 <div class="line"><span class="lineno">  103</span>    }</div>
@@ -594,7 +594,70 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="astructs__token_html_a5dae434205818bfc83a61809d4a34a29"><div class="ttname"><a href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">s_token::next</a></div><div class="ttdeci">struct s_token * next</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00044">tokens.h:44</a></div></div>
 <div class="ttc" id="astructs__token_html_afe30f6c413b34095d2a562e112a52e9a"><div class="ttname"><a href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">s_token::data</a></div><div class="ttdeci">char * data</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00043">tokens.h:43</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tokens_8h_source.html#l00043">s_token::data</a>, and <a class="el" href="tokens_8h_source.html#l00044">s_token::next</a>.</p>
+<p class="reference">References <a class="el" href="tokens_8h_source.html#l00043">s_token::data</a>, <a class="el" href="ft__printf_8c_source.html#l00037">ft_printf()</a>, and <a class="el" href="tokens_8h_source.html#l00044">s_token::next</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="tokeniser_8c_ac0f556c5b74afdbd7ce730e294df7b76_cgraph.png" border="0" usemap="#atokeniser_8c_ac0f556c5b74afdbd7ce730e294df7b76_cgraph" alt=""/></div>
+<map name="atokeniser_8c_ac0f556c5b74afdbd7ce730e294df7b76_cgraph" id="atokeniser_8c_ac0f556c5b74afdbd7ce730e294df7b76_cgraph">
+<area shape="rect" title=" " alt="" coords="5,278,98,304"/>
+<area shape="rect" href="ft__printf_8c.html#a1a04419f657be214129cb35741adf28f" title=" " alt="" coords="146,278,211,304"/>
+<area shape="poly" title=" " alt="" coords="98,288,130,288,130,294,98,294"/>
+<area shape="rect" href="ft__printf_8c.html#a068faf32152bcaef19d5087ccf586e4c" title=" " alt="" coords="259,303,374,329"/>
+<area shape="poly" title=" " alt="" coords="212,294,244,300,243,306,211,299"/>
+<area shape="rect" href="ft__print__char_8c.html#a8d58f57c578f3dbcf2615448216bd43b" title=" " alt="" coords="450,106,543,132"/>
+<area shape="poly" title=" " alt="" coords="197,275,291,213,354,175,421,140,434,135,436,140,423,145,357,180,294,217,200,280"/>
+<area shape="poly" title=" " alt="" coords="323,302,374,212,402,166,421,141,434,132,437,137,424,145,406,169,379,214,328,304"/>
+<area shape="rect" href="ft__print__int_8c.html#ae462756310d90a26c1fbbd0d4c1439dd" title=" " alt="" coords="455,377,538,402"/>
+<area shape="poly" title=" " alt="" coords="345,327,423,363,441,370,440,375,421,368,343,332"/>
+<area shape="rect" href="ft__print__str_8c.html#a70ef4d03492c95bd3069d86ba8ededda" title=" " alt="" coords="619,429,702,454"/>
+<area shape="poly" title=" " alt="" coords="329,328,367,371,394,394,423,413,469,428,516,438,603,442,603,448,515,443,467,434,421,417,390,399,363,375,325,331"/>
+<area shape="rect" href="ft__print__percent_8c.html#a3585300e4e2235d6d8edde3b2c0f58a5" title=" " alt="" coords="441,327,552,353"/>
+<area shape="poly" title=" " alt="" coords="375,321,426,328,425,333,374,327"/>
+<area shape="rect" href="ft__print__ptr_8c.html#a33aac8593b2a77df5d79036d0428cdf8" title=" " alt="" coords="455,278,538,304"/>
+<area shape="poly" title=" " alt="" coords="374,306,439,296,440,302,375,311"/>
+<area shape="rect" href="ft__print__unsigned__dec_8c.html#ae0e844e30ea88b8900b5bf754a949e47" title=" " alt="" coords="422,478,571,504"/>
+<area shape="poly" title=" " alt="" coords="327,328,363,389,391,425,424,457,442,469,439,473,421,461,387,428,359,392,322,331"/>
+<area shape="rect" href="ft__print__unsigned__hex_8c.html#a33b63929589965bc9d8186afda4709e7" title=" " alt="" coords="423,155,570,181"/>
+<area shape="poly" title=" " alt="" coords="332,301,466,189,469,193,335,305"/>
+<area shape="rect" href="ft__putchar__fd_8c.html#a8ee15a511946c1397bd2bdea4aed6aee" title=" " alt="" coords="750,217,847,242"/>
+<area shape="poly" title=" " alt="" coords="507,104,540,68,589,29,617,14,646,5,675,4,703,15,726,33,744,55,772,106,788,158,797,201,792,202,783,159,767,108,740,58,722,37,701,20,674,10,647,10,619,19,592,33,544,72,510,108"/>
+<area shape="rect" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38" title=" " alt="" coords="632,379,689,405"/>
+<area shape="poly" title=" " alt="" coords="538,388,616,389,616,394,538,393"/>
+<area shape="poly" title=" " alt="" coords="539,400,605,421,603,426,537,405"/>
+<area shape="rect" href="ft__itoa_8c.html#a01efab229ef959ceedc93dfa15b56689" title=" " alt="" coords="753,330,844,356"/>
+<area shape="poly" title=" " alt="" coords="688,380,745,359,747,364,690,385"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="763,379,835,405"/>
+<area shape="poly" title=" " alt="" coords="689,390,747,390,747,395,689,395"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="895,379,970,405"/>
+<area shape="poly" title=" " alt="" coords="835,390,880,390,880,395,835,395"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="898,429,967,454"/>
+<area shape="poly" title=" " alt="" coords="836,403,885,421,883,426,835,408"/>
+<area shape="poly" title=" " alt="" coords="688,426,700,416,718,391,728,369,735,346,748,316,781,254,785,257,752,319,740,348,733,371,723,394,704,419,691,430"/>
+<area shape="rect" href="ft__putstr__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="755,429,842,454"/>
+<area shape="poly" title=" " alt="" coords="702,439,740,439,740,444,702,444"/>
+<area shape="poly" title=" " alt="" coords="843,439,882,439,882,444,843,444"/>
+<area shape="poly" title=" " alt="" coords="553,340,625,335,664,327,701,314,723,301,743,286,776,253,780,256,747,290,726,306,703,319,665,332,626,340,553,345"/>
+<area shape="rect" href="ft__print__ptr_8c.html#a9efd82464e85d2e76947b5056c19794c" title=" " alt="" coords="623,205,698,230"/>
+<area shape="poly" title=" " alt="" coords="526,275,615,235,617,240,528,280"/>
+<area shape="rect" href="ft__print__ptr_8c.html#a8548b6592870051b3d16635ece9c9f04" title=" " alt="" coords="622,278,699,304"/>
+<area shape="poly" title=" " alt="" coords="539,288,607,288,607,294,539,294"/>
+<area shape="poly" title=" " alt="" coords="690,275,753,247,755,252,693,280"/>
+<area shape="poly" title=" " alt="" coords="636,279,632,269,635,260,644,254,660,251,677,254,686,261,683,265,675,259,660,257,646,259,639,263,637,269,641,277"/>
+<area shape="poly" title=" " alt="" coords="541,475,603,456,605,461,543,480"/>
+<area shape="rect" href="ft__print__unsigned__dec_8c.html#a4f8aaff43b7d218dc7ac357631df9ca0" title=" " alt="" coords="628,478,693,504"/>
+<area shape="poly" title=" " alt="" coords="571,488,613,488,613,494,571,494"/>
+<area shape="rect" href="ft__print__unsigned__dec_8c.html#a2a0e213502ab35746ffd5d25716c981c" title=" " alt="" coords="756,478,841,504"/>
+<area shape="poly" title=" " alt="" coords="693,488,741,488,741,494,693,494"/>
+<area shape="poly" title=" " alt="" coords="542,152,570,142,593,128,618,116,661,107,680,109,703,117,730,133,753,155,785,201,781,204,749,159,727,138,701,121,679,114,661,112,620,121,595,133,572,147,544,157"/>
+<area shape="rect" href="ft__print__unsigned__hex_8c.html#a397ac62bd572cf30f7f3d55b4186e5fc" title=" " alt="" coords="620,30,701,56"/>
+<area shape="poly" title=" " alt="" coords="551,153,569,142,585,126,594,110,602,93,617,73,627,64,630,68,621,77,607,95,599,113,589,129,572,146,553,157"/>
+<area shape="rect" href="ft__print__unsigned__hex_8c.html#a5f1d53b6392735065c905c857136c490" title=" " alt="" coords="620,155,701,181"/>
+<area shape="poly" title=" " alt="" coords="570,166,604,166,604,171,570,171"/>
+<area shape="poly" title=" " alt="" coords="693,179,755,208,753,212,690,184"/>
+<area shape="poly" title=" " alt="" coords="636,156,632,147,635,137,644,131,660,129,677,131,686,138,683,142,675,136,660,134,646,136,639,141,637,146,641,154"/>
+</map>
+</div>
 
 </div>
 </div>

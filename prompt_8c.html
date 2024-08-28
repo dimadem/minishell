@@ -180,8 +180,8 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   22</span>    <span class="keywordtype">char</span>    *prompt;</div>
 <div class="line"><span class="lineno">   23</span>    <span class="keywordtype">size_t</span>  prompt_len;</div>
 <div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    prompt_len = strlen(<span class="stringliteral">&quot;🌴\e[1m @maxishell$ \e[m&quot;</span>) + \</div>
-<div class="line"><span class="lineno">   26</span>            strlen(getenv(<span class="stringliteral">&quot;LOGNAME&quot;</span>));</div>
+<div class="line"><span class="lineno">   25</span>    prompt_len = <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(<span class="stringliteral">&quot;🌴\e[1m @maxishell$ \e[m&quot;</span>) + \</div>
+<div class="line"><span class="lineno">   26</span>            ft_strlen(getenv(<span class="stringliteral">&quot;LOGNAME&quot;</span>));</div>
 <div class="line"><span class="lineno">   27</span>    prompt = (<span class="keywordtype">char</span> *)malloc(prompt_len);</div>
 <div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!prompt)</div>
 <div class="line"><span class="lineno">   29</span>        exit(EXIT_FAILURE);</div>
@@ -192,9 +192,10 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> (prompt);</div>
 <div class="line"><span class="lineno">   35</span>}</div>
 <div class="ttc" id="alibft_8h_html_a916ac44ff3e67ef20834dd45e3837ac4"><div class="ttname"><a href="libft_8h.html#a916ac44ff3e67ef20834dd45e3837ac4">ft_strcpy</a></div><div class="ttdeci">char * ft_strcpy(char *dest, const char *src)</div><div class="ttdef"><b>Definition</b> <a href="ft__strcpy_8c_source.html#l00025">ft_strcpy.c:25</a></div></div>
+<div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
 <div class="ttc" id="alibft_8h_html_ac7bb7d543c62b46aae49fdc97c9ae837"><div class="ttname"><a href="libft_8h.html#ac7bb7d543c62b46aae49fdc97c9ae837">ft_strcat</a></div><div class="ttdeci">char * ft_strcat(char *dest, char *src)</div><div class="ttdef"><b>Definition</b> <a href="ft__strcat_8c_source.html#l00026">ft_strcat.c:26</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ft__strcat_8c_source.html#l00026">ft_strcat()</a>, and <a class="el" href="ft__strcpy_8c_source.html#l00025">ft_strcpy()</a>.</p>
+<p class="reference">References <a class="el" href="ft__strcat_8c_source.html#l00026">ft_strcat()</a>, <a class="el" href="ft__strcpy_8c_source.html#l00025">ft_strcpy()</a>, and <a class="el" href="ft__strlen_8c_source.html#l00015">ft_strlen()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00044">main_loop()</a>.</p>
 <div class="dynheader">
@@ -202,11 +203,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="prompt_8c_a9f5d4b27dda19ba9bdc223940f648db5_cgraph.png" border="0" usemap="#aprompt_8c_a9f5d4b27dda19ba9bdc223940f648db5_cgraph" alt=""/></div>
 <map name="aprompt_8c_a9f5d4b27dda19ba9bdc223940f648db5_cgraph" id="aprompt_8c_a9f5d4b27dda19ba9bdc223940f648db5_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,124,56"/>
+<area shape="rect" title=" " alt="" coords="5,55,124,80"/>
 <area shape="rect" href="ft__strcat_8c.html#ac7bb7d543c62b46aae49fdc97c9ae837" title=" " alt="" coords="173,5,242,31"/>
-<area shape="poly" title=" " alt="" coords="124,30,157,24,158,30,125,36"/>
+<area shape="poly" title=" " alt="" coords="103,52,157,33,159,38,105,57"/>
 <area shape="rect" href="ft__strcpy_8c.html#a916ac44ff3e67ef20834dd45e3837ac4" title=" " alt="" coords="172,55,243,80"/>
-<area shape="poly" title=" " alt="" coords="125,51,157,56,156,62,124,56"/>
+<area shape="poly" title=" " alt="" coords="124,65,156,65,156,70,124,70"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="173,104,242,130"/>
+<area shape="poly" title=" " alt="" coords="105,78,159,98,157,103,103,83"/>
 </map>
 </div>
 <div class="dynheader">
@@ -276,7 +279,6 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="aenv_8h_html_a41133e0ba7230727a51eedce713a225c"><div class="ttname"><a href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a></div><div class="ttdeci">char * get_env(t_env *envp, const char *key)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00060">env.c:60</a></div></div>
 <div class="ttc" id="alibft_8h_html_a91e6e3e428bcc9f2291b700e1829b82b"><div class="ttname"><a href="libft_8h.html#a91e6e3e428bcc9f2291b700e1829b82b">ft_strjoin</a></div><div class="ttdeci">char * ft_strjoin(char const *s1, char const *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strjoin_8c_source.html#l00023">ft_strjoin.c:23</a></div></div>
 <div class="ttc" id="alibft_8h_html_a9d2fe792187aa4ed08e5864fb2c4d6dc"><div class="ttname"><a href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a></div><div class="ttdeci">int ft_strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strncmp_8c_source.html#l00024">ft_strncmp.c:24</a></div></div>
-<div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_a4e5d14d7076b0165b2f3f5766b7e7159"><div class="ttname"><a href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">s_ms_data::envp</a></div><div class="ttdeci">t_env * envp</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00024">shell.h:24</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="shell_8h_source.html#l00024">s_ms_data::envp</a>, <a class="el" href="ft__strjoin_8c_source.html#l00023">ft_strjoin()</a>, <a class="el" href="ft__strlen_8c_source.html#l00015">ft_strlen()</a>, <a class="el" href="ft__strncmp_8c_source.html#l00024">ft_strncmp()</a>, and <a class="el" href="env_2env_8c_source.html#l00060">get_env()</a>.</p>
