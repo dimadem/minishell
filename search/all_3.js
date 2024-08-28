@@ -2,7 +2,7 @@ var searchData=
 [
   ['calc_5fstack_5fsize_0',['calc_stack_size',['../tokens_8h.html#a962defbcd8ea61b01724b658199944ec',1,'calc_stack_size(t_token *stack):&#160;stack_control.c'],['../stack__control_8c.html#a962defbcd8ea61b01724b658199944ec',1,'calc_stack_size(t_token *stack):&#160;stack_control.c']]],
   ['cd_2ec_1',['cd.c',['../cd_8c.html',1,'']]],
-  ['check_5fheredoc_2',['check_heredoc',['../tokens_8h.html#a4e1b3e73a18dd66697cd7eac990b0363',1,'check_heredoc(char *line):&#160;heredoc.c'],['../heredoc_8c.html#a4e1b3e73a18dd66697cd7eac990b0363',1,'check_heredoc(char *line):&#160;heredoc.c']]],
+  ['check_5fheredoc_2',['check_heredoc',['../tokens_8h.html#a4e1b3e73a18dd66697cd7eac990b0363',1,'tokens.h']]],
   ['check_5fopen_5fquotes_3',['check_open_quotes',['../input__checker_8c.html#ac967d9ffeb6f20952c9cac5c206bf717',1,'input_checker.c']]],
   ['check_5foperators_4',['check_operators',['../input__checker_8c.html#a1e938e2d09f6e98fe3304b21f5367369',1,'input_checker.c']]],
   ['check_5foperators_5floop_5',['check_operators_loop',['../input__checker_8c.html#a8bd1dd00648c512046de42538bd97b8e',1,'input_checker.c']]],
