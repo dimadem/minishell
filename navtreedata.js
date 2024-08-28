@@ -51,7 +51,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "ft__strmapi_8c_source.html",
-"redirect__in_8c_source.html"
+"redirect__heredoc_8c_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

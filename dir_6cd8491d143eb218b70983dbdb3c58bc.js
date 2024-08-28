@@ -3,6 +3,7 @@ var dir_6cd8491d143eb218b70983dbdb3c58bc =
     [ "input_checker.c", "input__checker_8c.html", "input__checker_8c" ],
     [ "input_checker_helpers.c", "input__checker__helpers_8c.html", "input__checker__helpers_8c" ],
     [ "parser.c", "parser_8c.html", "parser_8c" ],
+    [ "parser_helper_helpers.c", "parser__helper__helpers_8c.html", "parser__helper__helpers_8c" ],
     [ "parser_helpers.c", "parser__helpers_8c.html", "parser__helpers_8c" ],
     [ "parser_utils.c", "parser__utils_8c.html", "parser__utils_8c" ],
     [ "tokeniser.c", "tokeniser_8c.html", "tokeniser_8c" ],
