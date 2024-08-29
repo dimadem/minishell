@@ -74,10 +74,8 @@ t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 		command_node = redirect_node;
 		current_token = *tokens;
 	}
-	return command_node;
+	return (command_node);
 }
-
-
 
 t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
 {
