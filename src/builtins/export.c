@@ -23,7 +23,6 @@ Functionalities:
  */
 
 int			builtin_export(t_ms_data *data);
-// static bool	check_input(t_ms_data *data);
 static void	add_env(t_ms_data *data);
 
 int	builtin_export(t_ms_data *data)
@@ -47,7 +46,6 @@ int	builtin_export(t_ms_data *data)
 	}
 	else 
 		add_env(data);
-	// if (check_input(data))
 	return (0);
 }
 
