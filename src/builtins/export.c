@@ -23,6 +23,7 @@ Functionalities:
  */
 
 int			builtin_export(t_ms_data *data);
+// static bool	check_input(t_ms_data *data);
 static void	add_env(t_ms_data *data);
 
 int	builtin_export(t_ms_data *data)
@@ -37,12 +38,16 @@ int	builtin_export(t_ms_data *data)
 		curr_node = data->envp;
 		while (curr_node)
 		{
-			printf("declare -x %s=%s\n", curr_node->key, curr_node->value);
+			if (!ft_strcmp(curr_node->value, ""))
+				printf("declare -x %s\n", curr_node->key);
+			else
+				printf("declare -x %s=\"%s\"\n", curr_node->key, curr_node->value);
 			curr_node = curr_node->next;
 		}
 	}
-	else
+	else 
 		add_env(data);
+	// if (check_input(data))
 	return (0);
 }
 
@@ -50,30 +55,26 @@ static void	add_env(t_ms_data *data)
 {
 	int		i;
 	char*	key;
+	char*	curr_arg;
 
 	i = 0;
 	key = NULL;
+	curr_arg = NULL;
 	while (data->args[++i])
 	{
 		if (ft_strchr(data->args[i], '='))
 		{
-			printf("we are here boom\n");
-			char* res;
-			res = data->args[i];
-			printf("curr arg -> %s\n", ft_strchr(res, '$') + 1);
-			set_env(&data->envp, data->args[i], \
-					ft_strchr(data->args[i], '=') + 1);
+			curr_arg = data->args[i];
+			key = ft_strcdup(curr_arg, '=');
+			set_env(&data->envp, key, \
+					ft_strchr(curr_arg, '=') + 1);
 		}
 		else
 		{
-			key = ft_strcdup(data->args[i], '=');
-			if (!key)
-				continue ;
-			if (get_env(data->envp, key))
-				set_env(&data->envp, key, "");
-			else
-				set_env(&data->envp, key, NULL);
-			free(key);
+			curr_arg = data->args[i];
+			key = curr_arg;
+			printf("curr->arg - > %s\n", key);
+			set_env(&data->envp, key, "");
 		}
 	}
 }
