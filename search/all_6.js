@@ -1,12 +1,12 @@
 var searchData=
 [
   ['false_0',['FALSE',['../libft_8h.html#aa93f0eb578d23995850d61f7d61c55c1',1,'libft.h']]],
-  ['final_5fquote_5fremoval_1',['final_quote_removal',['../parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b',1,'parser_helper_helpers.c']]],
+  ['final_5fquote_5fremoval_1',['final_quote_removal',['../parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b',1,'final_quote_removal(int arg_count, t_ast *command_node):&#160;parser_helper_helpers.c'],['../tokens_8h.html#ae3d20c67cbbca937f7d28de35ab7888b',1,'final_quote_removal(int arg_count, t_ast *command_node):&#160;parser_helper_helpers.c']]],
   ['find_5fmax_5fin_5flist_2',['find_max_in_list',['../libft_8h.html#a84b2c4d47c892d0517d581f39732a6ff',1,'find_max_in_list(int a[], int size):&#160;find_max_in_list.c'],['../find__max__in__list_8c.html#a84b2c4d47c892d0517d581f39732a6ff',1,'find_max_in_list(int a[], int size):&#160;find_max_in_list.c']]],
   ['find_5fmax_5fin_5flist_2ec_3',['find_max_in_list.c',['../find__max__in__list_8c.html',1,'']]],
   ['free_5fall_5ftokens_4',['free_all_tokens',['../tokens_8h.html#a643bfec4ad8bf3d845c5fbed35caf95c',1,'free_all_tokens(t_token *tokens):&#160;clean_tree.c'],['../clean__tree_8c.html#a643bfec4ad8bf3d845c5fbed35caf95c',1,'free_all_tokens(t_token *tokens):&#160;clean_tree.c']]],
   ['free_5fargs_5',['free_args',['../clean__general_8c.html#ae6e1002c1a56f5bfa4ea13de63d3deae',1,'clean_general.c']]],
-  ['free_5fast_6',['free_ast',['../tokens_8h.html#a0a4196019426e41a9f5ec36835396e81',1,'free_ast(t_ast *node):&#160;clean_tree.c'],['../clean__tree_8c.html#a0a4196019426e41a9f5ec36835396e81',1,'free_ast(t_ast *node):&#160;clean_tree.c']]],
+  ['free_5fast_6',['free_ast',['../clean__tree_8c.html#a0a4196019426e41a9f5ec36835396e81',1,'free_ast(t_ast *node):&#160;clean_tree.c'],['../tokens_8h.html#a0a4196019426e41a9f5ec36835396e81',1,'free_ast(t_ast *node):&#160;clean_tree.c']]],
   ['free_5fenv_7',['free_env',['../env_8h.html#a2c192ab32512a4454973d916c1bff54e',1,'free_env(t_env *envp):&#160;utils.c'],['../env_2utils_8c.html#a2c192ab32512a4454973d916c1bff54e',1,'free_env(t_env *envp):&#160;utils.c']]],
   ['free_5fenv_5flist_8',['free_env_list',['../clean__general_8c.html#a9062b9b7e34cb35cb4b78c5251b020b0',1,'clean_general.c']]],
   ['free_5fms_5fdata_9',['free_ms_data',['../tokens_8h.html#af17ea5ac006f519b05a1631127f7aebc',1,'free_ms_data(t_ms_data *data):&#160;clean_general.c'],['../clean__general_8c.html#af17ea5ac006f519b05a1631127f7aebc',1,'free_ms_data(t_ms_data *data):&#160;clean_general.c']]],
@@ -30,7 +30,7 @@ var searchData=
   ['ft_5fexclude_5fdelimiters_2ec_27',['ft_exclude_delimiters.c',['../ft__exclude__delimiters_8c.html',1,'']]],
   ['ft_5ffind_5fpath_28',['ft_find_path',['../execute_8h.html#a3de2eb0e796441d7b827cf213bd8d789',1,'ft_find_path(char *cmd, t_env *envp):&#160;utils_1.c'],['../utils__1_8c.html#a3de2eb0e796441d7b827cf213bd8d789',1,'ft_find_path(char *cmd, t_env *envp):&#160;utils_1.c']]],
   ['ft_5fformatssssss_29',['ft_formatssssss',['../ft__printf_8c.html#a068faf32152bcaef19d5087ccf586e4c',1,'ft_printf.c']]],
-  ['ft_5ffree_5f2d_5farr_30',['ft_free_2d_arr',['../utils__0_8c.html#a5d9d8b46bb6c3dbbc91e99b69bb63e9d',1,'ft_free_2d_arr(char **arr):&#160;utils_0.c'],['../execute_8h.html#a5d9d8b46bb6c3dbbc91e99b69bb63e9d',1,'ft_free_2d_arr(char **arr):&#160;utils_0.c']]],
+  ['ft_5ffree_5f2d_5farr_30',['ft_free_2d_arr',['../execute_8h.html#a5d9d8b46bb6c3dbbc91e99b69bb63e9d',1,'ft_free_2d_arr(char **arr):&#160;utils_0.c'],['../utils__0_8c.html#a5d9d8b46bb6c3dbbc91e99b69bb63e9d',1,'ft_free_2d_arr(char **arr):&#160;utils_0.c']]],
   ['ft_5fget_5fnext_5fline_31',['ft_get_next_line',['../libft_8h.html#a5feb28b63e00d9f45e4887ee15da4ab8',1,'libft.h']]],
   ['ft_5fhex_5flen_32',['ft_hex_len',['../ft__print__unsigned__hex_8c.html#a397ac62bd572cf30f7f3d55b4186e5fc',1,'ft_print_unsigned_hex.c']]],
   ['ft_5fis_5fdouble_33',['ft_is_double',['../ft__is__double_8c.html#ae16fec1d497ae2334d6a0582ed73e5bb',1,'ft_is_double(const char *n):&#160;ft_is_double.c'],['../libft_8h.html#ae16fec1d497ae2334d6a0582ed73e5bb',1,'ft_is_double(const char *n):&#160;ft_is_double.c']]],

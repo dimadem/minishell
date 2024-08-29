@@ -7,5 +7,5 @@ var searchData=
   ['execute_5fchild_4',['execute_child',['../pipe_8c.html#a469087fc10539c580fe08400173ab4b8',1,'execute_child(t_ast *node, t_ms_data *data, int fd[2], int direction):&#160;pipe.c'],['../redirect__heredoc_8c.html#a79ffb6362b8f0c6960e7fe77f93d8888',1,'execute_child(t_ast *node, t_ms_data *data, int *file_fd):&#160;redirect_heredoc.c']]],
   ['execute_5fcommand_5',['execute_command',['../tokens_8h.html#a458295f97c8b5b5f590b1d0e2ec8dad0',1,'tokens.h']]],
   ['execute_5ftree_6',['execute_tree',['../tokens_8h.html#a67941e2704bfd6622dfc7d1d100b000e',1,'tokens.h']]],
-  ['expand_5fenv_5fvar_7',['expand_env_var',['../parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0',1,'parser_helper_helpers.c']]]
+  ['expand_5fenv_5fvar_7',['expand_env_var',['../tokens_8h.html#a23f04994cfc7846d455e4bb9a08f3de0',1,'expand_env_var(char *arg, t_ms_data *data):&#160;parser_helper_helpers.c'],['../parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0',1,'expand_env_var(char *arg, t_ms_data *data):&#160;parser_helper_helpers.c']]]
 ];

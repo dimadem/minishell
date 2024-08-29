@@ -18,6 +18,6 @@ var searchData=
   ['execute_5ftree_15',['execute_tree',['../tokens_8h.html#a67941e2704bfd6622dfc7d1d100b000e',1,'tokens.h']]],
   ['exit_2ec_16',['exit.c',['../exit_8c.html',1,'']]],
   ['exit_5fstatus_17',['exit_status',['../structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7',1,'s_ms_data']]],
-  ['expand_5fenv_5fvar_18',['expand_env_var',['../parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0',1,'parser_helper_helpers.c']]],
+  ['expand_5fenv_5fvar_18',['expand_env_var',['../tokens_8h.html#a23f04994cfc7846d455e4bb9a08f3de0',1,'expand_env_var(char *arg, t_ms_data *data):&#160;parser_helper_helpers.c'],['../parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0',1,'expand_env_var(char *arg, t_ms_data *data):&#160;parser_helper_helpers.c']]],
   ['export_2ec_19',['export.c',['../export_8c.html',1,'']]]
 ];

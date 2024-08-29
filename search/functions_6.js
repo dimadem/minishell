@@ -6,5 +6,5 @@ var searchData=
   ['handle_5fregular_5fchars_3',['handle_regular_chars',['../tokens_8h.html#a7fef00789eeca097ecbd68176503d4e4',1,'tokens.h']]],
   ['handle_5fspecial_5fchars_4',['handle_special_chars',['../tokens_8h.html#a0e22b8f037ef12eb28986615da9b79a6',1,'handle_special_chars(char **str, t_token **tokens):&#160;tokeniser.c'],['../tokeniser_8c.html#a0e22b8f037ef12eb28986615da9b79a6',1,'handle_special_chars(char **str, t_token **tokens):&#160;tokeniser.c']]],
   ['handle_5ftemp_5ffd_5',['handle_temp_fd',['../utils__0_8c.html#a9167ceacbe26a9ab28ea68b8a2dfc118',1,'utils_0.c']]],
-  ['heredoc_6',['heredoc',['../tokens_8h.html#a132ce43db3d4fba988a166e932845375',1,'heredoc(char *eof):&#160;heredoc.c'],['../heredoc_8c.html#a132ce43db3d4fba988a166e932845375',1,'heredoc(char *eof):&#160;heredoc.c']]]
+  ['heredoc_6',['heredoc',['../tokens_8h.html#a132ce43db3d4fba988a166e932845375',1,'tokens.h']]]
 ];
