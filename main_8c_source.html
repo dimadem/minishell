@@ -130,7 +130,7 @@ $(document).ready(function(){initNavTree('main_8c_source.html',''); initResizabl
 </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="main_8c.html#a3c7725caed2a77513c06468244396d9b">   30</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="main_8c.html#a3c7725caed2a77513c06468244396d9b">process_ast_and_io</a>(<a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data, <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a> *loop_data)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2">   30</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2">main_loop</a>(<a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data, <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a> *loop_data)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">int</span> status;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
@@ -145,8 +145,7 @@ $(document).ready(function(){initNavTree('main_8c_source.html',''); initResizabl
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
 </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2">   44</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2">main_loop</a>(<a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data, <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a> *loop_data)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">void</span>    <a class="code hl_function" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2">main_loop</a>(<a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data, <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a> *loop_data)</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">while</span> (1)</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
@@ -165,33 +164,38 @@ $(document).ready(function(){initNavTree('main_8c_source.html',''); initResizabl
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            continue ;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a9b704dd9ec48db6a19721c14de0cb40b">tokens</a> = <a class="code hl_function" href="tokens_8h.html#a5482db056a3edf1a61079f863ba7dc99">tokenise</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a5f49d9840e1d54bc67a8cfe91aa9123d">trimmed_input</a>);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a> = <a class="code hl_function" href="tokens_8h.html#a2fc6d65494ea98e85fda590e7c727f93">parse_tokens</a>(&amp;loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a9b704dd9ec48db6a19721c14de0cb40b">tokens</a>, data);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_function" href="main_8c.html#a3c7725caed2a77513c06468244396d9b">process_ast_and_io</a>(data, loop_data);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    free(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a55b11635c9e942224b6fd0e2b149b250">prompt</a>);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
-</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">   68</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keywordtype">char</span> **envp)</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a>       data;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a>     loop_data;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_function" href="tokens_8h.html#a4e673b7c7d3f45e10377ab9f537b8bf9">print_maxishell</a>();</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_function" href="tokens_8h.html#a1893ac59b9c42732ea38e02f340f98c9">init_ms_data</a>(&amp;data, envp);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_function" href="tokens_8h.html#a41e7a8e4355566996a5984b4a31fb8fe">initialise</a>(argc, argv);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_function" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2">main_loop</a>(&amp;data, &amp;loop_data);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_function" href="tokens_8h.html#af17ea5ac006f519b05a1631127f7aebc">free_ms_data</a>(&amp;data);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_function" href="tokens_8h.html#a16c146658d86ab8fa44a3af94804c5a9">print_ast_root</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        status = <a class="code hl_function" href="execute_8h.html#a18f57d723990aa716495663fbe9e4610">execute_ast</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a>, data);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="main_8c.html#aa58ce868c4a816bbe301da3bd43f1157">status_handler</a>(status, loop_data))</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <a class="code hl_function" href="execute_8h.html#ab311184a8278ddd2630e643a3ad7a8e6">handle_io_fd</a>(data);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            <a class="code hl_function" href="tokens_8h.html#a3f6fbbc61bc797c26b4ece51216fbb67">loop_cleanup</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a5f49d9840e1d54bc67a8cfe91aa9123d">trimmed_input</a>, loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a9b704dd9ec48db6a19721c14de0cb40b">tokens</a>, \</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a55b11635c9e942224b6fd0e2b149b250">prompt</a>, loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    free(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#a55b11635c9e942224b6fd0e2b149b250">prompt</a>);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">   75</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv, <span class="keywordtype">char</span> **envp)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a>   data;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_struct" href="structs__loop__data.html">t_loop_data</a>         loop_data;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="tokens_8h.html#a4e673b7c7d3f45e10377ab9f537b8bf9">print_maxishell</a>();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_function" href="tokens_8h.html#a1893ac59b9c42732ea38e02f340f98c9">init_ms_data</a>(&amp;data, envp);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <a class="code hl_function" href="tokens_8h.html#a41e7a8e4355566996a5984b4a31fb8fe">initialise</a>(argc, argv);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_function" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2">main_loop</a>(&amp;data, &amp;loop_data);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_function" href="tokens_8h.html#af17ea5ac006f519b05a1631127f7aebc">free_ms_data</a>(&amp;data);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
 </div>
 <div class="ttc" id="aexecute_8h_html"><div class="ttname"><a href="execute_8h.html">execute.h</a></div></div>
 <div class="ttc" id="aexecute_8h_html_a18f57d723990aa716495663fbe9e4610"><div class="ttname"><a href="execute_8h.html#a18f57d723990aa716495663fbe9e4610">execute_ast</a></div><div class="ttdeci">int execute_ast(t_ast *node, t_ms_data *data)</div><div class="ttdoc">execute Abstract Syntax Tree</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l00037">execute.c:37</a></div></div>
 <div class="ttc" id="aexecute_8h_html_ab311184a8278ddd2630e643a3ad7a8e6"><div class="ttname"><a href="execute_8h.html#ab311184a8278ddd2630e643a3ad7a8e6">handle_io_fd</a></div><div class="ttdeci">void handle_io_fd(t_ms_data *data)</div><div class="ttdoc">close temporary input/output file descriptors and reset them to -1</div><div class="ttdef"><b>Definition</b> <a href="utils__0_8c_source.html#l00069">utils_0.c:69</a></div></div>
-<div class="ttc" id="amain_8c_html_a3c7725caed2a77513c06468244396d9b"><div class="ttname"><a href="main_8c.html#a3c7725caed2a77513c06468244396d9b">process_ast_and_io</a></div><div class="ttdeci">void process_ast_and_io(t_ms_data *data, t_loop_data *loop_data)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00030">main.c:30</a></div></div>
-<div class="ttc" id="amain_8c_html_a647f21a28344e1d9c643f4115516d7c9"><div class="ttname"><a href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a></div><div class="ttdeci">int main(int argc, char **argv, char **envp)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00068">main.c:68</a></div></div>
+<div class="ttc" id="amain_8c_html_a647f21a28344e1d9c643f4115516d7c9"><div class="ttname"><a href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9">main</a></div><div class="ttdeci">int main(int argc, char **argv, char **envp)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00075">main.c:75</a></div></div>
 <div class="ttc" id="amain_8c_html_aa58ce868c4a816bbe301da3bd43f1157"><div class="ttname"><a href="main_8c.html#aa58ce868c4a816bbe301da3bd43f1157">status_handler</a></div><div class="ttdeci">int status_handler(int status, t_loop_data *loop_data)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00019">main.c:19</a></div></div>
-<div class="ttc" id="amain_8c_html_ae986e796a7fe43365ca3cbb2cd3c5ea2"><div class="ttname"><a href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2">main_loop</a></div><div class="ttdeci">void main_loop(t_ms_data *data, t_loop_data *loop_data)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00044">main.c:44</a></div></div>
+<div class="ttc" id="amain_8c_html_ae986e796a7fe43365ca3cbb2cd3c5ea2"><div class="ttname"><a href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2">main_loop</a></div><div class="ttdeci">void main_loop(t_ms_data *data, t_loop_data *loop_data)</div><div class="ttdef"><b>Definition</b> <a href="main_8c_source.html#l00030">main.c:30</a></div></div>
 <div class="ttc" id="apipe_8h_html"><div class="ttname"><a href="pipe_8h.html">pipe.h</a></div></div>
 <div class="ttc" id="apipe_8h_html_a816f42487cd607fbdb7df660a0d913fc"><div class="ttname"><a href="pipe_8h.html#a816f42487cd607fbdb7df660a0d913fc">WAIT_NEXT_COMMAND</a></div><div class="ttdeci">#define WAIT_NEXT_COMMAND</div><div class="ttdef"><b>Definition</b> <a href="pipe_8h_source.html#l00019">pipe.h:19</a></div></div>
 <div class="ttc" id="ashell_8h_html"><div class="ttname"><a href="shell_8h.html">shell.h</a></div></div>

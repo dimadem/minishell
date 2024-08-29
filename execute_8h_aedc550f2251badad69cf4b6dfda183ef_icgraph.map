@@ -1,47 +1,45 @@
 <map id="ft_perror" name="ft_perror">
-<area shape="rect" id="Node000001" title="return error message and exit" alt="" coords="907,227,977,252"/>
-<area shape="rect" id="Node000002" href="$pipe_8c.html#a49a58fe1a0102ba36ade8eecf94bf283" title="execute pipe when | is found in the command" alt="" coords="624,303,710,328"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="909,263,860,286,782,306,711,315,710,310,781,300,858,281,907,258"/>
-<area shape="rect" id="Node000007" href="$redirect__heredoc_8c.html#a79ffb6362b8f0c6960e7fe77f93d8888" title=" " alt="" coords="294,5,394,31"/>
-<area shape="poly" id="edge22_Node000001_Node000007" title=" " alt="" coords="919,217,892,188,858,163,797,132,733,106,603,66,485,40,394,26,395,21,486,35,605,61,735,101,800,127,861,159,895,184,923,213"/>
-<area shape="rect" id="Node000009" href="$pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="294,304,394,330"/>
-<area shape="poly" id="edge23_Node000001_Node000009" title=" " alt="" coords="892,247,703,268,461,299,395,310,394,305,460,294,702,263,891,242"/>
-<area shape="rect" id="Node000016" href="$execute_8c.html#a1334f84cc9186c9e7ff98820ca188f24" title="execute distribution function" alt="" coords="634,155,700,180"/>
-<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="911,220,886,204,858,191,817,180,774,174,700,169,701,164,775,168,818,175,860,186,889,199,914,215"/>
-<area shape="rect" id="Node000017" href="$execute_8c.html#ab14e094344a3a3583cf1ef7d86ac05f2" title="executes a new process" alt="" coords="760,201,858,227"/>
-<area shape="poly" id="edge24_Node000001_Node000017" title=" " alt="" coords="891,233,858,226,859,221,892,227"/>
-<area shape="rect" id="Node000018" href="$redirect__heredoc_8c.html#a15cf53350eb2877438bf504bd85fc36a" title=" " alt="" coords="758,379,859,404"/>
-<area shape="poly" id="edge26_Node000001_Node000018" title=" " alt="" coords="921,266,861,336,823,380,819,377,857,332,917,263"/>
-<area shape="rect" id="Node000003" href="$pipe__test_8c.html#a449dfac66dec53a70df96bedf109ec59" title=" " alt="" coords="460,353,576,379"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="614,336,559,355,557,350,612,331"/>
-<area shape="rect" id="Node000006" href="$execute_8c.html#a18f57d723990aa716495663fbe9e4610" title="execute Abstract Syntax Tree" alt="" coords="472,155,564,180"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="640,293,531,183,534,179,644,290"/>
-<area shape="rect" id="Node000004" href="$pipe__test_8c.html#a496f242b556b98e53271f0733b16a77e" title=" " alt="" coords="303,353,384,379"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="445,369,385,369,385,364,445,364"/>
-<area shape="rect" id="Node000005" href="$test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="140,353,190,379"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="287,369,190,369,190,364,287,364"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="499,143,462,93,438,67,411,44,392,34,394,29,414,40,442,63,466,90,503,140"/>
-<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="500,195,456,251,414,295,394,306,392,301,411,291,452,248,496,191"/>
-<area shape="rect" id="Node000010" href="$main_8c.html#a3c7725caed2a77513c06468244396d9b" title=" " alt="" coords="275,205,412,231"/>
-<area shape="poly" id="edge11_Node000006_Node000010" title=" " alt="" coords="458,188,391,207,390,202,457,182"/>
-<area shape="rect" id="Node000013" href="$redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="287,255,400,280"/>
-<area shape="poly" id="edge14_Node000006_Node000013" title=" " alt="" coords="501,194,462,227,414,258,402,263,400,259,411,253,459,222,497,190"/>
-<area shape="rect" id="Node000014" href="$redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title="redirection input in context of executing AST" alt="" coords="303,55,384,80"/>
-<area shape="poly" id="edge16_Node000006_Node000014" title=" " alt="" coords="476,148,411,106,359,83,361,78,414,101,479,143"/>
-<area shape="rect" id="Node000015" href="$redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="299,104,388,130"/>
-<area shape="poly" id="edge18_Node000006_Node000015" title=" " alt="" coords="457,161,368,133,370,128,458,156"/>
-<area shape="rect" id="Node000008" href="$redirect__heredoc_8c.html#af7acc822769ea3cda07222328febe924" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="103,155,227,180"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="283,40,277,44,244,71,216,102,177,156,172,153,211,99,240,67,273,40,280,36"/>
-<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="242,165,472,165,472,170,242,170"/>
-<area shape="poly" id="edge10_Node000009_Node000002" title=" " alt="" coords="409,314,624,313,624,318,409,319"/>
-<area shape="rect" id="Node000011" href="$main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="125,205,205,231"/>
-<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="260,221,205,221,205,216,260,216"/>
-<area shape="rect" id="Node000012" href="$main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,205,55,231"/>
-<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="109,221,55,221,55,216,109,216"/>
-<area shape="poly" id="edge15_Node000013_Node000006" title=" " alt="" coords="373,246,411,229,452,204,488,179,491,183,455,208,414,234,375,251"/>
-<area shape="poly" id="edge17_Node000014_Node000006" title=" " alt="" coords="400,71,414,77,471,115,511,152,507,156,468,119,411,82,398,76"/>
-<area shape="poly" id="edge19_Node000015_Node000006" title=" " alt="" coords="404,123,494,152,492,157,402,128"/>
-<area shape="poly" id="edge21_Node000016_Node000006" title=" " alt="" coords="618,170,564,170,564,165,618,165"/>
-<area shape="poly" id="edge25_Node000017_Node000016" title=" " alt="" coords="752,198,700,181,701,176,753,193"/>
-<area shape="poly" id="edge27_Node000018_Node000008" title=" " alt="" coords="758,412,659,440,598,451,531,458,463,458,395,449,331,428,301,413,273,394,253,371,243,347,241,322,244,297,247,271,247,245,241,220,225,195,210,183,214,179,229,191,246,218,252,245,252,271,249,297,247,322,248,346,257,368,277,389,304,408,333,423,397,444,463,453,531,453,597,446,658,434,757,407"/>
+<area shape="rect" id="Node000001" title="return error message and exit" alt="" coords="786,227,855,252"/>
+<area shape="rect" id="Node000002" href="$pipe_8c.html#a49a58fe1a0102ba36ade8eecf94bf283" title="execute pipe when | is found in the command" alt="" coords="502,303,589,328"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="788,263,739,286,660,306,590,315,589,310,659,300,737,281,786,258"/>
+<area shape="rect" id="Node000007" href="$redirect__heredoc_8c.html#a79ffb6362b8f0c6960e7fe77f93d8888" title=" " alt="" coords="184,5,285,31"/>
+<area shape="poly" id="edge21_Node000001_Node000007" title=" " alt="" coords="798,217,770,188,737,163,678,133,616,107,489,67,374,41,285,27,286,21,375,36,491,62,618,102,680,128,739,159,774,184,801,213"/>
+<area shape="rect" id="Node000009" href="$pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="184,304,285,330"/>
+<area shape="poly" id="edge22_Node000001_Node000009" title=" " alt="" coords="771,247,581,267,339,299,285,309,284,304,339,294,581,262,770,242"/>
+<area shape="rect" id="Node000015" href="$execute_8c.html#a1334f84cc9186c9e7ff98820ca188f24" title="execute distribution function" alt="" coords="512,155,579,180"/>
+<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="790,220,765,204,737,191,696,180,653,174,579,169,579,164,653,168,697,175,739,186,767,199,792,215"/>
+<area shape="rect" id="Node000016" href="$execute_8c.html#ab14e094344a3a3583cf1ef7d86ac05f2" title="executes a new process" alt="" coords="638,201,737,227"/>
+<area shape="poly" id="edge23_Node000001_Node000016" title=" " alt="" coords="770,233,736,226,737,221,771,227"/>
+<area shape="rect" id="Node000017" href="$redirect__heredoc_8c.html#a15cf53350eb2877438bf504bd85fc36a" title=" " alt="" coords="637,379,738,404"/>
+<area shape="poly" id="edge25_Node000001_Node000017" title=" " alt="" coords="800,266,740,336,702,380,698,377,736,332,796,263"/>
+<area shape="rect" id="Node000003" href="$pipe__test_8c.html#a449dfac66dec53a70df96bedf109ec59" title=" " alt="" coords="339,353,454,379"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="492,336,437,355,436,350,490,331"/>
+<area shape="rect" id="Node000006" href="$execute_8c.html#a18f57d723990aa716495663fbe9e4610" title="execute Abstract Syntax Tree" alt="" coords="351,155,442,180"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="519,293,409,183,413,179,522,290"/>
+<area shape="rect" id="Node000004" href="$pipe__test_8c.html#a496f242b556b98e53271f0733b16a77e" title=" " alt="" coords="194,353,275,379"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="324,369,275,369,275,364,324,364"/>
+<area shape="rect" id="Node000005" href="$test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="43,353,92,379"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="178,369,92,369,92,364,178,364"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="377,143,340,94,316,67,289,44,272,34,275,29,293,40,320,64,344,90,381,140"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="379,194,334,251,293,295,275,306,272,301,289,291,330,248,374,191"/>
+<area shape="rect" id="Node000010" href="$main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="194,205,275,231"/>
+<area shape="poly" id="edge11_Node000006_Node000010" title=" " alt="" coords="340,188,276,208,274,203,338,183"/>
+<area shape="rect" id="Node000012" href="$redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="178,255,291,280"/>
+<area shape="poly" id="edge13_Node000006_Node000012" title=" " alt="" coords="379,193,341,226,293,257,290,253,337,221,376,189"/>
+<area shape="rect" id="Node000013" href="$redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title="redirection input in context of executing AST" alt="" coords="194,55,275,80"/>
+<area shape="poly" id="edge15_Node000006_Node000013" title=" " alt="" coords="353,148,290,106,246,83,249,79,292,101,356,143"/>
+<area shape="rect" id="Node000014" href="$redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047" title="redirect out &quot;&gt;&quot; to the file output" alt="" coords="190,104,279,130"/>
+<area shape="poly" id="edge17_Node000006_Node000014" title=" " alt="" coords="335,160,257,133,259,128,337,155"/>
+<area shape="rect" id="Node000008" href="$redirect__heredoc_8c.html#af7acc822769ea3cda07222328febe924" title="This function handle &quot;&lt;&lt;&quot; heredoc functionality." alt="" coords="5,155,130,180"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="185,41,179,44,147,72,119,103,80,156,75,152,115,99,144,68,176,40,182,36"/>
+<area shape="poly" id="edge8_Node000008_Node000006" title=" " alt="" coords="145,165,351,165,351,170,145,170"/>
+<area shape="poly" id="edge10_Node000009_Node000002" title=" " alt="" coords="300,314,502,313,502,318,300,319"/>
+<area shape="rect" id="Node000011" href="$main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="43,205,92,231"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="179,221,93,221,93,216,179,216"/>
+<area shape="poly" id="edge14_Node000012_Node000006" title=" " alt="" coords="260,244,290,229,365,179,368,183,292,234,262,249"/>
+<area shape="poly" id="edge16_Node000013_Node000006" title=" " alt="" coords="290,76,292,77,349,116,389,153,386,156,346,120,290,82,288,81"/>
+<area shape="poly" id="edge18_Node000014_Node000006" title=" " alt="" coords="295,124,375,152,373,157,293,129"/>
+<area shape="poly" id="edge20_Node000015_Node000006" title=" " alt="" coords="497,170,443,170,443,165,497,165"/>
+<area shape="poly" id="edge24_Node000016_Node000015" title=" " alt="" coords="630,198,578,181,580,176,632,193"/>
+<area shape="poly" id="edge26_Node000017_Node000008" title=" " alt="" coords="637,412,542,438,484,449,421,455,356,455,292,446,231,427,203,412,176,394,155,371,146,347,144,322,146,297,149,271,149,245,143,220,128,195,113,183,116,179,132,191,148,218,155,245,155,271,152,297,149,322,151,346,160,368,179,389,205,407,233,422,293,441,356,450,420,450,483,444,541,433,635,407"/>
 </map>

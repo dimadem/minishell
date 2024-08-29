@@ -203,7 +203,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   26</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> = -1;</div>
 <div class="line"><span class="lineno">   27</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a57bf5c645546459cd84ea8c616b0029a">std_err</a> = 2;</div>
 <div class="line"><span class="lineno">   28</span>}</div>
-<div class="ttc" id="aenv_8h_html_a2344221e4d3b1327b956157b837a727b"><div class="ttname"><a href="env_8h.html#a2344221e4d3b1327b956157b837a727b">init_env</a></div><div class="ttdeci">void init_env(t_env **data_envp, char **envp)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00024">env.c:24</a></div></div>
+<div class="ttc" id="aenv_8h_html_a2344221e4d3b1327b956157b837a727b"><div class="ttname"><a href="env_8h.html#a2344221e4d3b1327b956157b837a727b">init_env</a></div><div class="ttdeci">void init_env(t_env **data_envp, char **envp)</div><div class="ttdef"><b>Definition</b> <a href="builtins_2env_8c_source.html#l00024">env.c:24</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_a2d3fc4d4c5f229fd50f00571565c3cb7"><div class="ttname"><a href="structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7">s_ms_data::exit_status</a></div><div class="ttdeci">int exit_status</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00030">shell.h:30</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_a4e5d14d7076b0165b2f3f5766b7e7159"><div class="ttname"><a href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">s_ms_data::envp</a></div><div class="ttdeci">t_env * envp</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00024">shell.h:24</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_a57bf5c645546459cd84ea8c616b0029a"><div class="ttname"><a href="structs__ms__data.html#a57bf5c645546459cd84ea8c616b0029a">s_ms_data::std_err</a></div><div class="ttdeci">int std_err</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00028">shell.h:28</a></div></div>
@@ -213,29 +213,19 @@ Functions</h2></td></tr>
 <div class="ttc" id="astructs__ms__data_html_ae3a38c68c37305c2aad70950bd7df1e8"><div class="ttname"><a href="structs__ms__data.html#ae3a38c68c37305c2aad70950bd7df1e8">s_ms_data::local_env</a></div><div class="ttdeci">t_env * local_env</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00025">shell.h:25</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_ae8d3099bc1be72bf3921ffadb2452ddd"><div class="ttname"><a href="structs__ms__data.html#ae8d3099bc1be72bf3921ffadb2452ddd">s_ms_data::std_in</a></div><div class="ttdeci">int std_in</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00026">shell.h:26</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_ms_data::args</a>, <a class="el" href="shell_8h_source.html#l00029">s_ms_data::current_dir</a>, <a class="el" href="shell_8h_source.html#l00024">s_ms_data::envp</a>, <a class="el" href="shell_8h_source.html#l00030">s_ms_data::exit_status</a>, <a class="el" href="env_2env_8c_source.html#l00024">init_env()</a>, <a class="el" href="shell_8h_source.html#l00025">s_ms_data::local_env</a>, <a class="el" href="shell_8h_source.html#l00028">s_ms_data::std_err</a>, <a class="el" href="shell_8h_source.html#l00026">s_ms_data::std_in</a>, and <a class="el" href="shell_8h_source.html#l00027">s_ms_data::std_out</a>.</p>
+<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_ms_data::args</a>, <a class="el" href="shell_8h_source.html#l00029">s_ms_data::current_dir</a>, <a class="el" href="shell_8h_source.html#l00024">s_ms_data::envp</a>, <a class="el" href="shell_8h_source.html#l00030">s_ms_data::exit_status</a>, <a class="el" href="builtins_2env_8c_source.html#l00024">init_env()</a>, <a class="el" href="shell_8h_source.html#l00025">s_ms_data::local_env</a>, <a class="el" href="shell_8h_source.html#l00028">s_ms_data::std_err</a>, <a class="el" href="shell_8h_source.html#l00026">s_ms_data::std_in</a>, and <a class="el" href="shell_8h_source.html#l00027">s_ms_data::std_out</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00068">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00075">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="initialise_8c_a1893ac59b9c42732ea38e02f340f98c9_cgraph.png" border="0" usemap="#ainitialise_8c_a1893ac59b9c42732ea38e02f340f98c9_cgraph" alt=""/></div>
 <map name="ainitialise_8c_a1893ac59b9c42732ea38e02f340f98c9_cgraph" id="ainitialise_8c_a1893ac59b9c42732ea38e02f340f98c9_cgraph">
-<area shape="rect" title=" " alt="" coords="5,55,101,80"/>
-<area shape="rect" href="env_2env_8c.html#a2344221e4d3b1327b956157b837a727b" title=" " alt="" coords="149,55,215,80"/>
-<area shape="poly" title=" " alt="" coords="101,65,133,65,133,70,101,70"/>
-<area shape="rect" href="env_2env_8c.html#aa2e361e75c8c044d588ec5c07b560659" title=" " alt="" coords="263,55,368,80"/>
-<area shape="poly" title=" " alt="" coords="216,65,247,65,247,70,216,70"/>
-<area shape="rect" href="env_2utils_8c.html#a67c3dca975ac3373851ded9534701bf5" title=" " alt="" coords="416,5,496,31"/>
-<area shape="poly" title=" " alt="" coords="354,52,402,34,404,39,356,57"/>
-<area shape="rect" href="ft__strchr_8c.html#aa6d0c2d180f32ee585485e1a1ce3d55d" title=" " alt="" coords="421,55,491,80"/>
-<area shape="poly" title=" " alt="" coords="369,65,406,65,406,70,369,70"/>
-<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="420,104,492,130"/>
-<area shape="poly" title=" " alt="" coords="356,78,406,97,404,102,354,83"/>
-<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="544,79,618,104"/>
-<area shape="poly" title=" " alt="" coords="492,107,528,99,529,105,493,112"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="547,128,615,154"/>
-<area shape="poly" title=" " alt="" coords="493,121,532,129,531,134,492,126"/>
+<area shape="rect" title=" " alt="" coords="5,5,101,31"/>
+<area shape="rect" href="env_2env_8c.html#a2344221e4d3b1327b956157b837a727b" title=" " alt="" coords="149,5,215,31"/>
+<area shape="poly" title=" " alt="" coords="101,16,133,16,133,21,101,21"/>
+<area shape="rect" href="builtins_2env_8c.html#aa2e361e75c8c044d588ec5c07b560659" title=" " alt="" coords="263,5,368,31"/>
+<area shape="poly" title=" " alt="" coords="216,16,247,16,247,21,216,21"/>
 </map>
 </div>
 <div class="dynheader">
@@ -291,7 +281,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__printf_8c_source.html#l00037">ft_printf()</a>, and <a class="el" href="tokens_8h_source.html#l00027">HISTORY_PATH</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00068">main()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00075">main()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

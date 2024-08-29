@@ -1,5 +1,9 @@
 var builtins_2env_8c =
 [
-    [ "builtin_env", "builtins_2env_8c.html#ab5d4a1b659839e18383cc87ef060ace2", null ],
-    [ "print_env_stack", "builtins_2env_8c.html#a5b5d29d406a0fad6272b33c03b7793b4", null ]
+    [ "add_env_node", "builtins_2env_8c.html#aa2e361e75c8c044d588ec5c07b560659", null ],
+    [ "get_env", "builtins_2env_8c.html#a41133e0ba7230727a51eedce713a225c", null ],
+    [ "init_env", "builtins_2env_8c.html#a2344221e4d3b1327b956157b837a727b", null ],
+    [ "is_valid_env_var_name", "builtins_2env_8c.html#acd814e2468240af51b636655e79b7637", null ],
+    [ "set_env", "builtins_2env_8c.html#a194b2552273340441e8b481b4ce5202c", null ],
+    [ "unset_env", "builtins_2env_8c.html#a0854396366b7055e0df29e25f8e520d3", null ]
 ];

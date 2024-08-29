@@ -199,80 +199,70 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00054">54</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
-<div class="line"><span class="lineno">   57</span>    (*tokens)-&gt;next = next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
-<div class="line"><span class="lineno">   58</span>    redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = <a class="code hl_function" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c">manage_redirs</a>(tokens, data);</div>
-<div class="line"><span class="lineno">   59</span>    redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = <a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>((next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>));</div>
-<div class="line"><span class="lineno">   60</span>    free(next_token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
-<div class="line"><span class="lineno">   61</span>    free(next_token);</div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">return</span> (redirect_node);</div>
-<div class="line"><span class="lineno">   63</span>}</div>
-<div class="ttc" id="aparser_8c_html_a665af377c02015d59f668e4b2b2434bf"><div class="ttname"><a href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a></div><div class="ttdeci">t_ast * create_redir_node(t_token *token)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00022">parser.c:22</a></div></div>
-<div class="ttc" id="aparser_8c_html_a9efa4d57dd89fa07cc567b31639ae20c"><div class="ttname"><a href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c">manage_redirs</a></div><div class="ttdeci">t_ast * manage_redirs(t_token **tokens, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00065">parser.c:65</a></div></div>
+<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00053">53</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>{</div>
+<div class="line"><span class="lineno">   55</span>    (*tokens)-&gt;next = next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
+<div class="line"><span class="lineno">   56</span>    redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = <a class="code hl_function" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c">manage_redirs</a>(tokens, data);</div>
+<div class="line"><span class="lineno">   57</span>    redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = <a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>((next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>));</div>
+<div class="line"><span class="lineno">   58</span>    free(next_token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
+<div class="line"><span class="lineno">   59</span>    free(next_token);</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> (redirect_node);</div>
+<div class="line"><span class="lineno">   61</span>}</div>
+<div class="ttc" id="aparser_8c_html_a665af377c02015d59f668e4b2b2434bf"><div class="ttname"><a href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a></div><div class="ttdeci">t_ast * create_redir_node(t_token *token)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00021">parser.c:21</a></div></div>
+<div class="ttc" id="aparser_8c_html_a9efa4d57dd89fa07cc567b31639ae20c"><div class="ttname"><a href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c">manage_redirs</a></div><div class="ttdeci">t_ast * manage_redirs(t_token **tokens, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00063">parser.c:63</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac2c9513b20e9351e45d9bc6361095f7b"><div class="ttname"><a href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">s_ast::right</a></div><div class="ttdeci">struct s_ast * right</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00053">tokens.h:53</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac3be51aa6a7ae13bd16b6ad0c7ac843c"><div class="ttname"><a href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">s_ast::left</a></div><div class="ttdeci">struct s_ast * left</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00052">tokens.h:52</a></div></div>
 <div class="ttc" id="astructs__token_html_a5dae434205818bfc83a61809d4a34a29"><div class="ttname"><a href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">s_token::next</a></div><div class="ttdeci">struct s_token * next</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00044">tokens.h:44</a></div></div>
 <div class="ttc" id="astructs__token_html_afe30f6c413b34095d2a562e112a52e9a"><div class="ttname"><a href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">s_token::data</a></div><div class="ttdeci">char * data</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00043">tokens.h:43</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parser_8c_source.html#l00022">create_redir_node()</a>, <a class="el" href="tokens_8h_source.html#l00043">s_token::data</a>, <a class="el" href="tokens_8h_source.html#l00052">s_ast::left</a>, <a class="el" href="parser_8c_source.html#l00065">manage_redirs()</a>, <a class="el" href="tokens_8h_source.html#l00044">s_token::next</a>, and <a class="el" href="tokens_8h_source.html#l00053">s_ast::right</a>.</p>
+<p class="reference">References <a class="el" href="parser_8c_source.html#l00021">create_redir_node()</a>, <a class="el" href="tokens_8h_source.html#l00043">s_token::data</a>, <a class="el" href="tokens_8h_source.html#l00052">s_ast::left</a>, <a class="el" href="parser_8c_source.html#l00063">manage_redirs()</a>, <a class="el" href="tokens_8h_source.html#l00044">s_token::next</a>, and <a class="el" href="tokens_8h_source.html#l00053">s_ast::right</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8c_a06ee584200ebd42fe6ba6690cf8f42b3_cgraph.png" border="0" usemap="#aparser_8c_a06ee584200ebd42fe6ba6690cf8f42b3_cgraph" alt=""/></div>
 <map name="aparser_8c_a06ee584200ebd42fe6ba6690cf8f42b3_cgraph" id="aparser_8c_a06ee584200ebd42fe6ba6690cf8f42b3_cgraph">
-<area shape="rect" title=" " alt="" coords="5,259,76,284"/>
-<area shape="rect" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf" title=" " alt="" coords="500,283,624,308"/>
-<area shape="poly" title=" " alt="" coords="77,275,167,288,278,300,347,302,416,300,484,297,484,302,416,305,347,307,278,305,167,293,76,280"/>
-<area shape="rect" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="124,183,230,208"/>
-<area shape="poly" title=" " alt="" coords="64,256,138,214,140,219,66,261"/>
-<area shape="poly" title=" " alt="" coords="193,207,229,239,253,255,279,268,331,283,385,292,485,297,484,302,384,297,330,288,277,273,251,260,226,243,189,211"/>
-<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="303,183,392,208"/>
-<area shape="poly" title=" " alt="" coords="230,201,287,201,287,207,230,207"/>
-<area shape="rect" href="parser__helpers_8c.html#a57973a9791a885be52c3b8b13cdf327e" title=" " alt="" coords="509,157,615,183"/>
-<area shape="poly" title=" " alt="" coords="221,179,278,168,392,161,494,163,494,168,392,166,278,173,222,185"/>
-<area shape="rect" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd" title=" " alt="" coords="298,232,396,258"/>
-<area shape="poly" title=" " alt="" coords="225,206,286,225,285,230,223,212"/>
-<area shape="rect" href="parser__helpers_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad" title=" " alt="" coords="278,81,416,107"/>
-<area shape="poly" title=" " alt="" coords="194,180,277,124,300,112,302,116,279,128,197,184"/>
-<area shape="poly" title=" " alt="" coords="390,206,417,217,526,272,523,277,415,222,388,211"/>
-<area shape="poly" title=" " alt="" coords="302,190,245,189,245,184,302,185"/>
-<area shape="poly" title=" " alt="" coords="392,188,493,176,494,181,393,193"/>
-<area shape="poly" title=" " alt="" coords="378,105,465,144,495,153,493,158,463,149,375,110"/>
-<area shape="rect" href="parser__helpers_8c.html#a4f595528e4e305887fda33e53258d602" title=" " alt="" coords="530,7,594,32"/>
-<area shape="poly" title=" " alt="" coords="383,78,463,49,515,32,516,37,465,54,385,83"/>
-<area shape="rect" href="parser__helper__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1" title=" " alt="" coords="464,108,660,134"/>
-<area shape="poly" title=" " alt="" coords="417,100,449,104,449,109,416,105"/>
-<area shape="rect" href="parser__helpers_8c.html#ab5f23ff7ab59a241fa7476e6fca458cf" title=" " alt="" coords="708,5,843,31"/>
-<area shape="poly" title=" " alt="" coords="416,82,659,42,705,32,706,38,660,47,417,87"/>
-<area shape="rect" href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0" title=" " alt="" coords="718,183,833,208"/>
-<area shape="poly" title=" " alt="" coords="625,132,661,142,735,173,733,178,659,147,623,137"/>
-<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="1085,108,1157,134"/>
-<area shape="poly" title=" " alt="" coords="660,116,831,113,1027,114,1069,116,1069,121,1027,119,831,118,660,121"/>
-<area shape="rect" href="parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b" title=" " alt="" coords="891,359,1027,384"/>
-<area shape="poly" title=" " alt="" coords="642,132,661,143,679,161,688,180,695,199,710,219,755,260,795,286,892,337,916,349,913,354,890,342,792,291,752,264,706,223,691,202,683,182,675,164,658,147,639,137"/>
-<area shape="rect" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38" title=" " alt="" coords="931,157,988,183"/>
-<area shape="poly" title=" " alt="" coords="833,185,915,174,915,179,834,190"/>
-<area shape="poly" title=" " alt="" coords="800,180,841,160,890,142,985,125,1069,119,1069,124,985,131,892,147,843,165,802,185"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="1218,333,1286,359"/>
-<area shape="poly" title=" " alt="" coords="798,207,840,232,892,257,976,286,1061,308,1203,336,1202,342,1060,313,974,291,890,262,838,237,795,211"/>
-<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="1083,232,1159,258"/>
-<area shape="poly" title=" " alt="" coords="801,206,842,226,892,242,937,249,984,251,1067,248,1068,253,984,257,937,254,890,247,840,231,799,211"/>
-<area shape="rect" href="env_2env_8c.html#a41133e0ba7230727a51eedce713a225c" title=" " alt="" coords="926,207,993,232"/>
-<area shape="poly" title=" " alt="" coords="834,200,910,211,910,216,833,206"/>
-<area shape="rect" href="ft__itoa_8c.html#a01efab229ef959ceedc93dfa15b56689" title=" " alt="" coords="1075,157,1167,183"/>
-<area shape="poly" title=" " alt="" coords="988,167,1060,167,1060,173,988,173"/>
-<area shape="poly" title=" " alt="" coords="987,159,1069,134,1071,139,989,164"/>
-<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="1215,196,1289,222"/>
-<area shape="poly" title=" " alt="" coords="1150,132,1168,143,1225,184,1222,188,1165,147,1147,136"/>
-<area shape="poly" title=" " alt="" coords="1155,132,1169,143,1189,175,1210,223,1244,318,1239,320,1205,225,1184,178,1165,147,1152,136"/>
-<area shape="poly" title=" " alt="" coords="994,222,1068,234,1067,239,993,227"/>
-<area shape="poly" title=" " alt="" coords="999,382,1035,392,1077,399,1122,401,1166,394,1195,382,1221,366,1224,371,1197,387,1167,399,1122,406,1077,404,1034,397,998,388"/>
-<area shape="rect" href="ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="1081,359,1161,384"/>
-<area shape="poly" title=" " alt="" coords="1028,369,1066,369,1066,374,1028,374"/>
-<area shape="poly" title=" " alt="" coords="1131,357,1228,233,1233,236,1135,360"/>
-<area shape="poly" title=" " alt="" coords="1161,361,1202,353,1203,358,1162,366"/>
-<area shape="poly" title=" " alt="" coords="844,15,933,23,982,32,1028,48,1067,70,1098,95,1095,100,1064,74,1026,53,980,38,932,28,843,20"/>
+<area shape="rect" title=" " alt="" coords="5,5,76,31"/>
+<area shape="rect" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf" title=" " alt="" coords="500,5,624,31"/>
+<area shape="poly" title=" " alt="" coords="76,15,416,14,484,15,484,20,416,19,76,21"/>
+<area shape="rect" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="124,56,230,82"/>
+<area shape="poly" title=" " alt="" coords="77,29,127,48,125,53,75,34"/>
+<area shape="poly" title=" " alt="" coords="224,53,278,41,386,27,484,19,485,24,386,32,278,46,225,58"/>
+<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="303,56,392,82"/>
+<area shape="poly" title=" " alt="" coords="230,75,287,75,287,80,230,80"/>
+<area shape="rect" href="parser__helpers_8c.html#a57973a9791a885be52c3b8b13cdf327e" title=" " alt="" coords="509,83,615,108"/>
+<area shape="poly" title=" " alt="" coords="222,80,278,92,392,99,494,97,494,102,392,104,278,97,221,85"/>
+<area shape="rect" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd" title=" " alt="" coords="298,207,396,232"/>
+<area shape="poly" title=" " alt="" coords="187,81,222,135,249,166,280,193,286,197,283,202,276,198,245,170,218,138,183,83"/>
+<area shape="rect" href="parser__helpers_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad" title=" " alt="" coords="278,157,416,183"/>
+<area shape="poly" title=" " alt="" coords="197,80,279,136,302,148,300,153,277,140,194,84"/>
+<area shape="poly" title=" " alt="" coords="392,56,489,33,490,38,393,61"/>
+<area shape="poly" title=" " alt="" coords="302,63,245,63,245,57,302,58"/>
+<area shape="poly" title=" " alt="" coords="393,72,494,84,493,90,392,77"/>
+<area shape="poly" title=" " alt="" coords="375,154,463,117,493,108,495,113,465,122,377,159"/>
+<area shape="rect" href="parser__helpers_8c.html#a4f595528e4e305887fda33e53258d602" title=" " alt="" coords="530,132,594,158"/>
+<area shape="poly" title=" " alt="" coords="416,159,515,148,515,153,417,165"/>
+<area shape="rect" href="parser__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1" title=" " alt="" coords="464,181,660,207"/>
+<area shape="poly" title=" " alt="" coords="417,175,449,179,449,184,416,181"/>
+<area shape="rect" href="parser__helpers_8c.html#ab5f23ff7ab59a241fa7476e6fca458cf" title=" " alt="" coords="494,256,630,282"/>
+<area shape="poly" title=" " alt="" coords="390,181,417,192,466,217,522,246,520,251,463,222,415,197,388,186"/>
+<area shape="rect" href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0" title=" " alt="" coords="718,55,834,80"/>
+<area shape="poly" title=" " alt="" coords="639,178,658,168,674,152,682,135,690,117,706,98,723,86,726,90,709,101,695,119,687,137,678,155,661,172,641,183"/>
+<area shape="rect" href="parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b" title=" " alt="" coords="708,156,844,182"/>
+<area shape="poly" title=" " alt="" coords="660,180,692,176,692,181,661,185"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="1022,169,1091,195"/>
+<area shape="poly" title=" " alt="" coords="626,178,659,168,682,153,707,141,748,133,789,130,872,134,948,148,1008,164,1007,169,947,153,871,140,789,135,748,138,709,146,685,158,661,173,628,183"/>
+<area shape="rect" href="ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="892,207,971,232"/>
+<area shape="poly" title=" " alt="" coords="660,198,877,213,876,218,660,204"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="896,256,968,282"/>
+<area shape="poly" title=" " alt="" coords="630,205,881,256,880,261,629,210"/>
+<area shape="poly" title=" " alt="" coords="845,169,1007,177,1007,183,844,175"/>
+<area shape="poly" title=" " alt="" coords="819,180,878,199,876,204,817,185"/>
+<area shape="poly" title=" " alt="" coords="971,205,1007,194,1008,199,973,210"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="1019,232,1094,258"/>
+<area shape="poly" title=" " alt="" coords="973,225,1005,232,1004,237,971,230"/>
+<area shape="poly" title=" " alt="" coords="954,253,970,243,1025,202,1028,207,973,247,957,258"/>
+<area shape="poly" title=" " alt="" coords="968,259,1004,252,1005,257,969,265"/>
+<area shape="poly" title=" " alt="" coords="630,278,731,288,788,290,844,286,880,280,881,285,844,291,788,295,731,294,630,283"/>
 </map>
 </div>
 
@@ -294,27 +284,27 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00022">22</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
-<div class="line"><span class="lineno">   24</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>           *node;</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    node = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__ast.html">t_ast</a>));</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">if</span> (!node)</div>
-<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   29</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441">type</a> = token-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a>;</div>
-<div class="line"><span class="lineno">   30</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a> = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *) * 2);</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (!node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>)</div>
-<div class="line"><span class="lineno">   32</span>    {</div>
-<div class="line"><span class="lineno">   33</span>        free(node);</div>
-<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
-<div class="line"><span class="lineno">   36</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[0] = token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>;</div>
-<div class="line"><span class="lineno">   37</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[1] = NULL;</div>
-<div class="line"><span class="lineno">   38</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = NULL;</div>
-<div class="line"><span class="lineno">   39</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = NULL;</div>
-<div class="line"><span class="lineno">   40</span>    free(token);</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> (node);</div>
-<div class="line"><span class="lineno">   42</span>}</div>
+<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00021">21</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
+<div class="line"><span class="lineno">   23</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>           *node;</div>
+<div class="line"><span class="lineno">   24</span> </div>
+<div class="line"><span class="lineno">   25</span>    node = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__ast.html">t_ast</a>));</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (!node)</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   28</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441">type</a> = token-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a>;</div>
+<div class="line"><span class="lineno">   29</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a> = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *) * 2);</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span> (!node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>)</div>
+<div class="line"><span class="lineno">   31</span>    {</div>
+<div class="line"><span class="lineno">   32</span>        free(node);</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[0] = token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>;</div>
+<div class="line"><span class="lineno">   36</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[1] = NULL;</div>
+<div class="line"><span class="lineno">   37</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = NULL;</div>
+<div class="line"><span class="lineno">   38</span>    node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = NULL;</div>
+<div class="line"><span class="lineno">   39</span>    free(token);</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> (node);</div>
+<div class="line"><span class="lineno">   41</span>}</div>
 <div class="ttc" id="astructs__ast_html"><div class="ttname"><a href="structs__ast.html">s_ast</a></div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00048">tokens.h:49</a></div></div>
 <div class="ttc" id="astructs__ast_html_ab62d177d86a1908cf5bbdb5cf6e978f8"><div class="ttname"><a href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">s_ast::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00051">tokens.h:51</a></div></div>
 <div class="ttc" id="astructs__ast_html_ad1cd2bc8f77d3bbac46e3fdddff8b441"><div class="ttname"><a href="structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441">s_ast::type</a></div><div class="ttdeci">t_token_type type</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00050">tokens.h:50</a></div></div>
@@ -322,31 +312,27 @@ Here is the call graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="tokens_8h_source.html#l00051">s_ast::args</a>, <a class="el" href="tokens_8h_source.html#l00043">s_token::data</a>, <a class="el" href="tokens_8h_source.html#l00052">s_ast::left</a>, <a class="el" href="tokens_8h_source.html#l00053">s_ast::right</a>, <a class="el" href="tokens_8h_source.html#l00042">s_token::type</a>, and <a class="el" href="tokens_8h_source.html#l00050">s_ast::type</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="parser_8c_source.html#l00054">clr_node()</a>, <a class="el" href="parser__helpers_8c_source.html#l00035">create_redir()</a>, and <a class="el" href="parser_8c_source.html#l00065">manage_redirs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="parser_8c_source.html#l00053">clr_node()</a>, <a class="el" href="parser__helpers_8c_source.html#l00035">create_redir()</a>, and <a class="el" href="parser_8c_source.html#l00063">manage_redirs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8c_a665af377c02015d59f668e4b2b2434bf_icgraph.png" border="0" usemap="#aparser_8c_a665af377c02015d59f668e4b2b2434bf_icgraph" alt=""/></div>
 <map name="aparser_8c_a665af377c02015d59f668e4b2b2434bf_icgraph" id="aparser_8c_a665af377c02015d59f668e4b2b2434bf_icgraph">
-<area shape="rect" title=" " alt="" coords="816,56,941,82"/>
-<area shape="rect" href="parser_8c.html#a06ee584200ebd42fe6ba6690cf8f42b3" title=" " alt="" coords="392,5,463,31"/>
-<area shape="poly" title=" " alt="" coords="811,55,768,46,597,28,463,22,463,16,598,23,769,41,813,49"/>
-<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="679,56,768,82"/>
-<area shape="poly" title=" " alt="" coords="800,72,769,72,769,66,800,66"/>
-<area shape="rect" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="525,56,631,82"/>
-<area shape="poly" title=" " alt="" coords="816,88,769,97,724,100,679,97,622,85,623,80,679,92,724,95,768,92,815,83"/>
-<area shape="poly" title=" " alt="" coords="663,80,631,80,631,75,663,75"/>
-<area shape="poly" title=" " alt="" coords="522,53,462,32,464,27,524,48"/>
-<area shape="poly" title=" " alt="" coords="646,57,679,58,679,63,646,63"/>
-<area shape="rect" href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81" title=" " alt="" coords="378,79,477,104"/>
-<area shape="poly" title=" " alt="" coords="509,82,478,87,477,81,509,77"/>
-<area shape="poly" title=" " alt="" coords="452,66,444,60,427,57,412,59,404,64,403,70,407,77,402,80,397,70,400,61,411,54,428,52,446,55,455,61"/>
-<area shape="rect" href="parser__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="231,79,330,104"/>
-<area shape="poly" title=" " alt="" coords="363,94,331,94,331,89,363,89"/>
-<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="103,79,183,104"/>
-<area shape="poly" title=" " alt="" coords="215,94,184,94,184,89,215,89"/>
-<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,79,55,104"/>
-<area shape="poly" title=" " alt="" coords="87,94,55,94,55,89,87,89"/>
+<area shape="rect" title=" " alt="" coords="591,56,715,82"/>
+<area shape="rect" href="parser_8c.html#a06ee584200ebd42fe6ba6690cf8f42b3" title=" " alt="" coords="167,5,237,31"/>
+<area shape="poly" title=" " alt="" coords="586,55,542,46,371,28,237,22,238,16,372,23,543,41,587,49"/>
+<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="453,56,543,82"/>
+<area shape="poly" title=" " alt="" coords="575,72,543,72,543,66,575,66"/>
+<area shape="rect" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="299,56,405,82"/>
+<area shape="poly" title=" " alt="" coords="590,88,543,97,498,100,453,97,396,85,397,80,454,92,498,95,542,92,589,83"/>
+<area shape="poly" title=" " alt="" coords="438,80,406,80,406,75,438,75"/>
+<area shape="poly" title=" " alt="" coords="297,53,237,32,238,27,298,48"/>
+<area shape="poly" title=" " alt="" coords="421,57,453,58,453,63,421,63"/>
+<area shape="rect" href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81" title=" " alt="" coords="153,79,251,104"/>
+<area shape="poly" title=" " alt="" coords="284,82,252,87,251,81,283,77"/>
+<area shape="poly" title=" " alt="" coords="226,66,218,60,202,57,187,59,179,64,177,70,181,77,176,80,172,70,175,61,185,54,202,52,220,55,229,61"/>
+<area shape="rect" href="parser__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="5,79,105,104"/>
+<area shape="poly" title=" " alt="" coords="137,94,105,94,105,89,137,89"/>
 </map>
 </div>
 
@@ -368,15 +354,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00044">44</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   45</span>{</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452">REDIR_IN</a></div>
-<div class="line"><span class="lineno">   47</span>        || tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01">REDIR_OUT</a></div>
-<div class="line"><span class="lineno">   48</span>        || tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464">REDIR_APPEND</a></div>
-<div class="line"><span class="lineno">   49</span>        || tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7">REDIR_HEREDOC</a>)</div>
-<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> (1);</div>
-<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><span class="lineno">   52</span>}</div>
+<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00043">43</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">if</span> (tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452">REDIR_IN</a></div>
+<div class="line"><span class="lineno">   46</span>        || tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01">REDIR_OUT</a></div>
+<div class="line"><span class="lineno">   47</span>        || tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464">REDIR_APPEND</a></div>
+<div class="line"><span class="lineno">   48</span>        || tokens-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7">REDIR_HEREDOC</a>)</div>
+<div class="line"><span class="lineno">   49</span>        <span class="keywordflow">return</span> (1);</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   51</span>}</div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452">REDIR_IN</a></div><div class="ttdeci">@ REDIR_IN</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00034">tokens.h:34</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7">REDIR_HEREDOC</a></div><div class="ttdeci">@ REDIR_HEREDOC</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00038">tokens.h:37</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01">REDIR_OUT</a></div><div class="ttdeci">@ REDIR_OUT</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00035">tokens.h:35</a></div></div>
@@ -384,29 +370,25 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="tokens_8h_source.html#l00036">REDIR_APPEND</a>, <a class="el" href="tokens_8h_source.html#l00037">REDIR_HEREDOC</a>, <a class="el" href="tokens_8h_source.html#l00034">REDIR_IN</a>, <a class="el" href="tokens_8h_source.html#l00035">REDIR_OUT</a>, and <a class="el" href="tokens_8h_source.html#l00042">s_token::type</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="parser_8c_source.html#l00065">manage_redirs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="parser_8c_source.html#l00063">manage_redirs()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8c_a963f3ae14f7e2f5334b13c7a67deabbd_icgraph.png" border="0" usemap="#aparser_8c_a963f3ae14f7e2f5334b13c7a67deabbd_icgraph" alt=""/></div>
 <map name="aparser_8c_a963f3ae14f7e2f5334b13c7a67deabbd_icgraph" id="aparser_8c_a963f3ae14f7e2f5334b13c7a67deabbd_icgraph">
-<area shape="rect" title=" " alt="" coords="679,55,777,80"/>
-<area shape="rect" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="525,55,631,80"/>
-<area shape="poly" title=" " alt="" coords="663,70,631,70,631,65,663,65"/>
-<area shape="rect" href="parser_8c.html#a06ee584200ebd42fe6ba6690cf8f42b3" title=" " alt="" coords="392,5,463,31"/>
-<area shape="poly" title=" " alt="" coords="521,52,462,32,464,27,522,47"/>
-<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="383,55,472,80"/>
-<area shape="poly" title=" " alt="" coords="509,79,472,78,472,73,509,74"/>
-<area shape="rect" href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81" title=" " alt="" coords="378,128,477,154"/>
-<area shape="poly" title=" " alt="" coords="537,90,457,130,455,125,535,85"/>
-<area shape="poly" title=" " alt="" coords="487,56,524,56,524,62,487,61"/>
-<area shape="poly" title=" " alt="" coords="452,115,444,109,427,107,412,109,404,113,403,119,407,126,402,129,397,119,400,110,411,104,428,101,446,104,455,111"/>
-<area shape="rect" href="parser__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="231,128,330,154"/>
-<area shape="poly" title=" " alt="" coords="363,144,331,144,331,138,363,138"/>
-<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="103,128,183,154"/>
-<area shape="poly" title=" " alt="" coords="215,144,184,144,184,138,215,138"/>
-<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,128,55,154"/>
-<area shape="poly" title=" " alt="" coords="87,144,55,144,55,138,87,138"/>
+<area shape="rect" title=" " alt="" coords="453,55,552,80"/>
+<area shape="rect" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="299,55,405,80"/>
+<area shape="poly" title=" " alt="" coords="437,70,406,70,406,65,437,65"/>
+<area shape="rect" href="parser_8c.html#a06ee584200ebd42fe6ba6690cf8f42b3" title=" " alt="" coords="167,5,237,31"/>
+<area shape="poly" title=" " alt="" coords="295,52,237,32,238,27,297,47"/>
+<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="157,55,247,80"/>
+<area shape="poly" title=" " alt="" coords="283,79,247,78,247,73,283,74"/>
+<area shape="rect" href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81" title=" " alt="" coords="153,128,251,154"/>
+<area shape="poly" title=" " alt="" coords="312,90,231,130,229,125,309,85"/>
+<area shape="poly" title=" " alt="" coords="262,56,298,56,298,62,262,61"/>
+<area shape="poly" title=" " alt="" coords="226,115,218,109,202,107,187,109,179,113,177,119,181,126,176,129,172,119,175,110,185,104,202,101,220,104,229,111"/>
+<area shape="rect" href="parser__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="5,128,105,154"/>
+<area shape="poly" title=" " alt="" coords="137,144,105,144,105,138,137,138"/>
 </map>
 </div>
 
@@ -438,99 +420,89 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00092">92</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>{</div>
-<div class="line"><span class="lineno">   94</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *tmp;</div>
-<div class="line"><span class="lineno">   95</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *next_token;</div>
-<div class="line"><span class="lineno">   96</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>       *pipe_node;</div>
-<div class="line"><span class="lineno">   97</span> </div>
-<div class="line"><span class="lineno">   98</span>    tmp = *tokens;</div>
-<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">while</span> (*tokens &amp;&amp; (*tokens)-&gt;next)</div>
-<div class="line"><span class="lineno">  100</span>    {</div>
-<div class="line"><span class="lineno">  101</span>        next_token = (*tokens)-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
-<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">if</span> ((*tokens)-&gt;next-&gt;type == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117">PIPE</a>)</div>
-<div class="line"><span class="lineno">  103</span>        {</div>
-<div class="line"><span class="lineno">  104</span>            pipe_node = <a class="code hl_function" href="tokens_8h.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a>((*tokens)-&gt;next-&gt;type);</div>
-<div class="line"><span class="lineno">  105</span>            (*tokens)-&gt;next = NULL;</div>
-<div class="line"><span class="lineno">  106</span>            pipe_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = <a class="code hl_function" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c">manage_redirs</a>(&amp;tmp, data);</div>
-<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">if</span> (next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a> == NULL)</div>
-<div class="line"><span class="lineno">  108</span>                pipe_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = NULL;</div>
-<div class="line"><span class="lineno">  109</span>            <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  110</span>                pipe_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = <a class="code hl_function" href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81">manage_pipe</a>(&amp;(next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>), data);</div>
-<div class="line"><span class="lineno">  111</span>            free(next_token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
-<div class="line"><span class="lineno">  112</span>            free(next_token);</div>
-<div class="line"><span class="lineno">  113</span>            <span class="keywordflow">return</span> (pipe_node);</div>
-<div class="line"><span class="lineno">  114</span>        }</div>
-<div class="line"><span class="lineno">  115</span>        *tokens = next_token;</div>
-<div class="line"><span class="lineno">  116</span>    }</div>
-<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c">manage_redirs</a>(&amp;tmp, data));</div>
-<div class="line"><span class="lineno">  118</span>}</div>
-<div class="ttc" id="aparser_8c_html_a04b3327a8c7b3dd801cc78e14a574a81"><div class="ttname"><a href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81">manage_pipe</a></div><div class="ttdeci">t_ast * manage_pipe(t_token **tokens, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00092">parser.c:92</a></div></div>
+<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00090">90</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>{</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *tmp;</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *next_token;</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>       *pipe_node;</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    tmp = *tokens;</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">while</span> (*tokens &amp;&amp; (*tokens)-&gt;next)</div>
+<div class="line"><span class="lineno">   98</span>    {</div>
+<div class="line"><span class="lineno">   99</span>        next_token = (*tokens)-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
+<div class="line"><span class="lineno">  100</span>        <span class="keywordflow">if</span> ((*tokens)-&gt;next-&gt;type == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117">PIPE</a>)</div>
+<div class="line"><span class="lineno">  101</span>        {</div>
+<div class="line"><span class="lineno">  102</span>            pipe_node = <a class="code hl_function" href="tokens_8h.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a>((*tokens)-&gt;next-&gt;type);</div>
+<div class="line"><span class="lineno">  103</span>            (*tokens)-&gt;next = NULL;</div>
+<div class="line"><span class="lineno">  104</span>            pipe_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = <a class="code hl_function" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c">manage_redirs</a>(&amp;tmp, data);</div>
+<div class="line"><span class="lineno">  105</span>            <span class="keywordflow">if</span> (next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a> == NULL)</div>
+<div class="line"><span class="lineno">  106</span>                pipe_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = NULL;</div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  108</span>                pipe_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = <a class="code hl_function" href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81">manage_pipe</a>(&amp;(next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>), data);</div>
+<div class="line"><span class="lineno">  109</span>            free(next_token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
+<div class="line"><span class="lineno">  110</span>            free(next_token);</div>
+<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">return</span> (pipe_node);</div>
+<div class="line"><span class="lineno">  112</span>        }</div>
+<div class="line"><span class="lineno">  113</span>        *tokens = next_token;</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
+<div class="line"><span class="lineno">  115</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c">manage_redirs</a>(&amp;tmp, data));</div>
+<div class="line"><span class="lineno">  116</span>}</div>
+<div class="ttc" id="aparser_8c_html_a04b3327a8c7b3dd801cc78e14a574a81"><div class="ttname"><a href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81">manage_pipe</a></div><div class="ttdeci">t_ast * manage_pipe(t_token **tokens, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00090">parser.c:90</a></div></div>
 <div class="ttc" id="astructs__token_html"><div class="ttname"><a href="structs__token.html">s_token</a></div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00040">tokens.h:41</a></div></div>
 <div class="ttc" id="atokens_8h_html_a57973a9791a885be52c3b8b13cdf327e"><div class="ttname"><a href="tokens_8h.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a></div><div class="ttdeci">t_ast * new_ast_node(t_token_type type)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00021">parser_helpers.c:21</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117">PIPE</a></div><div class="ttdeci">@ PIPE</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00032">tokens.h:32</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tokens_8h_source.html#l00043">s_token::data</a>, <a class="el" href="tokens_8h_source.html#l00052">s_ast::left</a>, <a class="el" href="parser_8c_source.html#l00092">manage_pipe()</a>, <a class="el" href="parser_8c_source.html#l00065">manage_redirs()</a>, <a class="el" href="parser__helpers_8c_source.html#l00021">new_ast_node()</a>, <a class="el" href="tokens_8h_source.html#l00044">s_token::next</a>, <a class="el" href="tokens_8h_source.html#l00032">PIPE</a>, and <a class="el" href="tokens_8h_source.html#l00053">s_ast::right</a>.</p>
+<p class="reference">References <a class="el" href="tokens_8h_source.html#l00043">s_token::data</a>, <a class="el" href="tokens_8h_source.html#l00052">s_ast::left</a>, <a class="el" href="parser_8c_source.html#l00090">manage_pipe()</a>, <a class="el" href="parser_8c_source.html#l00063">manage_redirs()</a>, <a class="el" href="parser__helpers_8c_source.html#l00021">new_ast_node()</a>, <a class="el" href="tokens_8h_source.html#l00044">s_token::next</a>, <a class="el" href="tokens_8h_source.html#l00032">PIPE</a>, and <a class="el" href="tokens_8h_source.html#l00053">s_ast::right</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="parser_8c_source.html#l00092">manage_pipe()</a>, and <a class="el" href="parser__utils_8c_source.html#l00017">parse_tokens()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="parser_8c_source.html#l00090">manage_pipe()</a>, and <a class="el" href="parser__utils_8c_source.html#l00017">parse_tokens()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8c_a04b3327a8c7b3dd801cc78e14a574a81_cgraph.png" border="0" usemap="#aparser_8c_a04b3327a8c7b3dd801cc78e14a574a81_cgraph" alt=""/></div>
 <map name="aparser_8c_a04b3327a8c7b3dd801cc78e14a574a81_cgraph" id="aparser_8c_a04b3327a8c7b3dd801cc78e14a574a81_cgraph">
-<area shape="rect" title=" " alt="" coords="5,328,104,354"/>
-<area shape="poly" title=" " alt="" coords="29,329,24,319,27,310,37,304,55,301,73,304,83,311,80,315,71,309,54,307,39,309,31,313,29,319,33,326"/>
-<area shape="rect" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="152,252,258,278"/>
-<area shape="poly" title=" " alt="" coords="81,325,163,283,165,287,83,330"/>
-<area shape="rect" href="parser__helpers_8c.html#a57973a9791a885be52c3b8b13cdf327e" title=" " alt="" coords="537,300,643,326"/>
-<area shape="poly" title=" " alt="" coords="92,352,158,372,246,391,295,398,345,400,395,398,444,389,475,378,506,364,557,333,560,337,508,369,477,383,445,394,396,403,345,405,294,403,245,397,157,377,90,357"/>
-<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="331,252,420,278"/>
-<area shape="poly" title=" " alt="" coords="258,271,315,271,315,276,258,276"/>
-<area shape="rect" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf" title=" " alt="" coords="528,251,652,276"/>
-<area shape="poly" title=" " alt="" coords="249,249,306,237,375,232,445,237,513,246,512,251,444,242,375,237,306,242,250,254"/>
-<area shape="poly" title=" " alt="" coords="253,276,306,288,420,301,522,308,521,313,419,307,306,293,252,281"/>
-<area shape="rect" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd" title=" " alt="" coords="326,353,424,379"/>
-<area shape="poly" title=" " alt="" coords="225,276,307,332,330,344,328,349,305,336,222,280"/>
-<area shape="rect" href="parser__helpers_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad" title=" " alt="" coords="306,151,444,176"/>
-<area shape="poly" title=" " alt="" coords="222,249,305,193,328,181,330,186,307,198,225,254"/>
-<area shape="poly" title=" " alt="" coords="330,259,273,259,273,253,330,254"/>
-<area shape="poly" title=" " alt="" coords="420,262,512,261,512,267,420,267"/>
-<area shape="poly" title=" " alt="" coords="421,272,523,295,522,300,420,277"/>
-<area shape="poly" title=" " alt="" coords="390,175,494,287,523,299,521,304,491,291,387,179"/>
-<area shape="rect" href="parser__helpers_8c.html#a4f595528e4e305887fda33e53258d602" title=" " alt="" coords="558,200,622,226"/>
-<area shape="poly" title=" " alt="" coords="435,174,544,200,543,205,434,180"/>
-<area shape="rect" href="parser__helper__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1" title=" " alt="" coords="492,151,688,176"/>
-<area shape="poly" title=" " alt="" coords="445,161,477,161,477,166,445,166"/>
-<area shape="rect" href="parser__helpers_8c.html#ab5f23ff7ab59a241fa7476e6fca458cf" title=" " alt="" coords="736,5,871,31"/>
-<area shape="poly" title=" " alt="" coords="415,148,748,34,750,39,417,153"/>
-<area shape="rect" href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0" title=" " alt="" coords="746,188,861,214"/>
-<area shape="poly" title=" " alt="" coords="668,174,731,185,730,191,667,180"/>
-<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="1113,108,1185,134"/>
-<area shape="poly" title=" " alt="" coords="662,147,782,128,919,113,987,111,1055,113,1097,115,1097,120,1055,118,987,116,919,118,783,133,663,153"/>
-<area shape="rect" href="parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b" title=" " alt="" coords="919,359,1055,384"/>
-<area shape="poly" title=" " alt="" coords="662,174,689,185,714,203,737,224,827,284,920,337,944,349,941,354,918,342,824,289,734,228,711,208,686,190,660,179"/>
-<area shape="rect" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38" title=" " alt="" coords="959,157,1016,183"/>
-<area shape="poly" title=" " alt="" coords="861,189,943,175,944,180,862,194"/>
-<area shape="poly" title=" " alt="" coords="825,185,867,162,918,142,965,131,1013,124,1097,118,1098,124,1013,130,966,137,920,147,869,167,827,190"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="1246,283,1314,308"/>
-<area shape="poly" title=" " alt="" coords="828,212,870,234,920,256,1010,281,1104,293,1170,296,1230,295,1230,301,1170,302,1103,298,1009,287,918,261,868,239,826,217"/>
-<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="1111,207,1187,232"/>
-<area shape="poly" title=" " alt="" coords="832,212,873,229,920,242,987,249,1055,242,1095,234,1096,239,1056,247,987,255,918,247,871,234,830,217"/>
-<area shape="rect" href="env_2env_8c.html#a41133e0ba7230727a51eedce713a225c" title=" " alt="" coords="954,207,1021,232"/>
-<area shape="poly" title=" " alt="" coords="862,204,938,212,938,217,861,209"/>
-<area shape="rect" href="ft__itoa_8c.html#a01efab229ef959ceedc93dfa15b56689" title=" " alt="" coords="1103,157,1195,183"/>
-<area shape="poly" title=" " alt="" coords="1016,168,1088,168,1088,173,1016,173"/>
-<area shape="poly" title=" " alt="" coords="1015,159,1097,134,1099,139,1017,164"/>
-<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="1243,233,1317,259"/>
-<area shape="poly" title=" " alt="" coords="1181,132,1196,143,1234,181,1264,219,1260,222,1230,185,1193,147,1178,136"/>
-<area shape="poly" title=" " alt="" coords="1184,132,1197,143,1209,160,1216,176,1222,207,1228,237,1234,253,1245,270,1245,270,1241,274,1241,273,1229,256,1222,239,1217,208,1211,178,1204,163,1193,147,1180,136"/>
-<area shape="poly" title=" " alt="" coords="1021,217,1095,217,1095,222,1021,222"/>
-<area shape="poly" title=" " alt="" coords="1055,364,1123,354,1194,337,1243,314,1246,319,1196,342,1124,360,1056,369"/>
-<area shape="rect" href="ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="1109,257,1189,283"/>
-<area shape="poly" title=" " alt="" coords="1008,356,1113,289,1116,294,1011,361"/>
-<area shape="poly" title=" " alt="" coords="1189,260,1227,253,1228,258,1190,266"/>
-<area shape="poly" title=" " alt="" coords="1190,275,1231,283,1230,289,1189,280"/>
-<area shape="poly" title=" " alt="" coords="872,15,961,23,1010,32,1056,48,1095,70,1126,95,1123,100,1092,74,1054,53,1008,38,960,28,871,20"/>
+<area shape="rect" title=" " alt="" coords="5,348,104,373"/>
+<area shape="poly" title=" " alt="" coords="29,348,24,339,27,329,37,323,55,321,73,324,83,330,80,335,71,329,54,326,39,328,31,333,29,338,33,346"/>
+<area shape="rect" href="parser_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="152,297,258,323"/>
+<area shape="poly" title=" " alt="" coords="94,344,150,325,151,330,96,350"/>
+<area shape="rect" href="parser__helpers_8c.html#a57973a9791a885be52c3b8b13cdf327e" title=" " alt="" coords="537,333,643,359"/>
+<area shape="poly" title=" " alt="" coords="104,357,444,348,522,346,522,351,444,354,104,362"/>
+<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="331,297,420,323"/>
+<area shape="poly" title=" " alt="" coords="258,316,315,316,315,321,258,321"/>
+<area shape="rect" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf" title=" " alt="" coords="528,284,652,309"/>
+<area shape="poly" title=" " alt="" coords="249,294,306,282,359,278,414,277,512,284,512,289,414,283,360,283,306,287,250,299"/>
+<area shape="poly" title=" " alt="" coords="251,321,306,332,420,343,522,345,522,350,420,348,306,338,250,326"/>
+<area shape="rect" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd" title=" " alt="" coords="326,196,424,221"/>
+<area shape="poly" title=" " alt="" coords="222,294,305,238,328,226,330,231,307,243,225,299"/>
+<area shape="rect" href="parser__helpers_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad" title=" " alt="" coords="306,146,444,172"/>
+<area shape="poly" title=" " alt="" coords="211,295,246,241,273,209,304,181,310,177,313,182,308,185,277,212,250,244,215,298"/>
+<area shape="poly" title=" " alt="" coords="330,304,273,304,273,298,330,299"/>
+<area shape="poly" title=" " alt="" coords="420,304,512,299,512,304,421,310"/>
+<area shape="poly" title=" " alt="" coords="421,315,523,332,522,337,420,320"/>
+<area shape="poly" title=" " alt="" coords="431,170,446,181,460,199,467,218,470,253,474,287,481,304,494,320,524,336,521,341,491,324,476,306,468,289,465,254,462,219,455,202,442,185,428,175"/>
+<area shape="rect" href="parser__helpers_8c.html#a4f595528e4e305887fda33e53258d602" title=" " alt="" coords="558,146,622,172"/>
+<area shape="poly" title=" " alt="" coords="445,156,543,156,543,162,445,162"/>
+<area shape="rect" href="parser__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1" title=" " alt="" coords="492,84,688,109"/>
+<area shape="poly" title=" " alt="" coords="421,143,528,112,530,117,423,148"/>
+<area shape="rect" href="parser__helpers_8c.html#ab5f23ff7ab59a241fa7476e6fca458cf" title=" " alt="" coords="522,221,658,247"/>
+<area shape="poly" title=" " alt="" coords="415,170,537,213,535,218,414,175"/>
+<area shape="rect" href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0" title=" " alt="" coords="746,77,862,103"/>
+<area shape="poly" title=" " alt="" coords="688,91,731,89,731,95,688,96"/>
+<area shape="rect" href="parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b" title=" " alt="" coords="736,28,872,53"/>
+<area shape="poly" title=" " alt="" coords="641,80,736,55,738,60,643,86"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="1050,57,1119,83"/>
+<area shape="poly" title=" " alt="" coords="607,81,661,44,697,26,735,13,776,5,819,3,902,10,978,28,1039,48,1037,53,977,33,901,16,818,8,777,10,736,18,699,31,664,49,610,85"/>
+<area shape="rect" href="ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="920,118,999,144"/>
+<area shape="poly" title=" " alt="" coords="689,107,736,112,905,125,904,131,735,118,688,112"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="924,168,996,193"/>
+<area shape="poly" title=" " alt="" coords="644,107,736,130,909,168,908,173,735,135,643,113"/>
+<area shape="poly" title=" " alt="" coords="873,45,1035,62,1035,67,872,50"/>
+<area shape="poly" title=" " alt="" coords="850,51,873,62,906,83,934,106,931,110,903,88,871,67,848,56"/>
+<area shape="poly" title=" " alt="" coords="986,115,1042,88,1044,92,989,120"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="1047,144,1122,169"/>
+<area shape="poly" title=" " alt="" coords="1001,137,1033,143,1032,148,999,142"/>
+<area shape="poly" title=" " alt="" coords="983,165,998,154,1032,123,1060,93,1064,96,1035,127,1001,159,986,169"/>
+<area shape="poly" title=" " alt="" coords="996,171,1032,164,1033,169,997,176"/>
+<area shape="poly" title=" " alt="" coords="658,230,759,223,871,207,910,196,911,202,873,212,760,229,658,235"/>
 </map>
 </div>
 <div class="dynheader">
@@ -538,14 +510,10 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8c_a04b3327a8c7b3dd801cc78e14a574a81_icgraph.png" border="0" usemap="#aparser_8c_a04b3327a8c7b3dd801cc78e14a574a81_icgraph" alt=""/></div>
 <map name="aparser_8c_a04b3327a8c7b3dd801cc78e14a574a81_icgraph" id="aparser_8c_a04b3327a8c7b3dd801cc78e14a574a81_icgraph">
-<area shape="rect" title=" " alt="" coords="378,29,477,55"/>
-<area shape="poly" title=" " alt="" coords="452,16,444,10,427,8,412,10,404,14,403,20,407,28,402,30,397,21,400,11,411,5,428,3,446,5,455,12"/>
-<area shape="rect" href="parser__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="231,29,330,55"/>
-<area shape="poly" title=" " alt="" coords="363,45,331,45,331,40,363,40"/>
-<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="103,29,183,55"/>
-<area shape="poly" title=" " alt="" coords="215,45,184,45,184,40,215,40"/>
-<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,29,55,55"/>
-<area shape="poly" title=" " alt="" coords="87,45,55,45,55,40,87,40"/>
+<area shape="rect" title=" " alt="" coords="153,29,251,55"/>
+<area shape="poly" title=" " alt="" coords="226,16,218,10,202,8,187,10,179,14,177,20,181,28,176,30,172,21,175,11,185,5,202,3,220,5,229,12"/>
+<area shape="rect" href="parser__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="5,29,105,55"/>
+<area shape="poly" title=" " alt="" coords="137,45,105,45,105,40,137,40"/>
 </map>
 </div>
 
@@ -577,93 +545,83 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00065">65</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
-<div class="line"><span class="lineno">   67</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *head;</div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>       *redirect_node;</div>
-<div class="line"><span class="lineno">   69</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *next_token;</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span> (!*tokens)</div>
-<div class="line"><span class="lineno">   72</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   73</span>    head = *tokens;</div>
-<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a>(*tokens))</div>
-<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="tokens_8h.html#a939ea5c4e430721c08cc172b513ac159">create_redir</a>(tokens, head, data));</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">while</span> (*tokens &amp;&amp; (*tokens)-&gt;next)</div>
-<div class="line"><span class="lineno">   77</span>    {</div>
-<div class="line"><span class="lineno">   78</span>        next_token = (*tokens)-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
-<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a>(next_token))</div>
-<div class="line"><span class="lineno">   80</span>        {</div>
-<div class="line"><span class="lineno">   81</span>            redirect_node = <a class="code hl_function" href="tokens_8h.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a>((*tokens)-&gt;next-&gt;type);</div>
-<div class="line"><span class="lineno">   82</span>            redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = <a class="code hl_function" href="tokens_8h.html#ae2a4de1cf25f90010b8dff7ba69719ad">manage_commands</a>(&amp;head, data);</div>
-<div class="line"><span class="lineno">   83</span>            *tokens = next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
-<div class="line"><span class="lineno">   84</span>            redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = <a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>(next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>);</div>
-<div class="line"><span class="lineno">   85</span>            <span class="keywordflow">return</span> (redirect_node);</div>
-<div class="line"><span class="lineno">   86</span>        }</div>
-<div class="line"><span class="lineno">   87</span>        *tokens = next_token;</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="tokens_8h.html#ae2a4de1cf25f90010b8dff7ba69719ad">manage_commands</a>(&amp;head, data));</div>
-<div class="line"><span class="lineno">   90</span>}</div>
-<div class="ttc" id="aparser_8c_html_a963f3ae14f7e2f5334b13c7a67deabbd"><div class="ttname"><a href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a></div><div class="ttdeci">int is_redir_node(t_token *tokens)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00044">parser.c:44</a></div></div>
+<p class="definition">Definition at line <a class="el" href="parser_8c_source.html#l00063">63</a> of file <a class="el" href="parser_8c_source.html">parser.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *head;</div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>       *redirect_node;</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_struct" href="structs__token.html">t_token</a>     *next_token;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">if</span> (!*tokens)</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   71</span>    head = *tokens;</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a>(*tokens))</div>
+<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="tokens_8h.html#a939ea5c4e430721c08cc172b513ac159">create_redir</a>(tokens, head, data));</div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">while</span> (*tokens &amp;&amp; (*tokens)-&gt;next)</div>
+<div class="line"><span class="lineno">   75</span>    {</div>
+<div class="line"><span class="lineno">   76</span>        next_token = (*tokens)-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a>(next_token))</div>
+<div class="line"><span class="lineno">   78</span>        {</div>
+<div class="line"><span class="lineno">   79</span>            redirect_node = <a class="code hl_function" href="tokens_8h.html#a57973a9791a885be52c3b8b13cdf327e">new_ast_node</a>((*tokens)-&gt;next-&gt;type);</div>
+<div class="line"><span class="lineno">   80</span>            redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> = <a class="code hl_function" href="tokens_8h.html#ae2a4de1cf25f90010b8dff7ba69719ad">manage_commands</a>(&amp;head, data);</div>
+<div class="line"><span class="lineno">   81</span>            *tokens = next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
+<div class="line"><span class="lineno">   82</span>            redirect_node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> = <a class="code hl_function" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf">create_redir_node</a>(next_token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>);</div>
+<div class="line"><span class="lineno">   83</span>            <span class="keywordflow">return</span> (redirect_node);</div>
+<div class="line"><span class="lineno">   84</span>        }</div>
+<div class="line"><span class="lineno">   85</span>        *tokens = next_token;</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="tokens_8h.html#ae2a4de1cf25f90010b8dff7ba69719ad">manage_commands</a>(&amp;head, data));</div>
+<div class="line"><span class="lineno">   88</span>}</div>
+<div class="ttc" id="aparser_8c_html_a963f3ae14f7e2f5334b13c7a67deabbd"><div class="ttname"><a href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd">is_redir_node</a></div><div class="ttdeci">int is_redir_node(t_token *tokens)</div><div class="ttdef"><b>Definition</b> <a href="parser_8c_source.html#l00043">parser.c:43</a></div></div>
 <div class="ttc" id="atokens_8h_html_a939ea5c4e430721c08cc172b513ac159"><div class="ttname"><a href="tokens_8h.html#a939ea5c4e430721c08cc172b513ac159">create_redir</a></div><div class="ttdeci">t_ast * create_redir(t_token **tokens, t_token *tmp, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00035">parser_helpers.c:35</a></div></div>
-<div class="ttc" id="atokens_8h_html_ae2a4de1cf25f90010b8dff7ba69719ad"><div class="ttname"><a href="tokens_8h.html#ae2a4de1cf25f90010b8dff7ba69719ad">manage_commands</a></div><div class="ttdeci">t_ast * manage_commands(t_token **tokens, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00080">parser_helpers.c:80</a></div></div>
+<div class="ttc" id="atokens_8h_html_ae2a4de1cf25f90010b8dff7ba69719ad"><div class="ttname"><a href="tokens_8h.html#ae2a4de1cf25f90010b8dff7ba69719ad">manage_commands</a></div><div class="ttdeci">t_ast * manage_commands(t_token **tokens, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser__helpers_8c_source.html#l00130">parser_helpers.c:130</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="parser__helpers_8c_source.html#l00035">create_redir()</a>, <a class="el" href="parser_8c_source.html#l00022">create_redir_node()</a>, <a class="el" href="parser_8c_source.html#l00044">is_redir_node()</a>, <a class="el" href="tokens_8h_source.html#l00052">s_ast::left</a>, <a class="el" href="parser__helpers_8c_source.html#l00080">manage_commands()</a>, <a class="el" href="parser__helpers_8c_source.html#l00021">new_ast_node()</a>, <a class="el" href="tokens_8h_source.html#l00044">s_token::next</a>, and <a class="el" href="tokens_8h_source.html#l00053">s_ast::right</a>.</p>
+<p class="reference">References <a class="el" href="parser__helpers_8c_source.html#l00035">create_redir()</a>, <a class="el" href="parser_8c_source.html#l00021">create_redir_node()</a>, <a class="el" href="parser_8c_source.html#l00043">is_redir_node()</a>, <a class="el" href="tokens_8h_source.html#l00052">s_ast::left</a>, <a class="el" href="parser__helpers_8c_source.html#l00130">manage_commands()</a>, <a class="el" href="parser__helpers_8c_source.html#l00021">new_ast_node()</a>, <a class="el" href="tokens_8h_source.html#l00044">s_token::next</a>, and <a class="el" href="tokens_8h_source.html#l00053">s_ast::right</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="parser_8c_source.html#l00054">clr_node()</a>, <a class="el" href="parser__helpers_8c_source.html#l00035">create_redir()</a>, and <a class="el" href="parser_8c_source.html#l00092">manage_pipe()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="parser_8c_source.html#l00053">clr_node()</a>, <a class="el" href="parser__helpers_8c_source.html#l00035">create_redir()</a>, and <a class="el" href="parser_8c_source.html#l00090">manage_pipe()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8c_a9efa4d57dd89fa07cc567b31639ae20c_cgraph.png" border="0" usemap="#aparser_8c_a9efa4d57dd89fa07cc567b31639ae20c_cgraph" alt=""/></div>
 <map name="aparser_8c_a9efa4d57dd89fa07cc567b31639ae20c_cgraph" id="aparser_8c_a9efa4d57dd89fa07cc567b31639ae20c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,57,112,83"/>
-<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="184,32,274,57"/>
-<area shape="poly" title=" " alt="" coords="112,68,174,58,175,63,112,73"/>
-<area shape="rect" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf" title=" " alt="" coords="382,6,506,32"/>
-<area shape="poly" title=" " alt="" coords="78,54,114,33,159,16,212,7,267,4,366,7,366,12,267,9,213,13,160,22,117,38,81,59"/>
-<area shape="rect" href="parser__helpers_8c.html#a57973a9791a885be52c3b8b13cdf327e" title=" " alt="" coords="391,81,496,107"/>
-<area shape="poly" title=" " alt="" coords="112,70,375,87,375,92,112,76"/>
-<area shape="rect" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd" title=" " alt="" coords="180,133,278,159"/>
-<area shape="poly" title=" " alt="" coords="91,81,186,124,183,129,88,86"/>
-<area shape="rect" href="parser__helpers_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad" title=" " alt="" coords="160,182,298,208"/>
-<area shape="poly" title=" " alt="" coords="72,81,108,124,133,148,161,169,169,173,166,178,158,173,130,152,104,128,68,85"/>
-<area shape="poly" title=" " alt="" coords="184,46,113,56,112,51,183,40"/>
-<area shape="poly" title=" " alt="" coords="274,36,366,25,367,31,274,42"/>
-<area shape="poly" title=" " alt="" coords="275,52,376,76,375,81,274,57"/>
-<area shape="poly" title=" " alt="" coords="275,179,297,169,311,158,320,147,330,135,345,123,375,109,377,114,347,128,333,139,324,150,314,161,299,173,277,184"/>
-<area shape="rect" href="parser__helpers_8c.html#a4f595528e4e305887fda33e53258d602" title=" " alt="" coords="412,232,475,257"/>
-<area shape="poly" title=" " alt="" coords="289,206,398,231,397,236,288,211"/>
-<area shape="rect" href="parser__helper__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1" title=" " alt="" coords="346,182,541,208"/>
-<area shape="poly" title=" " alt="" coords="298,192,330,192,330,198,298,198"/>
-<area shape="rect" href="parser__helpers_8c.html#ab5f23ff7ab59a241fa7476e6fca458cf" title=" " alt="" coords="589,80,725,105"/>
-<area shape="poly" title=" " alt="" coords="285,179,585,107,586,112,286,184"/>
-<area shape="rect" href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0" title=" " alt="" coords="599,257,715,283"/>
-<area shape="poly" title=" " alt="" coords="506,206,542,216,617,247,615,252,540,222,505,211"/>
-<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="967,182,1039,208"/>
-<area shape="poly" title=" " alt="" coords="542,190,713,187,909,188,951,190,951,195,909,194,713,193,542,195"/>
-<area shape="rect" href="parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b" title=" " alt="" coords="773,433,909,459"/>
-<area shape="poly" title=" " alt="" coords="523,206,543,217,561,235,569,254,577,273,591,293,636,334,676,360,774,411,797,423,795,428,771,416,673,365,633,338,587,297,572,276,564,256,556,238,540,221,521,211"/>
-<area shape="rect" href="ft__itoa_8c.html#a8a6ea3765dfd826eabfc00d36e28ea38" title=" " alt="" coords="812,232,870,257"/>
-<area shape="poly" title=" " alt="" coords="715,259,796,248,797,253,716,264"/>
-<area shape="poly" title=" " alt="" coords="681,254,723,234,772,216,866,199,951,193,951,198,867,205,773,222,725,239,684,259"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="1099,357,1168,383"/>
-<area shape="poly" title=" " alt="" coords="679,281,722,306,774,330,824,347,864,356,957,367,1023,370,1084,370,1084,375,1023,376,957,372,863,361,822,352,772,335,719,311,677,285"/>
-<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="965,281,1041,307"/>
-<area shape="poly" title=" " alt="" coords="683,281,724,301,773,316,811,323,840,324,909,316,949,308,950,313,909,322,841,329,810,328,772,322,722,305,680,285"/>
-<area shape="rect" href="env_2env_8c.html#a41133e0ba7230727a51eedce713a225c" title=" " alt="" coords="807,281,875,307"/>
-<area shape="poly" title=" " alt="" coords="716,275,792,285,791,290,715,280"/>
-<area shape="rect" href="ft__itoa_8c.html#a01efab229ef959ceedc93dfa15b56689" title=" " alt="" coords="957,232,1048,257"/>
-<area shape="poly" title=" " alt="" coords="870,242,941,242,941,247,870,247"/>
-<area shape="poly" title=" " alt="" coords="869,233,951,208,953,213,871,238"/>
-<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="1096,308,1171,333"/>
-<area shape="poly" title=" " alt="" coords="1034,206,1050,217,1088,255,1117,293,1113,296,1084,259,1047,221,1031,211"/>
-<area shape="poly" title=" " alt="" coords="1037,206,1050,217,1063,234,1070,250,1076,281,1081,312,1088,327,1098,344,1099,344,1095,348,1094,347,1083,330,1076,313,1071,282,1065,252,1058,237,1046,221,1034,210"/>
-<area shape="poly" title=" " alt="" coords="875,291,949,291,949,296,875,296"/>
-<area shape="poly" title=" " alt="" coords="909,438,977,429,1047,411,1097,388,1099,393,1049,416,978,434,910,444"/>
-<area shape="rect" href="ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="963,332,1042,357"/>
-<area shape="poly" title=" " alt="" coords="862,430,967,363,969,368,864,435"/>
-<area shape="poly" title=" " alt="" coords="1042,334,1080,327,1081,333,1043,340"/>
-<area shape="poly" title=" " alt="" coords="1043,349,1084,358,1083,363,1042,355"/>
-<area shape="poly" title=" " alt="" coords="725,89,815,97,863,107,910,122,948,144,980,170,977,174,945,148,908,127,862,112,814,102,725,94"/>
+<area shape="rect" title=" " alt="" coords="5,66,112,91"/>
+<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="184,40,274,66"/>
+<area shape="poly" title=" " alt="" coords="112,76,174,67,175,72,112,82"/>
+<area shape="rect" href="parser_8c.html#a665af377c02015d59f668e4b2b2434bf" title=" " alt="" coords="382,16,506,42"/>
+<area shape="poly" title=" " alt="" coords="78,63,114,42,159,25,212,16,267,13,366,17,366,22,267,18,213,22,160,30,117,47,81,67"/>
+<area shape="rect" href="parser__helpers_8c.html#a57973a9791a885be52c3b8b13cdf327e" title=" " alt="" coords="391,67,496,93"/>
+<area shape="poly" title=" " alt="" coords="112,76,375,77,375,82,112,81"/>
+<area shape="rect" href="parser_8c.html#a963f3ae14f7e2f5334b13c7a67deabbd" title=" " alt="" coords="180,191,278,217"/>
+<area shape="poly" title=" " alt="" coords="72,90,108,133,133,157,161,178,169,182,166,187,158,182,130,161,104,137,68,94"/>
+<area shape="rect" href="parser__helpers_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad" title=" " alt="" coords="160,142,298,167"/>
+<area shape="poly" title=" " alt="" coords="91,90,186,133,183,137,88,94"/>
+<area shape="poly" title=" " alt="" coords="184,54,113,65,112,60,183,49"/>
+<area shape="poly" title=" " alt="" coords="274,46,366,35,367,40,274,51"/>
+<area shape="poly" title=" " alt="" coords="274,56,376,69,375,74,274,61"/>
+<area shape="poly" title=" " alt="" coords="256,139,345,101,375,92,377,97,347,106,258,144"/>
+<area shape="rect" href="parser__helpers_8c.html#a4f595528e4e305887fda33e53258d602" title=" " alt="" coords="412,166,475,191"/>
+<area shape="poly" title=" " alt="" coords="299,160,397,171,396,176,298,165"/>
+<area shape="rect" href="parser__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1" title=" " alt="" coords="346,116,541,142"/>
+<area shape="poly" title=" " alt="" coords="298,144,330,140,331,145,299,149"/>
+<area shape="rect" href="parser__helpers_8c.html#ab5f23ff7ab59a241fa7476e6fca458cf" title=" " alt="" coords="376,216,511,242"/>
+<area shape="poly" title=" " alt="" coords="272,165,299,176,323,189,347,201,369,209,367,214,345,206,321,194,297,181,270,170"/>
+<area shape="rect" href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0" title=" " alt="" coords="600,91,715,117"/>
+<area shape="poly" title=" " alt="" coords="542,115,584,110,585,115,542,120"/>
+<area shape="rect" href="parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b" title=" " alt="" coords="589,42,726,67"/>
+<area shape="poly" title=" " alt="" coords="508,113,540,103,564,90,588,76,600,71,602,76,591,81,567,95,542,108,510,118"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="904,71,972,97"/>
+<area shape="poly" title=" " alt="" coords="521,114,540,103,555,85,562,65,569,44,588,27,628,11,671,4,715,4,758,10,838,34,901,61,899,66,837,39,757,16,714,9,672,9,630,16,591,31,574,47,567,67,560,88,543,107,523,118"/>
+<area shape="rect" href="ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="774,132,853,158"/>
+<area shape="poly" title=" " alt="" coords="542,131,758,140,758,146,542,136"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="777,182,850,207"/>
+<area shape="poly" title=" " alt="" coords="521,140,762,183,761,188,520,145"/>
+<area shape="poly" title=" " alt="" coords="726,59,889,76,888,81,726,64"/>
+<area shape="poly" title=" " alt="" coords="704,66,727,76,760,97,788,120,785,124,757,102,724,81,701,70"/>
+<area shape="poly" title=" " alt="" coords="840,130,895,102,898,106,842,134"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="901,158,975,183"/>
+<area shape="poly" title=" " alt="" coords="854,151,886,157,885,163,853,156"/>
+<area shape="poly" title=" " alt="" coords="836,179,851,169,885,138,914,107,918,110,889,141,855,173,840,183"/>
+<area shape="poly" title=" " alt="" coords="849,185,885,178,886,183,851,190"/>
+<area shape="poly" title=" " alt="" coords="512,231,613,232,670,228,725,221,765,211,767,216,726,227,670,234,613,237,512,236"/>
 </map>
 </div>
 <div class="dynheader">
@@ -671,21 +629,17 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="parser_8c_a9efa4d57dd89fa07cc567b31639ae20c_icgraph.png" border="0" usemap="#aparser_8c_a9efa4d57dd89fa07cc567b31639ae20c_icgraph" alt=""/></div>
 <map name="aparser_8c_a9efa4d57dd89fa07cc567b31639ae20c_icgraph" id="aparser_8c_a9efa4d57dd89fa07cc567b31639ae20c_icgraph">
-<area shape="rect" title=" " alt="" coords="525,55,631,80"/>
-<area shape="rect" href="parser_8c.html#a06ee584200ebd42fe6ba6690cf8f42b3" title=" " alt="" coords="392,5,463,31"/>
-<area shape="poly" title=" " alt="" coords="521,52,462,32,464,27,522,47"/>
-<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="383,55,472,80"/>
-<area shape="poly" title=" " alt="" coords="509,79,472,78,472,73,509,74"/>
-<area shape="rect" href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81" title=" " alt="" coords="378,128,477,154"/>
-<area shape="poly" title=" " alt="" coords="537,90,457,130,455,125,535,85"/>
-<area shape="poly" title=" " alt="" coords="487,56,524,56,524,62,487,61"/>
-<area shape="poly" title=" " alt="" coords="452,115,444,109,427,107,412,109,404,113,403,119,407,126,402,129,397,119,400,110,411,104,428,101,446,104,455,111"/>
-<area shape="rect" href="parser__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="231,128,330,154"/>
-<area shape="poly" title=" " alt="" coords="363,144,331,144,331,138,363,138"/>
-<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="103,128,183,154"/>
-<area shape="poly" title=" " alt="" coords="215,144,184,144,184,138,215,138"/>
-<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,128,55,154"/>
-<area shape="poly" title=" " alt="" coords="87,144,55,144,55,138,87,138"/>
+<area shape="rect" title=" " alt="" coords="299,55,405,80"/>
+<area shape="rect" href="parser_8c.html#a06ee584200ebd42fe6ba6690cf8f42b3" title=" " alt="" coords="167,5,237,31"/>
+<area shape="poly" title=" " alt="" coords="295,52,237,32,238,27,297,47"/>
+<area shape="rect" href="parser__helpers_8c.html#a939ea5c4e430721c08cc172b513ac159" title=" " alt="" coords="157,55,247,80"/>
+<area shape="poly" title=" " alt="" coords="283,79,247,78,247,73,283,74"/>
+<area shape="rect" href="parser_8c.html#a04b3327a8c7b3dd801cc78e14a574a81" title=" " alt="" coords="153,128,251,154"/>
+<area shape="poly" title=" " alt="" coords="312,90,231,130,229,125,309,85"/>
+<area shape="poly" title=" " alt="" coords="262,56,298,56,298,62,262,61"/>
+<area shape="poly" title=" " alt="" coords="226,115,218,109,202,107,187,109,179,113,177,119,181,126,176,129,172,119,175,110,185,104,202,101,220,104,229,111"/>
+<area shape="rect" href="parser__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="5,128,105,154"/>
+<area shape="poly" title=" " alt="" coords="137,144,105,144,105,138,137,138"/>
 </map>
 </div>
 
