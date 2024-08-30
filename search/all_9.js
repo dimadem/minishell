@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['init_5fenv_0',['init_env',['../env_8h.html#a2344221e4d3b1327b956157b837a727b',1,'init_env(t_env **data_envp, char **envp):&#160;env.c'],['../env_2env_8c.html#a2344221e4d3b1327b956157b837a727b',1,'init_env(t_env **data_envp, char **envp):&#160;env.c']]],
+  ['init_5fenv_0',['init_env',['../env_8h.html#a2344221e4d3b1327b956157b837a727b',1,'env.h']]],
   ['init_5fms_5fdata_1',['init_ms_data',['../tokens_8h.html#a1893ac59b9c42732ea38e02f340f98c9',1,'init_ms_data(t_ms_data *data, char **envp):&#160;initialise.c'],['../initialise_8c.html#a1893ac59b9c42732ea38e02f340f98c9',1,'init_ms_data(t_ms_data *data, char **envp):&#160;initialise.c']]],
-  ['initialise_2',['initialise',['../initialise_8c.html#a41e7a8e4355566996a5984b4a31fb8fe',1,'initialise(int argc, char **argv):&#160;initialise.c'],['../tokens_8h.html#a41e7a8e4355566996a5984b4a31fb8fe',1,'initialise(int argc, char **argv):&#160;initialise.c']]],
+  ['initialise_2',['initialise',['../tokens_8h.html#a41e7a8e4355566996a5984b4a31fb8fe',1,'initialise(int argc, char **argv):&#160;initialise.c'],['../initialise_8c.html#a41e7a8e4355566996a5984b4a31fb8fe',1,'initialise(int argc, char **argv):&#160;initialise.c']]],
   ['initialise_2ec_3',['initialise.c',['../initialise_8c.html',1,'']]],
   ['input_4',['input',['../structs__loop__data.html#aa4db2151823e8c8b49c2251837a7e367',1,'s_loop_data']]],
   ['input_5fchecker_2ec_5',['input_checker.c',['../input__checker_8c.html',1,'']]],
