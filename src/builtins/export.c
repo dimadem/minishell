@@ -29,9 +29,9 @@ static void	add_env(t_ms_data *data);
 int	builtin_export(t_ms_data *data)
 {
 	t_env	*curr_node;
-	char	*key;
+	// char	*key;
 
-	key = NULL;
+	// key = NULL;
 	if ((data->args[1] == NULL) \
 			|| ft_strncmp(data->args[1], "-p", 1) == 0)
 	{

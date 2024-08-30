@@ -1,0 +1,13 @@
+build
+doc
+en.subject.pdf
+gu
+inc
+lib
+ls
+Makefile
+minishell
+readline.supp
+README.md
+src
+tgu
