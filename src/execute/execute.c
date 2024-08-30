@@ -40,6 +40,8 @@ int	execute_ast(t_ast *node, t_ms_data *data)
 		return (1);
 	if (node->type == PIPE)
 		return (builtin_pipe(node, data));
+	else if (node->type == ENV_VAR)
+		ft_printf(BLU"ENV_VAR\n"RESET);
 	else if (node->type == REDIR_IN)
 		return (redirect_in(node, data));
 	else if (node->type == REDIR_OUT)
@@ -80,7 +82,7 @@ static int	execute(t_ms_data *data)
 	builtin_commands[6] = "unset";
 	builtin_functions[0] = &builtin_cd;
 	builtin_functions[1] = &builtin_echo;
-	//builtin_functions[2] = &builtin_env;
+	builtin_functions[2] = &builtin_env;
 	builtin_functions[3] = &builtin_exit;
 	builtin_functions[4] = &builtin_export;
 	builtin_functions[5] = &builtin_pwd;

@@ -22,16 +22,13 @@ Functionalities:
 - If arguments are passed, set the environment variables
  */
 
-int			builtin_export(t_ms_data *data);
-// static bool	check_input(t_ms_data *data);
-static void	add_env(t_ms_data *data);
+int			      builtin_export(t_ms_data *data);
+static  void	add_env(t_ms_data *data);
 
 int	builtin_export(t_ms_data *data)
 {
 	t_env	*curr_node;
-	// char	*key;
 
-	// key = NULL;
 	if ((data->args[1] == NULL) \
 			|| ft_strncmp(data->args[1], "-p", 1) == 0)
 	{
@@ -47,9 +44,9 @@ int	builtin_export(t_ms_data *data)
 	}
 	else 
 		add_env(data);
-	// if (check_input(data))
 	return (0);
 }
+
 
 static void	add_env(t_ms_data *data)
 {
@@ -73,7 +70,6 @@ static void	add_env(t_ms_data *data)
 		{
 			curr_arg = data->args[i];
 			key = curr_arg;
-			printf("curr->arg - > %s\n", key);
 			set_env(&data->envp, key, "");
 		}
 	}
