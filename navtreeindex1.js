@@ -1,5 +1,11 @@
 var NAVTREEINDEX1 =
 {
+"ft__strmapi_8c.html#a668b60557bfc9d60c2d3ccda8afadf49":[1,0,1,0,1,45,0],
+"ft__strmapi_8c_source.html":[1,0,1,0,1,45],
+"ft__strncmp_8c.html":[1,0,1,0,1,46],
+"ft__strncmp_8c.html#a9d2fe792187aa4ed08e5864fb2c4d6dc":[1,0,1,0,1,46,0],
+"ft__strncmp_8c_source.html":[1,0,1,0,1,46],
+"ft__strndup_8c.html":[1,0,1,0,1,47],
 "ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20":[1,0,1,0,1,47,0],
 "ft__strndup_8c_source.html":[1,0,1,0,1,47],
 "ft__strnstr_8c.html":[1,0,1,0,1,48],
@@ -36,8 +42,8 @@ var NAVTREEINDEX1 =
 "globals_enum.html":[1,1,3],
 "globals_eval.html":[1,1,4],
 "globals_f.html":[1,1,0,5],
-"globals_func.html":[1,1,1,0],
 "globals_func.html":[1,1,1],
+"globals_func.html":[1,1,1,0],
 "globals_func_b.html":[1,1,1,1],
 "globals_func_c.html":[1,1,1,2],
 "globals_func_e.html":[1,1,1,3],
@@ -243,11 +249,5 @@ var NAVTREEINDEX1 =
 "redirect__append_8c_source.html":[1,0,2,5,0],
 "redirect__heredoc_8c.html":[1,0,2,5,1],
 "redirect__heredoc_8c.html#a15cf53350eb2877438bf504bd85fc36a":[1,0,2,5,1,1],
-"redirect__heredoc_8c.html#a79ffb6362b8f0c6960e7fe77f93d8888":[1,0,2,5,1,0],
-"redirect__heredoc_8c.html#af7acc822769ea3cda07222328febe924":[1,0,2,5,1,2],
-"redirect__heredoc_8c_source.html":[1,0,2,5,1],
-"redirect__in_8c.html":[1,0,2,5,2],
-"redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284":[1,0,2,5,2,0],
-"redirect__in_8c_source.html":[1,0,2,5,2],
-"redirect__out_8c.html":[1,0,2,5,3]
+"redirect__heredoc_8c.html#a79ffb6362b8f0c6960e7fe77f93d8888":[1,0,2,5,1,0]
 };
