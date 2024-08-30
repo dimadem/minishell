@@ -103,4 +103,5 @@ t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
 		*tokens = next_token;
 	}
 	return (manage_redirs(&tmp, data));
+
 }
