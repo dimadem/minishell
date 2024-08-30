@@ -6,7 +6,7 @@
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 19:35:45 by rocky             #+#    #+#             */
-/*   Updated: 2024/07/11 18:44:23 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/08/28 20:11:50 by rocky            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_ast	*create_redir_node(t_token *token);
 int		is_redir_node(t_token *tokens);
-t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, t_ms_data *data);
 t_ast	*manage_redirs(t_token **tokens, t_ms_data *data);
 t_ast	*manage_pipe(t_token **tokens, t_ms_data *data);
 
@@ -50,41 +49,32 @@ int	is_redir_node(t_token *tokens)
 	return (0);
 }
 
-t_ast	*clr_node(t_token **tokens, t_token *next_token, t_ast *redirect_node, t_ms_data *data)
-{
-	(*tokens)->next = next_token->next->next;
-	redirect_node->left = manage_redirs(tokens, data);
-	redirect_node->right = create_redir_node((next_token->next));
-	free(next_token->data);
-	free(next_token);
-	return (redirect_node);
-}
-
 t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 {
-	t_token		*head;
+	t_ast		*command_node;
 	t_ast		*redirect_node;
-	t_token		*next_token;
+	t_token		*current_token;
 
-	if (!*tokens)
+	if (!tokens || !*tokens)
 		return (NULL);
-	head = *tokens;
-	if (is_redir_node(*tokens))
-		return (create_redir(tokens, head, data));
-	while (*tokens && (*tokens)->next)
+	command_node = manage_commands(tokens, data);
+	current_token = *tokens;
+	while (current_token && is_redir_node(current_token))
 	{
-		next_token = (*tokens)->next;
-		if (is_redir_node(next_token))
+		redirect_node = create_redir_node(current_token);
+		redirect_node->left = command_node;
+		*tokens = current_token->next;
+		if (*tokens)
 		{
-			redirect_node = new_ast_node((*tokens)->next->type);
-			redirect_node->left = manage_commands(&head, data);
-			*tokens = next_token->next;
-			redirect_node->right = create_redir_node(next_token->next);
-			return (redirect_node);
+			redirect_node->right = create_redir_node(*tokens);
+			*tokens = (*tokens)->next;
 		}
-		*tokens = next_token;
+		else
+			redirect_node->right = NULL;
+		command_node = redirect_node;
+		current_token = *tokens;
 	}
-	return (manage_commands(&head, data));
+	return (command_node);
 }
 
 t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
@@ -113,4 +103,5 @@ t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
 		*tokens = next_token;
 	}
 	return (manage_redirs(&tmp, data));
+
 }
