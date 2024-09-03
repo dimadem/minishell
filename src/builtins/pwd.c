@@ -14,6 +14,7 @@
 #include <unistd.h>
 #include "libft.h"
 #include <stdio.h>
+#include "execute.h"
 
 /*
 Functionality:
@@ -29,9 +30,9 @@ int	builtin_pwd(t_ms_data *data)
 		ft_putendl_fd(cwd, STDOUT_FILENO);
 	else
 	{
-		ft_putstr_fd("bash: cd: ", 2);
+		ft_putstr_fd("bash: cd: ", STDERR_FILENO);
 		perror("cwd");
-		return (1);
+		return (ERROR);
 	}
-	return (0);
+	return (SUCCESS);
 }
