@@ -15,6 +15,7 @@
 #include "shell.h"
 #include "env.h"
 #include "execute.h"
+#include "errors.h"
 
 /*
    - Functionality:
@@ -35,10 +36,9 @@ int	builtin_cd(t_ms_data *data)
 	target_dir = (char *)data->args[1];
 	if (!target_dir)
 		target_dir = home_dir;
-	if (chdir(target_dir) != 0)
+	if (chdir(target_dir) == -1)
 	{
-		ft_putstr_fd("bash: cd: ", STDERR_FILENO);
-		ft_perror(target_dir);
+		shell_error_handler(IS_DIRECTORY, ft_strjoin("cd: ", target_dir));
 		return (ERROR);
 	}
 	set_env(&data->envp, "OLDPWD", get_env(data->envp, "PWD"));

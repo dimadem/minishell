@@ -17,11 +17,6 @@
 # include "tokens.h"
 # include "env.h"
 
-# define ERROR 1
-# define SUCCESS 0
-# define IS_DIRECTORY 126
-# define UNKNOWN_COMMAND 127
-
 /*	execute	*/
 int		execute_ast(t_ast *node, t_ms_data *data);
 
@@ -35,6 +30,7 @@ void	handle_io_fd(t_ms_data *data);
 /*  shell variable execution */
 int handle_shell_variable(t_ast *node, t_ms_data *data);
 int handle_get_shell_variable(t_ms_data *data, const char *key);
+void shell_variable_update(t_ms_data *data, int status);
 
 
 #endif

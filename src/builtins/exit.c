@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "env.h"
+#include "errors.h"
 
 /*
 Functionality:
@@ -23,11 +24,29 @@ Functionality:
 - Exit with the exit status
  */
 
-int	builtin_exit(t_ms_data *data)
+int builtin_exit(t_ms_data *data)
 {
-	char	*message;
 
-	message = "exit\n";
-	ft_putstr_fd(message, STDOUT_FILENO);
-	exit(data->exit_status);
+    int     number;
+
+	number = 0;
+    if (!ft_isnumber(data->args[1]))
+    {
+		shell_error_handler(NUMERIC_REQUIRED, ft_strjoin("exit: ", data->args[1]));
+		set_exit_status(NUMERIC_REQUIRED);
+        exit(NUMERIC_REQUIRED);
+    }
+    else if (data->args[2])
+    {
+		shell_error_handler(TOO_MANY_ARGS, "exit");
+		data->exit_status = TOO_MANY_ARGS;
+        exit(TOO_MANY_ARGS);
+    }
+    else
+    {
+        number = ft_atoi(data->args[1]);
+        ft_putendl_fd("exit", STDOUT_FILENO);
+		data->exit_status = number;
+        exit(number);
+    }
 }

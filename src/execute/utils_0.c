@@ -37,20 +37,6 @@ void	ft_free_2d_arr(char **arr)
 }
 
 /**
-- @brief return error message and exit
-- 
-- @param str paste the error message
-- @return int return status:
-- 				- 1: ERROR
- */
-
-int	ft_perror(char *str)
-{
-	perror (str);
-	exit(ERROR);
-}
-
-/**
 - @brief close two file descriptors
 - 
 - @param fds file descriptors
