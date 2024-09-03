@@ -12,7 +12,7 @@
 
 #include "libft.h"
 #include "shell.h"
-#include "execute.h"
+#include "errors.h"
 
 /*
 	Functionality:

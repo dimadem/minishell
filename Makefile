@@ -13,7 +13,7 @@
 # Colors
 DEF_COLOR	=	\033[0;39m
 GRAY		=	\033[0;90m
-RED		=	\033[0;91m
+RED			=	\033[0;91m
 GREEN		=	\033[0;92m
 YELLOW		=	\033[0;93m
 BLUE		=	\033[0;94m
@@ -40,6 +40,7 @@ READLINE 				= -lreadline
 SRC_DIR					=	./src
 UTILS_DIR				= 	$(SRC_DIR)/utils
 ENV_DIR					=	$(SRC_DIR)/env
+ERRORS_DIR				=	$(SRC_DIR)/errors
 SHELL_VAR_DIR			=	$(SRC_DIR)/shell_variables
 APP_DIR					=	$(SRC_DIR)/app
 COMMON_DIR				=	$(SRC_DIR)/common
@@ -61,6 +62,7 @@ TEST_INCLUDES			=	-I./inc \
 MAIN_SOURCE					=	$(wildcard $(SRC_DIR)/*.c)
 APP_SOURCES					=	$(wildcard $(APP_DIR)/*.c)
 ENV_SOURCES					=	$(wildcard $(ENV_DIR)/*.c)
+ERRORS_SOURCES				=	$(wildcard $(ERRORS_DIR)/*.c)
 SHELL_VAR_SOURCES			=	$(wildcard $(SHELL_VAR_DIR)/*.c)
 COMMON_SOURCES				=	$(wildcard $(COMMON_DIR)/*.c)
 UTILS_SOURCES				= 	$(wildcard $(UTILS_DIR)/*.c)
@@ -78,6 +80,7 @@ PIPE_TEST_SOURCES			=	$(wildcard $(TEST_DIR)/pipe/*.c)
 SOURCES					=	$(MAIN_SOURCE) \
 							$(APP_SOURCES) \
 							$(ENV_SOURCES) \
+							$(ERRORS_SOURCES) \
 							$(SHELL_VAR_SOURCES) \
 							$(COMMON_SOURCES) \
 							$(UTILS_SOURCES) \
@@ -95,6 +98,7 @@ BUILD_DIR					=	./build
 MAIN_OBJECT					=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
 APP_OBJECTS					=	$(patsubst $(APP_DIR)/%.c, $(BUILD_DIR)/src/app/%.o, $(APP_SOURCES))
 ENV_OBJECTS					=	$(patsubst $(ENV_DIR)/env/%.c, $(BUILD_DIR)/src/app/env/%.o, $(ENV_SOURCES))
+ERRORS_OBJECTS				=	$(patsubst $(ERRORS_DIR)/%.c, $(BUILD_DIR)/src/errors/%.o, $(ERRORS_SOURCES))
 SHELL_VAR_OBJECTS			=	$(patsubst $(SHELL_VAR_DIR)/%.c, $(BUILD_DIR)/src/shell_variables/%.o, $(SHELL_VAR_SOURCES))
 COMMON_OBJECTS				=	$(patsubst $(COMMON_DIR)/%.c, $(BUILD_DIR)/common/app/%.o, $(COMMON_SOURCES))
 UTILS_OBJECTS				=	$(patsubst $(UTILS_DIR)/%.c, $(BUILD_DIR)/utils/%.o, $(UTILS_SOURCES))
@@ -112,6 +116,7 @@ PIPE_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/pipe/%.c, $(BUILD_DIR)/src/test/pip
 OBJECTS					=	$(MAIN_OBJECT) \
 							$(APP_OBJECTS) \
 							$(ENV_OBJECTS) \
+							$(ERRORS_OBJECTS) \
 							$(SHELL_VAR_OBJECTS) \
 							$(EXECUTE_OBJECTS) \
 							$(COMMON_OBJECTS) \
@@ -146,6 +151,10 @@ $(BUILD_DIR)/src/%.o: $(SRC_DIR)/%.c
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/src/env/%.o: $(ENV_DIR)/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/src/errors/%.o: $(ERRORS_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 

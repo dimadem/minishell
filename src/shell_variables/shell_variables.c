@@ -7,6 +7,7 @@
 int handle_add_set_shell_variable(t_env **shell_var, char *line);
 int handle_get_shell_variable(t_ms_data *data, const char *key);
 int handle_shell_variable(t_ast *node, t_ms_data *data);
+void shell_variable_update(t_ms_data *data, int status);
 
 int handle_add_set_shell_variable(t_env **shell_var, char *line)
 {
@@ -49,4 +50,10 @@ int handle_shell_variable(t_ast *node, t_ms_data *data)
     if (node->left && node->right == NULL)
         return (handle_get_shell_variable(data, node->args[0]));
     return (-1);
+}
+
+void shell_variable_update(t_ms_data *data, int status)
+{
+    data->exit_status = status;
+    set_shell_var(&data->shell_variables, "?", ft_itoa(status));
 }
