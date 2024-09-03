@@ -38,7 +38,7 @@ var tokens_8h =
     [ "handle_regular_chars", "tokens_8h.html#a7fef00789eeca097ecbd68176503d4e4", null ],
     [ "handle_special_chars", "tokens_8h.html#a0e22b8f037ef12eb28986615da9b79a6", null ],
     [ "heredoc", "tokens_8h.html#a132ce43db3d4fba988a166e932845375", null ],
-    [ "init_ms_data", "tokens_8h.html#a1893ac59b9c42732ea38e02f340f98c9", null ],
+    [ "init_ms_data", "tokens_8h.html#aa1ca669071f7e15d575af6920bfb616c", null ],
     [ "initialise", "tokens_8h.html#a41e7a8e4355566996a5984b4a31fb8fe", null ],
     [ "input_error_checks", "tokens_8h.html#a8ba7929cbd2a023ebba26c83879e553c", null ],
     [ "is_redir_node", "tokens_8h.html#a963f3ae14f7e2f5334b13c7a67deabbd", null ],

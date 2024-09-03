@@ -123,14 +123,14 @@ $(document).ready(function(){initNavTree('prompt_8c_source.html',''); initResiza
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">char</span>    *prompt;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">size_t</span>  prompt_len;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    prompt_len = <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(<span class="stringliteral">&quot;🌴\e[1m @maxishell$ \e[m&quot;</span>) + \</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    prompt_len = <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(<span class="stringliteral">&quot;🌴 @maxishell$ &quot;</span>) + \</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            ft_strlen(getenv(<span class="stringliteral">&quot;LOGNAME&quot;</span>));</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    prompt = (<span class="keywordtype">char</span> *)malloc(prompt_len);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!prompt)</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        exit(EXIT_FAILURE);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="libft_8h.html#a916ac44ff3e67ef20834dd45e3837ac4">ft_strcpy</a>(prompt, <span class="stringliteral">&quot;🌴\e[1m &quot;</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="libft_8h.html#a916ac44ff3e67ef20834dd45e3837ac4">ft_strcpy</a>(prompt, <span class="stringliteral">&quot;🌴 &quot;</span>);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="libft_8h.html#ac7bb7d543c62b46aae49fdc97c9ae837">ft_strcat</a>(prompt, getenv(<span class="stringliteral">&quot;LOGNAME&quot;</span>));</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="libft_8h.html#ac7bb7d543c62b46aae49fdc97c9ae837">ft_strcat</a>(prompt, <span class="stringliteral">&quot;@maxishell$ \e[m&quot;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="libft_8h.html#ac7bb7d543c62b46aae49fdc97c9ae837">ft_strcat</a>(prompt, <span class="stringliteral">&quot;@maxishell$ &quot;</span>);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    (void)data;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">return</span> (prompt);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>

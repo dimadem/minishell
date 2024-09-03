@@ -21,9 +21,10 @@ var searchData=
   ['print_5fenv_5fstack_18',['print_env_stack',['../builtins_2env_8c.html#a5b5d29d406a0fad6272b33c03b7793b4',1,'env.c']]],
   ['print_5fmaxishell_19',['print_maxishell',['../tokens_8h.html#a4e673b7c7d3f45e10377ab9f537b8bf9',1,'print_maxishell(void):&#160;prompt.c'],['../prompt_8c.html#a4e673b7c7d3f45e10377ab9f537b8bf9',1,'print_maxishell(void):&#160;prompt.c']]],
   ['print_5fstack_20',['print_stack',['../tokens_8h.html#af90eff9f4a4a22eec7f50142c9e1b591',1,'print_stack(t_token **stack):&#160;stack_control.c'],['../stack__control_8c.html#af90eff9f4a4a22eec7f50142c9e1b591',1,'print_stack(t_token **stack):&#160;stack_control.c']]],
-  ['print_5ftokens_21',['print_tokens',['../tokeniser_8c.html#ac0f556c5b74afdbd7ce730e294df7b76',1,'print_tokens(t_token *tokens):&#160;tokeniser.c'],['../tokens_8h.html#ac0f556c5b74afdbd7ce730e294df7b76',1,'print_tokens(t_token *tokens):&#160;tokeniser.c']]],
-  ['process_5fast_5fand_5fio_22',['process_ast_and_io',['../main_8c.html#a3c7725caed2a77513c06468244396d9b',1,'main.c']]],
-  ['prompt_23',['prompt',['../structs__loop__data.html#a55b11635c9e942224b6fd0e2b149b250',1,'s_loop_data']]],
-  ['prompt_2ec_24',['prompt.c',['../prompt_8c.html',1,'']]],
-  ['pwd_2ec_25',['pwd.c',['../pwd_8c.html',1,'']]]
+  ['print_5ft_5fenv_21',['print_t_env',['../env_8h.html#a7136cd5a6fbbadec4376ca292643ad51',1,'print_t_env(t_env *tokens):&#160;utils.c'],['../env_2utils_8c.html#a7136cd5a6fbbadec4376ca292643ad51',1,'print_t_env(t_env *tokens):&#160;utils.c']]],
+  ['print_5ftokens_22',['print_tokens',['../tokeniser_8c.html#ac0f556c5b74afdbd7ce730e294df7b76',1,'print_tokens(t_token *tokens):&#160;tokeniser.c'],['../tokens_8h.html#ac0f556c5b74afdbd7ce730e294df7b76',1,'print_tokens(t_token *tokens):&#160;tokeniser.c']]],
+  ['process_5fast_5fand_5fio_23',['process_ast_and_io',['../main_8c.html#a3c7725caed2a77513c06468244396d9b',1,'main.c']]],
+  ['prompt_24',['prompt',['../structs__loop__data.html#a55b11635c9e942224b6fd0e2b149b250',1,'s_loop_data']]],
+  ['prompt_2ec_25',['prompt.c',['../prompt_8c.html',1,'']]],
+  ['pwd_2ec_26',['pwd.c',['../pwd_8c.html',1,'']]]
 ];

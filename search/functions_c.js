@@ -7,10 +7,11 @@ var searchData=
   ['post_5fprocess_5fcommand_5fargs_4',['post_process_command_args',['../tokens_8h.html#ae75b1ee73be065ece94dc8bf097a04d1',1,'post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data):&#160;parser_helper_helpers.c'],['../parser__helper__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1',1,'post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data):&#160;parser_helper_helpers.c']]],
   ['print_5fast_5fgraphical_5',['print_ast_graphical',['../visualiser_8c.html#ac38cad433d858a530a7d7479f134f81c',1,'visualiser.c']]],
   ['print_5fast_5fnode_6',['print_ast_node',['../visualiser_8c.html#a13ff81f002e065c8be81f93b1e3bfecf',1,'visualiser.c']]],
-  ['print_5fast_5froot_7',['print_ast_root',['../tokens_8h.html#a16c146658d86ab8fa44a3af94804c5a9',1,'print_ast_root(t_ast *root):&#160;visualiser.c'],['../visualiser_8c.html#a16c146658d86ab8fa44a3af94804c5a9',1,'print_ast_root(t_ast *root):&#160;visualiser.c']]],
+  ['print_5fast_5froot_7',['print_ast_root',['../visualiser_8c.html#a16c146658d86ab8fa44a3af94804c5a9',1,'print_ast_root(t_ast *root):&#160;visualiser.c'],['../tokens_8h.html#a16c146658d86ab8fa44a3af94804c5a9',1,'print_ast_root(t_ast *root):&#160;visualiser.c']]],
   ['print_5fenv_5fstack_8',['print_env_stack',['../builtins_2env_8c.html#a5b5d29d406a0fad6272b33c03b7793b4',1,'env.c']]],
   ['print_5fmaxishell_9',['print_maxishell',['../tokens_8h.html#a4e673b7c7d3f45e10377ab9f537b8bf9',1,'print_maxishell(void):&#160;prompt.c'],['../prompt_8c.html#a4e673b7c7d3f45e10377ab9f537b8bf9',1,'print_maxishell(void):&#160;prompt.c']]],
   ['print_5fstack_10',['print_stack',['../tokens_8h.html#af90eff9f4a4a22eec7f50142c9e1b591',1,'print_stack(t_token **stack):&#160;stack_control.c'],['../stack__control_8c.html#af90eff9f4a4a22eec7f50142c9e1b591',1,'print_stack(t_token **stack):&#160;stack_control.c']]],
-  ['print_5ftokens_11',['print_tokens',['../tokens_8h.html#ac0f556c5b74afdbd7ce730e294df7b76',1,'print_tokens(t_token *tokens):&#160;tokeniser.c'],['../tokeniser_8c.html#ac0f556c5b74afdbd7ce730e294df7b76',1,'print_tokens(t_token *tokens):&#160;tokeniser.c']]],
-  ['process_5fast_5fand_5fio_12',['process_ast_and_io',['../main_8c.html#a3c7725caed2a77513c06468244396d9b',1,'main.c']]]
+  ['print_5ft_5fenv_11',['print_t_env',['../env_8h.html#a7136cd5a6fbbadec4376ca292643ad51',1,'print_t_env(t_env *tokens):&#160;utils.c'],['../env_2utils_8c.html#a7136cd5a6fbbadec4376ca292643ad51',1,'print_t_env(t_env *tokens):&#160;utils.c']]],
+  ['print_5ftokens_12',['print_tokens',['../tokens_8h.html#ac0f556c5b74afdbd7ce730e294df7b76',1,'print_tokens(t_token *tokens):&#160;tokeniser.c'],['../tokeniser_8c.html#ac0f556c5b74afdbd7ce730e294df7b76',1,'print_tokens(t_token *tokens):&#160;tokeniser.c']]],
+  ['process_5fast_5fand_5fio_13',['process_ast_and_io',['../main_8c.html#a3c7725caed2a77513c06468244396d9b',1,'main.c']]]
 ];
