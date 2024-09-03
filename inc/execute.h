@@ -17,6 +17,11 @@
 # include "tokens.h"
 # include "env.h"
 
+# define ERROR 1
+# define SUCCESS 0
+# define IS_DIRECTORY 126
+# define UNKNOWN_COMMAND 127
+
 /*	execute	*/
 int		execute_ast(t_ast *node, t_ms_data *data);
 

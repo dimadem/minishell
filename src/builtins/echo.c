@@ -12,6 +12,7 @@
 
 #include "libft.h"
 #include "shell.h"
+#include "execute.h"
 
 /*
 	Functionality:
@@ -23,8 +24,6 @@ int	builtin_echo(t_ms_data *data)
 	int	newline;
 	int	i;
 
-	if (data->std_out == -1)
-		data->std_out = 1;
 	newline = 1;
 	if (data->args[1] && (ft_strcmp(data->args[1], "-n") == 0))
 	{
@@ -34,12 +33,11 @@ int	builtin_echo(t_ms_data *data)
 	i = 0;
 	while (data->args[++i])
 	{
-		write(1, data->args[i], ft_strlen(data->args[i]));
+		ft_putstr_fd(data->args[i], STDOUT_FILENO);
 		if (data->args[i + 1])
-			write(data->std_out, " ", 1);
+			ft_putstr_fd(" ", STDOUT_FILENO);
 	}
 	if (newline)
-		write(data->std_out, "\n", 1);
-	data->std_out = -1;
-	return (0);
+		write(STDOUT_FILENO, "\n", 1);
+	return (SUCCESS);
 }

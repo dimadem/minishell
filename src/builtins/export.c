@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include "shell.h"
 #include <stdio.h>
+#include "execute.h"
 
 /*
 Functionalities:
@@ -44,7 +45,7 @@ int	builtin_export(t_ms_data *data)
 	}
 	else 
 		add_env(data);
-	return (0);
+	return (SUCCESS);
 }
 
 

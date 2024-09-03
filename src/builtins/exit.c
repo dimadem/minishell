@@ -25,9 +25,9 @@ Functionality:
 
 int	builtin_exit(t_ms_data *data)
 {
-	const char	*message;
+	char	*message;
 
 	message = "exit\n";
-	write(STDOUT_FILENO, message, ft_strlen(message));
+	ft_putstr_fd(message, STDOUT_FILENO);
 	exit(data->exit_status);
 }

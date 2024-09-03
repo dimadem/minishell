@@ -14,6 +14,7 @@
 #include "libft.h"
 #include "shell.h"
 #include "env.h"
+#include "execute.h"
 
 /*
    - Functionality:
@@ -36,12 +37,12 @@ int	builtin_cd(t_ms_data *data)
 		target_dir = home_dir;
 	if (chdir(target_dir) != 0)
 	{
-		ft_putstr_fd("bash: cd: ", 2);
-		perror(target_dir);
-		return (1);
+		ft_putstr_fd("bash: cd: ", STDERR_FILENO);
+		ft_perror(target_dir);
+		return (ERROR);
 	}
 	set_env(&data->envp, "OLDPWD", get_env(data->envp, "PWD"));
 	if (getcwd(cwd, sizeof(cwd)) != NULL)
 		set_env(&data->envp, "PWD", cwd);
-	return (0);
+	return (SUCCESS);
 }
