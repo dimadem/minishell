@@ -31,51 +31,48 @@ static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd);
   - 1: error
  */
 
-char *process_and_reassemble(char *line, t_ms_data *data) {
-    char **tokens;
-    char *token;
-    char *result;
-    size_t line_len = strlen(line);
-    size_t result_len = 0;
-    int i = 0;
-    
-    // Allocate memory for token array (assuming a reasonable max number of tokens)
-    tokens = malloc((line_len / 2 + 1) * sizeof(char *));
-    if (!tokens) {
-        perror("malloc");
-        return NULL;
-    }
-    
-    // Split the input line into tokens by spaces
-    token = strtok(line, " ");
-    while (token != NULL) {
-        // Apply the processing logic to each token
-        tokens[i] = expand_env_var(line, data);
-        result_len += strlen(tokens[i]) + 1; // +1 for the space
-        i++;
-        token = strtok(NULL, " ");
-    }
-    tokens[i] = NULL; // Null-terminate the token array
+static char	*assemble_result(char **tokens, size_t result_len)
+{
+	char	*result;
+	int		i;
 
-    // Allocate memory for the final result string
-    result = malloc(result_len + 1); // +1 for the null terminator
-    if (!result) {
-        perror("malloc");
-        free(tokens);
-        return NULL;
-    }
+	result = malloc(result_len + 1);
+	if (!result)
+		return (NULL);
+	*result = '\0';
+	i = 0;
+	while (tokens[i])
+	{
+		ft_strcat(result, tokens[i]);
+		if (tokens[i + 1])
+			ft_strcat(result, " ");
+		i++;
+	}
+	free(tokens);
+	return (result);
+}
 
-    // Concatenate the tokens back into a single string
-    strcpy(result, tokens[0]);
-    for (int j = 1; tokens[j] != NULL; j++) {
-        strcat(result, " ");
-        strcat(result, tokens[j]);
-    }
+char	*process_and_reassemble(char *line, t_ms_data *data)
+{
+	char	**tokens;
+	size_t	result_len;
+	int		i;
+	char	*processed_token;
 
-    // Free the memory allocated for the tokens
-    free(tokens);
-
-    return result;
+	tokens = ft_split(line, ' ');
+	if (!tokens)
+		return (NULL);
+	result_len = 0;
+	i = 0;
+	while (tokens[i])
+	{
+		processed_token = expand_env_var(tokens[i], data);
+		free(tokens[i]);
+		tokens[i] = processed_token;
+		result_len += ft_strlen(tokens[i]) + 1;
+		i++;
+	}
+	return (assemble_result(tokens, result_len));
 }
 
 int	redirect_here_doc(t_ast *node, t_ms_data *data)
