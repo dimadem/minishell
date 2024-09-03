@@ -46,7 +46,6 @@ char	*expand_env_var(char *arg, t_ms_data *data)
 	{
 		if (arg[ft_strlen(arg) - 1] == '"')
 			arg[ft_strlen(arg) - 1] = '\0';
-		ft_printf("we here");
 		env_value = get_env(data->envp, arg + 1);
 		if (!env_value)
 			env_value = get_env(data->shell_variables, arg + 1);

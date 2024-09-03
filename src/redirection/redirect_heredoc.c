@@ -31,6 +31,53 @@ static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd);
   - 1: error
  */
 
+char *process_and_reassemble(char *line, t_ms_data *data) {
+    char **tokens;
+    char *token;
+    char *result;
+    size_t line_len = strlen(line);
+    size_t result_len = 0;
+    int i = 0;
+    
+    // Allocate memory for token array (assuming a reasonable max number of tokens)
+    tokens = malloc((line_len / 2 + 1) * sizeof(char *));
+    if (!tokens) {
+        perror("malloc");
+        return NULL;
+    }
+    
+    // Split the input line into tokens by spaces
+    token = strtok(line, " ");
+    while (token != NULL) {
+        // Apply the processing logic to each token
+        tokens[i] = expand_env_var(line, data);
+        result_len += strlen(tokens[i]) + 1; // +1 for the space
+        i++;
+        token = strtok(NULL, " ");
+    }
+    tokens[i] = NULL; // Null-terminate the token array
+
+    // Allocate memory for the final result string
+    result = malloc(result_len + 1); // +1 for the null terminator
+    if (!result) {
+        perror("malloc");
+        free(tokens);
+        return NULL;
+    }
+
+    // Concatenate the tokens back into a single string
+    strcpy(result, tokens[0]);
+    for (int j = 1; tokens[j] != NULL; j++) {
+        strcat(result, " ");
+        strcat(result, tokens[j]);
+    }
+
+    // Free the memory allocated for the tokens
+    free(tokens);
+
+    return result;
+}
+
 int	redirect_here_doc(t_ast *node, t_ms_data *data)
 {
 	char	*line;
@@ -42,13 +89,13 @@ int	redirect_here_doc(t_ast *node, t_ms_data *data)
 		return (1);
 	file_fd = open_tmp_file("w");
 	eof = ft_strdup(node->right->args[0]);
-	line = readline("> ");
+	line = process_and_reassemble(readline("> "), data);
 	while (line && (ft_strcmp(line, eof) != 0))
 	{
 		write(file_fd, line, ft_strlen(line));
 		write(file_fd, "\n", 1);
 		free(line);
-		line = readline("> ");
+		line = process_and_reassemble(readline("> "), data);
 	}
 	free(line);
 	free(eof);
