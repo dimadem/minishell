@@ -15,7 +15,7 @@
 #include "shell.h"
 #include "env.h"
 #include "execute.h"
-#include "errors.h"
+#include "exit_status.h"
 
 /*
    - Functionality:
@@ -38,11 +38,14 @@ int	builtin_cd(t_ms_data *data)
 		target_dir = home_dir;
 	if (chdir(target_dir) == -1)
 	{
-		shell_error_handler(IS_DIRECTORY, ft_strjoin("cd: ", target_dir));
-		return (ERROR);
+		if (errno == EACCES)
+			exit_status_handler(data, PERMISSION_DENIED, ft_strjoin("cd: ", target_dir));
+		if (errno == ENOENT)
+			exit_status_handler(data, IS_DIRECTORY, ft_strjoin("cd: ", target_dir));
+		return (EXIT_FAILURE);
 	}
 	set_env(&data->envp, "OLDPWD", get_env(data->envp, "PWD"));
 	if (getcwd(cwd, sizeof(cwd)) != NULL)
 		set_env(&data->envp, "PWD", cwd);
-	return (SUCCESS);
+	return (EXIT_SUCCESS);
 }

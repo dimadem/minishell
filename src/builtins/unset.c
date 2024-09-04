@@ -14,7 +14,9 @@
 #include "env.h"
 #include "libft.h"
 #include <unistd.h>
-#include "errors.h"
+#include "exit_status.h"
+
+#include <stdio.h>
 
 /*
    todo
@@ -33,13 +35,16 @@ int	builtin_unset(t_ms_data *data)
 	while (data->args[++i])
 	{
 		key =  data->args[i];
+		printf("key: %s\n", key);
 		if (unset_env(&data->envp, key) == -1)
 		{
 			ft_putstr_fd("bash: unset: `", STDERR_FILENO);
 			ft_putstr_fd(key, STDERR_FILENO);
 			ft_putendl_fd("': not a valid identifier", STDERR_FILENO);
-			return (ERROR);
+			set_exit_status(&data->exit_status, EXIT_UNSET_NOT_VALID_IDENTIFIER);
+			set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
+			return (EXIT_UNSET_NOT_VALID_IDENTIFIER);
 		}
 	}
-	return (SUCCESS);
+	return (EXIT_SUCCESS);
 }

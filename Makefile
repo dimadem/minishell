@@ -40,7 +40,6 @@ READLINE 				= -lreadline
 SRC_DIR					=	./src
 UTILS_DIR				= 	$(SRC_DIR)/utils
 ENV_DIR					=	$(SRC_DIR)/env
-ERRORS_DIR				=	$(SRC_DIR)/errors
 SHELL_VAR_DIR			=	$(SRC_DIR)/shell_variables
 APP_DIR					=	$(SRC_DIR)/app
 COMMON_DIR				=	$(SRC_DIR)/common
@@ -49,6 +48,7 @@ PIPE_DIR				= 	$(SRC_DIR)/pipe
 REDIRECTION_DIR			=	$(SRC_DIR)/redirection
 BUILTINS_DIR			=	$(SRC_DIR)/builtins
 EXECUTE_DIR				=	$(SRC_DIR)/execute
+EXIT_STATUS_DIR			=	$(SRC_DIR)/exit_status
 TEST_DIR				=	$(SRC_DIR)/test
 SIGNALS_DIR				=	$(SRC_DIR)/signals
 
@@ -62,7 +62,6 @@ TEST_INCLUDES			=	-I./inc \
 MAIN_SOURCE					=	$(wildcard $(SRC_DIR)/*.c)
 APP_SOURCES					=	$(wildcard $(APP_DIR)/*.c)
 ENV_SOURCES					=	$(wildcard $(ENV_DIR)/*.c)
-ERRORS_SOURCES				=	$(wildcard $(ERRORS_DIR)/*.c)
 SHELL_VAR_SOURCES			=	$(wildcard $(SHELL_VAR_DIR)/*.c)
 COMMON_SOURCES				=	$(wildcard $(COMMON_DIR)/*.c)
 UTILS_SOURCES				= 	$(wildcard $(UTILS_DIR)/*.c)
@@ -71,6 +70,7 @@ PIPE_SOURCES				=	$(wildcard $(PIPE_DIR)/*.c)
 REDIRECTION_SOURCES			=	$(wildcard $(REDIRECTION_DIR)/*.c)
 BUILTINS_SOURCES			=	$(wildcard $(BUILTINS_DIR)/*.c)
 EXECUTE_SOURCES				=	$(wildcard $(EXECUTE_DIR)/*.c)
+EXIT_STATUS_SOURCES			=	$(wildcard $(EXIT_STATUS_DIR)/*.c)
 SIGNALS_SOURCES				=	$(wildcard $(SIGNALS_DIR)/*.c)
 
 MAIN_TEST_SOURCE			=	$(wildcard $(TEST_DIR)/*.c)
@@ -80,7 +80,6 @@ PIPE_TEST_SOURCES			=	$(wildcard $(TEST_DIR)/pipe/*.c)
 SOURCES					=	$(MAIN_SOURCE) \
 							$(APP_SOURCES) \
 							$(ENV_SOURCES) \
-							$(ERRORS_SOURCES) \
 							$(SHELL_VAR_SOURCES) \
 							$(COMMON_SOURCES) \
 							$(UTILS_SOURCES) \
@@ -88,6 +87,7 @@ SOURCES					=	$(MAIN_SOURCE) \
 							$(PIPE_SOURCES) \
 							$(BUILTINS_SOURCES) \
 							$(EXECUTE_SOURCES)	\
+							$(EXIT_STATUS_SOURCES) \
 							$(MAIN_TEST_SOURCE) \
 							$(ENV_TEST_SOURCES) \
 							$(PIPE_TEST_SOURCES) \
@@ -98,7 +98,7 @@ BUILD_DIR					=	./build
 MAIN_OBJECT					=	$(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(MAIN_SOURCE))
 APP_OBJECTS					=	$(patsubst $(APP_DIR)/%.c, $(BUILD_DIR)/src/app/%.o, $(APP_SOURCES))
 ENV_OBJECTS					=	$(patsubst $(ENV_DIR)/env/%.c, $(BUILD_DIR)/src/app/env/%.o, $(ENV_SOURCES))
-ERRORS_OBJECTS				=	$(patsubst $(ERRORS_DIR)/%.c, $(BUILD_DIR)/src/errors/%.o, $(ERRORS_SOURCES))
+EXIT_STATUS_OBJECTS			=	$(patsubst $(EXIT_STATUS_DIR)/%.c, $(BUILD_DIR)/src/exit_status/%.o, $(EXIT_STATUS_SOURCES))
 SHELL_VAR_OBJECTS			=	$(patsubst $(SHELL_VAR_DIR)/%.c, $(BUILD_DIR)/src/shell_variables/%.o, $(SHELL_VAR_SOURCES))
 COMMON_OBJECTS				=	$(patsubst $(COMMON_DIR)/%.c, $(BUILD_DIR)/common/app/%.o, $(COMMON_SOURCES))
 UTILS_OBJECTS				=	$(patsubst $(UTILS_DIR)/%.c, $(BUILD_DIR)/utils/%.o, $(UTILS_SOURCES))
@@ -116,9 +116,9 @@ PIPE_TEST_OBJECTS			=	$(patsubst $(TEST_DIR)/pipe/%.c, $(BUILD_DIR)/src/test/pip
 OBJECTS					=	$(MAIN_OBJECT) \
 							$(APP_OBJECTS) \
 							$(ENV_OBJECTS) \
-							$(ERRORS_OBJECTS) \
 							$(SHELL_VAR_OBJECTS) \
 							$(EXECUTE_OBJECTS) \
+							$(EXIT_STATUS_OBJECTS) \
 							$(COMMON_OBJECTS) \
 							$(BUILTINS_OBJECTS) \
 							$(UTILS_OBJECTS) \
@@ -154,10 +154,6 @@ $(BUILD_DIR)/src/env/%.o: $(ENV_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(BUILD_DIR)/src/errors/%.o: $(ERRORS_DIR)/%.c
-	@mkdir -p $(@D)
-	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
 $(BUILD_DIR)/src/shell_variables/%.o: $(SHELL_VAR_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
@@ -167,6 +163,10 @@ $(BUILD_DIR)/src/builtins/%.o: $(BUILTINS_DIR)/%.c
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/src/execute/%.o: $(EXECUTE_DIR)/%.c
+	@mkdir -p $(@D)
+	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/src/exit_status/%.o: $(ERRORS_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 

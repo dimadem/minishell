@@ -1,4 +1,4 @@
-#include "errors.h"
+#include "exit_status.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "libft.h"
@@ -17,7 +17,7 @@ int ft_isnumber(char *str);
 int	ft_perror(char *str)
 {
 	perror (str);
-	exit(ERROR);
+	exit(EXIT_FAILURE);
 }
 
 int ft_isnumber(char *str)

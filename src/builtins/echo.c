@@ -12,7 +12,7 @@
 
 #include "libft.h"
 #include "shell.h"
-#include "errors.h"
+#include "exit_status.h"
 
 /*
 	Functionality:
@@ -39,5 +39,5 @@ int	builtin_echo(t_ms_data *data)
 	}
 	if (newline)
 		write(STDOUT_FILENO, "\n", 1);
-	return (SUCCESS);
+	return (EXIT_SUCCESS);
 }
