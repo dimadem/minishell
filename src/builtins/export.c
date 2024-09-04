@@ -15,7 +15,7 @@
 #include <stdlib.h>
 #include "shell.h"
 #include <stdio.h>
-#include "errors.h"
+#include "exit_status.h"
 
 /*
 Functionalities:
@@ -24,28 +24,39 @@ Functionalities:
  */
 
 int			      builtin_export(t_ms_data *data);
+static  void	print_env(t_env *env);
 static  void	add_env(t_ms_data *data);
 
-int	builtin_export(t_ms_data *data)
-{
-	t_env	*curr_node;
 
-	if ((data->args[1] == NULL) \
-			|| ft_strncmp(data->args[1], "-p", 1) == 0)
-	{
-		curr_node = data->envp;
-		while (curr_node)
-		{
-			if (!ft_strcmp(curr_node->value, ""))
-				printf("declare -x %s\n", curr_node->key);
-			else
-				printf("declare -x %s=\"%s\"\n", curr_node->key, curr_node->value);
-			curr_node = curr_node->next;
-		}
-	}
-	else 
-		add_env(data);
-	return (SUCCESS);
+int builtin_export (t_ms_data *data)
+{
+    if (ft_strcmp(data->args[1], "-p") != 0 && data->args[1][0] == '-')
+    {
+        exit_status_handler(data, INVALID_OPTION, ft_strjoin("export: ", data->args[1]));
+		ft_putendl_fd("export: usage: export [-p] [name[=value] ...] or export -p", STDERR_FILENO);
+        return (INVALID_OPTION);
+    }
+    else if (data->args[1] == NULL)
+        print_env(data->envp);
+    else if (ft_strcmp(data->args[1], "-p") == 0)
+        print_env(data->envp);
+    add_env(data);
+	return (EXIT_SUCCESS);
+}
+
+static void print_env(t_env *env)
+{
+    t_env *curr_node;
+
+    curr_node = env;
+    while (curr_node)
+    {
+        if (!ft_strcmp(curr_node->value, ""))
+            printf("declare -x %s\n", curr_node->key);
+        else
+            printf("declare -x %s=\"%s\"\n", curr_node->key, curr_node->value);
+        curr_node = curr_node->next;
+    }
 }
 
 

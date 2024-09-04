@@ -19,6 +19,7 @@
 #include "tokens.h"
 #include "pipe.h"
 #include "redirection.h"
+#include "exit_status.h"
 
 int			execute_ast(t_ast *node, t_ms_data *data);
 static int	execute(t_ms_data *data);

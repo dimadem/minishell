@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "libft.h"
 #include <stdio.h>
-#include "errors.h"
+#include "exit_status.h"
 
 /*
 Functionality:
@@ -28,11 +28,11 @@ int	builtin_pwd(t_ms_data *data)
 	(void)data;
 	if (getcwd(cwd, sizeof(cwd)) != NULL)
 		ft_putendl_fd(cwd, STDOUT_FILENO);
-	else
-	{
-		ft_putstr_fd("bash: cd: ", STDERR_FILENO);
-		perror("cwd");
-		return (ERROR);
-	}
-	return (SUCCESS);
+	// else
+	// {
+	// 	ft_putstr_fd("bash: cd: ", STDERR_FILENO);
+	// 	perror("cwd");
+	// 	return (EXIT_FAILURE);
+	// }
+	return (EXIT_SUCCESS);
 }
