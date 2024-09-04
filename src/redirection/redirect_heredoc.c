@@ -66,7 +66,7 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	i = 0;
 	while (tokens[i])
 	{
-		processed_token = expand_env_var(tokens[i], data);
+		processed_token = expand_env_and_loc_var(tokens[i], data);
 		free(tokens[i]);
 		tokens[i] = processed_token;
 		result_len += ft_strlen(tokens[i]) + 1;

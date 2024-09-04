@@ -36,7 +36,7 @@ void	final_quote_removal(int arg_count, t_ast *command_node)
 	}
 }
 
-char	*expand_env_var(char *arg, t_ms_data *data)
+char	*expand_env_and_loc_var(char *arg, t_ms_data *data)
 {
 	char	*env_value;
 
@@ -93,9 +93,9 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 		if (arg[0] == '$' || (arg[0] == '"' && arg[1] == '$'))
 		{
 			if (arg[0] == '"')
-				processed_arg = expand_env_var(arg + 1, data);
+				processed_arg = expand_env_and_loc_var(arg + 1, data);
 			else
-				processed_arg = expand_env_var(arg, data);
+				processed_arg = expand_env_and_loc_var(arg, data);
 		}
 		else if (arg[0] == '\'')
 			processed_arg = ft_strdup(arg);
@@ -107,3 +107,4 @@ void	post_process_command_args(t_ast *command_node, int arg_count, \
 	}
 	final_quote_removal(arg_count, command_node);
 }
+
