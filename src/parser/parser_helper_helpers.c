@@ -77,76 +77,20 @@ void	handle_local_vars(t_ms_data *data, char *arg)
 	}
 }
 
-void	post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data)
+void	post_process_command_args(t_ast *command_node, int arg_count \
+			, t_ms_data *data)
 {
 	int		i;
-	char	*arg;
 	char	*processed_arg;
-	char	*start;
-	char	*var_name;
-	char	*expanded_var;
-	char	*tmp;
 
 	i = 0;
 	while (i < arg_count)
 	{
-		arg = command_node->args[i];
-		handle_local_vars(data, arg);  // This keeps working as expected
-
-		processed_arg = ft_strdup("");  // Start with an empty string
-		start = arg;  // Pointer to traverse through the argument string
-
-		while (*start != '\0')  // Traverse until end of string
-		{
-			if (*start == '$')  // Found a variable
-			{
-				// We want to keep the '$' as part of the variable name
-				char *var_start = start;  // Start of variable (including '$')
-
-				// Move past the '$' and collect the alphanumeric characters or underscores after it
-				start++;  // Move past the '$'
-				while (*start != '\0' && (ft_isalnum(*start) || *start == '_'))
-					start++;  // Move past the variable name
-
-				// Get the variable name including the '$'
-				var_name = ft_substr(var_start, 0, start - var_start);
-
-				// Expand the variable using the provided function (with '$' included)
-				expanded_var = expand_env_and_loc_var(var_name, data);
-				free(var_name);  // Free the variable name string
-
-				// Append the expanded variable value to processed_arg
-				if (expanded_var != NULL)
-				{
-					tmp = ft_strjoin(processed_arg, expanded_var);
-					free(processed_arg);
-					processed_arg = tmp;
-					free(expanded_var);
-				}
-			}
-			else
-			{
-				// Handle literal characters (until the next '$')
-				char *literal_start = start;
-				while (*start != '\0' && *start != '$')
-					start++;  // Move until we find a '$' or the end of string
-
-				// Extract the literal part and append it to processed_arg
-				char *literal_part = ft_substr(literal_start, 0, start - literal_start);
-				tmp = ft_strjoin(processed_arg, literal_part);
-				free(processed_arg);
-				processed_arg = tmp;
-				free(literal_part);
-			}
-		}
-
-		// Replace the old argument with the newly processed one
+		handle_local_vars(data, command_node->args[i]);
+		processed_arg = process_argument(command_node->args[i], data);
 		free(command_node->args[i]);
 		command_node->args[i] = processed_arg;
-
 		i++;
 	}
-
-	// This should remain unchanged as it handles the final cleanup
 	final_quote_removal(arg_count, command_node);
 }

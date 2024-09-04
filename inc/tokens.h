@@ -117,5 +117,7 @@ char		*trim_input(char *str);
 void		print_ast_root(t_ast *root);
 void		execute_tree(t_ast *node, t_ms_data *data);
 char		*expand_env_and_loc_var(char *arg, t_ms_data *data);
+char		*append_literal(char **start, char *processed_arg);
+char		*process_argument(char *arg, t_ms_data *data);
 
 #endif
