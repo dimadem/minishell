@@ -38,12 +38,12 @@ int	builtin_unset(t_ms_data *data)
 		printf("key: %s\n", key);
 		if (unset_env(&data->envp, key) == -1)
 		{
-			ft_putstr_fd("bash: unset: `", STDERR_FILENO);
-			ft_putstr_fd(key, STDERR_FILENO);
-			ft_putendl_fd("': not a valid identifier", STDERR_FILENO);
-			set_exit_status(&data->exit_status, EXIT_UNSET_NOT_VALID_IDENTIFIER);
-			set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
-			return (EXIT_UNSET_NOT_VALID_IDENTIFIER);
+			// ft_putstr_fd("bash: unset: `", STDERR_FILENO);
+			// ft_putstr_fd(key, STDERR_FILENO);
+			// ft_putendl_fd("': not a valid identifier", STDERR_FILENO);
+			// set_exit_status(&data->exit_status, NOT_VALID_IDENTIFIER);
+			// set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
+			return (EXIT_SUCCESS);
 		}
 	}
 	return (EXIT_SUCCESS);
