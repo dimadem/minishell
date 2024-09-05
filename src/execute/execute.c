@@ -38,7 +38,7 @@ static int	new_process(t_ms_data *data);
 int	execute_ast(t_ast *node, t_ms_data *data)
 {
 	if (!node)
-		return (ERROR);
+		return (EXIT_FAILURE);
 	if (node->type == PIPE)
 		return (builtin_pipe(node, data));
 	else if (node->type == REDIR_IN)
@@ -54,7 +54,7 @@ int	execute_ast(t_ast *node, t_ms_data *data)
 		data->args = node->args;
 		return (execute(data));
 	}
-	return (SUCCESS);
+	return (EXIT_SUCCESS);
 }
 
 /**
@@ -128,5 +128,5 @@ static int	new_process(t_ms_data *data)
 	}
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &data->exit_status, 0);
-	return (SUCCESS);
+	return (EXIT_SUCCESS);
 }
