@@ -15,11 +15,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "env.h"
-<<<<<<< HEAD
 #include "exit_status.h"
-=======
-#include "errors.h"
->>>>>>> fd09487 (new: errors)
+
 
 /*
 Functionality:
