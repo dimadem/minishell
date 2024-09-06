@@ -18,16 +18,14 @@
 #include <sys/wait.h>
 #include "signals.h"
 
-int			redirect_here_doc(t_ast *node, t_ms_data *data);
-
 // GLOBAL VAR
 // volatile tells compiler the var can change at compilation between accesses.
 // sig_atomic_t used for global_vars
-volatile sig_atomic_t g_heredoc_interrupted = 0;
+volatile sig_atomic_t	g_heredoc_interrupted = 0;
 
 static int	open_tmp_file(const char *type)
 {
-	int	file_fd;	
+	int	file_fd;
 
 	file_fd = -1;
 	if (ft_strcmp(type, "w") == 0)
@@ -38,7 +36,6 @@ static int	open_tmp_file(const char *type)
 		ft_perror("open");
 	return (file_fd);
 }
-
 
 static void	setup_sigint_handler(struct sigaction *sa_old)
 {
@@ -62,17 +59,6 @@ static int	handle_heredoc_interruption(char *line, char *eof, int file_fd, \
 	return (1);
 }
 
-static void	write_heredoc_lines(char **line, int file_fd, char *eof)
-{
-	while (*line && (ft_strcmp(*line, eof) != 0) && !g_heredoc_interrupted)
-	{
-		write(file_fd, *line, ft_strlen(*line));
-		write(file_fd, "\n", 1);
-		free(*line);
-		*line = readline("> ");
-	}
-}
-
 static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd)
 {
 	pid_t	pid;
@@ -92,25 +78,21 @@ static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd)
 
 int	redirect_here_doc(t_ast *node, t_ms_data *data)
 {
-	char			*line;
-	char			*eof;
-	int				file_fd;
+	char				*line;
+	char				*eof;
+	int					file_fd;
 	struct sigaction	sa_old;
 
 	line = NULL;
 	if (node->right->args[0] == NULL)
 		return (1);
-
 	setup_sigint_handler(&sa_old);
 	file_fd = open_tmp_file("w");
 	eof = ft_strdup(node->right->args[0]);
 	line = readline("> ");
-
 	write_heredoc_lines(&line, file_fd, eof);
-
 	if (g_heredoc_interrupted)
 		return (handle_heredoc_interruption(line, eof, file_fd, &sa_old));
-
 	free(line);
 	free(eof);
 	close(file_fd);

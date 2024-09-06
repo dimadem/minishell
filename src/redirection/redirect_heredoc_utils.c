@@ -73,3 +73,14 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	}
 	return (assemble_result(tokens, result_len));
 }
+
+void	write_heredoc_lines(char **line, int file_fd, char *eof)
+{
+	while (*line && (ft_strcmp(*line, eof) != 0) && !g_heredoc_interrupted)
+	{
+		write(file_fd, *line, ft_strlen(*line));
+		write(file_fd, "\n", 1);
+		free(*line);
+		*line = readline("> ");
+	}
+}
