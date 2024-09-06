@@ -19,12 +19,16 @@
 # include <signal.h>
 # include "shell.h"
 
+// GLOBAL VAR
+extern volatile sig_atomic_t g_heredoc_interrupted;
+
 /*      signals     */
 void	signal_reset_prompt(int signo);
 void	set_signals_interactive(void);
 void	signal_print_newline(int signal);
 void	sigquit_ignore(void);
 void	set_signals_noninteractive(void);
+void handle_sigint_heredoc(int signo);
 
 int		ft_perror(char *str);
 #endif
