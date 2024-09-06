@@ -124,7 +124,10 @@ static int	new_process(t_ms_data *data)
 		close_fds(data->std_in, data->std_out);
 		if (execve(ft_find_path(data->args[0], data->envp), \
 					data->args, env_to_array(data->envp)) == -1)
-			ft_perror("minishell");
+		{
+			exit_status_handler(data, IS_DIRECTORY, "minishell: ");
+			exit(IS_DIRECTORY);
+		}	
 	}
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &data->exit_status, 0);

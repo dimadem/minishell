@@ -47,6 +47,7 @@ void	exit_status_handler(t_ms_data *data, int status_code, char *err_arg)
 	ft_puterror(err_arg, error_message);
 	set_exit_status(&data->exit_status, status_code);
 	set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
+	printf("get_shell_variable ->%s\n", get_shell_variable(data->shell_variables, "?"));
 }
 
 void	ft_puterror(char *err_arg, char *error_message)
