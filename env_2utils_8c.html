@@ -203,7 +203,7 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__strjoin_8c_source.html#l00023">ft_strjoin()</a>, <a class="el" href="env_8h_source.html#l00018">s_env::key</a>, <a class="el" href="env_8h_source.html#l00020">s_env::next</a>, and <a class="el" href="env_8h_source.html#l00019">s_env::value</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00108">new_process()</a>, and <a class="el" href="env__test_8c_source.html#l00035">test_init_env()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00107">new_process()</a>, and <a class="el" href="env__test_8c_source.html#l00035">test_init_env()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -285,21 +285,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="env_2utils_8c_source.html#l00088">88</a> of file <a class="el" href="env_2utils_8c_source.html">utils.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>{</div>
-<div class="line"><span class="lineno">   90</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *curr_node;</div>
-<div class="line"><span class="lineno">   91</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *next_node;</div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>    curr_node = envp;</div>
-<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">while</span> (curr_node)</div>
-<div class="line"><span class="lineno">   95</span>    {</div>
-<div class="line"><span class="lineno">   96</span>        next_node = curr_node-&gt;<a class="code hl_variable" href="structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2">next</a>;</div>
-<div class="line"><span class="lineno">   97</span>        free(curr_node-&gt;<a class="code hl_variable" href="structs__env.html#aac496ab31822220b5bf37affd2554f08">key</a>);</div>
-<div class="line"><span class="lineno">   98</span>        free(curr_node-&gt;<a class="code hl_variable" href="structs__env.html#aeed22f6fb6689d3a190d64d3e11d989f">value</a>);</div>
-<div class="line"><span class="lineno">   99</span>        free(curr_node);</div>
-<div class="line"><span class="lineno">  100</span>        curr_node = next_node;</div>
-<div class="line"><span class="lineno">  101</span>    }</div>
-<div class="line"><span class="lineno">  102</span>}</div>
+<p class="definition">Definition at line <a class="el" href="env_2utils_8c_source.html#l00073">73</a> of file <a class="el" href="env_2utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *curr_node;</div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *next_node;</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    curr_node = envp;</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">while</span> (curr_node)</div>
+<div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>        next_node = curr_node-&gt;<a class="code hl_variable" href="structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2">next</a>;</div>
+<div class="line"><span class="lineno">   82</span>        free(curr_node-&gt;<a class="code hl_variable" href="structs__env.html#aac496ab31822220b5bf37affd2554f08">key</a>);</div>
+<div class="line"><span class="lineno">   83</span>        free(curr_node-&gt;<a class="code hl_variable" href="structs__env.html#aeed22f6fb6689d3a190d64d3e11d989f">value</a>);</div>
+<div class="line"><span class="lineno">   84</span>        free(curr_node);</div>
+<div class="line"><span class="lineno">   85</span>        curr_node = next_node;</div>
+<div class="line"><span class="lineno">   86</span>    }</div>
+<div class="line"><span class="lineno">   87</span>}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="env_8h_source.html#l00018">s_env::key</a>, <a class="el" href="env_8h_source.html#l00020">s_env::next</a>, and <a class="el" href="env_8h_source.html#l00019">s_env::value</a>.</p>
 
@@ -344,38 +344,29 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The function <code>ft_strcdup</code> duplicates a string <code>s</code> until the character <code>c</code> is encountered or the end of the string is reached.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">s</td><td>The <code>s</code> parameter in the <code>ft_strcdup</code> function is a pointer to a constant character array (string) from which a new string will be duplicated up to the specified character <code>c</code>. </td></tr>
-    <tr><td class="paramname">c</td><td>The parameter <code>c</code> in the <code>ft_strcdup</code> function represents the character that will be used as a delimiter. The function will copy the characters from the input string <code>s</code> until it encounters this delimiter character <code>c</code>, or until the end of the string if the delimiter is not found</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The function <code>ft_strcdup</code> returns a newly allocated string that is a duplicate of the input string <code>s</code> up to the first occurrence of the character <code>c</code>. If memory allocation fails, it returns <code>NULL</code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="env_2utils_8c_source.html#l00067">67</a> of file <a class="el" href="env_2utils_8c_source.html">utils.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordtype">char</span>    *str;</div>
-<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">size_t</span>  i;</div>
-<div class="line"><span class="lineno">   71</span> </div>
-<div class="line"><span class="lineno">   72</span>    i = 0;</div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">while</span> (s[i] &amp;&amp; s[i] != c)</div>
-<div class="line"><span class="lineno">   74</span>        i++;</div>
-<div class="line"><span class="lineno">   75</span>    str = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * (i + 1));</div>
-<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span> (!str)</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   78</span>    i = 0;</div>
-<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">while</span> (s[i] &amp;&amp; s[i] != c)</div>
-<div class="line"><span class="lineno">   80</span>    {</div>
-<div class="line"><span class="lineno">   81</span>        str[i] = s[i];</div>
-<div class="line"><span class="lineno">   82</span>        i++;</div>
-<div class="line"><span class="lineno">   83</span>    }</div>
-<div class="line"><span class="lineno">   84</span>    str[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> (str);</div>
-<div class="line"><span class="lineno">   86</span>}</div>
+<p class="definition">Definition at line <a class="el" href="env_2utils_8c_source.html#l00052">52</a> of file <a class="el" href="env_2utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">char</span>    *str;</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">size_t</span>  i;</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    i = 0;</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">while</span> (s[i] &amp;&amp; s[i] != c)</div>
+<div class="line"><span class="lineno">   59</span>        i++;</div>
+<div class="line"><span class="lineno">   60</span>    str = (<span class="keywordtype">char</span> *)malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * (i + 1));</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">if</span> (!str)</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   63</span>    i = 0;</div>
+<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">while</span> (s[i] &amp;&amp; s[i] != c)</div>
+<div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>        str[i] = s[i];</div>
+<div class="line"><span class="lineno">   67</span>        i++;</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="line"><span class="lineno">   69</span>    str[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> (str);</div>
+<div class="line"><span class="lineno">   71</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="export_8c_source.html#l00051">add_env()</a>, <a class="el" href="env_2env_8c_source.html#l00033">add_env_node()</a>, <a class="el" href="shell__variables__utils_8c_source.html#l00013">add_shell_var_node()</a>, and <a class="el" href="shell__variables_8c_source.html#l00011">handle_add_set_shell_variable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="export_8c_source.html#l00069">add_env()</a>, <a class="el" href="env_2env_8c_source.html#l00033">add_env_node()</a>, <a class="el" href="shell__variables__utils_8c_source.html#l00025">add_shell_var_node()</a>, and <a class="el" href="shell__variables_8c_source.html#l00024">handle_add_set_shell_variable()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -482,21 +473,21 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="env_2utils_8c_source.html#l00104">104</a> of file <a class="el" href="env_2utils_8c_source.html">utils.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>{</div>
-<div class="line"><span class="lineno">  106</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *token;</div>
-<div class="line"><span class="lineno">  107</span>    <span class="keywordtype">int</span>     i;              </div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>    i = 0;</div>
-<div class="line"><span class="lineno">  110</span>    token = tokens;</div>
-<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">while</span> (token != NULL)</div>
-<div class="line"><span class="lineno">  112</span>    {</div>
-<div class="line"><span class="lineno">  113</span>        <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;key[%d]      -&gt;  %s \n&quot;</span>, i, token-&gt;<a class="code hl_variable" href="structs__env.html#aac496ab31822220b5bf37affd2554f08">key</a>);</div>
-<div class="line"><span class="lineno">  114</span>        <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;value[%d]    -&gt;  %s \n&quot;</span>, i, token-&gt;<a class="code hl_variable" href="structs__env.html#aeed22f6fb6689d3a190d64d3e11d989f">value</a>);</div>
-<div class="line"><span class="lineno">  115</span>        token = token-&gt;<a class="code hl_variable" href="structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2">next</a>;</div>
-<div class="line"><span class="lineno">  116</span>        i++;</div>
-<div class="line"><span class="lineno">  117</span>    }</div>
-<div class="line"><span class="lineno">  118</span>}</div>
+<p class="definition">Definition at line <a class="el" href="env_2utils_8c_source.html#l00089">89</a> of file <a class="el" href="env_2utils_8c_source.html">utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>{</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *token;</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordtype">int</span>     i;              </div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span>    i = 0;</div>
+<div class="line"><span class="lineno">   95</span>    token = tokens;</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">while</span> (token != NULL)</div>
+<div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>        <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;key[%d]      -&gt;  %s \n&quot;</span>, i, token-&gt;<a class="code hl_variable" href="structs__env.html#aac496ab31822220b5bf37affd2554f08">key</a>);</div>
+<div class="line"><span class="lineno">   99</span>        <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;value[%d]    -&gt;  %s \n&quot;</span>, i, token-&gt;<a class="code hl_variable" href="structs__env.html#aeed22f6fb6689d3a190d64d3e11d989f">value</a>);</div>
+<div class="line"><span class="lineno">  100</span>        token = token-&gt;<a class="code hl_variable" href="structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2">next</a>;</div>
+<div class="line"><span class="lineno">  101</span>        i++;</div>
+<div class="line"><span class="lineno">  102</span>    }</div>
+<div class="line"><span class="lineno">  103</span>}</div>
 <div class="ttc" id="alibft_8h_html_a1ee8ae8a80a7d9141ea5339af8565f2e"><div class="ttname"><a href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a></div><div class="ttdeci">int ft_printf(const char *format,...)</div><div class="ttdef"><b>Definition</b> <a href="ft__printf_8c_source.html#l00037">ft_printf.c:37</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__printf_8c_source.html#l00037">ft_printf()</a>, <a class="el" href="env_8h_source.html#l00018">s_env::key</a>, <a class="el" href="env_8h_source.html#l00020">s_env::next</a>, and <a class="el" href="env_8h_source.html#l00019">s_env::value</a>.</p>

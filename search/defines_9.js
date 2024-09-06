@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['true_0',['TRUE',['../libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'libft.h']]]
+  ['not_5fvalid_5fidentifier_0',['NOT_VALID_IDENTIFIER',['../exit__status_8h.html#a479c3dd3bb6522c8e3f74ba0e27fc22f',1,'exit_status.h']]],
+  ['numeric_5frequired_1',['NUMERIC_REQUIRED',['../exit__status_8h.html#a1ad749793bda23d52d705cdf9273c98f',1,'exit_status.h']]]
 ];

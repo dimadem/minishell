@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mag_0',['MAG',['../libft_8h.html#af54a5a977c0c499323d656315f008ee0',1,'libft.h']]]
+  ['history_5fpath_0',['HISTORY_PATH',['../tokens_8h.html#a32f7389f2a161bbbb128130ca37ef8e1',1,'tokens.h']]]
 ];

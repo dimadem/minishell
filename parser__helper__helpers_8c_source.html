@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('parser__helper__helpers_8c_source.html
 </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="tokens_8h.html#a23f04994cfc7846d455e4bb9a08f3de0">   39</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0">expand_env_var</a>(<span class="keywordtype">char</span> *arg, <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="tokens_8h.html#aa3f9c993878d2f0d44c2cd69d3a5df47">   39</a></span><span class="keywordtype">char</span>    *<a class="code hl_function" href="parser__helper__helpers_8c.html#aa3f9c993878d2f0d44c2cd69d3a5df47">expand_env_and_loc_var</a>(<span class="keywordtype">char</span> *arg, <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data)</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">char</span>    *env_value;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
@@ -150,71 +150,60 @@ $(document).ready(function(){initNavTree('parser__helper__helpers_8c_source.html
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">if</span> (arg[<a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(arg) - 1] == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            arg[<a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(arg) - 1] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        env_value = <a class="code hl_function" href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a>(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">envp</a>, arg + 1);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> (env_value)</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(env_value));</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(arg));</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">if</span> (!env_value)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            env_value = <a class="code hl_function" href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a>(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">shell_variables</a>, arg + 1);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">if</span> (env_value)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(env_value));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> (<a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
 </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="parser__helper__helpers_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">   56</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="parser__helper__helpers_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a>(<a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data, <span class="keywordtype">char</span> *arg)</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">char</span>    *p;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">int</span>     valid_var;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    p = arg;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    valid_var = 1;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (arg[0] != <span class="charliteral">&#39;=&#39;</span> &amp;&amp; strchr(arg, <span class="charliteral">&#39;=&#39;</span>))</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">while</span> (p &lt; strchr(arg, <span class="charliteral">&#39;=&#39;</span>))</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a9c2c3821ea43ebdf97de07b123503f8b">ft_isalnum</a>(*p++))</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                valid_var = 0;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                break ;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (valid_var)</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <a class="code hl_function" href="env_8h.html#a8508df71f808894b44abb69527998a0c">handle_add_set_shell_variable</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">shell_variables</a>, arg);</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="parser__helper__helpers_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">   58</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="parser__helper__helpers_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a>(<a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data, <span class="keywordtype">char</span> *arg)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">char</span>    *p;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">int</span>     valid_var;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    p = arg;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    valid_var = 1;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> (arg[0] != <span class="charliteral">&#39;=&#39;</span> &amp;&amp; strchr(arg, <span class="charliteral">&#39;=&#39;</span>))</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">while</span> (p &lt; strchr(arg, <span class="charliteral">&#39;=&#39;</span>))</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a9c2c3821ea43ebdf97de07b123503f8b">ft_isalnum</a>(*p++))</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                valid_var = 0;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                break ;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">if</span> (valid_var)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <a class="code hl_function" href="env_8h.html#a8508df71f808894b44abb69527998a0c">handle_add_set_shell_variable</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">shell_variables</a>, arg);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
 </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="foldopen" id="foldopen00078" data-start="{" data-end="}">
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="tokens_8h.html#ae75b1ee73be065ece94dc8bf097a04d1">   78</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="parser__helper__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1">post_process_command_args</a>(<a class="code hl_struct" href="structs__ast.html">t_ast</a> *command_node, <span class="keywordtype">int</span> arg_count, \</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data)</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">int</span>     i;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">char</span>    *arg;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">char</span>    *processed_arg;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    i = 0;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">while</span> (i &lt; arg_count)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        arg = command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i];</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_function" href="parser__helper__helpers_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a>(data, arg);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        processed_arg = NULL;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        <span class="keywordflow">if</span> (arg[0] == <span class="charliteral">&#39;$&#39;</span> || (arg[0] == <span class="charliteral">&#39;&quot;&#39;</span> &amp;&amp; arg[1] == <span class="charliteral">&#39;$&#39;</span>))</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">if</span> (arg[0] == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                processed_arg = <a class="code hl_function" href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0">expand_env_var</a>(arg + 1, data);</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                processed_arg = <a class="code hl_function" href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0">expand_env_var</a>(arg, data);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (arg[0] == <span class="charliteral">&#39;\&#39;&#39;</span>)</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            processed_arg = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(arg);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            processed_arg = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(arg);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        free(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i] = processed_arg;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        i++;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_function" href="parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b">final_quote_removal</a>(arg_count, command_node);</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="tokens_8h.html#ae75b1ee73be065ece94dc8bf097a04d1">   80</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="parser__helper__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1">post_process_command_args</a>(<a class="code hl_struct" href="structs__ast.html">t_ast</a> *command_node, <span class="keywordtype">int</span> arg_count \</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            , <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">int</span>     i;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">char</span>    *processed_arg;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    i = 0;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">while</span> (i &lt; arg_count)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_function" href="parser__helper__helpers_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a>(data, command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        processed_arg = <a class="code hl_function" href="tokens_8h.html#af891fe2f7e0a7383e331ef4950f2bb6c">process_argument</a>(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i], data);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        free(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i] = processed_arg;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        i++;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_function" href="parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b">final_quote_removal</a>(arg_count, command_node);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
 </div>
 <div class="ttc" id="aenv_8h_html_a41133e0ba7230727a51eedce713a225c"><div class="ttname"><a href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a></div><div class="ttdeci">char * get_env(t_env *envp, const char *key)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00060">env.c:60</a></div></div>
-<div class="ttc" id="aenv_8h_html_a8508df71f808894b44abb69527998a0c"><div class="ttname"><a href="env_8h.html#a8508df71f808894b44abb69527998a0c">handle_add_set_shell_variable</a></div><div class="ttdeci">int handle_add_set_shell_variable(t_env **shell_var, char *line)</div><div class="ttdef"><b>Definition</b> <a href="shell__variables_8c_source.html#l00011">shell_variables.c:11</a></div></div>
+<div class="ttc" id="aenv_8h_html_a8508df71f808894b44abb69527998a0c"><div class="ttname"><a href="env_8h.html#a8508df71f808894b44abb69527998a0c">handle_add_set_shell_variable</a></div><div class="ttdeci">int handle_add_set_shell_variable(t_env **shell_var, char *line)</div><div class="ttdef"><b>Definition</b> <a href="shell__variables_8c_source.html#l00024">shell_variables.c:24</a></div></div>
 <div class="ttc" id="aexecute_8h_html"><div class="ttname"><a href="execute_8h.html">execute.h</a></div></div>
 <div class="ttc" id="alibft_8h_html_a1f2ff2312e5994560c9537cd9173be94"><div class="ttname"><a href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a></div><div class="ttdeci">int ft_strcmp(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strcmp_8c_source.html#l00024">ft_strcmp.c:24</a></div></div>
 <div class="ttc" id="alibft_8h_html_a2d5f42a11a38830b809bced1fc209c20"><div class="ttname"><a href="libft_8h.html#a2d5f42a11a38830b809bced1fc209c20">ft_strndup</a></div><div class="ttdeci">char * ft_strndup(const char *s, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strndup_8c_source.html#l00023">ft_strndup.c:23</a></div></div>
@@ -222,10 +211,10 @@ $(document).ready(function(){initNavTree('parser__helper__helpers_8c_source.html
 <div class="ttc" id="alibft_8h_html_a9c2c3821ea43ebdf97de07b123503f8b"><div class="ttname"><a href="libft_8h.html#a9c2c3821ea43ebdf97de07b123503f8b">ft_isalnum</a></div><div class="ttdeci">int ft_isalnum(int c)</div><div class="ttdef"><b>Definition</b> <a href="ft__isalnum_8c_source.html#l00015">ft_isalnum.c:15</a></div></div>
 <div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
 <div class="ttc" id="alibft_8h_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00023">ft_strdup.c:23</a></div></div>
-<div class="ttc" id="aparser__helper__helpers_8c_html_a23f04994cfc7846d455e4bb9a08f3de0"><div class="ttname"><a href="parser__helper__helpers_8c.html#a23f04994cfc7846d455e4bb9a08f3de0">expand_env_var</a></div><div class="ttdeci">char * expand_env_var(char *arg, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser__helper__helpers_8c_source.html#l00039">parser_helper_helpers.c:39</a></div></div>
-<div class="ttc" id="aparser__helper__helpers_8c_html_a75d9ab1c7aa7b65a9233367c05aa0b04"><div class="ttname"><a href="parser__helper__helpers_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a></div><div class="ttdeci">void handle_local_vars(t_ms_data *data, char *arg)</div><div class="ttdef"><b>Definition</b> <a href="parser__helper__helpers_8c_source.html#l00056">parser_helper_helpers.c:56</a></div></div>
+<div class="ttc" id="aparser__helper__helpers_8c_html_a75d9ab1c7aa7b65a9233367c05aa0b04"><div class="ttname"><a href="parser__helper__helpers_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a></div><div class="ttdeci">void handle_local_vars(t_ms_data *data, char *arg)</div><div class="ttdef"><b>Definition</b> <a href="parser__helper__helpers_8c_source.html#l00058">parser_helper_helpers.c:58</a></div></div>
+<div class="ttc" id="aparser__helper__helpers_8c_html_aa3f9c993878d2f0d44c2cd69d3a5df47"><div class="ttname"><a href="parser__helper__helpers_8c.html#aa3f9c993878d2f0d44c2cd69d3a5df47">expand_env_and_loc_var</a></div><div class="ttdeci">char * expand_env_and_loc_var(char *arg, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser__helper__helpers_8c_source.html#l00039">parser_helper_helpers.c:39</a></div></div>
 <div class="ttc" id="aparser__helper__helpers_8c_html_ae3d20c67cbbca937f7d28de35ab7888b"><div class="ttname"><a href="parser__helper__helpers_8c.html#ae3d20c67cbbca937f7d28de35ab7888b">final_quote_removal</a></div><div class="ttdeci">void final_quote_removal(int arg_count, t_ast *command_node)</div><div class="ttdef"><b>Definition</b> <a href="parser__helper__helpers_8c_source.html#l00016">parser_helper_helpers.c:16</a></div></div>
-<div class="ttc" id="aparser__helper__helpers_8c_html_ae75b1ee73be065ece94dc8bf097a04d1"><div class="ttname"><a href="parser__helper__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1">post_process_command_args</a></div><div class="ttdeci">void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser__helper__helpers_8c_source.html#l00078">parser_helper_helpers.c:78</a></div></div>
+<div class="ttc" id="aparser__helper__helpers_8c_html_ae75b1ee73be065ece94dc8bf097a04d1"><div class="ttname"><a href="parser__helper__helpers_8c.html#ae75b1ee73be065ece94dc8bf097a04d1">post_process_command_args</a></div><div class="ttdeci">void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser__helper__helpers_8c_source.html#l00080">parser_helper_helpers.c:80</a></div></div>
 <div class="ttc" id="astructs__ast_html"><div class="ttname"><a href="structs__ast.html">s_ast</a></div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00048">tokens.h:49</a></div></div>
 <div class="ttc" id="astructs__ast_html_ab62d177d86a1908cf5bbdb5cf6e978f8"><div class="ttname"><a href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">s_ast::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00051">tokens.h:51</a></div></div>
 <div class="ttc" id="astructs__ms__data_html"><div class="ttname"><a href="structs__ms__data.html">s_ms_data</a></div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00020">shell.h:21</a></div></div>
@@ -233,6 +222,7 @@ $(document).ready(function(){initNavTree('parser__helper__helpers_8c_source.html
 <div class="ttc" id="astructs__ms__data_html_a4e5d14d7076b0165b2f3f5766b7e7159"><div class="ttname"><a href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">s_ms_data::envp</a></div><div class="ttdeci">t_env * envp</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00024">shell.h:24</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_a6cd50b5e5a842a418a4399dac7e76064"><div class="ttname"><a href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">s_ms_data::shell_variables</a></div><div class="ttdeci">t_env * shell_variables</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00025">shell.h:25</a></div></div>
 <div class="ttc" id="atokens_8h_html"><div class="ttname"><a href="tokens_8h.html">tokens.h</a></div></div>
+<div class="ttc" id="atokens_8h_html_af891fe2f7e0a7383e331ef4950f2bb6c"><div class="ttname"><a href="tokens_8h.html#af891fe2f7e0a7383e331ef4950f2bb6c">process_argument</a></div><div class="ttdeci">char * process_argument(char *arg, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="parser__joint__vars_8c_source.html#l00047">parser_joint_vars.c:47</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

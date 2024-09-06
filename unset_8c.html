@@ -99,41 +99,50 @@ $(document).ready(function(){initNavTree('unset_8c.html',''); initResizable(); }
 <code>#include &quot;<a class="el" href="env_8h_source.html">env.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="libft_8h_source.html">libft.h</a>&quot;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="exit__status_8h_source.html">exit_status.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for unset.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="unset_8c__incl.png" border="0" usemap="#a_2github_2workspace_2src_2builtins_2unset_8c" alt=""/></div>
 <map name="a_2github_2workspace_2src_2builtins_2unset_8c" id="a_2github_2workspace_2src_2builtins_2unset_8c">
-<area shape="rect" title=" " alt="" coords="272,5,421,46"/>
-<area shape="rect" href="shell_8h.html" title=" " alt="" coords="137,94,195,120"/>
-<area shape="poly" title=" " alt="" coords="302,49,209,90,206,85,300,44"/>
-<area shape="rect" href="env_8h.html" title=" " alt="" coords="5,168,58,193"/>
-<area shape="poly" title=" " alt="" coords="272,44,199,64,162,79,126,96,86,126,53,158,49,154,82,122,123,92,159,74,197,59,270,38"/>
-<area shape="rect" href="libft_8h.html" title=" " alt="" coords="496,94,548,120"/>
-<area shape="poly" title=" " alt="" coords="391,44,483,85,481,90,389,49"/>
-<area shape="rect" title=" " alt="" coords="896,168,962,193"/>
-<area shape="poly" title=" " alt="" coords="422,44,882,164,880,169,420,49"/>
-<area shape="poly" title=" " alt="" coords="145,123,69,162,66,158,142,118"/>
-<area shape="rect" title=" " alt="" coords="180,168,246,193"/>
-<area shape="poly" title=" " alt="" coords="176,118,199,153,194,156,172,121"/>
-<area shape="rect" title=" " alt="" coords="82,168,157,193"/>
-<area shape="poly" title=" " alt="" coords="161,121,138,156,133,153,156,118"/>
-<area shape="poly" title=" " alt="" coords="496,117,261,170,260,165,495,111"/>
-<area shape="rect" title=" " alt="" coords="270,168,337,193"/>
-<area shape="poly" title=" " alt="" coords="496,119,353,166,351,161,495,114"/>
-<area shape="rect" title=" " alt="" coords="362,168,424,193"/>
-<area shape="poly" title=" " alt="" coords="502,123,430,162,427,157,499,118"/>
-<area shape="rect" title=" " alt="" coords="448,168,511,193"/>
-<area shape="poly" title=" " alt="" coords="517,121,497,156,492,153,513,119"/>
-<area shape="rect" title=" " alt="" coords="535,168,597,193"/>
-<area shape="poly" title=" " alt="" coords="532,118,553,153,548,156,527,121"/>
-<area shape="poly" title=" " alt="" coords="549,109,687,130,881,165,880,170,686,135,548,114"/>
-<area shape="rect" title=" " alt="" coords="622,168,689,193"/>
-<area shape="poly" title=" " alt="" coords="546,118,621,158,618,162,544,123"/>
-<area shape="rect" title=" " alt="" coords="714,168,787,193"/>
-<area shape="poly" title=" " alt="" coords="550,114,700,161,698,166,548,119"/>
-<area shape="rect" title=" " alt="" coords="811,168,871,193"/>
-<area shape="poly" title=" " alt="" coords="549,111,796,164,795,169,548,116"/>
+<area shape="rect" title=" " alt="" coords="265,5,414,46"/>
+<area shape="rect" href="shell_8h.html" title=" " alt="" coords="69,168,127,193"/>
+<area shape="poly" title=" " alt="" coords="265,35,229,43,191,55,156,72,125,96,109,123,102,153,97,152,104,121,122,92,153,67,189,50,227,37,264,30"/>
+<area shape="rect" href="env_8h.html" title=" " alt="" coords="5,241,58,267"/>
+<area shape="poly" title=" " alt="" coords="265,37,184,57,143,73,105,96,78,125,58,160,46,195,38,227,33,225,41,194,54,157,74,121,102,92,140,69,182,52,264,32"/>
+<area shape="rect" href="libft_8h.html" title=" " alt="" coords="471,94,523,120"/>
+<area shape="poly" title=" " alt="" coords="380,44,460,84,458,89,378,49"/>
+<area shape="rect" title=" " alt="" coords="913,168,979,193"/>
+<area shape="poly" title=" " alt="" coords="405,44,537,92,562,105,587,117,671,138,739,147,809,152,898,165,897,170,809,157,739,152,670,144,585,122,559,110,534,96,403,49"/>
+<area shape="rect" href="exit__status_8h.html" title=" " alt="" coords="135,94,229,120"/>
+<area shape="poly" title=" " alt="" coords="301,49,221,89,219,84,299,44"/>
+<area shape="rect" title=" " alt="" coords="598,94,657,120"/>
+<area shape="poly" title=" " alt="" coords="412,44,583,91,582,96,411,49"/>
+<area shape="poly" title=" " alt="" coords="89,195,55,232,51,228,85,192"/>
+<area shape="rect" title=" " alt="" coords="199,241,264,267"/>
+<area shape="poly" title=" " alt="" coords="122,192,197,231,194,236,120,196"/>
+<area shape="rect" title=" " alt="" coords="82,241,157,267"/>
+<area shape="poly" title=" " alt="" coords="104,193,114,226,109,227,99,194"/>
+<area shape="poly" title=" " alt="" coords="470,111,429,115,378,124,325,141,300,154,277,170,255,197,241,228,236,226,250,194,274,166,297,149,323,137,377,119,429,109,470,106"/>
+<area shape="rect" title=" " alt="" coords="287,168,355,193"/>
+<area shape="poly" title=" " alt="" coords="471,121,366,164,364,159,469,116"/>
+<area shape="rect" title=" " alt="" coords="379,168,441,193"/>
+<area shape="poly" title=" " alt="" coords="484,122,438,160,435,156,480,118"/>
+<area shape="rect" title=" " alt="" coords="465,168,529,193"/>
+<area shape="poly" title=" " alt="" coords="500,120,500,152,494,152,494,120"/>
+<area shape="rect" title=" " alt="" coords="552,168,615,193"/>
+<area shape="poly" title=" " alt="" coords="513,118,559,156,556,160,510,122"/>
+<area shape="poly" title=" " alt="" coords="524,113,543,117,641,133,719,141,798,149,898,165,897,170,797,154,718,146,640,138,542,122,523,118"/>
+<area shape="rect" title=" " alt="" coords="639,168,707,193"/>
+<area shape="poly" title=" " alt="" coords="525,116,630,159,628,164,523,121"/>
+<area shape="rect" title=" " alt="" coords="731,168,804,193"/>
+<area shape="poly" title=" " alt="" coords="524,113,716,163,715,168,523,118"/>
+<area shape="rect" title=" " alt="" coords="828,168,888,193"/>
+<area shape="poly" title=" " alt="" coords="524,113,543,117,677,140,813,164,812,170,676,145,542,122,523,118"/>
+<area shape="poly" title=" " alt="" coords="170,122,126,159,122,155,166,118"/>
+<area shape="rect" title=" " alt="" coords="152,168,212,193"/>
+<area shape="poly" title=" " alt="" coords="185,120,185,152,180,152,180,120"/>
 </map>
 </div>
 </div>
@@ -161,57 +170,40 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="unset_8c_source.html#l00026">26</a> of file <a class="el" href="unset_8c_source.html">unset.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">int</span>     i;</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">int</span>     exit_status;</div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordtype">char</span>    *key;</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    i = 0;</div>
-<div class="line"><span class="lineno">   33</span>    exit_status = 0;</div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">while</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[++i])</div>
-<div class="line"><span class="lineno">   35</span>    {</div>
-<div class="line"><span class="lineno">   36</span>        key =  data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[i];</div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="env_8h.html#a0854396366b7055e0df29e25f8e520d3">unset_env</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">envp</a>, key) == -1)</div>
-<div class="line"><span class="lineno">   38</span>        {</div>
-<div class="line"><span class="lineno">   39</span>            <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(<span class="stringliteral">&quot;bash: unset: `&quot;</span>, STDERR_FILENO);</div>
-<div class="line"><span class="lineno">   40</span>            <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(key, STDERR_FILENO);</div>
-<div class="line"><span class="lineno">   41</span>            <a class="code hl_function" href="libft_8h.html#aeb112152acfc553d58d61a5df38afcde">ft_putendl_fd</a>(<span class="stringliteral">&quot;&#39;: not a valid identifier&quot;</span>, STDERR_FILENO);</div>
-<div class="line"><span class="lineno">   42</span>            exit_status = 1;</div>
-<div class="line"><span class="lineno">   43</span>        }</div>
-<div class="line"><span class="lineno">   44</span>    }</div>
-<div class="line"><span class="lineno">   45</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7">exit_status</a> = exit_status;</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">return</span> (exit_status);</div>
-<div class="line"><span class="lineno">   47</span>}</div>
+<p class="definition">Definition at line <a class="el" href="unset_8c_source.html#l00029">29</a> of file <a class="el" href="unset_8c_source.html">unset.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">int</span>     i;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordtype">char</span>    *key;</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    i = 0;</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">while</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[++i])</div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>        key = data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[i];</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="env_8h.html#a0854396366b7055e0df29e25f8e520d3">unset_env</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">envp</a>, key) == -1)</div>
+<div class="line"><span class="lineno">   39</span>        {</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a>);</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a>);</div>
+<div class="line"><span class="lineno">   44</span>}</div>
 <div class="ttc" id="aenv_8h_html_a0854396366b7055e0df29e25f8e520d3"><div class="ttname"><a href="env_8h.html#a0854396366b7055e0df29e25f8e520d3">unset_env</a></div><div class="ttdeci">int unset_env(t_env **env, const char *name)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00103">env.c:103</a></div></div>
-<div class="ttc" id="alibft_8h_html_acefce9ac519f8f8b7d3fde33dbafe469"><div class="ttname"><a href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a></div><div class="ttdeci">void ft_putstr_fd(char *s, int fd)</div><div class="ttdef"><b>Definition</b> <a href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd.c:20</a></div></div>
-<div class="ttc" id="alibft_8h_html_aeb112152acfc553d58d61a5df38afcde"><div class="ttname"><a href="libft_8h.html#aeb112152acfc553d58d61a5df38afcde">ft_putendl_fd</a></div><div class="ttdeci">void ft_putendl_fd(char *s, int fd)</div><div class="ttdef"><b>Definition</b> <a href="ft__putendl__fd_8c_source.html#l00021">ft_putendl_fd.c:21</a></div></div>
-<div class="ttc" id="astructs__ms__data_html_a2d3fc4d4c5f229fd50f00571565c3cb7"><div class="ttname"><a href="structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7">s_ms_data::exit_status</a></div><div class="ttdeci">int exit_status</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00030">shell.h:30</a></div></div>
+<div class="ttc" id="aexit__status_8h_html_a687984f47d8cce148d1b914d2b79612a"><div class="ttname"><a href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a></div><div class="ttdeci">#define EXIT_SUCCESS</div><div class="ttdef"><b>Definition</b> <a href="exit__status_8h_source.html#l00016">exit_status.h:16</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_a4e5d14d7076b0165b2f3f5766b7e7159"><div class="ttname"><a href="structs__ms__data.html#a4e5d14d7076b0165b2f3f5766b7e7159">s_ms_data::envp</a></div><div class="ttdeci">t_env * envp</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00024">shell.h:24</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_ae0f3cfd0ab25ca9b6a5c9c1697e1692a"><div class="ttname"><a href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">s_ms_data::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00023">shell.h:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_ms_data::args</a>, <a class="el" href="shell_8h_source.html#l00024">s_ms_data::envp</a>, <a class="el" href="shell_8h_source.html#l00030">s_ms_data::exit_status</a>, <a class="el" href="ft__putendl__fd_8c_source.html#l00021">ft_putendl_fd()</a>, <a class="el" href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd()</a>, and <a class="el" href="env_2env_8c_source.html#l00103">unset_env()</a>.</p>
+<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_ms_data::args</a>, <a class="el" href="shell_8h_source.html#l00024">s_ms_data::envp</a>, <a class="el" href="exit__status_8h_source.html#l00016">EXIT_SUCCESS</a>, and <a class="el" href="env_2env_8c_source.html#l00103">unset_env()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00070">execute()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00069">execute()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="unset_8c_a4bd04cc81f319fd2b866b8a164069d72_cgraph.png" border="0" usemap="#aunset_8c_a4bd04cc81f319fd2b866b8a164069d72_cgraph" alt=""/></div>
 <map name="aunset_8c_a4bd04cc81f319fd2b866b8a164069d72_cgraph" id="aunset_8c_a4bd04cc81f319fd2b866b8a164069d72_cgraph">
-<area shape="rect" title=" " alt="" coords="5,56,100,82"/>
-<area shape="rect" href="ft__putendl__fd_8c.html#aeb112152acfc553d58d61a5df38afcde" title=" " alt="" coords="148,5,244,31"/>
-<area shape="poly" title=" " alt="" coords="90,53,143,34,144,39,92,58"/>
-<area shape="rect" href="ft__putstr__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="297,56,384,82"/>
-<area shape="poly" title=" " alt="" coords="100,66,281,66,281,72,100,72"/>
-<area shape="rect" href="env_2env_8c.html#a0854396366b7055e0df29e25f8e520d3" title=" " alt="" coords="155,107,237,132"/>
-<area shape="poly" title=" " alt="" coords="92,80,144,99,143,104,90,85"/>
-<area shape="rect" href="ft__putchar__fd_8c.html#a8ee15a511946c1397bd2bdea4aed6aee" title=" " alt="" coords="292,5,389,31"/>
-<area shape="poly" title=" " alt="" coords="245,16,277,16,277,21,245,21"/>
-<area shape="poly" title=" " alt="" coords="236,29,289,48,287,53,234,34"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="437,56,506,82"/>
-<area shape="poly" title=" " alt="" coords="385,66,422,66,422,72,385,72"/>
-<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="303,107,379,132"/>
-<area shape="poly" title=" " alt="" coords="237,117,287,117,287,122,237,122"/>
+<area shape="rect" title=" " alt="" coords="5,5,100,31"/>
+<area shape="rect" href="env_2env_8c.html#a0854396366b7055e0df29e25f8e520d3" title=" " alt="" coords="148,5,229,31"/>
+<area shape="poly" title=" " alt="" coords="100,16,132,16,132,21,100,21"/>
+<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="277,5,353,31"/>
+<area shape="poly" title=" " alt="" coords="230,16,261,16,261,21,230,21"/>
 </map>
 </div>
 <div class="dynheader">

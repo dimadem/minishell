@@ -18,6 +18,7 @@ var tokens_8h =
       [ "REDIR_HEREDOC", "tokens_8h.html#a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7", null ]
     ] ],
     [ "add_node", "tokens_8h.html#ad3cb8fb50ea5bbd7019b2480704d8e4e", null ],
+    [ "append_literal", "tokens_8h.html#a807c63b78dacc4103cf352ff25af8e84", null ],
     [ "append_token", "tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6", null ],
     [ "arg_len", "tokens_8h.html#a4f595528e4e305887fda33e53258d602", null ],
     [ "build_linked_list", "tokens_8h.html#abe6ee9afbff4acb27c42380ff770c52a", null ],
@@ -27,6 +28,7 @@ var tokens_8h =
     [ "create_redir_node", "tokens_8h.html#a665af377c02015d59f668e4b2b2434bf", null ],
     [ "execute_command", "tokens_8h.html#a458295f97c8b5b5f590b1d0e2ec8dad0", null ],
     [ "execute_tree", "tokens_8h.html#a67941e2704bfd6622dfc7d1d100b000e", null ],
+    [ "expand_env_and_loc_var", "tokens_8h.html#aa3f9c993878d2f0d44c2cd69d3a5df47", null ],
     [ "expand_env_var", "tokens_8h.html#a23f04994cfc7846d455e4bb9a08f3de0", null ],
     [ "final_quote_removal", "tokens_8h.html#ae3d20c67cbbca937f7d28de35ab7888b", null ],
     [ "free_all_tokens", "tokens_8h.html#a643bfec4ad8bf3d845c5fbed35caf95c", null ],
@@ -58,6 +60,7 @@ var tokens_8h =
     [ "print_maxishell", "tokens_8h.html#a4e673b7c7d3f45e10377ab9f537b8bf9", null ],
     [ "print_stack", "tokens_8h.html#af90eff9f4a4a22eec7f50142c9e1b591", null ],
     [ "print_tokens", "tokens_8h.html#ac0f556c5b74afdbd7ce730e294df7b76", null ],
+    [ "process_argument", "tokens_8h.html#af891fe2f7e0a7383e331ef4950f2bb6c", null ],
     [ "reallocate_tokens", "tokens_8h.html#a8aec0604d35be80e561fff4b0d7215c8", null ],
     [ "set_command_args", "tokens_8h.html#ab5f23ff7ab59a241fa7476e6fca458cf", null ],
     [ "skip_delimiters", "tokens_8h.html#a0d5b07dd4544b0e35522ebf974a8db63", null ],

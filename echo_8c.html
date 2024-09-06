@@ -97,16 +97,19 @@ $(document).ready(function(){initNavTree('echo_8c.html',''); initResizable(); })
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="libft_8h_source.html">libft.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="shell_8h_source.html">shell.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="exit__status_8h_source.html">exit_status.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for echo.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="echo_8c__incl.png" border="0" usemap="#a_2github_2workspace_2src_2builtins_2echo_8c" alt=""/></div>
 <map name="a_2github_2workspace_2src_2builtins_2echo_8c" id="a_2github_2workspace_2src_2builtins_2echo_8c">
-<area shape="rect" title=" " alt="" coords="496,5,646,46"/>
+<area shape="rect" title=" " alt="" coords="683,5,832,46"/>
 <area shape="rect" href="libft_8h.html" title=" " alt="" coords="409,94,461,120"/>
-<area shape="poly" title=" " alt="" coords="538,49,470,88,467,84,536,44"/>
-<area shape="rect" href="shell_8h.html" title=" " alt="" coords="765,94,823,120"/>
-<area shape="poly" title=" " alt="" coords="628,44,751,88,749,93,626,49"/>
+<area shape="poly" title=" " alt="" coords="683,48,477,98,476,93,682,43"/>
+<area shape="rect" href="shell_8h.html" title=" " alt="" coords="771,168,830,193"/>
+<area shape="poly" title=" " alt="" coords="765,46,786,119,795,152,790,154,780,120,760,47"/>
+<area shape="rect" href="exit__status_8h.html" title=" " alt="" coords="795,94,889,120"/>
+<area shape="poly" title=" " alt="" coords="780,44,820,81,816,85,777,48"/>
 <area shape="rect" title=" " alt="" coords="5,168,73,193"/>
 <area shape="poly" title=" " alt="" coords="409,115,276,136,88,170,87,165,275,130,408,109"/>
 <area shape="rect" title=" " alt="" coords="97,168,160,193"/>
@@ -119,17 +122,20 @@ Include dependency graph for echo.c:</div>
 <area shape="poly" title=" " alt="" coords="430,121,408,156,403,153,425,118"/>
 <area shape="rect" title=" " alt="" coords="447,168,514,193"/>
 <area shape="poly" title=" " alt="" coords="445,118,467,153,462,156,440,121"/>
-<area shape="rect" title=" " alt="" coords="720,168,785,193"/>
-<area shape="poly" title=" " alt="" coords="462,111,705,164,704,169,461,116"/>
-<area shape="rect" title=" " alt="" coords="538,168,612,193"/>
-<area shape="poly" title=" " alt="" coords="460,118,539,158,537,163,458,123"/>
-<area shape="rect" title=" " alt="" coords="636,168,696,193"/>
-<area shape="poly" title=" " alt="" coords="462,114,622,163,620,168,461,119"/>
-<area shape="poly" title=" " alt="" coords="789,121,769,156,765,153,785,119"/>
-<area shape="rect" href="env_8h.html" title=" " alt="" coords="809,168,861,193"/>
-<area shape="poly" title=" " alt="" coords="803,119,823,153,818,156,798,121"/>
-<area shape="rect" title=" " alt="" coords="886,168,960,193"/>
-<area shape="poly" title=" " alt="" coords="817,118,889,157,886,162,814,123"/>
+<area shape="rect" title=" " alt="" coords="602,241,668,267"/>
+<area shape="poly" title=" " alt="" coords="456,118,527,165,610,229,607,234,524,170,453,122"/>
+<area shape="rect" title=" " alt="" coords="589,168,662,193"/>
+<area shape="poly" title=" " alt="" coords="462,116,580,159,578,164,461,121"/>
+<area shape="rect" title=" " alt="" coords="686,168,747,193"/>
+<area shape="poly" title=" " alt="" coords="462,112,672,164,670,170,461,117"/>
+<area shape="poly" title=" " alt="" coords="773,196,678,237,676,232,771,191"/>
+<area shape="rect" href="env_8h.html" title=" " alt="" coords="730,241,783,267"/>
+<area shape="poly" title=" " alt="" coords="795,195,774,229,770,226,791,192"/>
+<area shape="rect" title=" " alt="" coords="807,241,882,267"/>
+<area shape="poly" title=" " alt="" coords="810,192,831,226,827,229,805,195"/>
+<area shape="poly" title=" " alt="" coords="837,121,817,156,813,153,833,119"/>
+<area shape="rect" title=" " alt="" coords="854,168,915,193"/>
+<area shape="poly" title=" " alt="" coords="851,119,872,153,867,156,846,121"/>
 </map>
 </div>
 </div>
@@ -157,49 +163,48 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="echo_8c_source.html#l00021">21</a> of file <a class="el" href="echo_8c_source.html">echo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">int</span> newline;</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">int</span> i;</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> == -1)</div>
-<div class="line"><span class="lineno">   27</span>        data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> = 1;</div>
-<div class="line"><span class="lineno">   28</span>    newline = 1;</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[1] &amp;&amp; (<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[1], <span class="stringliteral">&quot;-n&quot;</span>) == 0))</div>
-<div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        newline = 0;</div>
-<div class="line"><span class="lineno">   32</span>        data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>++;</div>
-<div class="line"><span class="lineno">   33</span>    }</div>
-<div class="line"><span class="lineno">   34</span>    i = 0;</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">while</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[++i])</div>
-<div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        write(1, data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[i], <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[i]));</div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[i + 1])</div>
-<div class="line"><span class="lineno">   39</span>            write(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a>, <span class="stringliteral">&quot; &quot;</span>, 1);</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (newline)</div>
-<div class="line"><span class="lineno">   42</span>        write(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a>, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
-<div class="line"><span class="lineno">   43</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> = -1;</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><span class="lineno">   45</span>}</div>
+<p class="definition">Definition at line <a class="el" href="echo_8c_source.html#l00022">22</a> of file <a class="el" href="echo_8c_source.html">echo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">int</span> newline;</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">int</span> i;</div>
+<div class="line"><span class="lineno">   26</span> </div>
+<div class="line"><span class="lineno">   27</span>    newline = 1;</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[1] &amp;&amp; (<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[1], <span class="stringliteral">&quot;-n&quot;</span>) == 0))</div>
+<div class="line"><span class="lineno">   29</span>    {</div>
+<div class="line"><span class="lineno">   30</span>        newline = 0;</div>
+<div class="line"><span class="lineno">   31</span>        data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>++;</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
+<div class="line"><span class="lineno">   33</span>    i = 0;</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">while</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[++i])</div>
+<div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[i], STDOUT_FILENO);</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[i + 1])</div>
+<div class="line"><span class="lineno">   38</span>            <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(<span class="stringliteral">&quot; &quot;</span>, STDOUT_FILENO);</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (newline)</div>
+<div class="line"><span class="lineno">   41</span>        write(STDOUT_FILENO, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a>);</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+<div class="ttc" id="aexit__status_8h_html_a687984f47d8cce148d1b914d2b79612a"><div class="ttname"><a href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a></div><div class="ttdeci">#define EXIT_SUCCESS</div><div class="ttdef"><b>Definition</b> <a href="exit__status_8h_source.html#l00016">exit_status.h:16</a></div></div>
 <div class="ttc" id="alibft_8h_html_a1f2ff2312e5994560c9537cd9173be94"><div class="ttname"><a href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a></div><div class="ttdeci">int ft_strcmp(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strcmp_8c_source.html#l00024">ft_strcmp.c:24</a></div></div>
-<div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
-<div class="ttc" id="astructs__ms__data_html_a68d87458c3e4250e56a66c8ece61d5a5"><div class="ttname"><a href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">s_ms_data::std_out</a></div><div class="ttdeci">int std_out</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00027">shell.h:27</a></div></div>
+<div class="ttc" id="alibft_8h_html_acefce9ac519f8f8b7d3fde33dbafe469"><div class="ttname"><a href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a></div><div class="ttdeci">void ft_putstr_fd(char *s, int fd)</div><div class="ttdef"><b>Definition</b> <a href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd.c:20</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_ae0f3cfd0ab25ca9b6a5c9c1697e1692a"><div class="ttname"><a href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">s_ms_data::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00023">shell.h:23</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_ms_data::args</a>, <a class="el" href="ft__strcmp_8c_source.html#l00024">ft_strcmp()</a>, <a class="el" href="ft__strlen_8c_source.html#l00015">ft_strlen()</a>, and <a class="el" href="shell_8h_source.html#l00027">s_ms_data::std_out</a>.</p>
+<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_ms_data::args</a>, <a class="el" href="exit__status_8h_source.html#l00016">EXIT_SUCCESS</a>, <a class="el" href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd()</a>, and <a class="el" href="ft__strcmp_8c_source.html#l00024">ft_strcmp()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00070">execute()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00069">execute()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="echo_8c_aad8cf30ea2aff3ab849f3f9cc156bc65_cgraph.png" border="0" usemap="#aecho_8c_aad8cf30ea2aff3ab849f3f9cc156bc65_cgraph" alt=""/></div>
 <map name="aecho_8c_aad8cf30ea2aff3ab849f3f9cc156bc65_cgraph" id="aecho_8c_aad8cf30ea2aff3ab849f3f9cc156bc65_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,96,56"/>
-<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="144,5,220,31"/>
-<area shape="poly" title=" " alt="" coords="96,32,128,26,129,31,97,37"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="148,55,216,80"/>
-<area shape="poly" title=" " alt="" coords="97,49,133,56,132,61,96,54"/>
+<area shape="rect" href="ft__putstr__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="144,5,231,31"/>
+<area shape="poly" title=" " alt="" coords="96,33,128,26,129,32,97,38"/>
+<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="149,55,226,80"/>
+<area shape="poly" title=" " alt="" coords="97,49,135,56,134,61,96,54"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="279,5,347,31"/>
+<area shape="poly" title=" " alt="" coords="231,16,264,16,264,21,231,21"/>
 </map>
 </div>
 <div class="dynheader">

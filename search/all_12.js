@@ -17,9 +17,10 @@ var searchData=
   ['tokeniser_5fhelpers_2ec_14',['tokeniser_helpers.c',['../tokeniser__helpers_8c.html',1,'']]],
   ['tokens_15',['tokens',['../structs__loop__data.html#a9b704dd9ec48db6a19721c14de0cb40b',1,'s_loop_data']]],
   ['tokens_2eh_16',['tokens.h',['../tokens_8h.html',1,'']]],
-  ['tree_17',['tree',['../structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91',1,'s_loop_data']]],
-  ['trim_5finput_18',['trim_input',['../tokens_8h.html#ad85feb33dfe75120540e2bc4dc28209a',1,'trim_input(char *str):&#160;input_checker_helpers.c'],['../input__checker__helpers_8c.html#ad85feb33dfe75120540e2bc4dc28209a',1,'trim_input(char *str):&#160;input_checker_helpers.c']]],
-  ['trimmed_5finput_19',['trimmed_input',['../structs__loop__data.html#a5f49d9840e1d54bc67a8cfe91aa9123d',1,'s_loop_data']]],
-  ['true_20',['TRUE',['../libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'libft.h']]],
-  ['type_21',['type',['../structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441',1,'s_ast::type'],['../structs__token.html#a350680c70abb7e7173240477e92dc0a3',1,'s_token::type']]]
+  ['too_5fmany_5fargs_17',['TOO_MANY_ARGS',['../exit__status_8h.html#a31a0e0047c20de1fa3669c962d3775fb',1,'exit_status.h']]],
+  ['tree_18',['tree',['../structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91',1,'s_loop_data']]],
+  ['trim_5finput_19',['trim_input',['../tokens_8h.html#ad85feb33dfe75120540e2bc4dc28209a',1,'trim_input(char *str):&#160;input_checker_helpers.c'],['../input__checker__helpers_8c.html#ad85feb33dfe75120540e2bc4dc28209a',1,'trim_input(char *str):&#160;input_checker_helpers.c']]],
+  ['trimmed_5finput_20',['trimmed_input',['../structs__loop__data.html#a5f49d9840e1d54bc67a8cfe91aa9123d',1,'s_loop_data']]],
+  ['true_21',['TRUE',['../libft_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d',1,'libft.h']]],
+  ['type_22',['type',['../structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441',1,'s_ast::type'],['../structs__token.html#a350680c70abb7e7173240477e92dc0a3',1,'s_token::type']]]
 ];
