@@ -16,6 +16,12 @@
 #include "execute.h"
 #include <fcntl.h>
 #include <sys/wait.h>
+#include "signals.h"
+
+// GLOBAL VAR
+// volatile tells compiler the var can change at compilation between accesses.
+// sig_atomic_t used for global_vars
+volatile sig_atomic_t g_heredoc_interrupted = 0;
 
 int			redirect_here_doc(t_ast *node, t_ms_data *data);
 static int	open_tmp_file(const char *type);
@@ -75,32 +81,87 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	return (assemble_result(tokens, result_len));
 }
 
-int	redirect_here_doc(t_ast *node, t_ms_data *data)
-{
-	char	*line;
-	char	*eof;
-	int		file_fd;
+// int	redirect_here_doc(t_ast *node, t_ms_data *data)
+// {
+// 	char	*line;
+// 	char	*eof;
+// 	int		file_fd;
 
-	line = NULL;
-	if (node->right->args[0] == NULL)
-		return (1);
-	file_fd = open_tmp_file("w");
-	eof = ft_strdup(node->right->args[0]);
-	line = process_and_reassemble(readline("> "), data);
-	while (line && (ft_strcmp(line, eof) != 0))
-	{
-		write(file_fd, line, ft_strlen(line));
-		write(file_fd, "\n", 1);
-		free(line);
-		line = process_and_reassemble(readline("> "), data);
-	}
-	free(line);
-	free(eof);
-	close(file_fd);
-	file_fd = open_tmp_file("r");
-	execute_child(node->left, data, &file_fd);
-	unlink("/tmp/heredoc");
-	return (0);
+// 	line = NULL;
+// 	if (node->right->args[0] == NULL)
+// 		return (1);
+// 	file_fd = open_tmp_file("w");
+// 	eof = ft_strdup(node->right->args[0]);
+// 	line = process_and_reassemble(readline("> "), data);
+// 	while (line && (ft_strcmp(line, eof) != 0))
+// 	{
+// 		write(file_fd, line, ft_strlen(line));
+// 		write(file_fd, "\n", 1);
+// 		free(line);
+// 		line = process_and_reassemble(readline("> "), data);
+// 	}
+// 	free(line);
+// 	free(eof);
+// 	close(file_fd);
+// 	file_fd = open_tmp_file("r");
+// 	execute_child(node->left, data, &file_fd);
+// 	unlink("/tmp/heredoc");
+// 	return (0);
+// }
+
+int redirect_here_doc(t_ast *node, t_ms_data *data)
+{
+    char    *line;
+    char    *eof;
+    int     file_fd;
+    struct sigaction sa_old, sa_new;
+
+    line = NULL;
+    if (node->right->args[0] == NULL)
+        return (1);
+    
+    // Setup SIGINT handler for heredoc (CTRL+C)
+    sa_new.sa_handler = handle_sigint_heredoc;
+    sigemptyset(&sa_new.sa_mask);
+    sa_new.sa_flags = 0;
+    sigaction(SIGINT, &sa_new, &sa_old);  // Set custom SIGINT handler
+
+    file_fd = open_tmp_file("w");
+    eof = ft_strdup(node->right->args[0]);
+    
+    // Heredoc input loop
+    line = process_and_reassemble(readline("> "), data);
+    while (line && (ft_strcmp(line, eof) != 0) && !g_heredoc_interrupted)
+    {
+        write(file_fd, line, ft_strlen(line));
+        write(file_fd, "\n", 1);
+        free(line);
+        line = process_and_reassemble(readline("> "), data);
+    }
+
+    // Clean up if interrupted
+    if (g_heredoc_interrupted)
+    {
+        free(line);
+        free(eof);
+        close(file_fd);
+        unlink("/tmp/heredoc");  // Remove temporary file
+        g_heredoc_interrupted = 0;  // Reset the flag
+        sigaction(SIGINT, &sa_old, NULL);  // Restore original SIGINT handler
+        return (1);  // Return to shell prompt without executing further
+    }
+
+    // Normal completion of heredoc
+    free(line);
+    free(eof);
+    close(file_fd);
+    sigaction(SIGINT, &sa_old, NULL);  // Restore original SIGINT handler
+
+    file_fd = open_tmp_file("r");
+    execute_child(node->left, data, &file_fd);
+    unlink("/tmp/heredoc");
+    
+    return (0);
 }
 
 static int	open_tmp_file(const char *type)
