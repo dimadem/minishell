@@ -37,6 +37,7 @@ void	set_signals_interactive(void)
 
 	sigquit_ignore();
 	sigemptyset(&a.sa_mask);
+	a.sa_flags = 0;
 	a.sa_handler = *signal_reset_prompt;
 	sigaction(SIGINT, &a, NULL);
 }
@@ -52,6 +53,7 @@ void	sigquit_ignore(void)
 	struct sigaction	a;
 
 	sigemptyset(&a.sa_mask);
+	a.sa_flags = 0;
 	a.sa_handler = SIG_IGN;
 	sigaction(SIGQUIT, &a, NULL);
 }
@@ -61,6 +63,7 @@ void	set_signals_noninteractive(void)
 	struct sigaction	a;
 
 	sigemptyset(&a.sa_mask);
+	a.sa_flags = 0;
 	a.sa_handler = &signal_print_newline;
 	sigaction(SIGINT, &a, NULL);
 	sigaction(SIGQUIT, &a, NULL);

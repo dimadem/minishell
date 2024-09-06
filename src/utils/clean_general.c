@@ -32,10 +32,10 @@ void	free_env_list(t_env *env)
 
 	while (env)
 	{
-		free(env->key);
-		free(env->value);
 		temp = env;
 		env = env->next;
+		free(env->key);
+		free(env->value);
 		free(temp);
 	}
 }
