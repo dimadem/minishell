@@ -22,15 +22,6 @@ void	signal_print_newline(int signal);
 void	sigquit_ignore(void);
 void	set_signals_noninteractive(void);
 
-void handle_sigint_heredoc(int signo)
-{
-    (void)signo;
-    g_heredoc_interrupted = 1; // Set the interrupt flag
-    write(1, "\n", 1);         // Print a newline
-    rl_replace_line("", 0);    // Clear the current input
-    rl_redisplay();            // Redisplay the prompt
-}
-
 void	signal_reset_prompt(int signo)
 {
 	(void)signo;
