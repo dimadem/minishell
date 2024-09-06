@@ -66,8 +66,11 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	i = 0;
 	while (tokens[i])
 	{
+		printf("tokens[i]:%s\n", tokens[i]);
 		processed_token = expand_variable(&tokens[i], data);
+		printf("processed_token:%s\n", processed_token);
 		tokens[i] = processed_token;
+		printf("tokens[i]:%s\n", tokens[i]);
 		result_len += ft_strlen(tokens[i]) + 1;
 		i++;
 	}

@@ -88,6 +88,7 @@ t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
 	if (!command_node->args)
 		return (NULL);
 	set_command_args(command_node, tokens, arg_count);
+	print_tokens(*tokens);
 	post_process_command_args(command_node, arg_count, data);
 	return (command_node);
 }

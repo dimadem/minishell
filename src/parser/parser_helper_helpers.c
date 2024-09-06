@@ -82,6 +82,20 @@ void	handle_local_vars(t_ms_data *data, char *arg)
 	}
 }
 
+int	is_in_single_quotes(char *arg)
+{
+	int	len;
+
+	if (!arg || arg[0] != '\'')
+		return (0);
+	len = 0;
+	while (arg[len] != '\0')
+		len++;
+	if (arg[len - 1] == '\'')
+		return (1);
+	return (0);
+}
+
 void	post_process_command_args(t_ast *command_node, int arg_count \
 			, t_ms_data *data)
 {
@@ -91,8 +105,17 @@ void	post_process_command_args(t_ast *command_node, int arg_count \
 	i = 0;
 	while (i < arg_count)
 	{
-		handle_local_vars(data, command_node->args[i]);
-		processed_arg = process_argument(command_node->args[i], data);
+		printf("command_node->args[i]:%s\n", command_node->args[i]);
+		if (!is_in_single_quotes(command_node->args[i]))
+		{
+			handle_local_vars(data, command_node->args[i]);
+			processed_arg = process_argument(command_node->args[i], data);
+		}
+		else
+		{
+			processed_arg = ft_substr(command_node->args[i], 1, \
+				ft_strlen(command_node->args[i]) - 2);
+		}
 		free(command_node->args[i]);
 		command_node->args[i] = processed_arg;
 		i++;
