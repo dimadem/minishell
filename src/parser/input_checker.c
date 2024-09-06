@@ -12,11 +12,38 @@
 
 #include "tokens.h"
 
-
-int	check_operators(const char *str)
+void	free_op_strings(t_loop_data *loop_data, char *tail, char *new_input)
 {
-	if (*str == '&' || *str == '|')
+	free(loop_data->trimmed_input);
+	free(new_input);
+	free(tail);
+}
+
+int	check_operators(t_loop_data *loop_data)
+{
+	char	*input;
+	char	*tail;
+	char	*new_input;
+	char	*final_input;
+
+	input = loop_data->trimmed_input;
+	if (*input == '&' || *input == '|')
 		return (1);
+	while (*input)
+	{
+		if (*input == '|' && *(input + 1) == '\0')
+		{
+			tail = readline("> ");
+			if (tail == NULL)
+				break ;
+			new_input = ft_strcat_const(loop_data->trimmed_input, " ");
+			final_input = ft_strcat_const(new_input, tail);
+			free_op_strings(loop_data, tail, new_input);
+			loop_data->trimmed_input = final_input;
+			break ;
+		}
+		input++;
+	}
 	return (0);
 }
 
@@ -65,11 +92,13 @@ int	check_open_quotes(const char *str)
 	return (single_quote_open || double_quote_open);
 }
 
-int	input_error_checks(const char *str)
+int	input_error_checks(t_loop_data *loop_data)
 {
+	const char	*str = loop_data->trimmed_input;
+
 	if (check_redirections(str))
 		ft_printf("Input error: invalid redirection.\n");
-	else if (check_operators(str))
+	else if (check_operators(loop_data))
 		ft_printf("Input error: invalid operator.\n");
 	else if (check_open_quotes(str))
 		ft_printf("Input error: open quote.\n");

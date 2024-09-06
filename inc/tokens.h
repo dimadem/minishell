@@ -80,7 +80,6 @@ void		skip_delimiters(char **input, char *delim);
 void		reallocate_tokens(char ***tokens, int *bufsize);
 void		parse_loop(char **input, char **tokens, int *pos, int *bufsize);
 char		**parse_input(char *input);
-// char *generate_prompt(void);
 char		*generate_prompt(t_ms_data *data);
 void		make_history(char *line);
 void		loop_cleanup(char *line, t_token *tokens, \
@@ -92,7 +91,7 @@ void		init_ms_data(t_ms_data *data,char **argv, char **envp);
 void		initialise(int argc, char **argv);
 void		execute_command(char **parsed_text, t_token **tokens);
 void		print_maxishell(void);
-int			input_error_checks(const char *str);
+int			input_error_checks(t_loop_data *loop_data);
 t_token		*tokenise(char *str);
 void		print_tokens(t_token *tokens);
 t_ast		*parse_tokens(t_token **tokens, t_ms_data *data);

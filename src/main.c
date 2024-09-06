@@ -57,7 +57,7 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		}
 		make_history(loop_data->input);
 		loop_data->trimmed_input = trim_input(loop_data->input);
-		if (input_error_checks(loop_data->trimmed_input))
+		if (input_error_checks(loop_data))
 			continue ;
 		loop_data->tokens = tokenise(loop_data->trimmed_input);
 		loop_data->tree = parse_tokens(&loop_data->tokens, data);
