@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strcat_const(const char *dest, const char *src)
 {
 	int		i;
 	int		j;
 	char	*result;
 
-	result = malloc(sizeof(char) * (strlen(dest) + strlen(src) + 1));
+	result = malloc(sizeof(char) * (ft_strlen(dest) + ft_strlen(src) + 1));
 	if (!result)
 		return (NULL);
 	i = 0;
