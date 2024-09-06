@@ -57,6 +57,7 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	size_t	result_len;
 	int		i;
 	char	*processed_token;
+	char	*result;
 
 	tokens = ft_split(line, ' ');
 	if (!tokens)
@@ -65,22 +66,23 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	i = 0;
 	while (tokens[i])
 	{
-		processed_token = expand_env_and_loc_var(tokens[i], data);
-		free(tokens[i]);
+		processed_token = expand_variable(&tokens[i], data);
 		tokens[i] = processed_token;
 		result_len += ft_strlen(tokens[i]) + 1;
 		i++;
 	}
-	return (assemble_result(tokens, result_len));
+	result = assemble_result(tokens, result_len);
+	return (result);
 }
 
-void	write_heredoc_lines(char **line, int file_fd, char *eof)
+void	write_heredoc_lines(char **line, int file_fd, char *eof, \
+			t_ms_data *data)
 {
 	while (*line && (ft_strcmp(*line, eof) != 0) && !g_heredoc_interrupted)
 	{
 		write(file_fd, *line, ft_strlen(*line));
 		write(file_fd, "\n", 1);
 		free(*line);
-		*line = readline("> ");
+		*line = process_and_reassemble(readline("> "), data);
 	}
 }

@@ -89,8 +89,8 @@ int	redirect_here_doc(t_ast *node, t_ms_data *data)
 	setup_sigint_handler(&sa_old);
 	file_fd = open_tmp_file("w");
 	eof = ft_strdup(node->right->args[0]);
-	line = readline("> ");
-	write_heredoc_lines(&line, file_fd, eof);
+	line = process_and_reassemble(readline("> "), data);
+	write_heredoc_lines(&line, file_fd, eof, data);
 	if (g_heredoc_interrupted)
 		return (handle_heredoc_interruption(line, eof, file_fd, &sa_old));
 	free(line);

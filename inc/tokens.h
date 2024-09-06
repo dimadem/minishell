@@ -87,7 +87,7 @@ void		loop_cleanup(char *line, t_token *tokens, \
 void		free_ms_data(t_ms_data *data);
 char		*check_heredoc(char *line);
 char		*heredoc(char *eof);
-void		init_ms_data(t_ms_data *data,char **argv, char **envp);
+void		init_ms_data(t_ms_data *data, char **argv, char **envp);
 void		initialise(int argc, char **argv);
 void		execute_command(char **parsed_text, t_token **tokens);
 void		print_maxishell(void);
@@ -118,5 +118,6 @@ void		execute_tree(t_ast *node, t_ms_data *data);
 char		*expand_env_and_loc_var(char *arg, t_ms_data *data);
 char		*append_literal(char **start, char *processed_arg);
 char		*process_argument(char *arg, t_ms_data *data);
+char		*expand_variable(char **start, t_ms_data *data);
 
 #endif

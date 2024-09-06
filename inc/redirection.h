@@ -17,13 +17,15 @@
 # include "tokens.h"
 
 /*  redirect_in */
-int	redirect_in(t_ast *node, t_ms_data *data);
-int	redirect_out(t_ast *node, t_ms_data *data);
-int	redirect_append(t_ast *node, t_ms_data *data);
-int	redirect_here_doc(t_ast *node, t_ms_data *data);
-void	write_heredoc_lines(char **line, int file_fd, char *eof);
+int		redirect_in(t_ast *node, t_ms_data *data);
+int		redirect_out(t_ast *node, t_ms_data *data);
+int		redirect_append(t_ast *node, t_ms_data *data);
+int		redirect_here_doc(t_ast *node, t_ms_data *data);
+void	write_heredoc_lines(char **line, int file_fd, char *eof, \
+			t_ms_data *data);
+char	*process_and_reassemble(char *line, t_ms_data *data);
 
 /*  utils   */
-int	open_file(t_ast *node, char *direction);
+int		open_file(t_ast *node, char *direction);
 
 #endif
