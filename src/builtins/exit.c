@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:32:42 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 14:59:10 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:28:10 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 #include "env.h"
 #include "exit_status.h"
 
-
 /*
 Functionality:
 - Exit the shell
@@ -25,33 +24,44 @@ Functionality:
 - Exit with the exit status
  */
 
-int builtin_exit(t_ms_data *data)
+void	handle_numeric_error(t_ms_data *data, const char *arg)
 {
+	exit_status_handler(data, NUMERIC_REQUIRED, ft_strjoin("exit: ", arg));
+	exit(NUMERIC_REQUIRED);
+}
 
-    int     number;
+void	handle_too_many_args_error(t_ms_data *data)
+{
+	exit_status_handler(data, TOO_MANY_ARGS, "exit");
+	exit(TOO_MANY_ARGS);
+}
+
+void	handle_exit(t_ms_data *data, int status)
+{
+	ft_putendl_fd("exit", STDOUT_FILENO);
+	data->exit_status = status;
+	set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
+	exit(status);
+}
+
+int	builtin_exit(t_ms_data *data)
+{
+	int	number;
 
 	number = 0;
-    if (data->args[1] && ft_isnumber(data->args[1]) == 0)
-    {
-		exit_status_handler(data, NUMERIC_REQUIRED, ft_strjoin("exit: ", data->args[1]));
-        exit(NUMERIC_REQUIRED);
-    }
-    else if (data->args[1] && data->args[2])
-    {
-		exit_status_handler(data, TOO_MANY_ARGS, "exit");
-        exit(TOO_MANY_ARGS);
-    }
-    else if (data->args[1])
-    {
-        number = ft_atoi(data->args[1]);
-        ft_putendl_fd("exit", STDOUT_FILENO);
-		data->exit_status = number;
-        set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
-        exit(number);
-    }
-    else
-    {
-        ft_putendl_fd("exit", STDOUT_FILENO);
-        exit(0);
-    }
+	if (data->args[1])
+	{
+		if (ft_isnumber(data->args[1]) == 0)
+			handle_numeric_error(data, data->args[1]);
+		else if (data->args[2])
+			handle_too_many_args_error(data);
+		else
+		{
+			number = ft_atoi(data->args[1]);
+			handle_exit(data, number);
+		}
+	}
+	else
+		handle_exit(data, 0);
+	return (0);
 }

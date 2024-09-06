@@ -6,7 +6,7 @@
 #    By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/30 12:57:25 by dmdemirk          #+#    #+#              #
-#    Updated: 2024/06/11 15:31:58 by rocky            ###   ########.fr        #
+#    Updated: 2024/09/06 11:50:43 by dmdemirk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -153,10 +153,6 @@ $(BUILD_DIR)/src/%.o: $(SRC_DIR)/%.c
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/src/env/%.o: $(ENV_DIR)/%.c
-	@mkdir -p $(@D)
-	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
-
-$(BUILD_DIR)/src/errors/%.o: $(ERRORS_DIR)/%.c
 	@mkdir -p $(@D)
 	@$(COMPILER) $(CFLAGS) $(INCLUDES) -c $< -o $@
 

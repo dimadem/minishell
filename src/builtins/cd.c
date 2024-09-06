@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 16:31:07 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 16:06:37 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:28:43 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,11 @@ int	builtin_cd(t_ms_data *data)
 	if (chdir(target_dir) == -1)
 	{
 		if (errno == EACCES)
-			exit_status_handler(data, PERMISSION_DENIED, ft_strjoin("cd: ", target_dir));
+			exit_status_handler(data, PERMISSION_DENIED, \
+				ft_strjoin("cd: ", target_dir));
 		if (errno == ENOENT)
-			exit_status_handler(data, IS_DIRECTORY, ft_strjoin("cd: ", target_dir));
+			exit_status_handler(data, IS_DIRECTORY, \
+				ft_strjoin("cd: ", target_dir));
 		return (EXIT_FAILURE);
 	}
 	set_env(&data->envp, "OLDPWD", get_env(data->envp, "PWD"));
