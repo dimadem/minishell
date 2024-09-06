@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 11:10:03 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/06/17 11:10:25 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:01:39 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,9 @@ int	builtin_unset(t_ms_data *data)
 	i = 0;
 	while (data->args[++i])
 	{
-		key =  data->args[i];
-		printf("key: %s\n", key);
+		key = data->args[i];
 		if (unset_env(&data->envp, key) == -1)
 		{
-			// ft_putstr_fd("bash: unset: `", STDERR_FILENO);
-			// ft_putstr_fd(key, STDERR_FILENO);
-			// ft_putendl_fd("': not a valid identifier", STDERR_FILENO);
-			// set_exit_status(&data->exit_status, NOT_VALID_IDENTIFIER);
-			// set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
 			return (EXIT_SUCCESS);
 		}
 	}

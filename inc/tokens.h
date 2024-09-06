@@ -6,7 +6,7 @@
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 20:53:51 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/06/26 14:39:34 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:29:14 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ t_ast		*new_ast_node(t_token_type type);
 t_ast		*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data);
 int			arg_len(t_token *current);
 void		set_command_args(t_ast *command_node, t_token **tokens, \
-			int arg_count);
+		int arg_count);
 t_ast		*manage_commands(t_token **tokens, t_ms_data *data);
 t_ast		*create_redir_node(t_token *token);
 int			is_redir_node(t_token *tokens);
