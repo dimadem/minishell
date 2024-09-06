@@ -25,7 +25,10 @@ char	*expand_variable(char **start, t_ms_data *data)
 	var_name = ft_substr(var_start, 0, *start - var_start);
 	expanded_var = expand_env_and_loc_var(var_name, data);
 	free(var_name);
-	return (expanded_var);
+	if (ft_strlen(expanded_var) != 0)
+		return (expanded_var);
+	else
+		return (var_start);
 }
 
 char	*append_literal(char **start, char *processed_arg)
