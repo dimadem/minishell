@@ -19,13 +19,11 @@ char	*expand_variable(char **start, t_ms_data *data)
 	char	*var_start;
 
 	var_start = *start;
-	printf("var_start: %s\n", var_start);
 	(*start)++;
 	while (**start != '\0' && (ft_isalnum(**start) || **start == '_' \
 		|| **start == '?'))
 		(*start)++;
 	var_name = ft_substr(var_start, 0, *start - var_start);
-	printf("var_name: %s\n", var_name);
 	expanded_var = expand_env_and_loc_var(var_name, data);
 	free(var_name);
 	if (ft_strlen(expanded_var) != 0)

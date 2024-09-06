@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include "env.h"
 #include "exit_status.h"
+#include "tokens.h"
 
 /*
 Functionality:
@@ -23,6 +24,11 @@ Functionality:
 - Free the environment
 - Exit with the exit status
  */
+
+void	clear_history_file(void)
+{
+	remove(HISTORY_PATH);
+}
 
 void	handle_numeric_error(t_ms_data *data, const char *arg)
 {
@@ -41,6 +47,7 @@ void	handle_exit(t_ms_data *data, int status)
 	ft_putendl_fd("exit", STDOUT_FILENO);
 	data->exit_status = status;
 	set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
+	clear_history_file();
 	exit(status);
 }
 

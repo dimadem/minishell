@@ -63,6 +63,7 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		loop_data->tree = parse_tokens(&loop_data->tokens, data);
 		process_ast_and_io(data, loop_data);
 	}
+	clear_history_file();
 	free(loop_data->prompt);
 }
 
@@ -76,5 +77,6 @@ int	main(int argc, char **argv, char **envp)
 	initialise(argc, argv);
 	main_loop(&data, &loop_data);
 	free_ms_data(&data);
+	clear_history_file();
 	return (0);
 }

@@ -119,5 +119,6 @@ char		*expand_env_and_loc_var(char *arg, t_ms_data *data);
 char		*append_literal(char **start, char *processed_arg);
 char		*process_argument(char *arg, t_ms_data *data);
 char		*expand_variable(char **start, t_ms_data *data);
+void		clear_history_file(void);
 
 #endif

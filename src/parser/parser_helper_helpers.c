@@ -42,17 +42,13 @@ char	*expand_env_and_loc_var(char *arg, t_ms_data *data)
 	char	*env_value;
 	char	*exit_status;
 
-	printf("arg: %s\n", arg);
 	if (ft_strcmp(arg, "$?") == 0)
 	{
-		printf("expand_env_and_loc_var triggered\n");
 		exit_status = get_shell_variable(data->shell_variables, "?");
-		printf("exit_status: %s\n", exit_status);
 		return (ft_strdup(exit_status));
 	}
 	else if (arg[0] == '$')
 	{
-		printf("expand_env_and_loc_var triggered badly\n");
 		if (arg[ft_strlen(arg) - 1] == '"')
 			arg[ft_strlen(arg) - 1] = '\0';
 		env_value = get_env(data->envp, arg + 1);
