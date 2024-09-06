@@ -105,7 +105,6 @@ void	post_process_command_args(t_ast *command_node, int arg_count \
 	i = 0;
 	while (i < arg_count)
 	{
-		printf("command_node->args[i]:%s\n", command_node->args[i]);
 		if (!is_in_single_quotes(command_node->args[i]))
 		{
 			handle_local_vars(data, command_node->args[i]);

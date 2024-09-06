@@ -14,31 +14,44 @@
 
 char	*expand_variable(char **start, t_ms_data *data)
 {
+	char	*expanded_str;
 	char	*var_name;
 	char	*expanded_var;
+	char	*result;
 	char	*var_start;
+	char	*str_start;
+	int		len_before_var;
 
-	printf("expand_variable start: %s\n", *start);
-	var_start = *start;
-	if (**start == '\"')
+	str_start = *start;
+	expanded_str = ft_strdup("");
+	while (**start && **start != '\0')
 	{
-		(*start)++;
-		var_start++;
+		if (**start == '$')
+		{
+			var_start = *start;
+			(*start)++;
+
+			while (**start && (ft_isalnum(**start) || **start == '_'))
+				(*start)++;
+			var_name = ft_substr(var_start, 0, *start - var_start);
+			expanded_var = expand_env_and_loc_var(var_name, data);
+			free(var_name);
+			len_before_var = var_start - str_start;
+			result = ft_strjoin_free(expanded_str, ft_substr(str_start, 0, len_before_var));
+			expanded_str = ft_strjoin_free(result, expanded_var);
+			str_start = *start;
+			free(expanded_var);
+		}
+		else
+			(*start)++;
 	}
-	(*start)++;
-	while (**start != '\0' && (ft_isalnum(**start) || **start == '_' \
-		|| **start == '?'))
-		(*start)++;
-	printf("expand_variable start2: %s\n", *start);
-	var_name = ft_substr(var_start, 0, *start - var_start);
-	printf("expand_variable start3: %s\n", var_name);
-	expanded_var = expand_env_and_loc_var(var_name, data);
-	printf("expand_variable start4: %s\n", expanded_var);
-	free(var_name);
-	if (ft_strlen(expanded_var) != 0)
-		return (expanded_var);
-	else
-		return (ft_strdup(var_start));
+	if (str_start != *start)
+	{
+		result = ft_substr(str_start, 0, *start - str_start);
+		expanded_str = ft_strjoin_free(expanded_str, result);
+		free(result);
+	}
+	return (expanded_str);
 }
 
 char	*append_literal(char **start, char *processed_arg)
@@ -68,12 +81,9 @@ char	*process_argument(char *arg, t_ms_data *data)
 	start = arg;
 	while (*start != '\0')
 	{
-		printf("arg: %s\n", arg);
-		printf("start: %s\n", start);
 		if (*start == '$')
 		{
 			expanded_var = expand_variable(&start, data);
-			printf("expanded_var in process-argument (should be non << only): %s\n", expanded_var);
 			if (expanded_var != NULL)
 			{
 				tmp = ft_strjoin(processed_arg, expanded_var);
