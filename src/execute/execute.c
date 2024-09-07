@@ -109,6 +109,7 @@ static int	new_process(t_ms_data *data)
 {
 	pid_t	pid;
 	struct sigaction a;
+	char	*exec_path;
 
 	if (data->std_in == -1)
 		data->std_in = dup(STDIN_FILENO);
@@ -125,10 +126,25 @@ static int	new_process(t_ms_data *data)
 			dup2(data->std_out, STDOUT_FILENO);
 		close_fds(data->std_in, data->std_out);
 
+		ft_memset(&a, 0, sizeof(struct sigaction));
 		sigemptyset(&a.sa_mask);
 		a.sa_handler = SIG_DFL;
+		a.sa_flags = 0;
 		sigaction(SIGQUIT, &a, NULL);
-		if (execve(ft_find_path(data->args[0], data->envp), \
+
+		exec_path = ft_find_path(data->args[0], data->envp);
+		if (!exec_path)
+		{
+			ft_putstr_fd("maxishell: command not found\n", STDERR_FILENO);
+			exit(EXIT_FAILURE);
+		}
+		if (!data->args || !data->args[0] || !data->envp)
+		{
+			ft_putstr_fd("maxishell: invalid arguments or environment\n", STDERR_FILENO);
+			exit(EXIT_FAILURE);
+		}
+
+		if (execve(exec_path, \
 					data->args, env_to_array(data->envp)) == -1)
 		{
 			exit_status_handler(data, IS_DIRECTORY, "maxishell: ");
@@ -137,7 +153,5 @@ static int	new_process(t_ms_data *data)
 	}
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &data->exit_status, 0);
-	if (WIFSIGNALED(data->exit_status) && WTERMSIG(data->exit_status) == SIGQUIT)
-    	ft_printf("Quit (core dumped)\n");
 	return (EXIT_SUCCESS);
 }
