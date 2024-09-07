@@ -48,11 +48,11 @@ void	free_ms_data(t_ms_data *data)
 		free_shell_var_list(data->envp);
 		free_shell_var_list(data->shell_variables);
 		free(data->current_dir);
-		if (data->std_in != STDIN_FILENO)
+		if (data->std_in >= 0)
 			close(data->std_in);
-		if (data->std_out != STDOUT_FILENO)
+		if (data->std_out >= 0)
 			close(data->std_out);
-		if (data->std_err != STDERR_FILENO)
+		if (data->std_err >= 0)
 			close(data->std_err);
 	}
 }

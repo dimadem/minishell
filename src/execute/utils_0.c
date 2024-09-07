@@ -44,8 +44,10 @@ void	ft_free_2d_arr(char **arr)
 
 void	close_fds(int in, int out)
 {
-	close(in);
-	close(out);
+	if(in != -1)
+		close(in);
+	if(out != -1)
+		close(out);
 }
 
 /**

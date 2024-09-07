@@ -24,9 +24,11 @@ WHITE		=	\033[0;97m
 # Program
 NAME			=	minishell
 
+# ASAN_OPTIONS=verbosity=1:detect_leaks=1:report_objects=1:sleep_before_dying=1
+
 # Comands
 COMPILER		=	cc
-DFLAGS			=	-g3 -gdwarf-2
+DFLAGS			=	#-g3 -gdwarf-3 -fsanitize=address -fsanitize=undefined 
 CFLAGS			=	-Wall -Wextra -Werror $(DFLAGS) -g -O0
 AR			=	ar rcs
 RM			=	rm -rf
@@ -234,6 +236,6 @@ test: $(TEST_OBJECTS) $(LIBFT)
 	@./test
 
 valgrind: $(NAME)
-	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --suppressions=readline.supp --log-file=valgrind-out.txt ./minishell
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --suppressions=readline.supp --log-file=valgrind-out.txt ./minishell
 
 .PHONY: all bonus clean fclean re test
