@@ -51,6 +51,36 @@ static char	*assemble_result(char **tokens, size_t result_len)
 	return (result);
 }
 
+char	*token_adj(char *arg)
+{
+	char	*ptr;
+	char	*new_arg;
+
+	if (*arg == '\"')
+	{
+		ptr = arg + 1;
+		while (*ptr && *ptr != '\"')
+		{
+			if (!ft_isdigit(*ptr))
+				return (arg);
+			ptr++;
+		}
+		if (*ptr == '\0')
+		{
+			new_arg = malloc(strlen(arg) + 2);
+			if (!new_arg)
+				return (NULL);
+			strcpy(new_arg, arg);
+			strcat(new_arg, "\"");
+			return (new_arg);
+		}
+		if (*ptr == '\"' && *(ptr + 1) == '\0')
+			return (arg);
+	}
+	return (arg);
+}
+
+
 char	*process_and_reassemble(char *line, t_ms_data *data)
 {
 	char	**tokens;
@@ -66,7 +96,11 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	i = 0;
 	while (tokens[i])
 	{
+		printf(GRN"tokens[i]: %s\n"RESET, tokens[i]);
 		processed_token = expand_variable(&tokens[i], data);
+		printf(GRN"processed_token: %s\n"RESET, processed_token);
+		processed_token = token_adj(processed_token);
+		printf(GRN"processed_token2: %s\n"RESET, processed_token);
 		tokens[i] = processed_token;
 		result_len += ft_strlen(tokens[i]) + 1;
 		i++;
