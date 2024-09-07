@@ -27,7 +27,8 @@ int				builtin_export(t_ms_data *data);
 static void		print_env(t_env *env);
 static void		add_env(t_ms_data *data);
 
-int	builtin_export(t_ms_data *data)
+
+int builtin_export (t_ms_data *data)
 {
 	if (data->args == NULL || data->args[1] == NULL)
 	{
