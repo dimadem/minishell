@@ -38,9 +38,13 @@ void	handle_too_many_args_error(t_ms_data *data)
 
 void	handle_exit(t_ms_data *data, int status)
 {
+	char *status_str;
+
 	ft_putendl_fd("exit", STDOUT_FILENO);
 	data->exit_status = status;
-	set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
+	status_str = ft_itoa(status);
+	set_shell_var(&data->shell_variables, "?", status_str);
+	free(status_str);
 	exit(status);
 }
 

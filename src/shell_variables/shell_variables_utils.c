@@ -21,6 +21,7 @@
 void	set_shell_var(t_env **shell_var, const char *key, const char *value);
 void	add_shell_var_node(t_env **shell_var, const char *line);
 char	*get_shell_variable(t_env *shell_var, const char *key);
+void	free_shell_var_list(t_env *shell_var);
 
 void	add_shell_var_node(t_env **shell_var, const char *line)
 {
@@ -84,4 +85,20 @@ char	*get_shell_variable(t_env *shell_var, const char *key)
 		curr_node = curr_node->next;
 	}
 	return (NULL);
+}
+
+void	free_shell_var_list(t_env *shell_var)
+{
+	t_env	*curr_node;
+	t_env	*next_node;
+
+	curr_node = shell_var;
+	while (curr_node)
+	{
+		next_node = curr_node->next;
+		free(curr_node->key);
+		free(curr_node->value);
+		free(curr_node);
+		curr_node = next_node;
+	}
 }

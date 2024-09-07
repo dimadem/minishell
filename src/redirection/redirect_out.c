@@ -33,15 +33,27 @@ int	redirect_out(t_ast *node, t_ms_data *data)
 {
 	pid_t	pid;
 	int		status;
+	int		fd;
 
 	pid = fork();
 	if (pid == -1)
 		return (1);
 	if (pid == 0)
 	{
-		data->std_out = open_file(node->right, ">");
 		if (data->std_out == -1)
-			return (1);
+		{
+			data->std_out = open_file(node->right, ">");
+			if (data->std_out == -1)
+				return (1);
+		}
+		else 
+		{
+			fd = open_file(node->right, ">");
+			if (fd == -1)
+				return (1);
+			dup2(fd, STDOUT_FILENO);
+			close(fd);
+		}
 		execute_ast(node->left, data);
 		exit(0);
 	}
