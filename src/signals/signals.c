@@ -54,7 +54,9 @@ void	set_signals_interactive(void)
 
 	sigquit_ignore();
 	sigemptyset(&a.sa_mask);
+	a.sa_flags = 0; 
 	a.sa_handler = *signal_reset_prompt;
+	a.sa_flags |= SA_RESTART;
 	sigaction(SIGINT, &a, NULL);
 }
 

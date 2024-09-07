@@ -46,7 +46,9 @@ void	handle_exit(t_ms_data *data, int status)
 {
 	ft_putendl_fd("exit", STDOUT_FILENO);
 	data->exit_status = status;
-	set_shell_var(&data->shell_variables, "?", ft_itoa(data->exit_status));
+	char *exit_status_str = ft_itoa(data->exit_status);
+	set_shell_var(&data->shell_variables, "?", exit_status_str);
+	free(exit_status_str);
 	clear_history_file();
 	exit(status);
 }
