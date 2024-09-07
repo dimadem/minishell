@@ -63,15 +63,11 @@ char	*expand_variable(char **start, t_ms_data *data)
 			var_name = ft_substr(var_start, 0, *start - var_start);
 			expanded_var = expand_env_and_loc_var(var_name, data);
 			free(var_name);
-			printf("expanded_var: %s\n", expanded_var);
 			len_before_var = var_start - str_start;
 			result = ft_strjoin_free(expanded_str, ft_substr(str_start, 0, len_before_var));
-			printf("result: %s\n", result);
 			expanded_str = ft_strjoin_free(result, expanded_var);
-			printf("expanded_str: %s\n", expanded_str);
 			str_start = *start;
 			str_start = str_start_adj(str_start);
-			printf("str_start: %s\n", str_start);
 			free(expanded_var);
 		}
 		else
@@ -80,9 +76,7 @@ char	*expand_variable(char **start, t_ms_data *data)
 	if (str_start != *start)
 	{
 		result = ft_substr(str_start, 0, *start - str_start);
-		printf("result: %s\n", result);
 		expanded_str = ft_strjoin_free(expanded_str, result);
-		printf("expanded_str2: %s\n", expanded_str);
 		free(result);
 	}
 	return (expanded_str);
@@ -113,29 +107,21 @@ char	*process_argument(char *arg, t_ms_data *data)
 
 	processed_arg = ft_strdup("");
 	start = arg;
-	printf(RED"arg: %s\n"RESET, arg);
 	while (*start != '\0')
 	{
 		if (*start == '$')
 		{
 			expanded_var = expand_variable(&start, data);
-			printf("expanded_var: %s\n", expanded_var);
 			if (expanded_var != NULL)
 			{
-				printf(BLU"processed_arg: %s\n"RESET, processed_arg);
-				printf(BLU"expanded_var: %s\n"RESET, expanded_var);
 				tmp = tmp_adj(ft_strjoin(processed_arg, expanded_var));
-				printf(BLU"tmp: %s\n"RESET, tmp);
 				free(processed_arg);
 				processed_arg = tmp;
-				printf(BLU"shouldn't be here. processed_arg: %s\n"RESET, processed_arg);
 				free(expanded_var);
 			}
-			printf("processed_arg1: %s\n", processed_arg);
 		}
 		else
 			processed_arg = append_literal(&start, processed_arg);
 	}
-	printf("processed_arg2: %s\n", processed_arg);
 	return (processed_arg);
 }

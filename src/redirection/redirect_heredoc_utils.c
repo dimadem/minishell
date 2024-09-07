@@ -96,11 +96,8 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	i = 0;
 	while (tokens[i])
 	{
-		printf(GRN"tokens[i]: %s\n"RESET, tokens[i]);
 		processed_token = expand_variable(&tokens[i], data);
-		printf(GRN"processed_token: %s\n"RESET, processed_token);
 		processed_token = token_adj(processed_token);
-		printf(GRN"processed_token2: %s\n"RESET, processed_token);
 		tokens[i] = processed_token;
 		result_len += ft_strlen(tokens[i]) + 1;
 		i++;
