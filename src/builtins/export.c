@@ -84,6 +84,7 @@ static void	add_env(t_ms_data *data)
 			key = ft_strcdup(curr_arg, '=');
 			set_env(&data->envp, key, \
 					ft_strchr(curr_arg, '=') + 1);
+			free(key);
 		}
 		else
 		{

@@ -23,31 +23,28 @@ void	add_shell_var_node(t_env **shell_var, const char *line);
 char	*get_shell_variable(t_env *shell_var, const char *key);
 void	free_shell_var_list(t_env *shell_var);
 
-void	add_shell_var_node(t_env **shell_var, const char *line)
+void add_shell_var_node(t_env **shell_var, const char *line) 
 {
-	t_env	*new_node;
-	t_env	*curr_node;
-	char	*key;
-	char	*value;
+    
+	if (!shell_var || !line)
+        return;
 
-	new_node = (t_env *)malloc(sizeof(t_env));
-	if (!new_node)
-		return ;
-	key = ft_strcdup(line, '=');
-	value = ft_strchr(line, '=') + 1;
-	new_node->key = ft_strdup(key);
-	new_node->value = ft_strdup(value);
-	free(key);
-	new_node->next = NULL;
-	if (*shell_var == NULL)
+    char *key = ft_strcdup(line, '=');
+    char *value = ft_strchr(line, '=') + 1;
+    t_env *new_node = (t_env *)malloc(sizeof(t_env));
+    new_node->key = ft_strdup(key);
+    new_node->value = ft_strdup(value);
+    new_node->next = NULL;
+    if (*shell_var == NULL)
+        *shell_var = new_node;
+    else 
 	{
-		*shell_var = new_node;
-		return ;
-	}
-	curr_node = *shell_var;
-	while (curr_node->next != NULL)
-		curr_node = curr_node->next;
-	curr_node->next = new_node;
+        t_env *curr_node = *shell_var;
+        while (curr_node->next != NULL)
+            curr_node = curr_node->next;
+        curr_node->next = new_node;
+    }
+    free(key);
 }
 
 void	set_shell_var(t_env **shell_var, const char *key, const char *value)

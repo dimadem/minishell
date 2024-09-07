@@ -41,10 +41,10 @@ void	add_env_node(t_env **data_envp, char *line)
 	if (!new_node)
 		return ;
 	key = ft_strcdup(line, '=');
+	free(key);
 	value = ft_strchr(line, '=') + 1;
 	new_node->key = ft_strdup(key);
 	new_node->value = ft_strdup(value);
-	free(key);
 	new_node->next = NULL;
 	if (*data_envp == NULL)
 	{
