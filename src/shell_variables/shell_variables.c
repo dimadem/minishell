@@ -52,6 +52,7 @@ int	handle_get_shell_variable(t_ms_data *data, const char *key)
 	{
 		ft_putstr_fd(value, data->std_out);
 		ft_putstr_fd("\n", data->std_out);
+		free(value);
 		return (0);
 	}
 	return (-1);

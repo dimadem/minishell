@@ -50,6 +50,7 @@ void	handle_exit(t_ms_data *data, int status)
 	set_shell_var(&data->shell_variables, "?", exit_status_str);
 	free(exit_status_str);
 	clear_history_file();
+	free_ms_data(data);
 	exit(status);
 }
 

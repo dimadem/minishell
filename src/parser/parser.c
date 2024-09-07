@@ -35,7 +35,6 @@ t_ast	*create_redir_node(t_token *token)
 	node->args[1] = NULL;
 	node->left = NULL;
 	node->right = NULL;
-	free(token);
 	return (node);
 }
 

@@ -131,7 +131,6 @@ static int	new_process(t_ms_data *data)
 		a.sa_handler = SIG_DFL;
 		a.sa_flags = 0;
 		sigaction(SIGQUIT, &a, NULL);
-
 		exec_path = ft_find_path(data->args[0], data->envp);
 		if (!exec_path)
 		{
