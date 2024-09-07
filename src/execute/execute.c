@@ -20,6 +20,7 @@
 #include "pipe.h"
 #include "redirection.h"
 #include "exit_status.h"
+#include "signals.h"
 
 int			execute_ast(t_ast *node, t_ms_data *data);
 static int	execute(t_ms_data *data);
@@ -107,6 +108,7 @@ static int	execute(t_ms_data *data)
 static int	new_process(t_ms_data *data)
 {
 	pid_t	pid;
+	struct sigaction a;
 
 	if (data->std_in == -1)
 		data->std_in = dup(STDIN_FILENO);
@@ -122,14 +124,20 @@ static int	new_process(t_ms_data *data)
 		if (data->std_out != -1)
 			dup2(data->std_out, STDOUT_FILENO);
 		close_fds(data->std_in, data->std_out);
+
+		sigemptyset(&a.sa_mask);
+		a.sa_handler = SIG_DFL;
+		sigaction(SIGQUIT, &a, NULL);
 		if (execve(ft_find_path(data->args[0], data->envp), \
 					data->args, env_to_array(data->envp)) == -1)
 		{
-			exit_status_handler(data, IS_DIRECTORY, "minishell: ");
+			exit_status_handler(data, IS_DIRECTORY, "maxishell: ");
 			exit(IS_DIRECTORY);
 		}	
 	}
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &data->exit_status, 0);
+	if (WIFSIGNALED(data->exit_status) && WTERMSIG(data->exit_status) == SIGQUIT)
+    	ft_printf("Quit (core dumped)\n");
 	return (EXIT_SUCCESS);
 }
