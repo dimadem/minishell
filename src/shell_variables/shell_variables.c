@@ -66,6 +66,10 @@ int	handle_shell_variable(t_ast *node, t_ms_data *data)
 
 void	shell_variable_update(t_ms_data *data, int status)
 {
+	char *status_str;
+
 	data->exit_status = status;
-	set_shell_var(&data->shell_variables, "?", ft_itoa(status));
+	status_str = ft_itoa(status);
+	set_shell_var(&data->shell_variables, "?", status_str);
+	free(status_str);
 }

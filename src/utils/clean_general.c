@@ -12,6 +12,7 @@
 
 #include "tokens.h"
 #include "env.h"
+#include "exit_status.h"
 
 void	free_args(char **args)
 {
@@ -32,10 +33,10 @@ void	free_env_list(t_env *env)
 
 	while (env)
 	{
-		free(env->key);
-		free(env->value);
 		temp = env;
 		env = env->next;
+		free(env->key);
+		free(env->value);
 		free(temp);
 	}
 }
@@ -44,8 +45,8 @@ void	free_ms_data(t_ms_data *data)
 {
 	if (data)
 	{
-		free_env_list(data->envp);
-		free_env_list(data->shell_variables);
+		free_shell_var_list(data->envp);
+		free_shell_var_list(data->shell_variables);
 		free(data->current_dir);
 		if (data->std_in != STDIN_FILENO)
 			close(data->std_in);
@@ -63,3 +64,4 @@ void	loop_cleanup(char *line, t_token *tokens, char *prompt, t_ast *tree)
 	(void)tokens;
 	free_ast(tree);
 }
+

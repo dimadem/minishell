@@ -29,6 +29,7 @@ int	builtin_cd(t_ms_data *data)
 {
 	char	*target_dir;
 	char	*home_dir;
+	char    *error_message;
 	char	cwd[4096];
 
 	ft_printf("builtin_cd\n");
@@ -38,12 +39,12 @@ int	builtin_cd(t_ms_data *data)
 		target_dir = home_dir;
 	if (chdir(target_dir) == -1)
 	{
+		error_message = ft_strjoin("cd: ", target_dir);
 		if (errno == EACCES)
-			exit_status_handler(data, PERMISSION_DENIED, \
-				ft_strjoin("cd: ", target_dir));
+			exit_status_handler(data, PERMISSION_DENIED, error_message);
 		if (errno == ENOENT)
-			exit_status_handler(data, IS_DIRECTORY, \
-				ft_strjoin("cd: ", target_dir));
+			exit_status_handler(data, IS_DIRECTORY, error_message);
+		free(error_message);
 		return (EXIT_FAILURE);
 	}
 	set_env(&data->envp, "OLDPWD", get_env(data->envp, "PWD"));
