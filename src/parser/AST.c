@@ -174,13 +174,13 @@ t_ast	*new_ast_node(void)
 
 int	cmd_arg_len(t_token *current)
 {
-	int	cmd_arg_count;
+	int	i;
 
-	cmd_arg_count = 0;
+	i = 0;
 	while (current && current->type == PHRASE)
 	{
-		cmd_arg_count++;
+		i++;
 		current = current->next;
 	}
-	return (cmd_arg_count);
+	return (i);
 }
