@@ -18,8 +18,8 @@ t_ast	*manage_redirs(t_token **tokens, t_ms_data *data);
 t_ast	*manage_pipe(t_token **tokens, t_ms_data *data);
 t_ast	*new_ast_node(void);
 t_ast	*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data);
-int		phrase_arg_len(t_token *current);
-void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count);
+int		cmd_arg_len(t_token *current);
+void	set_command_args(t_ast *command_node, t_token **tokens, int cmd_arg_count);
 t_ast	*manage_commands(t_token **tokens, t_ms_data *data);
 
 
@@ -95,20 +95,20 @@ t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
 {
 	t_ast		*command_node;
-	int			arg_count;
+	int			cmd_arg_count;
 
 	command_node = new_ast_node();
 	command_node->type = PHRASE;
-	arg_count = phrase_arg_len(*tokens);
-	ft_printf("arg_count: %d\n", arg_count);
-	command_node->args = malloc(sizeof(char *) * (arg_count + 1));
+	cmd_arg_count = cmd_arg_len(*tokens);
+	ft_printf("cmd_arg_count: %d\n", cmd_arg_count);
+	command_node->args = malloc(sizeof(char *) * (cmd_arg_count + 1));
 	if (!command_node->args)
 		return (NULL);
 	ft_printf(BLU"manage_commands tokens:\n"RESET);
 	print_tokens(*tokens);
-	set_command_args(command_node, tokens, arg_count);
+	set_command_args(command_node, tokens, cmd_arg_count);
 	(void)data;
-	//post_process_command_args(command_node, arg_count, data);
+	//post_process_command_args(command_node, cmd_arg_count, data);
 	return (command_node);
 }
 
@@ -172,15 +172,15 @@ t_ast	*new_ast_node(void)
 	return (node);
 }
 
-int	phrase_arg_len(t_token *current)
+int	cmd_arg_len(t_token *current)
 {
-	int	arg_count;
+	int	cmd_arg_count;
 
-	arg_count = 0;
+	cmd_arg_count = 0;
 	while (current && current->type == PHRASE)
 	{
-		arg_count++;
+		cmd_arg_count++;
 		current = current->next;
 	}
-	return (arg_count);
+	return (cmd_arg_count);
 }
