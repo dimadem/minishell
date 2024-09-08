@@ -13,6 +13,28 @@
 #include "tokens.h"
 #include <string.h>
 
+void	handle_special_chars(char **str, t_token **tokens);
+void	append_phrase_if_valid(char **start, char **str, t_token **tokens);
+void	handle_phrase(char **str, t_token **tokens);
+
+t_token	*tokenise(char *str)
+{
+	t_token	*tokens;
+
+	tokens = NULL;
+	while (*str)
+	{
+		while (*str && ft_strchr(" \t\n\r\v\f", *str) != NULL)
+			str++;
+		if (ft_strchr("<|>", *str) != NULL)
+			handle_special_chars(&str, &tokens);
+		else
+			handle_phrase(&str, &tokens);
+	}
+	return (tokens);
+}
+
+
 void	handle_special_chars(char **str, t_token **tokens)
 {
 	if (**str == '<')
@@ -107,21 +129,4 @@ void	print_ast_args(t_ast *node)
 		ft_printf("ast arg[%d] ->  %s \n", i, node->args[i]);
 		i++;
 	}
-}
-
-t_token	*tokenise(char *str)
-{
-	t_token	*tokens;
-
-	tokens = NULL;
-	while (*str)
-	{
-		while (*str && ft_strchr(" \t\n\r\v\f", *str) != NULL)
-			str++;
-		if (ft_strchr("<|>", *str) != NULL)
-			handle_special_chars(&str, &tokens);
-		else
-			handle_phrase(&str, &tokens);
-	}
-	return (tokens);
 }

@@ -66,3 +66,48 @@ void	loop_cleanup(char *line, t_token *tokens, char *prompt, t_ast *tree)
 	free_ast(tree);
 }
 
+void	free_ast(t_ast *node)
+{
+	int				i;
+
+	i = 0;
+	if (!node)
+		return ;
+	if (node->args)
+	{
+		while (node->args && node->args[i])
+		{
+			ft_printf(GRN"t_ast node arg free'd: %s			(end of main_loop->loop_clean->free_ast)\n"RESET, node->args[i]);
+			free(node->args[i]);
+			i++;
+		}
+		free(node->args);
+	}
+	free_ast(node->left);
+	free_ast(node->right);
+	free(node);
+}
+
+
+// unused since tree freed on the fly, delete at the end if unused
+void	free_all_tokens(t_token *tokens)
+{
+	t_token	*temp;
+
+	while (tokens)
+	{
+		temp = tokens;
+		tokens = tokens->next;
+		if (temp)
+		{
+			if (temp->data)
+			{
+				ft_printf(GRN"token free'd: %s\n"RESET, temp->data);
+				free(temp->data);
+				temp->data = NULL;
+			}
+		}
+		free(temp);
+		temp = NULL;
+	}
+}

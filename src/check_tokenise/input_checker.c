@@ -12,10 +12,10 @@
 
 #include "tokens.h"
 
-void	free_op_strings(t_loop_data *loop_data, char *tail, char *new_input)
+void	free_op_strings(t_loop_data *data, char *tail, char *new)
 {
-	free(loop_data->trimmed_input);
-	free(new_input);
+	free(data->trimmed_input);
+	free(new);
 	free(tail);
 }
 
@@ -40,6 +40,7 @@ int	check_operators(t_loop_data *loop_data)
 			final_input = ft_strcat_const(new_input, tail);
 			free_op_strings(loop_data, tail, new_input);
 			loop_data->trimmed_input = final_input;
+			free(final_input);
 			break ;
 		}
 		input++;
