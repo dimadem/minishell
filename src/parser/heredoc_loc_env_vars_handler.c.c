@@ -18,18 +18,6 @@
 #include <sys/wait.h>
 #include "signals.h"
 
-int			redirect_here_doc(t_ast *node, t_ms_data *data);
-
-/**
-  - @brief This function handle "<<" heredoc functionality
-  - 
-  - @param node current node in the AST
-  - @param data minishell data structure
-  - @return status:
-  - 0: success
-  - 1: error
- */
-
 static char	*assemble_result(char **tokens, size_t result_len)
 {
 	char	*result;
@@ -104,16 +92,4 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	}
 	result = assemble_result(tokens, result_len);
 	return (result);
-}
-
-void	write_heredoc_lines(char **line, int file_fd, char *eof, \
-			t_ms_data *data)
-{
-	while (*line && (ft_strcmp(*line, eof) != 0) && !g_heredoc_interrupted)
-	{
-		write(file_fd, *line, ft_strlen(*line));
-		write(file_fd, "\n", 1);
-		free(*line);
-		*line = process_and_reassemble(readline("> "), data);
-	}
 }
