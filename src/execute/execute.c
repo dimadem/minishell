@@ -152,5 +152,9 @@ static int	new_process(t_ms_data *data)
 	}
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &data->exit_status, 0);
+	if (WIFSIGNALED(data->exit_status) && WTERMSIG(data->exit_status) == SIGQUIT)
+	{
+		ft_printf("\n");
+	}
 	return (EXIT_SUCCESS);
 }
