@@ -25,6 +25,7 @@ void	free_all_tokens(t_token *tokens)
 		{
 			if (temp->data)
 			{
+				ft_printf(GRN"token free'd: %s\n"RESET, temp->data);
 				free(temp->data);
 				temp->data = NULL;
 			}
@@ -45,6 +46,7 @@ void	free_ast(t_ast *node)
 	{
 		while (node->args && node->args[i])
 		{
+			ft_printf(GRN"t_ast node arg free'd: %s			(end of main_loop->loop_clean->free_ast)\n"RESET, node->args[i]);
 			free(node->args[i]);
 			i++;
 		}

@@ -17,6 +17,7 @@ t_token	*new_token(char *value, t_token_type type)
 	t_token	*token;
 
 	token = malloc(sizeof(t_token));
+	ft_printf(RED"token malloc'd: %s\n"RESET, "");
 	if (!token)
 		return (NULL);
 	token->data = ft_strdup(value);

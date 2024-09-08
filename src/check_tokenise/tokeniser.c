@@ -97,6 +97,18 @@ void	print_tokens(t_token *tokens)
 	}
 }
 
+void	print_ast_args(t_ast *node)
+{
+	int		i;				
+
+	i = 0;
+	while (node->args[i] != NULL)
+	{
+		ft_printf("ast arg[%d] ->  %s \n", i, node->args[i]);
+		i++;
+	}
+}
+
 t_token	*tokenise(char *str)
 {
 	t_token	*tokens;

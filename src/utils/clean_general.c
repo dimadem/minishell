@@ -61,6 +61,7 @@ void	loop_cleanup(char *line, t_token *tokens, char *prompt, t_ast *tree)
 {
 	free(line);
 	free(prompt);
+	// print_tokens(tokens);
 	(void)tokens;
 	free_ast(tree);
 }

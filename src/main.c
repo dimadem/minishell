@@ -60,6 +60,7 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		if (input_error_checks(loop_data))
 			continue ;
 		loop_data->tokens = tokenise(loop_data->trimmed_input);
+		print_tokens(loop_data->tokens);
 		loop_data->tree = parse_tokens(&loop_data->tokens, data);
 		process_ast_and_io(data, loop_data);
 	}

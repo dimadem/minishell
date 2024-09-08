@@ -121,5 +121,6 @@ char		*process_argument(char *arg, t_ms_data *data);
 char		*expand_variable(char **start, t_ms_data *data);
 void		clear_history_file(void);
 int			is_in_single_quotes(char *arg);
+void		print_ast_args(t_ast *node);
 
 #endif
