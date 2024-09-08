@@ -13,9 +13,9 @@
 #include "tokens.h"
 #include <string.h>
 
-void	handle_special_chars(char **str, t_token **tokens);
-void	append_word_if_valid(char **start, char **str, t_token **tokens);
-void	handle_phrase(char **str, t_token **tokens);
+char	*handle_special_chars(char *str, t_token **tokens);
+void	append_word_if_valid(char *start, char *str, t_token **tokens);
+char	*handle_phrase(char *str, t_token **tokens);
 
 t_token	*tokenise(char *str)
 {
@@ -27,38 +27,39 @@ t_token	*tokenise(char *str)
 		while (*str && ft_strchr(" \t\n\r\v\f", *str) != NULL)
 			str++;
 		if (ft_strchr("<|>", *str) != NULL)
-			handle_special_chars(&str, &tokens);
+			str = handle_special_chars(str, &tokens);
 		else
-			handle_phrase(&str, &tokens);
+			str = handle_phrase(str, &tokens);
 	}
 	return (tokens);
 }
 
-void	handle_special_chars(char **str, t_token **tokens)
+char	*handle_special_chars(char *str, t_token **tokens)
 {
-	if (**str == '<')
+	if (*str == '<')
 	{
-		if (*(*str + 1) == '<')
+		if ((*str + 1) == '<')
 		{
 			append_token(tokens, new_token("<<", REDIR_HEREDOC));
-			(*str)++;
+			(str)++;
 		}
 		else
 			append_token(tokens, new_token("<", REDIR_IN));
 	}
-	else if (**str == '>')
+	else if (*str == '>')
 	{
-		if (*(*str + 1) == '>')
+		if ((*str + 1) == '>')
 		{
 			append_token(tokens, new_token(">>", REDIR_APPEND));
-			(*str)++;
+			(str)++;
 		}
 		else
 			append_token(tokens, new_token(">", REDIR_OUT));
 	}
-	else if (**str == '|')
+	else if (*str == '|')
 		append_token(tokens, new_token("|", PIPE));
-	(*str)++;
+	(str)++;
+	return (str);
 }
 
 t_token	*new_token(char *value, t_token_type type)
@@ -95,39 +96,39 @@ void	append_token(t_token **tokens, t_token *new_token)
 	}
 }
 
-void	handle_phrase(char **str, t_token **tokens)
+char	*handle_phrase(char *str, t_token **tokens)
 {
 	char	*start;
 	char	quote_flag;
 	char	quote_type;
 
-	start = *str;
+	start = str;
 	quote_flag = 0;
 	quote_type = 0;
-	while (**str)
+	while (*str)
 	{
-		if (!quote_flag && (**str == '\'' || **str == '\"'))
+		if (!quote_flag && (*str == '\'' || *str == '\"'))
 		{
 			quote_flag = 1;
-			quote_type = **str;
+			quote_type = *str;
 		}
-		else if (quote_flag && **str == quote_type)
+		else if (quote_flag && *str == quote_type)
 			quote_flag = 0;
-		if (!quote_flag && ft_strchr(" \t\n\r\v\f<|>", **str) != NULL)
+		if (!quote_flag && ft_strchr(" \t\n\r\v\f<|>", *str) != NULL)
 			break ;
-		(*str)++;
+		str++;
 	}
-	append_word_if_valid(&start, str, tokens);
+	append_word_if_valid(start, str, tokens);
+	return (str);
 }
 
-void	append_word_if_valid(char **start, char **str, t_token **tokens)
+void	append_word_if_valid(char *start, char *str, t_token **tokens)
 {
 	char	*word;
 
-	if (*str > *start)
+	if (str > start)
 	{
-		word = ft_strndup(*start, *str - *start);
-		ft_printf(CYA"word: %s\n"RESET, word);
+		word = ft_strndup(start, str - start);
 		if (word)
 		{
 			append_token(tokens, new_token(word, PHRASE));

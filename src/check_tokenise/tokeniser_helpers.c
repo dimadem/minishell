@@ -21,7 +21,7 @@ void	print_tokens(t_token *tokens)
 	token = tokens;
 	while (token != NULL)
 	{
-		ft_printf("input[%d] ->  %s \n", i, token->data);
+		ft_printf("input[%d] ->  %s at add: %p\n", i, token->data, &token->data);
 		token = token->next;
 		i++;
 	}

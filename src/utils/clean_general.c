@@ -57,13 +57,13 @@ void	free_ms_data(t_ms_data *data)
 	}
 }
 
-void	loop_cleanup(char *line, t_token *tokens, char *prompt, t_ast *tree)
+void	loop_cleanup(t_loop_data *loop_data,  t_token *tokens_head)
 {
-	free(line);
-	free(prompt);
-	// print_tokens(tokens);
-	(void)tokens;
-	free_ast(tree);
+	free(loop_data->trimmed_input);
+	print_tokens(tokens_head);
+	free_all_tokens(tokens_head);
+	free(loop_data->prompt);
+	free_ast(loop_data->tree);
 }
 
 void	free_ast(t_ast *node)

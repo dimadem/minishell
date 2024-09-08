@@ -67,8 +67,6 @@ t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 
 	if (!tokens || !*tokens)
 		return (NULL);
-	ft_printf(CYA"manage_redirs tokens:\n"RESET);
-	print_tokens(*tokens);
 	command_node = manage_commands(tokens, data);
 	current_token = *tokens;
 	while (current_token && is_redir_node(current_token))
@@ -100,12 +98,9 @@ t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
 	command_node = new_ast_node();
 	command_node->type = PHRASE;
 	cmd_arg_count = cmd_arg_len(*tokens);
-	ft_printf("cmd_arg_count: %d\n", cmd_arg_count);
 	command_node->args = malloc(sizeof(char *) * (cmd_arg_count + 1));
 	if (!command_node->args)
 		return (NULL);
-	ft_printf(BLU"manage_commands tokens:\n"RESET);
-	print_tokens(*tokens);
 	set_command_args(command_node, tokens, cmd_arg_count);
 	(void)data;
 	//post_process_command_args(command_node, cmd_arg_count, data);
@@ -119,8 +114,6 @@ void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count)
 	i = 0;
 	while (i < arg_count)
 	{
-		ft_printf("set_command_args tokens:\n");
-		print_tokens(*tokens);
 		command_node->args[i] = ft_strdup((*tokens)->data);
 		*tokens = (*tokens)->next;
 		i++;
@@ -135,7 +128,6 @@ t_ast	*create_redir_node(t_token *token)
 
 	node = new_ast_node();
 	node->type = token->type;
-	ft_printf(RED"token: %s, token_type: %d\n"RESET, token->data, token->type);
 	node->args = malloc(sizeof(char *) * 2);
 	if (!node->args)
 	{
