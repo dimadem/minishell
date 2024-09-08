@@ -40,18 +40,24 @@ t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
 	while (*tokens && (*tokens)->next)
 	{
 		next_token = (*tokens)->next;
-		if ((*tokens)->next->type == PIPE)
+		if (next_token->type == PIPE)
 		{
 			pipe_node = new_ast_node();
-			pipe_node->type = (*tokens)->next->type;
-			(*tokens)->next = NULL;
+			pipe_node->type = next_token->type;
+			pipe_node->args = malloc(sizeof(char *) * 2);
+			if (!pipe_node->args)
+			{
+				free(pipe_node);
+				return (NULL);
+			}
+			pipe_node->args[0] = ft_strdup(next_token->data);
+			pipe_node->args[1] = NULL;
 			pipe_node->left = manage_redirs(&tmp, data);
+			*tokens = next_token->next;
 			if (next_token->next == NULL)
 				pipe_node->right = NULL;
 			else
-				pipe_node->right = manage_pipe(&(next_token->next), data);
-			free(next_token->data);
-			free(next_token);
+				pipe_node->right = manage_pipe(tokens, data);
 			return (pipe_node);
 		}
 		*tokens = next_token;
