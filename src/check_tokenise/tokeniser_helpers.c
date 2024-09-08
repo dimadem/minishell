@@ -12,36 +12,29 @@
 
 #include "tokens.h"
 
-t_token	*new_token(char *value, t_token_type type)
+void	print_tokens(t_token *tokens)
 {
 	t_token	*token;
+	int		i;				
 
-	token = malloc(sizeof(t_token));
-	ft_printf(RED"token malloc'd: %s\n"RESET, "");
-	if (!token)
-		return (NULL);
-	token->data = ft_strdup(value);
-	if (!token->data)
+	i = 0;
+	token = tokens;
+	while (token != NULL)
 	{
-		free(token);
-		return (NULL);
+		ft_printf("input[%d] ->  %s \n", i, token->data);
+		token = token->next;
+		i++;
 	}
-	token->type = type;
-	token->next = NULL;
-	return (token);
 }
 
-void	append_token(t_token **tokens, t_token *new_token)
+void	print_ast_args(t_ast *node)
 {
-	t_token	*prev;
+	int		i;				
 
-	if (!*tokens)
-		*tokens = new_token;
-	else
+	i = 0;
+	while (node->args[i] != NULL)
 	{
-		prev = *tokens;
-		while (prev->next)
-			prev = prev->next;
-		prev->next = new_token;
+		ft_printf("ast arg[%d] ->  %s \n", i, node->args[i]);
+		i++;
 	}
 }

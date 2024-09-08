@@ -14,7 +14,7 @@
 #include <string.h>
 
 void	handle_special_chars(char **str, t_token **tokens);
-void	append_phrase_if_valid(char **start, char **str, t_token **tokens);
+void	append_word_if_valid(char **start, char **str, t_token **tokens);
 void	handle_phrase(char **str, t_token **tokens);
 
 t_token	*tokenise(char *str)
@@ -33,7 +33,6 @@ t_token	*tokenise(char *str)
 	}
 	return (tokens);
 }
-
 
 void	handle_special_chars(char **str, t_token **tokens)
 {
@@ -62,20 +61,37 @@ void	handle_special_chars(char **str, t_token **tokens)
 	(*str)++;
 }
 
-void	append_phrase_if_valid(char **start, char **str, t_token **tokens)
+t_token	*new_token(char *value, t_token_type type)
 {
-	char	*phrase;
+	t_token	*token;
 
-	if (*str > *start)
+	token = malloc(sizeof(t_token));
+	ft_printf(RED"token malloc'd: %s\n"RESET, "");
+	if (!token)
+		return (NULL);
+	token->data = ft_strdup(value);
+	if (!token->data)
 	{
-		phrase = ft_strndup(*start, *str - *start);
-		if (phrase)
-		{
-			append_token(tokens, new_token(phrase, PHRASE));
-			free(phrase);
-		}
-		else
-			ft_printf("Error: unable to allocate memory for token\n");
+		free(token);
+		return (NULL);
+	}
+	token->type = type;
+	token->next = NULL;
+	return (token);
+}
+
+void	append_token(t_token **tokens, t_token *new_token)
+{
+	t_token	*curr;
+
+	if (!*tokens)
+		*tokens = new_token;
+	else
+	{
+		curr = *tokens;
+		while (curr->next)
+			curr = curr->next;
+		curr->next = new_token;
 	}
 }
 
@@ -101,32 +117,23 @@ void	handle_phrase(char **str, t_token **tokens)
 			break ;
 		(*str)++;
 	}
-	append_phrase_if_valid(&start, str, tokens);
+	append_word_if_valid(&start, str, tokens);
 }
 
-void	print_tokens(t_token *tokens)
+void	append_word_if_valid(char **start, char **str, t_token **tokens)
 {
-	t_token	*token;
-	int		i;				
+	char	*word;
 
-	i = 0;
-	token = tokens;
-	while (token != NULL)
+	if (*str > *start)
 	{
-		ft_printf("input[%d] ->  %s \n", i, token->data);
-		token = token->next;
-		i++;
-	}
-}
-
-void	print_ast_args(t_ast *node)
-{
-	int		i;				
-
-	i = 0;
-	while (node->args[i] != NULL)
-	{
-		ft_printf("ast arg[%d] ->  %s \n", i, node->args[i]);
-		i++;
+		word = ft_strndup(*start, *str - *start);
+		ft_printf(CYA"word: %s\n"RESET, word);
+		if (word)
+		{
+			append_token(tokens, new_token(word, PHRASE));
+			free(word);
+		}
+		else
+			ft_printf("Error: unable to allocate memory for token\n");
 	}
 }
