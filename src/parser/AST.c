@@ -134,7 +134,7 @@ t_ast	*create_redir_node(t_token *token)
 		free(node);
 		return (NULL);
 	}
-	node->args[0] = token->data;
+	node->args[0] = ft_strdup(token->data);
 	node->args[1] = NULL;
 	return (node);
 }

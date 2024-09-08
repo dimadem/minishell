@@ -61,8 +61,8 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 			continue ;
 		loop_data->tokens = tokenise(loop_data->trimmed_input);
 		tokens_start = loop_data->tokens;
-		// print_tokens(loop_data->tokens);
-		// print_tokens(tokens_start);
+		print_tokens(loop_data->tokens);
+		print_tokens(tokens_start);
 		loop_data->tree = parse_tokens(&loop_data->tokens, data);
 		// print_tokens(tokens_start);
 		process_ast_and_io(data, loop_data, tokens_start);

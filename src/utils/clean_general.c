@@ -60,7 +60,6 @@ void	free_ms_data(t_ms_data *data)
 void	loop_cleanup(t_loop_data *loop_data,  t_token *tokens_head)
 {
 	free(loop_data->trimmed_input);
-	print_tokens(tokens_head);
 	free_all_tokens(tokens_head);
 	free(loop_data->prompt);
 	free_ast(loop_data->tree);
@@ -77,7 +76,7 @@ void	free_ast(t_ast *node)
 	{
 		while (node->args && node->args[i])
 		{
-			ft_printf(GRN"t_ast node arg free'd: %s			(end of main_loop->loop_clean->free_ast)\n"RESET, node->args[i]);
+			ft_printf(GRN"t_ast node arg free'd: %s	at add: %p\n"RESET, node->args[i], node->args[i]);
 			free(node->args[i]);
 			i++;
 		}
@@ -88,8 +87,6 @@ void	free_ast(t_ast *node)
 	free(node);
 }
 
-
-// unused since tree freed on the fly, delete at the end if unused
 void	free_all_tokens(t_token *tokens)
 {
 	t_token	*temp;
@@ -102,7 +99,7 @@ void	free_all_tokens(t_token *tokens)
 		{
 			if (temp->data)
 			{
-				ft_printf(GRN"token free'd: %s\n"RESET, temp->data);
+				ft_printf(GRN"token free'd: %s at add: %p\n"RESET, temp->data, temp->data);
 				free(temp->data);
 				temp->data = NULL;
 			}
