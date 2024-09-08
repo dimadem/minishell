@@ -66,6 +66,8 @@ t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 
 	if (!tokens || !*tokens)
 		return (NULL);
+	ft_printf(CYA"manage_redirs tokens:\n"RESET);
+	print_tokens(*tokens);
 	command_node = manage_commands(tokens, data);
 	current_token = *tokens;
 	while (current_token && is_redir_node(current_token))
@@ -74,7 +76,7 @@ t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 		// ft_printf(YEL"freeing curr_token (redir): %s		(manage_redirs)\n"RESET, current_token->data);
 		// free(current_token->data);
 		redirect_node->left = command_node;
-		print_ast_args(command_node);
+		// print_ast_args(command_node);
 		*tokens = current_token->next;
 		if (*tokens)
 		{
@@ -96,9 +98,12 @@ t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
 
 	command_node = new_ast_node(PHRASE);
 	arg_count = arg_len(*tokens);
+	ft_printf("arg_count: %d\n", arg_count);
 	command_node->args = malloc(sizeof(char *) * (arg_count + 1));
 	if (!command_node->args)
 		return (NULL);
+	ft_printf(BLU"manage_commands tokens:\n"RESET);
+	print_tokens(*tokens);
 	set_command_args(command_node, tokens, arg_count);
 	(void)data;
 	//post_process_command_args(command_node, arg_count, data);
@@ -112,8 +117,8 @@ void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count)
 	i = 0;
 	while (i < arg_count)
 	{
-		// ft_printf("set_command_args tokens:\n");
-		// print_tokens(*tokens);
+		ft_printf("set_command_args tokens:\n");
+		print_tokens(*tokens);
 		command_node->args[i] = ft_strdup((*tokens)->data);
 		*tokens = (*tokens)->next;
 		i++;
@@ -122,17 +127,39 @@ void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count)
 }
 
 
+t_ast	*create_redir_node(t_token *token)
+{
+	t_ast			*node;
+
+	node = malloc(sizeof(t_ast));
+	if (!node)
+		return (NULL);
+	node->type = token->type;
+	ft_printf(RED"token: %s, token_type: %d\n"RESET, token->data, token->type);
+	node->args = malloc(sizeof(char *) * 2);
+	if (!node->args)
+	{
+		free(node);
+		return (NULL);
+	}
+	node->args[0] = token->data;
+	node->args[1] = NULL;
+	node->left = NULL;
+	node->right = NULL;
+	return (node);
+}
 
 
 
-
-
-
-
-
-
-
-
+int	is_redir_node(t_token *tokens)
+{
+	if (tokens->type == REDIR_IN
+		|| tokens->type == REDIR_OUT
+		|| tokens->type == REDIR_APPEND
+		|| tokens->type == REDIR_HEREDOC)
+		return (1);
+	return (0);
+}
 
 t_ast	*new_ast_node(t_token_type type)
 {
@@ -148,19 +175,6 @@ t_ast	*new_ast_node(t_token_type type)
 	return (node);
 }
 
-t_ast	*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data)
-{
-	t_ast	*redirect_node;
-
-	redirect_node = new_ast_node((*tokens)->type);
-	*tokens = (*tokens)->next->next;
-	redirect_node->left = manage_redirs(tokens, data);
-	redirect_node->right = create_redir_node(tmp->next);
-	free(tmp->data);
-	free(tmp);
-	return (redirect_node);
-}
-
 int	arg_len(t_token *current)
 {
 	int	arg_count;
@@ -173,35 +187,3 @@ int	arg_len(t_token *current)
 	}
 	return (arg_count);
 }
-
-t_ast	*create_redir_node(t_token *token)
-{
-	t_ast			*node;
-
-	node = malloc(sizeof(t_ast));
-	if (!node)
-		return (NULL);
-	node->type = token->type;
-	node->args = malloc(sizeof(char *) * 2);
-	if (!node->args)
-	{
-		free(node);
-		return (NULL);
-	}
-	node->args[0] = token->data;
-	node->args[1] = NULL;
-	node->left = NULL;
-	node->right = NULL;
-	return (node);
-}
-
-int	is_redir_node(t_token *tokens)
-{
-	if (tokens->type == REDIR_IN
-		|| tokens->type == REDIR_OUT
-		|| tokens->type == REDIR_APPEND
-		|| tokens->type == REDIR_HEREDOC)
-		return (1);
-	return (0);
-}
-
