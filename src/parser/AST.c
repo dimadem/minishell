@@ -78,10 +78,7 @@ t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 	while (current_token && is_redir_node(current_token))
 	{
 		redirect_node = create_redir_node(current_token);
-		// ft_printf(YEL"freeing curr_token (redir): %s		(manage_redirs)\n"RESET, current_token->data);
-		// free(current_token->data);
 		redirect_node->left = command_node;
-		// print_ast_args(command_node);
 		*tokens = current_token->next;
 		if (*tokens)
 		{

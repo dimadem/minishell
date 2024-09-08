@@ -70,7 +70,7 @@ t_token	*new_token(char *value, t_token_type type)
 	if (!token)
 		return (NULL);
 	token->data = ft_strdup(value);
-	ft_printf(RED"token malloc'd:	%s		at add:		%p\n"RESET, token->data, token->data);
+	// ft_printf(RED"token malloc'd:	%s		at add:		%p\n"RESET, token->data, token->data);
 	if (!token->data)
 	{
 		free(token);
