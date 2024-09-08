@@ -30,7 +30,7 @@ void	process_ast_and_io(t_ms_data *data, t_loop_data *loop_data, t_token *tokens
 {
 	int	status;
 
-	// print_ast_root(loop_data->tree);
+	print_ast_root(loop_data->tree);
 	status = execute_ast(loop_data->tree, data);
 	shell_variable_update(data, status);
 	if (status_handler(status, loop_data, tokens_head))
@@ -61,7 +61,7 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 			continue ;
 		loop_data->tokens = tokenise(loop_data->trimmed_input);
 		tokens_start = loop_data->tokens;
-		print_tokens(loop_data->tokens);
+		// print_tokens(loop_data->tokens);
 		print_tokens(tokens_start);
 		loop_data->tree = parse_tokens(&loop_data->tokens, data);
 		// print_tokens(tokens_start);

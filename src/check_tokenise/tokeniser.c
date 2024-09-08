@@ -38,7 +38,7 @@ char	*handle_special_chars(char *str, t_token **tokens)
 {
 	if (*str == '<')
 	{
-		if ((*str + 1) == '<')
+		if (*(str + 1) == '<')
 		{
 			append_token(tokens, new_token("<<", REDIR_HEREDOC));
 			(str)++;
@@ -48,7 +48,7 @@ char	*handle_special_chars(char *str, t_token **tokens)
 	}
 	else if (*str == '>')
 	{
-		if ((*str + 1) == '>')
+		if (*(str + 1) == '>')
 		{
 			append_token(tokens, new_token(">>", REDIR_APPEND));
 			(str)++;
@@ -67,10 +67,10 @@ t_token	*new_token(char *value, t_token_type type)
 	t_token	*token;
 
 	token = malloc(sizeof(t_token));
-	ft_printf(RED"token malloc'd: %s\n"RESET, "");
 	if (!token)
 		return (NULL);
 	token->data = ft_strdup(value);
+	ft_printf(RED"token malloc'd:	%s		at add:		%p\n"RESET, token->data, token->data);
 	if (!token->data)
 	{
 		free(token);
