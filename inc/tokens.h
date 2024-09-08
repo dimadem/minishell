@@ -34,7 +34,8 @@ typedef enum e_token_type
 	REDIR_IN,
 	REDIR_OUT,
 	REDIR_APPEND,
-	REDIR_HEREDOC
+	REDIR_HEREDOC,
+	NONE
 }	t_token_type;
 
 typedef struct s_token
@@ -102,7 +103,7 @@ void		free_all_tokens(t_token *tokens);
 t_token		*new_token(char *value, t_token_type type);
 void		append_token(t_token **tokens, t_token *new_token);
 int			valid_operator(const char **str);
-t_ast		*new_ast_node(t_token_type type);
+t_ast		*new_ast_node(void);
 t_ast		*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data);
 int			arg_len(t_token *current);
 void		set_command_args(t_ast *command_node, t_token **tokens, \

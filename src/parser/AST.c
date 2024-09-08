@@ -16,9 +16,9 @@ t_ast	*create_redir_node(t_token *token);
 int		is_redir_node(t_token *tokens);
 t_ast	*manage_redirs(t_token **tokens, t_ms_data *data);
 t_ast	*manage_pipe(t_token **tokens, t_ms_data *data);
-t_ast	*new_ast_node(t_token_type type);
+t_ast	*new_ast_node(void);
 t_ast	*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data);
-int		arg_len(t_token *current);
+int		phrase_arg_len(t_token *current);
 void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count);
 t_ast	*manage_commands(t_token **tokens, t_ms_data *data);
 
@@ -42,7 +42,8 @@ t_ast	*manage_pipe(t_token **tokens, t_ms_data *data)
 		next_token = (*tokens)->next;
 		if ((*tokens)->next->type == PIPE)
 		{
-			pipe_node = new_ast_node((*tokens)->next->type);
+			pipe_node = new_ast_node();
+			pipe_node->type = (*tokens)->next->type;
 			(*tokens)->next = NULL;
 			pipe_node->left = manage_redirs(&tmp, data);
 			if (next_token->next == NULL)
@@ -96,8 +97,9 @@ t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
 	t_ast		*command_node;
 	int			arg_count;
 
-	command_node = new_ast_node(PHRASE);
-	arg_count = arg_len(*tokens);
+	command_node = new_ast_node();
+	command_node->type = PHRASE;
+	arg_count = phrase_arg_len(*tokens);
 	ft_printf("arg_count: %d\n", arg_count);
 	command_node->args = malloc(sizeof(char *) * (arg_count + 1));
 	if (!command_node->args)
@@ -131,9 +133,7 @@ t_ast	*create_redir_node(t_token *token)
 {
 	t_ast			*node;
 
-	node = malloc(sizeof(t_ast));
-	if (!node)
-		return (NULL);
+	node = new_ast_node();
 	node->type = token->type;
 	ft_printf(RED"token: %s, token_type: %d\n"RESET, token->data, token->type);
 	node->args = malloc(sizeof(char *) * 2);
@@ -144,11 +144,8 @@ t_ast	*create_redir_node(t_token *token)
 	}
 	node->args[0] = token->data;
 	node->args[1] = NULL;
-	node->left = NULL;
-	node->right = NULL;
 	return (node);
 }
-
 
 
 int	is_redir_node(t_token *tokens)
@@ -161,21 +158,21 @@ int	is_redir_node(t_token *tokens)
 	return (0);
 }
 
-t_ast	*new_ast_node(t_token_type type)
+t_ast	*new_ast_node(void)
 {
 	t_ast		*node;
 
 	node = malloc(sizeof(t_ast));
 	if (!node)
 		return (NULL);
-	node->type = type;
+	node->type = NONE;
 	node->args = NULL;
 	node->left = NULL;
 	node->right = NULL;
 	return (node);
 }
 
-int	arg_len(t_token *current)
+int	phrase_arg_len(t_token *current)
 {
 	int	arg_count;
 
