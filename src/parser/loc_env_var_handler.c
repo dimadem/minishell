@@ -39,12 +39,13 @@ void	post_process_command_args(t_ast *command_node, int arg_count \
 		{
 			processed_arg = ft_substr(command_node->args[i], 1, \
 				ft_strlen(command_node->args[i]) - 2);
-			ft_printf(RED"malloc'd processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
+			ft_printf(RED"malloc'd processed_arg1: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
 		}
 		ft_printf(GRN"freed command_node->args[i]: %s	at ad: %p\n"RESET, command_node->args[i], command_node->args[i]);
 		free(command_node->args[i]);
-		ft_printf(RED"malloc'd command_node->args[i]: %s	at ad: %p\n"RESET, command_node->args[i], command_node->args[i]);
+		printf("processed_arg: %s\n", processed_arg);
 		command_node->args[i] = ft_strdup(processed_arg);
+		ft_printf(RED"malloc'd command_node->args[i]: %s	at ad: %p\n"RESET, command_node->args[i], command_node->args[i]);
 		ft_printf(GRN"freed new processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
 		free(processed_arg);
 		i++;
@@ -80,10 +81,11 @@ char	*process_argument(char *arg, t_ms_data *data)
 	char	*start;
 	char	*processed_arg;
 	char	*tmp;
+	char	*tmp_ad;
 	char	*expanded_var;
 
 	processed_arg = ft_strdup("");
-	ft_printf(RED"malloc'd processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
+	ft_printf(RED"malloc'd processed_arg2: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
 	start = arg;
 	while (*start != '\0')
 	{
@@ -92,14 +94,17 @@ char	*process_argument(char *arg, t_ms_data *data)
 			expanded_var = expand_variable(&start, data);
 			if (expanded_var != NULL)
 			{
-				tmp = tmp_adj(ft_strjoin(processed_arg, expanded_var));
-				ft_printf(GRN"freed processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
-				free(processed_arg);
-				ft_printf(GRN"freed expanded_var: %s	at ad: %p\n"RESET, expanded_var, expanded_var);
-				free(expanded_var);
-				processed_arg = tmp;
-				ft_printf(GRN"freed tmp_adj_dup: %s	at ad: %p\n"RESET, tmp, tmp);
+				ft_printf(GRN"freed processed_arg: %s	at ad: %p (in ft_strjoin_free)\n"RESET, processed_arg, processed_arg);
+				tmp = ft_strjoin_free(processed_arg, expanded_var);
+				ft_printf(RED"malloc'd tmp: %s	at ad: %p\n"RESET, tmp, tmp);
+				tmp_ad = tmp_adj(tmp);
+				ft_printf(GRN"freed tmp: %s	at ad: %p\n"RESET, tmp, tmp);
 				free(tmp);
+				ft_printf(GRN"freed expanded_str(=expanded_var): %s	at ad: %p\n"RESET, expanded_var, expanded_var);
+				free(expanded_var);
+				processed_arg = ft_strdup(tmp_ad);
+				ft_printf(GRN"freed tmp_adj_dup: %s	at ad: %p\n"RESET, tmp_ad, tmp_ad);
+				free(tmp_ad);
 			}
 		}
 		else
@@ -117,6 +122,7 @@ char	*expand_variable(char **start, t_ms_data *data)
 	char	*var_start;
 	char	*str_start;
 	int		len_before_var;
+	char	*tmp;
 
 	str_start = *start;
 	expanded_str = ft_strdup("");
@@ -134,18 +140,22 @@ char	*expand_variable(char **start, t_ms_data *data)
 			var_name = ft_substr(var_start, 0, *start - var_start);
 			ft_printf(RED"malloc'd var_name: %s	at ad: %p\n"RESET, var_name, var_name);
 			expanded_var = expand_env_and_loc_var(var_name, data);
-			ft_printf(RED"malloc'd expanded_var: %s	at ad: %p\n"RESET, expanded_var, expanded_var);
 			ft_printf(GRN"freed var_name: %s	at ad: %p\n"RESET, var_name, var_name);
 			free(var_name);
 			len_before_var = var_start - str_start;
-			result = ft_strjoin_free(expanded_str, ft_substr(str_start, 0, len_before_var));
+			ft_printf(GRN"freed expanded_str: %s	at ad: %p	(in ft_strjoin_free)\n"RESET, expanded_str, expanded_str);
+			tmp = ft_substr(str_start, 0, len_before_var);
+			ft_printf(RED"malloc'd tmp in expand_variable: %s	at ad: %p\n"RESET, tmp, tmp);
+			result = ft_strjoin_free(expanded_str, tmp);
 			ft_printf(RED"malloc'd result: %s	at ad: %p\n"RESET, result, result);
+			ft_printf(GRN"freed tmp in expand_variable: %s	at ad: %p\n"RESET, tmp, tmp);
+			free(tmp);
+			ft_printf(GRN"freed result: %s	at ad: %p	(in ft_strjoin_free)\n"RESET, result, result);
 			expanded_str = ft_strjoin_free(result, expanded_var);
 			ft_printf(RED"malloc'd expanded_str: %s	at ad: %p\n"RESET, expanded_str, expanded_str);
 			str_start = *start;
 			str_start = str_start_adj(str_start);
-			ft_printf(RED"malloc'd str_start: %s	at ad: %p\n"RESET, str_start, str_start);
-			ft_printf(GRN"freed expanded_var: %s	at ad: %p\n"RESET, expanded_var, expanded_var);
+			ft_printf(GRN"freed env_value_dup(=expanded_var): %s	at ad: %p\n"RESET, expanded_var, expanded_var);
 			free(expanded_var);
 		}
 		else
@@ -154,10 +164,10 @@ char	*expand_variable(char **start, t_ms_data *data)
 	if (str_start != *start)
 	{
 		result = ft_substr(str_start, 0, *start - str_start);
-		ft_printf(RED"malloc'd result: %s	at ad: %p\n"RESET, result, result);
+		ft_printf(RED"malloc'd result2: %s	at ad: %p\n"RESET, result, result);
 		expanded_str = ft_strjoin_free(expanded_str, result);
 		ft_printf(RED"malloc'd expanded_str: %s	at ad: %p\n"RESET, expanded_str, expanded_str);
-		ft_printf(GRN"freed result: %s	at ad: %p\n"RESET, result, result);
+		ft_printf(GRN"freed result2: %s	at ad: %p\n"RESET, result, result);
 		free(result);
 	}
 	return (expanded_str);
@@ -226,15 +236,8 @@ void	final_quote_removal(int arg_count, t_ast *command_node)
 
 char *exit_status_adj(char *arg)
 {
-	char *exit_status;
-
     if (strcmp(arg, "$") == 0)
-	{
-		free(arg);
-		exit_status = strdup("$?");
-		ft_printf(RED"malloc'd exit_status: %s	at ad: %p\n"RESET, exit_status, exit_status);
-        return exit_status;
-	}
+        return "$?";
     return arg;
 }
 
@@ -255,9 +258,9 @@ int	is_in_single_quotes(char *arg)
 char *str_start_adj(char *arg)
 {
     if (!strcmp(arg, "?") || !strcmp(arg, "?\""))
-        return strdup("");
+        return ("");
 	else if (!strcmp(arg, "?\'"))
-        return strdup("\'");
+        return ("\'");
     return arg;
 }
 
@@ -280,6 +283,8 @@ char	*tmp_adj(char *arg)
 		return (tmp_adj_dup);
 	}
 	tmp_adj_dup = ft_strdup(arg);
+	ft_printf(GRN"freed ft_str_join_free (no var assigned): %s	at ad: %p\n"RESET, arg, arg);
+	free(arg);
 	ft_printf(RED"malloc'd tmp_adj_dup: %s	at ad: %p\n"RESET, tmp_adj_dup, tmp_adj_dup);
 	return (tmp_adj_dup);
 }
