@@ -81,7 +81,7 @@ static char	*assemble_result(char **tokens, size_t result_len)
 	result = malloc(result_len + 1);
 	if (!result)
 		return (NULL);
-	*result = '\0';  // Start with an empty string
+	*result = '\0';  // Start with an empty strin
 	i = 0;
 	while (tokens[i])
 	{
