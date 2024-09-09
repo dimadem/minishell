@@ -45,6 +45,23 @@ t_ast	*manage_redirs(t_token **tokens, t_ms_data *data)
 	return (command_node);
 }
 
+t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
+{
+	t_ast		*command_node;
+	int			cmd_arg_count;
+
+	command_node = new_ast_node();
+	command_node->type = PHRASE;
+	cmd_arg_count = cmd_arg_len(*tokens);
+	command_node->args = malloc(sizeof(char *) * (cmd_arg_count + 1));
+	if (!command_node->args)
+		return (NULL);
+	set_command_args(command_node, tokens, cmd_arg_count);
+	(void)data;
+	post_process_command_args(command_node, cmd_arg_count, data);
+	return (command_node);
+}
+
 void	set_command_args(t_ast *command_node, t_token **tokens, int arg_count)
 {
 	int	i;

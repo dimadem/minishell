@@ -99,7 +99,7 @@ int	redirect_here_doc(t_ast *node, t_ms_data *data)
 	setup_sigint_handler(&sa_old);
 	file_fd = open_tmp_file("w");
 	eof = ft_strdup(node->right->args[0]);
-	line = readline("> ");
+	line = process_and_reassemble(readline("> "), data);
 	write_heredoc_lines(&line, file_fd, eof, data);
 	if (g_heredoc_interrupted)
 		return (handle_heredoc_interruption(line, eof, file_fd, &sa_old));
@@ -111,4 +111,17 @@ int	redirect_here_doc(t_ast *node, t_ms_data *data)
 	execute_child(node->left, data, &file_fd);
 	unlink("/tmp/heredoc");
 	return (0);
+}
+
+void	write_heredoc_lines(char **line, int file_fd, char *eof, \
+			t_ms_data *data)
+{
+	while (*line && (ft_strcmp(*line, eof) != 0) && !g_heredoc_interrupted)
+	{
+		write(file_fd, *line, ft_strlen(*line));
+		write(file_fd, "\n", 1);
+		free(*line);
+		(void)data;
+		*line = readline("> ");
+	}
 }

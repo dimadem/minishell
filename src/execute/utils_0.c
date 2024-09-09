@@ -15,31 +15,14 @@
 #include "shell.h"
 #include "execute.h"
 
-void	ft_free_2d_arr(char **arr);
 int		ft_perror(char *str);
 void	close_fds(int in, int out);
 void	handle_temp_fd(t_ms_data *data);
 
 /**
-  - @brief clean up 2d array
-  - 
-  - @param arr simple two dimensional array
- */
-
-void	ft_free_2d_arr(char **arr)
-{
-	int	i;
-
-	i = -1;
-	while (arr[++i] != NULL)
-		free(arr[i]);
-	free(arr);
-}
-
-/**
-  - @brief close two file descriptors
-  - 
-  - @param fds file descriptors
+- @brief close two file descriptors
+- 
+- @param fds file descriptors
  */
 
 void	close_fds(int in, int out)
