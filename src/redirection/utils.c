@@ -14,6 +14,7 @@
 #include <fcntl.h>
 #include "libft.h"
 #include "tokens.h"
+#include "exit_status.h"
 
 int			open_file(t_ast *node, char *direction);
 int			open_tmp_file(const char *type);
