@@ -25,14 +25,17 @@ void	free_shell_var_list(t_env *shell_var);
 
 void add_shell_var_node(t_env **shell_var, const char *line) 
 {
-    
+    char *key;
+	char *value;
+
 	if (!shell_var || !line)
         return;
 
-    char *key = ft_strcdup(line, '=');
-    char *value = ft_strchr(line, '=') + 1;
+    key = ft_strcdup(line, '=');
+    value = ft_strchr(line, '=') + 1;
     t_env *new_node = (t_env *)malloc(sizeof(t_env));
     new_node->key = ft_strdup(key);
+    free(key);
     new_node->value = ft_strdup(value);
     new_node->next = NULL;
     if (*shell_var == NULL)
@@ -44,7 +47,6 @@ void add_shell_var_node(t_env **shell_var, const char *line)
             curr_node = curr_node->next;
         curr_node->next = new_node;
     }
-    free(key);
 }
 
 void	set_shell_var(t_env **shell_var, const char *key, const char *value)
