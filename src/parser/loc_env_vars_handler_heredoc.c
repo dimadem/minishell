@@ -57,6 +57,7 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 			{
 				new_token = tmp_token;  // No changes, use the token as-is
 			}
+			free(processed_token);
 			free(orig_token);  // Free the original token from ft_split
 			tokens[i] = new_token;  // Assign the newly adjusted or expanded token
 			result_len += ft_strlen(new_token) + 1;
@@ -81,7 +82,7 @@ static char	*assemble_result(char **tokens, size_t result_len)
 	result = malloc(result_len + 1);
 	if (!result)
 		return (NULL);
-	*result = '\0';  // Start with an empty strin
+	*result = '\0';  // Start with an empty string
 	i = 0;
 	while (tokens[i])
 	{
@@ -104,7 +105,7 @@ char	*token_adj(char *arg)
 		while (*ptr && *ptr != '\"')
 		{
 			if (!ft_isdigit(*ptr))
-				return (arg);  // Return the original argument if not all digits inside quotes
+				return (ft_strdup(arg));  // Return the original argument if not all digits inside quotes
 			ptr++;
 		}
 		if (*ptr == '\0')  // If there's no closing quote, add one
@@ -117,7 +118,7 @@ char	*token_adj(char *arg)
 			return (new_arg);
 		}
 		if (*ptr == '\"' && *(ptr + 1) == '\0')  // If it's a properly quoted string, return as-is
-			return (arg);
+			return (ft_strdup(arg));
 	}
-	return (arg);  // Return the original
+	return (ft_strdup(arg));  // Return the original
 }
