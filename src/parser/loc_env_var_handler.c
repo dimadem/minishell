@@ -98,8 +98,8 @@ char	*process_argument(char *arg, t_ms_data *data)
 				tmp = ft_strjoin_free(processed_arg, expanded_var);
 				ft_printf(RED"malloc'd tmp: %s	at ad: %p\n"RESET, tmp, tmp);
 				tmp_ad = tmp_adj(tmp);
-				ft_printf(GRN"freed tmp: %s	at ad: %p\n"RESET, tmp, tmp);
-				free(tmp);
+				// ft_printf(GRN"freed tmp: %s	at ad: %p\n"RESET, tmp, tmp);
+				// free(tmp);
 				ft_printf(GRN"freed expanded_str(=expanded_var): %s	at ad: %p\n"RESET, expanded_var, expanded_var);
 				free(expanded_var);
 				processed_arg = ft_strdup(tmp_ad);
@@ -184,7 +184,7 @@ char	*expand_env_and_loc_var(char *arg, t_ms_data *data)
 	{
 		exit_status = get_shell_variable(data->shell_variables, "?");
 		env_value_dup = ft_strdup(exit_status);
-		ft_printf(RED"malloc'd (exit status) env_value_dup: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
+		ft_printf(RED"malloc'd (exit status) env_value_dup1: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
 		return (env_value_dup);
 	}
 	else if (arg[0] == '$')
@@ -195,18 +195,18 @@ char	*expand_env_and_loc_var(char *arg, t_ms_data *data)
 		if (!env_value)
 		{
 			env_value = get_env(data->shell_variables, arg + 1); // is strdup necessary?
-			env_value_dup = ft_strdup(env_value);
-			ft_printf(RED"malloc'd env_value_dup: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
+			// env_value_dup = ft_strdup(env_value);
+			// ft_printf(RED"malloc'd env_value_dup2: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
 		}
 		if (env_value)
 		{
 			env_value_dup = ft_strdup(env_value);
-			ft_printf(RED"malloc'd env_value_dup: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
+			ft_printf(RED"malloc'd env_value_dup3: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
 			return (env_value_dup);
 		}
 	}
 	env_value_dup = ft_strdup("");
-	ft_printf(RED"malloc'd empty env_value_dup: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
+	ft_printf(RED"malloc'd empty env_value_dup4: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
 	return (env_value_dup);
 }
 
@@ -269,6 +269,8 @@ char	*tmp_adj(char *arg)
 	char	*ptr;
 	char	*tmp_adj_dup;
 
+	ft_printf("arg: %s\n", arg);
+
 	if (*arg == '\"')
 	{
 		ptr = arg + 1;
@@ -280,6 +282,8 @@ char	*tmp_adj(char *arg)
 		}
 		tmp_adj_dup = ft_strdup(arg + 1);
 		ft_printf(RED"malloc'd tmp_adj_dup: %s	at ad: %p\n"RESET, tmp_adj_dup, tmp_adj_dup);
+		ft_printf(GRN"freed arg in tmp_adj: %s	at ad: %p\n"RESET, arg, arg);
+		free(arg);
 		return (tmp_adj_dup);
 	}
 	tmp_adj_dup = ft_strdup(arg);
