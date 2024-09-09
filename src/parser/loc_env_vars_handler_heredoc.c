@@ -19,7 +19,7 @@
 #include "signals.h"
 
 static char	*assemble_result(char **tokens, size_t result_len);
-char	*token_adj(char *arg);
+char		*token_adj(char *arg);
 
 char	*process_and_reassemble(char *line, t_ms_data *data)
 {
@@ -36,43 +36,33 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	free(line);
 	if (!tokens)
 		return (NULL);
-	ft_print_2d_arr(tokens);
 	result_len = 0;
 	i = 0;
 	while (tokens[i])
 	{
-		orig_token = tokens[i];  // Store the original token
-		tmp_token = expand_variable(&tokens[i], data);  // Get expanded token (may be the same or new)
+		orig_token = tokens[i];
+		tmp_token = expand_variable(&tokens[i], data);
 		if (tmp_token)
 		{
-			printf("post-expand_variable &tokens[i] below:\n");
-			ft_print_2d_arr(tokens);
-			processed_token = token_adj(tmp_token);  // Adjust the token
+			processed_token = token_adj(tmp_token);
 			if (processed_token != tmp_token)
 			{
-				new_token = ft_strdup(processed_token);  // Duplicate the adjusted token
-				free(tmp_token);  // Free the temporary token returned by expand_variable
+				new_token = ft_strdup(processed_token);
+				free(tmp_token);
 			}
 			else
-			{
-				new_token = tmp_token;  // No changes, use the token as-is
-			}
+				new_token = tmp_token;
 			free(processed_token);
-			free(orig_token);  // Free the original token from ft_split
-			tokens[i] = new_token;  // Assign the newly adjusted or expanded token
+			free(orig_token);
+			tokens[i] = new_token;
 			result_len += ft_strlen(new_token) + 1;
 		}
 		i++;
 	}
-	printf("post-loop &tokens[i] below:\n");
-	ft_print_2d_arr(tokens);
 	result = assemble_result(tokens, result_len);
-	printf("post-assemble_result &tokens[i] below:\n");
-	ft_print_2d_arr(tokens);
-	ft_free_2d_arr(tokens);  // Free the tokens array after use
+	ft_free_2d_arr(tokens);
 	return (result);
 }
-
 
 static char	*assemble_result(char **tokens, size_t result_len)
 {
@@ -82,13 +72,13 @@ static char	*assemble_result(char **tokens, size_t result_len)
 	result = malloc(result_len + 1);
 	if (!result)
 		return (NULL);
-	*result = '\0';  // Start with an empty string
+	*result = '\0';
 	i = 0;
 	while (tokens[i])
 	{
 		ft_strcat(result, tokens[i]);
 		if (tokens[i + 1])
-			ft_strcat(result, " ");  // Add space between tokens
+			ft_strcat(result, " ");
 		i++;
 	}
 	return (result);
@@ -105,10 +95,10 @@ char	*token_adj(char *arg)
 		while (*ptr && *ptr != '\"')
 		{
 			if (!ft_isdigit(*ptr))
-				return (ft_strdup(arg));  // Return the original argument if not all digits inside quotes
+				return (ft_strdup(arg));
 			ptr++;
 		}
-		if (*ptr == '\0')  // If there's no closing quote, add one
+		if (*ptr == '\0')
 		{
 			new_arg = malloc(strlen(arg) + 2);
 			if (!new_arg)
@@ -117,8 +107,8 @@ char	*token_adj(char *arg)
 			ft_strcat(new_arg, "\"");
 			return (new_arg);
 		}
-		if (*ptr == '\"' && *(ptr + 1) == '\0')  // If it's a properly quoted string, return as-is
+		if (*ptr == '\"' && *(ptr + 1) == '\0')
 			return (ft_strdup(arg));
 	}
-	return (ft_strdup(arg));  // Return the original
+	return (ft_strdup(arg));
 }

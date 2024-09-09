@@ -21,8 +21,8 @@ char	*tmp_adj(char *arg);
 char	*expand_env_and_loc_var(char *arg, t_ms_data *data);
 char	*str_start_adj(char *arg);
 
-void	post_process_command_args(t_ast *command_node, int arg_count \
-			, t_ms_data *data)
+void	post_process_command_args(t_ast *command_node, int arg_count, 
+			t_ms_data *data)
 {
 	int		i;
 	char	*processed_arg;
@@ -32,25 +32,19 @@ void	post_process_command_args(t_ast *command_node, int arg_count \
 	{
 		if (!is_in_single_quotes(command_node->args[i]))
 		{
-			handle_local_vars(data, command_node->args[i]); // no mallocs --> noleaks poss
+			handle_local_vars(data, command_node->args[i]);
 			processed_arg = process_argument(command_node->args[i], data);
 		}
 		else
 		{
-			processed_arg = ft_substr(command_node->args[i], 1, \
-				ft_strlen(command_node->args[i]) - 2);
-			ft_printf(RED"malloc'd processed_arg1: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
+			processed_arg = ft_substr(command_node->args[i], 1,
+					ft_strlen(command_node->args[i]) - 2);
 		}
-		ft_printf(GRN"freed command_node->args[i]: %s	at ad: %p\n"RESET, command_node->args[i], command_node->args[i]);
 		free(command_node->args[i]);
-		printf("processed_arg: %s\n", processed_arg);
 		command_node->args[i] = ft_strdup(processed_arg);
-		ft_printf(RED"malloc'd command_node->args[i]: %s	at ad: %p\n"RESET, command_node->args[i], command_node->args[i]);
-		ft_printf(GRN"freed new processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
 		free(processed_arg);
 		i++;
 	}
-	
 	final_quote_removal(arg_count, command_node);
 }
 
@@ -85,7 +79,6 @@ char	*process_argument(char *arg, t_ms_data *data)
 	char	*expanded_var;
 
 	processed_arg = ft_strdup("");
-	ft_printf(RED"malloc'd processed_arg2: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
 	start = arg;
 	while (*start != '\0')
 	{
@@ -94,16 +87,10 @@ char	*process_argument(char *arg, t_ms_data *data)
 			expanded_var = expand_variable(&start, data);
 			if (expanded_var != NULL)
 			{
-				ft_printf(GRN"freed processed_arg: %s	at ad: %p (in ft_strjoin_free)\n"RESET, processed_arg, processed_arg);
 				tmp = ft_strjoin_free(processed_arg, expanded_var);
-				ft_printf(RED"malloc'd tmp: %s	at ad: %p\n"RESET, tmp, tmp);
 				tmp_ad = tmp_adj(tmp);
-				// ft_printf(GRN"freed tmp: %s	at ad: %p\n"RESET, tmp, tmp);
-				// free(tmp);
-				ft_printf(GRN"freed expanded_str(=expanded_var): %s	at ad: %p\n"RESET, expanded_var, expanded_var);
 				free(expanded_var);
 				processed_arg = ft_strdup(tmp_ad);
-				ft_printf(GRN"freed tmp_adj_dup: %s	at ad: %p\n"RESET, tmp_ad, tmp_ad);
 				free(tmp_ad);
 			}
 		}
@@ -126,36 +113,24 @@ char	*expand_variable(char **start, t_ms_data *data)
 
 	str_start = *start;
 	expanded_str = ft_strdup("");
-	ft_printf(RED"malloc'd expanded_str: %s	at ad: %p\n"RESET, expanded_str, expanded_str);
-	
 	while (**start && **start != '\0')
 	{
 		if (**start == '$')
 		{
 			var_start = *start;
 			(*start)++;
-
 			while (**start && (ft_isalnum(**start) || **start == '_'))
 				(*start)++;
 			var_name = ft_substr(var_start, 0, *start - var_start);
-			ft_printf(RED"malloc'd var_name: %s	at ad: %p\n"RESET, var_name, var_name);
 			expanded_var = expand_env_and_loc_var(var_name, data);
-			ft_printf(GRN"freed var_name: %s	at ad: %p\n"RESET, var_name, var_name);
 			free(var_name);
 			len_before_var = var_start - str_start;
-			ft_printf(GRN"freed expanded_str: %s	at ad: %p	(in ft_strjoin_free)\n"RESET, expanded_str, expanded_str);
 			tmp = ft_substr(str_start, 0, len_before_var);
-			ft_printf(RED"malloc'd tmp in expand_variable: %s	at ad: %p\n"RESET, tmp, tmp);
 			result = ft_strjoin_free(expanded_str, tmp);
-			ft_printf(RED"malloc'd result: %s	at ad: %p\n"RESET, result, result);
-			ft_printf(GRN"freed tmp in expand_variable: %s	at ad: %p\n"RESET, tmp, tmp);
 			free(tmp);
-			ft_printf(GRN"freed result: %s	at ad: %p	(in ft_strjoin_free)\n"RESET, result, result);
 			expanded_str = ft_strjoin_free(result, expanded_var);
-			ft_printf(RED"malloc'd expanded_str: %s	at ad: %p\n"RESET, expanded_str, expanded_str);
 			str_start = *start;
 			str_start = str_start_adj(str_start);
-			ft_printf(GRN"freed env_value_dup(=expanded_var): %s	at ad: %p\n"RESET, expanded_var, expanded_var);
 			free(expanded_var);
 		}
 		else
@@ -164,10 +139,7 @@ char	*expand_variable(char **start, t_ms_data *data)
 	if (str_start != *start)
 	{
 		result = ft_substr(str_start, 0, *start - str_start);
-		ft_printf(RED"malloc'd result2: %s	at ad: %p\n"RESET, result, result);
 		expanded_str = ft_strjoin_free(expanded_str, result);
-		ft_printf(RED"malloc'd expanded_str: %s	at ad: %p\n"RESET, expanded_str, expanded_str);
-		ft_printf(GRN"freed result2: %s	at ad: %p\n"RESET, result, result);
 		free(result);
 	}
 	return (expanded_str);
@@ -184,7 +156,6 @@ char	*expand_env_and_loc_var(char *arg, t_ms_data *data)
 	{
 		exit_status = get_shell_variable(data->shell_variables, "?");
 		env_value_dup = ft_strdup(exit_status);
-		ft_printf(RED"malloc'd (exit status) env_value_dup1: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
 		return (env_value_dup);
 	}
 	else if (arg[0] == '$')
@@ -194,22 +165,17 @@ char	*expand_env_and_loc_var(char *arg, t_ms_data *data)
 		env_value = get_env(data->envp, arg + 1);
 		if (!env_value)
 		{
-			env_value = get_env(data->shell_variables, arg + 1); // is strdup necessary?
-			// env_value_dup = ft_strdup(env_value);
-			// ft_printf(RED"malloc'd env_value_dup2: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
+			env_value = get_env(data->shell_variables, arg + 1);
 		}
 		if (env_value)
 		{
 			env_value_dup = ft_strdup(env_value);
-			ft_printf(RED"malloc'd env_value_dup3: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
 			return (env_value_dup);
 		}
 	}
 	env_value_dup = ft_strdup("");
-	ft_printf(RED"malloc'd empty env_value_dup4: %s	at ad: %p\n"RESET, env_value_dup, env_value_dup);
 	return (env_value_dup);
 }
-
 
 void	final_quote_removal(int arg_count, t_ast *command_node)
 {
@@ -223,8 +189,8 @@ void	final_quote_removal(int arg_count, t_ast *command_node)
 	{
 		arg = command_node->args[i];
 		len = ft_strlen(arg);
-		if ((arg[0] == '"' && arg[len - 1] == '"') || (arg[0] == '\'' \
-			&& arg[len - 1] == '\''))
+		if ((arg[0] == '"' && arg[len - 1] == '"') || (arg[0] == '\''
+				&& arg[len - 1] == '\''))
 		{
 			trimmed_arg = ft_strndup(arg + 1, len - 2);
 			free(command_node->args[i]);
@@ -234,11 +200,11 @@ void	final_quote_removal(int arg_count, t_ast *command_node)
 	}
 }
 
-char *exit_status_adj(char *arg)
+char	*exit_status_adj(char *arg)
 {
-    if (strcmp(arg, "$") == 0)
-        return "$?";
-    return arg;
+	if (strcmp(arg, "$") == 0)
+		return ("$?");
+	return (arg);
 }
 
 int	is_in_single_quotes(char *arg)
@@ -255,21 +221,19 @@ int	is_in_single_quotes(char *arg)
 	return (0);
 }
 
-char *str_start_adj(char *arg)
+char	*str_start_adj(char *arg)
 {
-    if (!strcmp(arg, "?") || !strcmp(arg, "?\""))
-        return ("");
+	if (!strcmp(arg, "?") || !strcmp(arg, "?\""))
+		return ("");
 	else if (!strcmp(arg, "?\'"))
-        return ("\'");
-    return arg;
+		return ("\'");
+	return (arg);
 }
 
 char	*tmp_adj(char *arg)
 {
 	char	*ptr;
 	char	*tmp_adj_dup;
-
-	ft_printf("arg: %s\n", arg);
 
 	if (*arg == '\"')
 	{
@@ -281,15 +245,11 @@ char	*tmp_adj(char *arg)
 			ptr++;
 		}
 		tmp_adj_dup = ft_strdup(arg + 1);
-		ft_printf(RED"malloc'd tmp_adj_dup: %s	at ad: %p\n"RESET, tmp_adj_dup, tmp_adj_dup);
-		ft_printf(GRN"freed arg in tmp_adj: %s	at ad: %p\n"RESET, arg, arg);
 		free(arg);
 		return (tmp_adj_dup);
 	}
 	tmp_adj_dup = ft_strdup(arg);
-	ft_printf(GRN"freed ft_str_join_free (no var assigned): %s	at ad: %p\n"RESET, arg, arg);
 	free(arg);
-	ft_printf(RED"malloc'd tmp_adj_dup: %s	at ad: %p\n"RESET, tmp_adj_dup, tmp_adj_dup);
 	return (tmp_adj_dup);
 }
 
@@ -303,14 +263,8 @@ char	*append_literal(char **start, char *processed_arg)
 	while (**start != '\0' && **start != '$')
 		(*start)++;
 	literal_part = ft_substr(literal_start, 0, *start - literal_start);
-	ft_printf(RED"malloc'd literal_part: %s	at ad: %p\n"RESET, literal_part, literal_part);
 	tmp = ft_strjoin(processed_arg, literal_part);
-	ft_printf(RED"malloc'd tmp_append_literal (new processed_arg): %s	at ad: %p\n"RESET, tmp, tmp);
-	ft_printf(GRN"freed literal_part: %s	at ad: %p\n"RESET, literal_part, literal_part);
 	free(literal_part);
-	ft_printf(GRN"freed processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
 	free(processed_arg);
-
 	return (tmp);
 }
-
