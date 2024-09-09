@@ -6,15 +6,17 @@
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 15:00:23 by rocky             #+#    #+#             */
-/*   Updated: 2024/06/12 15:00:25 by rocky            ###   ########.fr       */
+/*   Updated: 2024/09/09 15:48:26 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tokens.h"
 #include <string.h>
 
+t_token	*tokenise(char *str);
 char	*handle_special_chars(char *str, t_token **tokens);
-void	append_word_if_valid(char *start, char *str, t_token **tokens);
+t_token	*new_token(char *value, t_token_type type);
+void	append_token(t_token **tokens, t_token *new_token);
 char	*handle_phrase(char *str, t_token **tokens);
 
 t_token	*tokenise(char *str)
@@ -70,7 +72,6 @@ t_token	*new_token(char *value, t_token_type type)
 	if (!token)
 		return (NULL);
 	token->data = ft_strdup(value);
-	// ft_printf(RED"token malloc'd:	%s		at add:		%p\n"RESET, token->data, token->data);
 	if (!token->data)
 	{
 		free(token);
@@ -120,21 +121,4 @@ char	*handle_phrase(char *str, t_token **tokens)
 	}
 	append_word_if_valid(start, str, tokens);
 	return (str);
-}
-
-void	append_word_if_valid(char *start, char *str, t_token **tokens)
-{
-	char	*word;
-
-	if (str > start)
-	{
-		word = ft_strndup(start, str - start);
-		if (word)
-		{
-			append_token(tokens, new_token(word, PHRASE));
-			free(word);
-		}
-		else
-			ft_printf("Error: unable to allocate memory for token\n");
-	}
 }

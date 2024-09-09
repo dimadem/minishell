@@ -104,7 +104,7 @@ t_ast		*new_ast_node(void);
 t_ast		*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data);
 int			arg_len(t_token *current);
 void		set_command_args(t_ast *command_node, t_token **tokens, \
-		int arg_count);
+				int arg_count);
 t_ast		*manage_commands(t_token **tokens, t_ms_data *data);
 t_ast		*create_redir_node(t_token *token);
 int			is_redir_node(t_token *tokens);
@@ -120,5 +120,9 @@ char		*expand_variable(char **start, t_ms_data *data);
 void		clear_history_file(void);
 int			is_in_single_quotes(char *arg);
 void		print_ast_args(t_ast *node);
+void		append_word_if_valid(char *start, char *str, t_token **tokens);
+char		*exit_status_adj(char *arg);
+char		*str_start_adj(char *arg);
+char		*tmp_adj(char *arg);
 
 #endif

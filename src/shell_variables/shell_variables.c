@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 11:51:16 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/06 11:51:54 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 12:41:39 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	handle_add_set_shell_variable(t_env **shell_var, char *line)
 		key = ft_strcdup(line, '=');
 		value = ft_strchr(line, '=') + 1;
 		set_shell_var(shell_var, key, value);
-		printf("value: %s\n", get_env(*shell_var, key));
 		free(key);
 	}
 	return (0);
@@ -67,7 +66,7 @@ int	handle_shell_variable(t_ast *node, t_ms_data *data)
 
 void	shell_variable_update(t_ms_data *data, int status)
 {
-	char *status_str;
+	char	*status_str;
 
 	data->exit_status = status;
 	status_str = ft_itoa(status);
