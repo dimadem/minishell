@@ -34,7 +34,8 @@ typedef enum e_token_type
 	REDIR_IN,
 	REDIR_OUT,
 	REDIR_APPEND,
-	REDIR_HEREDOC
+	REDIR_HEREDOC,
+	NONE
 }	t_token_type;
 
 typedef struct s_token
@@ -73,17 +74,14 @@ int			calc_stack_size(t_token *stack);
 char		**list_to_array(t_token *head);
 void		build_linked_list(t_token **tokens, char **argv);
 void		handle_quotes(char **tokens, int *pos, char **input);
-void		handle_special_chars(char **str, t_token **tokens);
-void		handle_regular_chars(char **tokens, int *pos, char **input, \
-		char *delim);
+char		*handle_special_chars(char *str, t_token **tokens);
 void		skip_delimiters(char **input, char *delim);
 void		reallocate_tokens(char ***tokens, int *bufsize);
 void		parse_loop(char **input, char **tokens, int *pos, int *bufsize);
 char		**parse_input(char *input);
 char		*generate_prompt(t_ms_data *data);
 void		make_history(char *line);
-void		loop_cleanup(char *line, t_token *tokens, \
-		char *prompt, t_ast *tree);
+void		loop_cleanup(t_loop_data *loop_data, t_token *tokens_head);
 void		free_ms_data(t_ms_data *data);
 char		*check_heredoc(char *line);
 char		*heredoc(char *eof);
@@ -102,7 +100,7 @@ void		free_all_tokens(t_token *tokens);
 t_token		*new_token(char *value, t_token_type type);
 void		append_token(t_token **tokens, t_token *new_token);
 int			valid_operator(const char **str);
-t_ast		*new_ast_node(t_token_type type);
+t_ast		*new_ast_node(void);
 t_ast		*create_redir(t_token **tokens, t_token *tmp, t_ms_data *data);
 int			arg_len(t_token *current);
 void		set_command_args(t_ast *command_node, t_token **tokens, \
@@ -121,5 +119,6 @@ char		*process_argument(char *arg, t_ms_data *data);
 char		*expand_variable(char **start, t_ms_data *data);
 void		clear_history_file(void);
 int			is_in_single_quotes(char *arg);
+void		print_ast_args(t_ast *node);
 
 #endif

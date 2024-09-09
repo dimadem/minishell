@@ -57,11 +57,54 @@ void	free_ms_data(t_ms_data *data)
 	}
 }
 
-void	loop_cleanup(char *line, t_token *tokens, char *prompt, t_ast *tree)
+void	loop_cleanup(t_loop_data *loop_data,  t_token *tokens_head)
 {
-	free(line);
-	free(prompt);
-	(void)tokens;
-	free_ast(tree);
+	free(loop_data->trimmed_input);
+	free_all_tokens(tokens_head);
+	free(loop_data->prompt);
+	free_ast(loop_data->tree);
 }
 
+void	free_ast(t_ast *node)
+{
+	int				i;
+
+	i = 0;
+	if (!node)
+		return ;
+	if (node->args)
+	{
+		while (node->args && node->args[i])
+		{
+			// ft_printf(GRN"t_ast node arg free'd: %s		at add: 	%p\n"RESET, node->args[i], node->args[i]);
+			free(node->args[i]);
+			i++;
+		}
+		free(node->args);
+	}
+	free_ast(node->left);
+	free_ast(node->right);
+	free(node);
+}
+
+void	free_all_tokens(t_token *tokens)
+{
+	t_token	*temp;
+
+	while (tokens)
+	{
+		temp = tokens;
+		tokens = tokens->next;
+		if (temp)
+		{
+			if (temp->data)
+			{
+				// ft_printf(GRN"token free'd: %s		at add:		%p\n"RESET, temp->data, temp->data);
+				free(temp->data);
+				temp->data = NULL;
+			}
+		}
+		free(temp);
+		temp = NULL;
+	}
+}
