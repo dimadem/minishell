@@ -30,17 +30,23 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 	char	*result;
 	char	*tmp_token;
 	char	*new_token;
+	char	*orig_token;
 
 	tokens = ft_split(line, ' ');
+	free(line);
 	if (!tokens)
 		return (NULL);
+	ft_print_2d_arr(tokens);
 	result_len = 0;
 	i = 0;
 	while (tokens[i])
 	{
+		orig_token = tokens[i];  // Store the original token
 		tmp_token = expand_variable(&tokens[i], data);  // Get expanded token (may be the same or new)
 		if (tmp_token)
 		{
+			printf("post-expand_variable &tokens[i] below:\n");
+			ft_print_2d_arr(tokens);
 			processed_token = token_adj(tmp_token);  // Adjust the token
 			if (processed_token != tmp_token)
 			{
@@ -51,16 +57,21 @@ char	*process_and_reassemble(char *line, t_ms_data *data)
 			{
 				new_token = tmp_token;  // No changes, use the token as-is
 			}
-			// Now, set the new token into the tokens array without freeing tokens[i]
+			free(orig_token);  // Free the original token from ft_split
 			tokens[i] = new_token;  // Assign the newly adjusted or expanded token
 			result_len += ft_strlen(new_token) + 1;
 		}
 		i++;
 	}
+	printf("post-loop &tokens[i] below:\n");
+	ft_print_2d_arr(tokens);
 	result = assemble_result(tokens, result_len);
+	printf("post-assemble_result &tokens[i] below:\n");
+	ft_print_2d_arr(tokens);
 	ft_free_2d_arr(tokens);  // Free the tokens array after use
 	return (result);
 }
+
 
 static char	*assemble_result(char **tokens, size_t result_len)
 {
