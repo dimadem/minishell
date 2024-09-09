@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:20:11 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/06 12:01:09 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:08:55 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,35 +29,62 @@ void	init_env(t_env **data_envp, char **envp)
 	while (envp[++i])
 		add_env_node(data_envp, envp[i]);
 }
+/*
+// void	add_env_node(t_env **data_envp, char *line)
+// {
+// 	t_env	*new_node;
+// 	t_env	*curr_node;
+// 	char	*key;
+// 	char	*value;
+
+// 	new_node = (t_env *)malloc(sizeof(t_env));
+// 	if (!new_node)
+// 		return ;
+// 	key = ft_strcdup(line, '=');
+// 	if (!key)
+// 		return ;
+// 	value = ft_strchr(line, '=');
+// 	value++;
+// 	new_node->key = ft_strdup(key);
+// 	free(key);
+// 	new_node->value = ft_strdup(value);
+// 	new_node->next = NULL;
+// 	if (*data_envp == NULL)
+// 	{
+// 		*data_envp = new_node;
+// 		return ;
+// 	}
+// 	curr_node = *data_envp;
+// 	while (curr_node->next != NULL)
+// 		curr_node = curr_node->next;
+// 	curr_node->next = new_node;
+// }
+ */
 
 void	add_env_node(t_env **data_envp, char *line)
 {
 	t_env	*new_node;
-	t_env	*curr_node;
-	char	*key;
-	char	*value;
+	char	*eq_pos;
+	t_env	*curr;
 
-	new_node = (t_env *)malloc(sizeof(t_env));
+	new_node = malloc(sizeof(t_env));
 	if (!new_node)
 		return ;
-	key = ft_strcdup(line, '=');
-	if (!key)
+	eq_pos = ft_strchr(line, '=');
+	if (!eq_pos)
 		return ;
-	value = ft_strchr(line, '=');
-	value++;
-	new_node->key = ft_strdup(key);
-	free(key);
-	new_node->value = ft_strdup(value);
+	new_node->key = ft_strndup(line, eq_pos - line);
+	new_node->value = ft_strdup(eq_pos + 1);
 	new_node->next = NULL;
-	if (*data_envp == NULL)
-	{
+	if (!*data_envp)
 		*data_envp = new_node;
-		return ;
+	else
+	{
+		curr = *data_envp;
+		while (curr->next)
+			curr = curr->next;
+		curr->next = new_node;
 	}
-	curr_node = *data_envp;
-	while (curr_node->next != NULL)
-		curr_node = curr_node->next;
-	curr_node->next = new_node;
 }
 
 char	*get_env(t_env *envp, const char *key)

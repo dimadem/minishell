@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 17:32:22 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 18:18:41 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 13:01:32 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	close_fds(int in, int out);
 void	handle_temp_fd(t_ms_data *data);
 
 /**
-- @brief clean up 2d array
-- 
-- @param arr simple two dimensional array
+  - @brief clean up 2d array
+  - 
+  - @param arr simple two dimensional array
  */
 
 void	ft_free_2d_arr(char **arr)
@@ -37,9 +37,9 @@ void	ft_free_2d_arr(char **arr)
 }
 
 /**
-- @brief close two file descriptors
-- 
-- @param fds file descriptors
+  - @brief close two file descriptors
+  - 
+  - @param fds file descriptors
  */
 
 void	close_fds(int in, int out)
@@ -49,8 +49,8 @@ void	close_fds(int in, int out)
 }
 
 /**
-- @brief close temporary input/output file descriptors and reset them to -1
-- @param data minishell structure
+  - @brief close temporary input/output file descriptors and reset them to -1
+  - @param data minishell structure
  */
 
 void	handle_io_fd(t_ms_data *data)
@@ -62,4 +62,12 @@ void	handle_io_fd(t_ms_data *data)
 		data->std_in = -1;
 		data->std_out = -1;
 	}
+}
+
+void	handle_std_io(int *std_io, int std_fileno)
+{
+	if (*std_io == -1)
+		*std_io = dup(std_fileno);
+	else
+		dup2(*std_io, std_fileno);
 }

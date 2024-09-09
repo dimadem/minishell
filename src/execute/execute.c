@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:02:00 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/11 18:42:17 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 12:54:44 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 int			execute_ast(t_ast *node, t_ms_data *data);
 static int	execute(t_ms_data *data);
 static int	new_process(t_ms_data *data);
+static void	signal_handler(void);
+static void	handle_exec_errors(char *exec_path, t_ms_data *data);
 
 /**
   - @brief execute Abstract Syntax Tree
@@ -107,54 +109,58 @@ static int	execute(t_ms_data *data)
 
 static int	new_process(t_ms_data *data)
 {
-	pid_t	pid;
-	struct sigaction a;
-	char	*exec_path;
+	pid_t				pid;
+	char				*exec_path;
 
-	if (data->std_in == -1)
-		data->std_in = dup(STDIN_FILENO);
-	if (data->std_out == -1)
-		data->std_out = dup(STDOUT_FILENO);
+	handle_std_io(&data->std_in, STDIN_FILENO);
+	handle_std_io(&data->std_out, STDOUT_FILENO);
 	pid = fork();
 	if (pid == -1)
 		ft_perror("fork");
 	if (pid == 0)
 	{
-		if (data->std_in != -1)
-			dup2(data->std_in, STDIN_FILENO);
-		if (data->std_out != -1)
-			dup2(data->std_out, STDOUT_FILENO);
+		handle_std_io(&data->std_in, STDIN_FILENO);
+		handle_std_io(&data->std_out, STDOUT_FILENO);
 		close_fds(data->std_in, data->std_out);
-
-		ft_memset(&a, 0, sizeof(struct sigaction));
-		sigemptyset(&a.sa_mask);
-		a.sa_handler = SIG_DFL;
-		a.sa_flags = 0;
-		sigaction(SIGQUIT, &a, NULL);
+		signal_handler();
 		exec_path = ft_find_path(data->args[0], data->envp);
-		if (!exec_path)
-		{
-			ft_putstr_fd("maxishell: command not found\n", STDERR_FILENO);
-			exit(EXIT_FAILURE);
-		}
-		if (!data->args || !data->args[0] || !data->envp)
-		{
-			ft_putstr_fd("maxishell: invalid arguments or environment\n", STDERR_FILENO);
-			exit(EXIT_FAILURE);
-		}
-
-		if (execve(exec_path, \
-					data->args, env_to_array(data->envp)) == -1)
-		{
-			exit_status_handler(data, IS_DIRECTORY, "maxishell: ");
-			exit(IS_DIRECTORY);
-		}	
+		handle_exec_errors(exec_path, data);
 	}
 	close_fds(data->std_in, data->std_out);
 	waitpid(pid, &data->exit_status, 0);
-	if (WIFSIGNALED(data->exit_status) && WTERMSIG(data->exit_status) == SIGQUIT)
-	{
+	if (WIFSIGNALED(data->exit_status) \
+			&& WTERMSIG(data->exit_status) == SIGQUIT)
 		ft_printf("\n");
-	}
 	return (EXIT_SUCCESS);
+}
+
+static void	handle_exec_errors(char *exec_path, t_ms_data *data)
+{
+	if (!exec_path)
+	{
+		ft_putstr_fd("maxishell: command not found\n", STDERR_FILENO);
+		exit(EXIT_FAILURE);
+	}
+	if (!data->args || !data->args[0] || !data->envp)
+	{
+		ft_putstr_fd("maxishell: invalid \
+			arguments or environment\n", STDERR_FILENO);
+		exit(EXIT_FAILURE);
+	}
+	if (execve(exec_path, data->args, env_to_array(data->envp)) == -1)
+	{
+		exit_status_handler(data, IS_DIRECTORY, "maxishell: ");
+		exit(IS_DIRECTORY);
+	}
+}
+
+static void	signal_handler(void)
+{
+	struct sigaction	a;
+
+	ft_memset(&a, 0, sizeof(struct sigaction));
+	sigemptyset(&a.sa_mask);
+	a.sa_handler = SIG_DFL;
+	a.sa_flags = 0;
+	sigaction(SIGQUIT, &a, NULL);
 }

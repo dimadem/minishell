@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 11:51:16 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/06 11:51:54 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 12:41:39 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	handle_shell_variable(t_ast *node, t_ms_data *data)
 
 void	shell_variable_update(t_ms_data *data, int status)
 {
-	char *status_str;
+	char	*status_str;
 
 	data->exit_status = status;
 	status_str = ft_itoa(status);
