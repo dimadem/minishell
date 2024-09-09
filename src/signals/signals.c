@@ -6,7 +6,7 @@
 /*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:59:59 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/07/18 16:42:07 by dmdemirk         ###   ########.fr       */
+/*   Updated: 2024/09/09 12:32:04 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	set_signals_interactive(void)
 
 	sigquit_ignore();
 	sigemptyset(&a.sa_mask);
-	a.sa_flags = 0; 
+	a.sa_flags = 0;
 	a.sa_handler = *signal_reset_prompt;
 	a.sa_flags |= SA_RESTART;
 	sigaction(SIGINT, &a, NULL);
