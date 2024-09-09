@@ -41,13 +41,14 @@ void	post_process_command_args(t_ast *command_node, int arg_count \
 				ft_strlen(command_node->args[i]) - 2);
 			ft_printf(RED"malloc'd processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
 		}
-		ft_printf(RED"malloc'd command_node->args[i]: %s	at ad: %p\n"RESET, command_node->args[i], command_node->args[i]);
+		ft_printf(GRN"freed command_node->args[i]: %s	at ad: %p\n"RESET, command_node->args[i], command_node->args[i]);
 		free(command_node->args[i]);
-		command_node->args[i] = processed_arg;
-		ft_printf(RED"freed processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
-		// free(processed_arg);
+		ft_printf(RED"malloc'd command_node->args[i]: %s	at ad: %p\n"RESET, command_node->args[i], command_node->args[i]);
+		command_node->args[i] = ft_strdup(processed_arg);
 		i++;
 	}
+	ft_printf(GRN"freed new processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
+	free(processed_arg);
 	final_quote_removal(arg_count, command_node);
 }
 
@@ -292,13 +293,14 @@ char	*append_literal(char **start, char *processed_arg)
 	while (**start != '\0' && **start != '$')
 		(*start)++;
 	literal_part = ft_substr(literal_start, 0, *start - literal_start);
-	ft_printf(RED"malloc'd tmp_aliteral_partdj_dup: %s	at ad: %p\n"RESET, literal_part, literal_part);
+	ft_printf(RED"malloc'd literal_part: %s	at ad: %p\n"RESET, literal_part, literal_part);
 	tmp = ft_strjoin(processed_arg, literal_part);
-	ft_printf(RED"malloc'd tmp_append_literal: %s	at ad: %p\n"RESET, tmp, tmp);
+	ft_printf(RED"malloc'd tmp_append_literal (new processed_arg): %s	at ad: %p\n"RESET, tmp, tmp);
 	ft_printf(GRN"freed literal_part: %s	at ad: %p\n"RESET, literal_part, literal_part);
 	free(literal_part);
 	ft_printf(GRN"freed processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
 	free(processed_arg);
+
 	return (tmp);
 }
 
