@@ -1,49 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser_joint_vars.c                                :+:      :+:    :+:   */
+/*   loc_env_var_handler.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmikhayl <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:46:53 by rmikhayl          #+#    #+#             */
-/*   Updated: 2024/09/04 16:46:57 by rmikhayl         ###   ########.fr       */
+/*   Updated: 2024/09/09 16:19:56 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <tokens.h>
 
-void	final_quote_removal(int arg_count, t_ast *command_node)
-{
-	int		i;
-	size_t	len;
-	char	*arg;
-	char	*trimmed_arg;
+void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data);
+char *process_argument(char *arg, t_ms_data *data);
+char *expand_variable(char **start, t_ms_data *data);
+char *expand_env_and_loc_var(char *arg, t_ms_data *data);
+void handle_local_vars(t_ms_data *data, char *arg);
 
-	i = 0;
-	while (i < arg_count)
-	{
-		arg = command_node->args[i];
-		len = ft_strlen(arg);
-		if ((arg[0] == '"' && arg[len - 1] == '"') || (arg[0] == '\'' \
-			&& arg[len - 1] == '\''))
-		{
-			trimmed_arg = ft_strndup(arg + 1, len - 2);
-			free(command_node->args[i]);
-			command_node->args[i] = trimmed_arg;
-		}
-		i++;
-	}
-}
-
-char *exit_status_adj(char *arg)
-{
-    if (strcmp(arg, "$") == 0)
-	{
-		free(arg);
-        return strdup("$?");
-	}
-    return arg;
-}
 
 char	*expand_env_and_loc_var(char *arg, t_ms_data *data)
 {
@@ -91,22 +65,8 @@ void	handle_local_vars(t_ms_data *data, char *arg)
 	}
 }
 
-int	is_in_single_quotes(char *arg)
-{
-	int	len;
-
-	if (!arg || arg[0] != '\'')
-		return (0);
-	len = 0;
-	while (arg[len] != '\0')
-		len++;
-	if (arg[len - 1] == '\'')
-		return (1);
-	return (0);
-}
-
 void	post_process_command_args(t_ast *command_node, int arg_count \
-			, t_ms_data *data)
+		, t_ms_data *data)
 {
 	int		i;
 	char	*processed_arg;
@@ -122,41 +82,13 @@ void	post_process_command_args(t_ast *command_node, int arg_count \
 		else
 		{
 			processed_arg = ft_substr(command_node->args[i], 1, \
-				ft_strlen(command_node->args[i]) - 2);
+					ft_strlen(command_node->args[i]) - 2);
 		}
 		free(command_node->args[i]);
 		command_node->args[i] = processed_arg;
 		i++;
 	}
 	final_quote_removal(arg_count, command_node);
-}
-
-
-char *str_start_adj(char *arg)
-{
-    if (!strcmp(arg, "?") || !strcmp(arg, "?\""))
-        return strdup("");
-	else if (!strcmp(arg, "?\'"))
-        return strdup("\'");
-    return arg;
-}
-
-char	*tmp_adj(char *arg)
-{
-	char	*ptr;
-
-	if (*arg == '\"')
-	{
-		ptr = arg + 1;
-		while (*ptr)
-		{
-			if (!ft_isdigit(*ptr))
-				return (arg);
-			ptr++;
-		}
-		return (ft_strdup(arg + 1));
-	}
-	return (arg);
 }
 
 char	*expand_variable(char **start, t_ms_data *data)
@@ -200,22 +132,6 @@ char	*expand_variable(char **start, t_ms_data *data)
 		free(result);
 	}
 	return (expanded_str);
-}
-
-char	*append_literal(char **start, char *processed_arg)
-{
-	char	*literal_part;
-	char	*literal_start;
-	char	*tmp;
-
-	literal_start = *start;
-	while (**start != '\0' && **start != '$')
-		(*start)++;
-	literal_part = ft_substr(literal_start, 0, *start - literal_start);
-	tmp = ft_strjoin(processed_arg, literal_part);
-	free(literal_part);
-	free(processed_arg);
-	return (tmp);
 }
 
 char	*process_argument(char *arg, t_ms_data *data)
