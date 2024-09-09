@@ -35,7 +35,7 @@ int	handle_add_set_shell_variable(t_env **shell_var, char *line)
 		key = ft_strcdup(line, '=');
 		value = ft_strchr(line, '=') + 1;
 		set_shell_var(shell_var, key, value);
-		printf("value: %s\n", get_env(*shell_var, key));
+		// printf("value: %s\n", get_env(*shell_var, key));
 		free(key);
 	}
 	return (0);

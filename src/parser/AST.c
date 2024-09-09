@@ -106,7 +106,7 @@ t_ast	*manage_commands(t_token **tokens, t_ms_data *data)
 		return (NULL);
 	set_command_args(command_node, tokens, cmd_arg_count);
 	(void)data;
-	//post_process_command_args(command_node, cmd_arg_count, data);
+	post_process_command_args(command_node, cmd_arg_count, data);
 	return (command_node);
 }
 
