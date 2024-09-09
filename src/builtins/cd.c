@@ -32,7 +32,6 @@ int	builtin_cd(t_ms_data *data)
 	char	*error_message;
 	char	cwd[4096];
 
-	ft_printf("builtin_cd\n");
 	home_dir = get_env(data->envp, "HOME");
 	target_dir = (char *)data->args[1];
 	if (!target_dir)
