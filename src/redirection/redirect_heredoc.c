@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   redirect_heredoc_utils.c                           :+:      :+:    :+:   */
+/*   redirect_heredoc.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rocky <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/06 13:46:24 by rocky             #+#    #+#             */
-/*   Updated: 2024/09/06 13:46:25 by rocky            ###   ########.fr       */
+/*   Updated: 2024/09/09 13:50:24 by dmdemirk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,21 @@
 #include <sys/wait.h>
 #include "signals.h"
 
-// GLOBAL VAR
-// volatile tells compiler the var can change at compilation between accesses.
-// sig_atomic_t used for global_vars
+/*
+   GLOBAL VAR
+   volatile tells compiler the var can change at compilation between accesses.
+   sig_atomic_t used for global_vars
+ */
+
 volatile sig_atomic_t	g_heredoc_interrupted = 0;
 
+static void	setup_sigint_handler(struct sigaction *sa_old);
+static int	handle_heredoc_interruption(char *line, char *eof, int file_fd, \
+		struct sigaction *sa_old);
+static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd);
+static void	write_heredoc_lines(char **line, int file_fd, char *eof, \
+		t_ms_data *data);
 int			redirect_here_doc(t_ast *node, t_ms_data *data);
-
-static int	open_tmp_file(const char *type)
-{
-	int	file_fd;
-
-	file_fd = -1;
-	if (ft_strcmp(type, "w") == 0)
-		file_fd = open("/tmp/heredoc", O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	else if (ft_strcmp(type, "r") == 0)
-		file_fd = open("/tmp/heredoc", O_RDONLY);
-	if (file_fd < 0)
-		ft_perror("open");
-	return (file_fd);
-}
 
 static void	setup_sigint_handler(struct sigaction *sa_old)
 {
@@ -78,6 +73,19 @@ static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd)
 	waitpid(pid, &data->exit_status, 0);
 }
 
+static void	write_heredoc_lines(char **line, int file_fd, char *eof, \
+		t_ms_data *data)
+{
+	while (*line && (ft_strcmp(*line, eof) != 0) && !g_heredoc_interrupted)
+	{
+		write(file_fd, *line, ft_strlen(*line));
+		write(file_fd, "\n", 1);
+		free(*line);
+		(void)data;
+		*line = readline("> ");
+	}
+}
+
 int	redirect_here_doc(t_ast *node, t_ms_data *data)
 {
 	char				*line;
@@ -91,7 +99,6 @@ int	redirect_here_doc(t_ast *node, t_ms_data *data)
 	setup_sigint_handler(&sa_old);
 	file_fd = open_tmp_file("w");
 	eof = ft_strdup(node->right->args[0]);
-	// line = process_and_reassemble(readline("> "), data);
 	line = readline("> ");
 	write_heredoc_lines(&line, file_fd, eof, data);
 	if (g_heredoc_interrupted)
@@ -104,18 +111,4 @@ int	redirect_here_doc(t_ast *node, t_ms_data *data)
 	execute_child(node->left, data, &file_fd);
 	unlink("/tmp/heredoc");
 	return (0);
-}
-
-void	write_heredoc_lines(char **line, int file_fd, char *eof, \
-			t_ms_data *data)
-{
-	while (*line && (ft_strcmp(*line, eof) != 0) && !g_heredoc_interrupted)
-	{
-		write(file_fd, *line, ft_strlen(*line));
-		write(file_fd, "\n", 1);
-		free(*line);
-		(void)data;
-		// *line = process_and_reassemble(readline("> "), data);
-		*line = readline("> ");
-	}
 }
