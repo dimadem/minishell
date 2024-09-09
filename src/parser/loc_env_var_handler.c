@@ -45,10 +45,11 @@ void	post_process_command_args(t_ast *command_node, int arg_count \
 		free(command_node->args[i]);
 		ft_printf(RED"malloc'd command_node->args[i]: %s	at ad: %p\n"RESET, command_node->args[i], command_node->args[i]);
 		command_node->args[i] = ft_strdup(processed_arg);
+		ft_printf(GRN"freed new processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
+		free(processed_arg);
 		i++;
 	}
-	ft_printf(GRN"freed new processed_arg: %s	at ad: %p\n"RESET, processed_arg, processed_arg);
-	free(processed_arg);
+	
 	final_quote_removal(arg_count, command_node);
 }
 
