@@ -124,5 +124,6 @@ void		append_word_if_valid(char *start, char *str, t_token **tokens);
 char		*exit_status_adj(char *arg);
 char		*str_start_adj(char *arg);
 char		*tmp_adj(char *arg);
+int			cmd_arg_len(t_token *current);
 
 #endif

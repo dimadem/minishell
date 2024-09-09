@@ -73,8 +73,8 @@ static void	execute_child(t_ast *node, t_ms_data *data, int *file_fd)
 	waitpid(pid, &data->exit_status, 0);
 }
 
-static void	write_heredoc_lines(char **line, int file_fd, char *eof, \
-		t_ms_data *data)
+void	write_heredoc_lines(char **line, int file_fd, char *eof, \
+			t_ms_data *data)
 {
 	while (*line && (ft_strcmp(*line, eof) != 0) && !g_heredoc_interrupted)
 	{
@@ -111,17 +111,4 @@ int	redirect_here_doc(t_ast *node, t_ms_data *data)
 	execute_child(node->left, data, &file_fd);
 	unlink("/tmp/heredoc");
 	return (0);
-}
-
-void	write_heredoc_lines(char **line, int file_fd, char *eof, \
-			t_ms_data *data)
-{
-	while (*line && (ft_strcmp(*line, eof) != 0) && !g_heredoc_interrupted)
-	{
-		write(file_fd, *line, ft_strlen(*line));
-		write(file_fd, "\n", 1);
-		free(*line);
-		(void)data;
-		*line = readline("> ");
-	}
 }
