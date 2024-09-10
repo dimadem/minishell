@@ -34,7 +34,7 @@ char	*token_adj(char *arg)
 		}
 		if (*ptr == '\0')
 		{
-			new_arg = malloc(strlen(arg) + 2);
+			new_arg = malloc(ft_strlen(arg) + 2);
 			if (!new_arg)
 				return (NULL);
 			ft_strcpy(new_arg, arg);

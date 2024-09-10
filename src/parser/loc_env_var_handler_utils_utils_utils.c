@@ -20,7 +20,7 @@ char	*append_literal(char **start, char *processed_arg);
 
 char	*exit_status_adj(char *arg)
 {
-	if (strcmp(arg, "$") == 0)
+	if (ft_strcmp(arg, "$") == 0)
 		return ("$?");
 	return (arg);
 }
@@ -41,9 +41,9 @@ int	is_in_single_quotes(char *arg)
 
 char	*str_start_adj(char *arg)
 {
-	if (!strcmp(arg, "?") || !strcmp(arg, "?\""))
+	if (!ft_strcmp(arg, "?") || !ft_strcmp(arg, "?\""))
 		return ("");
-	else if (!strcmp(arg, "?\'"))
+	else if (!ft_strcmp(arg, "?\'"))
 		return ("\'");
 	return (arg);
 }
