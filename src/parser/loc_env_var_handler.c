@@ -14,12 +14,6 @@
 
 void	handle_local_vars(t_ms_data *data, char *arg);
 char	*process_argument(char *arg, t_ms_data *data);
-char	*expand_variable(char **start, t_ms_data *data);
-void	final_quote_removal(int arg_count, t_ast *command_node);
-char	*exit_status_adj(char *arg);
-char	*tmp_adj(char *arg);
-char	*expand_env_and_loc_var(char *arg, t_ms_data *data);
-char	*str_start_adj(char *arg);
 
 void	post_process_command_args(t_ast *command_node, int arg_count, \
 			t_ms_data *data)
