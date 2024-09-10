@@ -12,7 +12,8 @@
 
 #include "tokens.h"
 
-char	*expand_variable_loop(char **start, t_ms_data *data, char *str_start, char *result, char *expanded_str)
+char	*ev_loop(char **start, t_ms_data *data, char *str_start, \
+			char *expanded_str)
 {
 	char	*var_name;
 	char	*var_start;
@@ -29,18 +30,18 @@ char	*expand_variable_loop(char **start, t_ms_data *data, char *str_start, char 
 	free(var_name);
 	len_before_var = var_start - str_start;
 	tmp = ft_substr(str_start, 0, len_before_var);
-	result = ft_strjoin_free(expanded_str, tmp);
+	expanded_str = ft_strjoin_free(expanded_str, tmp);
 	free(tmp);
-	expanded_str = ft_strjoin_free(result, expanded_var);
+	expanded_str = ft_strjoin_free(expanded_str, expanded_var);
 	free(expanded_var);
-	return expanded_str;
+	return (expanded_str);
 }
 
 char	*expand_variable(char **start, t_ms_data *data)
 {
 	char	*expanded_str;
-	char	*result;
 	char	*str_start;
+	char	*result;
 
 	result = NULL;
 	str_start = *start;
@@ -49,7 +50,7 @@ char	*expand_variable(char **start, t_ms_data *data)
 	{
 		if (**start == '$')
 		{
-			expanded_str = expand_variable_loop(start, data, str_start, result, expanded_str);
+			expanded_str = ev_loop(start, data, str_start, expanded_str);
 			str_start = *start;
 			str_start = str_start_adj(str_start);
 		}

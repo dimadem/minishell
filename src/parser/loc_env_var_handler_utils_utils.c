@@ -40,6 +40,7 @@ void	final_quote_removal(int arg_count, t_ast *command_node)
 		i++;
 	}
 }
+
 char	*expand_env_and_loc_var(char *arg, t_ms_data *data)
 {
 	char	*env_value_dup;
@@ -83,4 +84,3 @@ char	*get_env_variable(char *arg, t_ms_data *data)
 		return (ft_strdup(env_value));
 	return (ft_strdup(""));
 }
-
