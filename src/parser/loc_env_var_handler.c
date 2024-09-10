@@ -21,7 +21,7 @@ char	*tmp_adj(char *arg);
 char	*expand_env_and_loc_var(char *arg, t_ms_data *data);
 char	*str_start_adj(char *arg);
 
-void	post_process_command_args(t_ast *command_node, int arg_count, 
+void	post_process_command_args(t_ast *command_node, int arg_count, \
 			t_ms_data *data)
 {
 	int		i;
@@ -70,14 +70,28 @@ void	handle_local_vars(t_ms_data *data, char *arg)
 	}
 }
 
+char	*append_expanded_var(char *processed_arg, char *tmp_ad, \
+			char *expanded_var)
+{
+	char	*tmp;
+	char	*tmp_2;
+
+	tmp = ft_strjoin_free(processed_arg, expanded_var);
+	tmp_ad = tmp_adj(tmp);
+	free(expanded_var);
+	tmp_2 = ft_strdup(tmp_ad);
+	free(tmp_ad);
+	return (tmp_2);
+}
+
 char	*process_argument(char *arg, t_ms_data *data)
 {
 	char	*start;
 	char	*processed_arg;
-	char	*tmp;
 	char	*tmp_ad;
 	char	*expanded_var;
 
+	tmp_ad = NULL;
 	processed_arg = ft_strdup("");
 	start = arg;
 	while (*start != '\0')
@@ -87,10 +101,8 @@ char	*process_argument(char *arg, t_ms_data *data)
 			expanded_var = expand_variable(&start, data);
 			if (expanded_var != NULL)
 			{
-				tmp = ft_strjoin_free(processed_arg, expanded_var);
-				tmp_ad = tmp_adj(tmp);
-				free(expanded_var);
-				processed_arg = ft_strdup(tmp_ad);
+				processed_arg = append_expanded_var(processed_arg, \
+									tmp_ad, expanded_var);
 				free(tmp_ad);
 			}
 		}
