@@ -12,38 +12,46 @@
 
 #include "tokens.h"
 
+char	*expand_variable_loop(char **start, t_ms_data *data, char *str_start, char *result, char *expanded_str)
+{
+	char	*var_name;
+	char	*var_start;
+	char	*expanded_var;
+	char	*tmp;
+	int		len_before_var;
+
+	var_start = *start;
+	(*start)++;
+	while (**start && (ft_isalnum(**start) || **start == '_'))
+		(*start)++;
+	var_name = ft_substr(var_start, 0, *start - var_start);
+	expanded_var = expand_env_and_loc_var(var_name, data);
+	free(var_name);
+	len_before_var = var_start - str_start;
+	tmp = ft_substr(str_start, 0, len_before_var);
+	result = ft_strjoin_free(expanded_str, tmp);
+	free(tmp);
+	expanded_str = ft_strjoin_free(result, expanded_var);
+	free(expanded_var);
+	return expanded_str;
+}
+
 char	*expand_variable(char **start, t_ms_data *data)
 {
 	char	*expanded_str;
-	char	*var_name;
-	char	*expanded_var;
 	char	*result;
-	char	*var_start;
 	char	*str_start;
-	int		len_before_var;
-	char	*tmp;
 
+	result = NULL;
 	str_start = *start;
 	expanded_str = ft_strdup("");
 	while (**start && **start != '\0')
 	{
 		if (**start == '$')
 		{
-			var_start = *start;
-			(*start)++;
-			while (**start && (ft_isalnum(**start) || **start == '_'))
-				(*start)++;
-			var_name = ft_substr(var_start, 0, *start - var_start);
-			expanded_var = expand_env_and_loc_var(var_name, data);
-			free(var_name);
-			len_before_var = var_start - str_start;
-			tmp = ft_substr(str_start, 0, len_before_var);
-			result = ft_strjoin_free(expanded_str, tmp);
-			free(tmp);
-			expanded_str = ft_strjoin_free(result, expanded_var);
+			expanded_str = expand_variable_loop(start, data, str_start, result, expanded_str);
 			str_start = *start;
 			str_start = str_start_adj(str_start);
-			free(expanded_var);
 		}
 		else
 			(*start)++;
