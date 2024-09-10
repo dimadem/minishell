@@ -40,5 +40,4 @@ int		ft_perror(char *str);
 int		ft_isnumber(char *str);
 void	free_shell_var_list(t_env *shell_var);
 
-
 #endif

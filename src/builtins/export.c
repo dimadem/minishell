@@ -61,8 +61,8 @@ static void	print_env(t_env *env)
 		if (!ft_strcmp(curr_node->value, ""))
 			ft_printf("declare -x %s\n", curr_node->key);
 		else
-			ft_printf("declare -x %s=\"%s\"\n", curr_node->key, \
-				curr_node->value);
+			ft_printf("declare -x %s=\"%s\"\n", \
+				curr_node->key, curr_node->value);
 		curr_node = curr_node->next;
 	}
 }
