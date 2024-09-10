@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['terminal_0',['terminal',['../structs__ms__data.html#ade365daa9273b1a93f28b69c965faca2',1,'s_ms_data']]],
-  ['tokens_1',['tokens',['../structs__loop__data.html#a9b704dd9ec48db6a19721c14de0cb40b',1,'s_loop_data']]],
-  ['tree_2',['tree',['../structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91',1,'s_loop_data']]],
-  ['trimmed_5finput_3',['trimmed_input',['../structs__loop__data.html#a5f49d9840e1d54bc67a8cfe91aa9123d',1,'s_loop_data']]],
-  ['type_4',['type',['../structs__token.html#a350680c70abb7e7173240477e92dc0a3',1,'s_token::type'],['../structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441',1,'s_ast::type']]]
+  ['shell_5fvariables_0',['shell_variables',['../structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064',1,'s_ms_data']]],
+  ['std_5ferr_1',['std_err',['../structs__ms__data.html#a57bf5c645546459cd84ea8c616b0029a',1,'s_ms_data']]],
+  ['std_5fin_2',['std_in',['../structs__ms__data.html#ae8d3099bc1be72bf3921ffadb2452ddd',1,'s_ms_data']]],
+  ['std_5fout_3',['std_out',['../structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5',1,'s_ms_data']]]
 ];

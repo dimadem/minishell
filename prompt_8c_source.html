@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('prompt_8c_source.html',''); initResiza
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    prompt_len = <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(<span class="stringliteral">&quot;🌴 @maxishell$ &quot;</span>) + \</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            ft_strlen(getenv(<span class="stringliteral">&quot;LOGNAME&quot;</span>));</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    prompt = (<span class="keywordtype">char</span> *)malloc(prompt_len);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    prompt = (<span class="keywordtype">char</span> *)malloc(prompt_len + 1);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!prompt)</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        exit(<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="libft_8h.html#a916ac44ff3e67ef20834dd45e3837ac4">ft_strcpy</a>(prompt, <span class="stringliteral">&quot;🌴 &quot;</span>);</div>
@@ -182,7 +182,7 @@ $(document).ready(function(){initNavTree('prompt_8c_source.html',''); initResiza
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
 </div>
 <div class="ttc" id="aenv_8h_html"><div class="ttname"><a href="env_8h.html">env.h</a></div></div>
-<div class="ttc" id="aenv_8h_html_a41133e0ba7230727a51eedce713a225c"><div class="ttname"><a href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a></div><div class="ttdeci">char * get_env(t_env *envp, const char *key)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00060">env.c:60</a></div></div>
+<div class="ttc" id="aenv_8h_html_a41133e0ba7230727a51eedce713a225c"><div class="ttname"><a href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a></div><div class="ttdeci">char * get_env(t_env *envp, const char *key)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00059">env.c:59</a></div></div>
 <div class="ttc" id="aexit__status_8h_html_a73efe787c131b385070f25d18b7c9aa4"><div class="ttname"><a href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a></div><div class="ttdeci">#define EXIT_FAILURE</div><div class="ttdef"><b>Definition</b> <a href="exit__status_8h_source.html#l00017">exit_status.h:17</a></div></div>
 <div class="ttc" id="alibft_8h_html_a1ee8ae8a80a7d9141ea5339af8565f2e"><div class="ttname"><a href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a></div><div class="ttdeci">int ft_printf(const char *format,...)</div><div class="ttdef"><b>Definition</b> <a href="ft__printf_8c_source.html#l00037">ft_printf.c:37</a></div></div>
 <div class="ttc" id="alibft_8h_html_a916ac44ff3e67ef20834dd45e3837ac4"><div class="ttname"><a href="libft_8h.html#a916ac44ff3e67ef20834dd45e3837ac4">ft_strcpy</a></div><div class="ttdeci">char * ft_strcpy(char *dest, const char *src)</div><div class="ttdef"><b>Definition</b> <a href="ft__strcpy_8c_source.html#l00025">ft_strcpy.c:25</a></div></div>
