@@ -17,7 +17,7 @@ void	ft_free_2d_arr(char **arr)
 	int	i;
 
 	if (!arr)
-		return;
+		return ;
 	i = -1;
 	while (arr[++i] != NULL)
 		free(arr[i]);

@@ -125,14 +125,13 @@ char		*exit_status_adj(char *arg);
 char		*str_start_adj(char *arg);
 char		*tmp_adj(char *arg);
 int			cmd_arg_len(t_token *current);
-char	*exit_status_adj(char *arg);
-int		is_in_single_quotes(char *arg);
-char	*str_start_adj(char *arg);
-char	*tmp_adj(char *arg);
-char	*append_literal(char **start, char *processed_arg);
-char	*expand_variable(char **start, t_ms_data *data);
-char	*expand_env_and_loc_var(char *arg, t_ms_data *data);
-void	final_quote_removal(int arg_count, t_ast *command_node);
-
+char		*exit_status_adj(char *arg);
+int			is_in_single_quotes(char *arg);
+char		*str_start_adj(char *arg);
+char		*tmp_adj(char *arg);
+char		*append_literal(char **start, char *processed_arg);
+char		*expand_variable(char **start, t_ms_data *data);
+char		*expand_env_and_loc_var(char *arg, t_ms_data *data);
+void		final_quote_removal(int arg_count, t_ast *command_node);
 
 #endif
