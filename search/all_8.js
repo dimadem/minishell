@@ -1,7 +1,7 @@
 var searchData=
 [
   ['handle_5fadd_5fset_5fshell_5fvariable_0',['handle_add_set_shell_variable',['../shell__variables_8c.html#a8508df71f808894b44abb69527998a0c',1,'handle_add_set_shell_variable(t_env **shell_var, char *line):&#160;shell_variables.c'],['../env_8h.html#a8508df71f808894b44abb69527998a0c',1,'handle_add_set_shell_variable(t_env **shell_var, char *line):&#160;shell_variables.c']]],
-  ['handle_5fexec_5ferrors_1',['handle_exec_errors',['../execute_8c.html#a90e49f6ceb32bdc90c813c4ebd87c4e0',1,'execute.c']]],
+  ['handle_5fexec_5ferrors_1',['handle_exec_errors',['../execute__child_8c.html#a90e49f6ceb32bdc90c813c4ebd87c4e0',1,'execute_child.c']]],
   ['handle_5fexit_2',['handle_exit',['../exit_8c.html#a16c892fe103bf5f59b6e2288f974dad1',1,'exit.c']]],
   ['handle_5fget_5fshell_5fvariable_3',['handle_get_shell_variable',['../execute_8h.html#a689cc0f6374a9730a0628c44f2f5bf2c',1,'handle_get_shell_variable(t_ms_data *data, const char *key):&#160;shell_variables.c'],['../shell__variables_8c.html#a689cc0f6374a9730a0628c44f2f5bf2c',1,'handle_get_shell_variable(t_ms_data *data, const char *key):&#160;shell_variables.c']]],
   ['handle_5fheredoc_5finterruption_4',['handle_heredoc_interruption',['../redirect__heredoc_8c.html#a024f35fc76fbbc658216e395cf08dab5',1,'redirect_heredoc.c']]],

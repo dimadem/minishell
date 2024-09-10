@@ -16,5 +16,6 @@ var exit__status_8h =
     [ "free_shell_var_list", "exit__status_8h.html#a71f13ea8bfb09f685380f6a97d6807e7", null ],
     [ "ft_isnumber", "exit__status_8h.html#a7cef2b916a61b3cb6324fc95e198dcd5", null ],
     [ "ft_perror", "exit__status_8h.html#aedc550f2251badad69cf4b6dfda183ef", null ],
-    [ "set_exit_status", "exit__status_8h.html#ad51b654a9898601223e9f44b99fc9b74", null ]
+    [ "set_exit_status", "exit__status_8h.html#ad51b654a9898601223e9f44b99fc9b74", null ],
+    [ "set_shell_var_handler", "exit__status_8h.html#aaba65d0061083091e69b12ed2868d84b", null ]
 ];
