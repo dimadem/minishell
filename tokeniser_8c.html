@@ -190,20 +190,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tokeniser_8c_source.html#l00085">85</a> of file <a class="el" href="tokeniser_8c_source.html">tokeniser.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span>{</div>
-<div class="line"><span class="lineno">   87</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *curr;</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span> (!*tokens)</div>
-<div class="line"><span class="lineno">   90</span>        *tokens = <a class="code hl_function" href="tokeniser_8c.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>;</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   92</span>    {</div>
-<div class="line"><span class="lineno">   93</span>        curr = *tokens;</div>
-<div class="line"><span class="lineno">   94</span>        <span class="keywordflow">while</span> (curr-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>)</div>
-<div class="line"><span class="lineno">   95</span>            curr = curr-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
-<div class="line"><span class="lineno">   96</span>        curr-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a> = <a class="code hl_function" href="tokeniser_8c.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>;</div>
-<div class="line"><span class="lineno">   97</span>    }</div>
-<div class="line"><span class="lineno">   98</span>}</div>
+<p class="definition">Definition at line <a class="el" href="tokeniser_8c_source.html#l00088">88</a> of file <a class="el" href="tokeniser_8c_source.html">tokeniser.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>{</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *curr;</div>
+<div class="line"><span class="lineno">   91</span> </div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> (!*tokens)</div>
+<div class="line"><span class="lineno">   93</span>        *tokens = <a class="code hl_function" href="tokeniser_8c.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>;</div>
+<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   95</span>    {</div>
+<div class="line"><span class="lineno">   96</span>        curr = *tokens;</div>
+<div class="line"><span class="lineno">   97</span>        <span class="keywordflow">while</span> (curr-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>)</div>
+<div class="line"><span class="lineno">   98</span>            curr = curr-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
+<div class="line"><span class="lineno">   99</span>        curr-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a> = <a class="code hl_function" href="tokeniser_8c.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>;</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>}</div>
 <div class="ttc" id="astructs__token_html"><div class="ttname"><a href="structs__token.html">s_token</a></div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00041">tokens.h:42</a></div></div>
 <div class="ttc" id="astructs__token_html_a5dae434205818bfc83a61809d4a34a29"><div class="ttname"><a href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">s_token::next</a></div><div class="ttdeci">struct s_token * next</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00045">tokens.h:45</a></div></div>
 <div class="ttc" id="atokeniser_8c_html_a07793427f42bd19d0f4ea6771441be99"><div class="ttname"><a href="tokeniser_8c.html#a07793427f42bd19d0f4ea6771441be99">new_token</a></div><div class="ttdeci">t_token * new_token(char *value, t_token_type type)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00067">tokeniser.c:67</a></div></div>
@@ -277,31 +277,31 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="tokeniser_8c_source.html#l00100">100</a> of file <a class="el" href="tokeniser_8c_source.html">tokeniser.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>{</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordtype">char</span>    *start;</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">char</span>    quote_flag;</div>
-<div class="line"><span class="lineno">  104</span>    <span class="keywordtype">char</span>    quote_type;</div>
-<div class="line"><span class="lineno">  105</span> </div>
-<div class="line"><span class="lineno">  106</span>    start = str;</div>
-<div class="line"><span class="lineno">  107</span>    quote_flag = 0;</div>
-<div class="line"><span class="lineno">  108</span>    quote_type = 0;</div>
-<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">while</span> (*str)</div>
-<div class="line"><span class="lineno">  110</span>    {</div>
-<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span> (!quote_flag &amp;&amp; (*str == <span class="charliteral">&#39;\&#39;&#39;</span> || *str == <span class="charliteral">&#39;\&quot;&#39;</span>))</div>
-<div class="line"><span class="lineno">  112</span>        {</div>
-<div class="line"><span class="lineno">  113</span>            quote_flag = 1;</div>
-<div class="line"><span class="lineno">  114</span>            quote_type = *str;</div>
-<div class="line"><span class="lineno">  115</span>        }</div>
-<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (quote_flag &amp;&amp; *str == quote_type)</div>
-<div class="line"><span class="lineno">  117</span>            quote_flag = 0;</div>
-<div class="line"><span class="lineno">  118</span>        <span class="keywordflow">if</span> (!quote_flag &amp;&amp; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(<span class="stringliteral">&quot; \t\n\r\v\f&lt;|&gt;&quot;</span>, *str) != NULL)</div>
-<div class="line"><span class="lineno">  119</span>            break ;</div>
-<div class="line"><span class="lineno">  120</span>        str++;</div>
-<div class="line"><span class="lineno">  121</span>    }</div>
-<div class="line"><span class="lineno">  122</span>    <a class="code hl_function" href="tokens_8h.html#a794df33f59bbab3194911bc3eab90871">append_word_if_valid</a>(start, str, tokens);</div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">return</span> (str);</div>
-<div class="line"><span class="lineno">  124</span>}</div>
+<p class="definition">Definition at line <a class="el" href="tokeniser_8c_source.html#l00103">103</a> of file <a class="el" href="tokeniser_8c_source.html">tokeniser.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>{</div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordtype">char</span>    *start;</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordtype">char</span>    quote_flag;</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordtype">char</span>    quote_type;</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    start = str;</div>
+<div class="line"><span class="lineno">  110</span>    quote_flag = 0;</div>
+<div class="line"><span class="lineno">  111</span>    quote_type = 0;</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">while</span> (*str)</div>
+<div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">if</span> (!quote_flag &amp;&amp; (*str == <span class="charliteral">&#39;\&#39;&#39;</span> || *str == <span class="charliteral">&#39;\&quot;&#39;</span>))</div>
+<div class="line"><span class="lineno">  115</span>        {</div>
+<div class="line"><span class="lineno">  116</span>            quote_flag = 1;</div>
+<div class="line"><span class="lineno">  117</span>            quote_type = *str;</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (quote_flag &amp;&amp; *str == quote_type)</div>
+<div class="line"><span class="lineno">  120</span>            quote_flag = 0;</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (!quote_flag &amp;&amp; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(<span class="stringliteral">&quot; \t\n\r\v\f&lt;|&gt;&quot;</span>, *str) != NULL)</div>
+<div class="line"><span class="lineno">  122</span>            break ;</div>
+<div class="line"><span class="lineno">  123</span>        str++;</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span>    <a class="code hl_function" href="tokens_8h.html#a794df33f59bbab3194911bc3eab90871">append_word_if_valid</a>(start, str, tokens);</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> (str);</div>
+<div class="line"><span class="lineno">  127</span>}</div>
 <div class="ttc" id="alibft_8h_html_aa6d0c2d180f32ee585485e1a1ce3d55d"><div class="ttname"><a href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a></div><div class="ttdeci">char * ft_strchr(const char *s, int c)</div><div class="ttdef"><b>Definition</b> <a href="ft__strchr_8c_source.html#l00025">ft_strchr.c:25</a></div></div>
 <div class="ttc" id="atokens_8h_html_a794df33f59bbab3194911bc3eab90871"><div class="ttname"><a href="tokens_8h.html#a794df33f59bbab3194911bc3eab90871">append_word_if_valid</a></div><div class="ttdeci">void append_word_if_valid(char *start, char *str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser__helpers_8c_source.html#l00047">tokeniser_helpers.c:47</a></div></div>
 </div><!-- fragment -->
@@ -455,14 +455,14 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   63</span>    (str)++;</div>
 <div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> (str);</div>
 <div class="line"><span class="lineno">   65</span>}</div>
-<div class="ttc" id="atokeniser_8c_html_a6c482f0c73f7263b3253aaa8e1bd4fb6"><div class="ttname"><a href="tokeniser_8c.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a></div><div class="ttdeci">void append_token(t_token **tokens, t_token *new_token)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00085">tokeniser.c:85</a></div></div>
+<div class="ttc" id="atokeniser_8c_html_a6c482f0c73f7263b3253aaa8e1bd4fb6"><div class="ttname"><a href="tokeniser_8c.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a></div><div class="ttdeci">void append_token(t_token **tokens, t_token *new_token)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00088">tokeniser.c:88</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea18f3c2f496edb0cae413ac5244bb2452">REDIR_IN</a></div><div class="ttdeci">@ REDIR_IN</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00034">tokens.h:34</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea6b4984ec77e78953297b7cb3f580a2e7">REDIR_HEREDOC</a></div><div class="ttdeci">@ REDIR_HEREDOC</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00037">tokens.h:37</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea9bc832fa28809fb974f6ce5bb0cc7117">PIPE</a></div><div class="ttdeci">@ PIPE</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00032">tokens.h:32</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deacb2a363e84eabbbe3925fd298f7a3d01">REDIR_OUT</a></div><div class="ttdeci">@ REDIR_OUT</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00035">tokens.h:35</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222deae6167ac4e4f266512f36d79961bde464">REDIR_APPEND</a></div><div class="ttdeci">@ REDIR_APPEND</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00036">tokens.h:36</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tokeniser_8c_source.html#l00085">append_token()</a>, <a class="el" href="tokeniser_8c_source.html#l00067">new_token()</a>, <a class="el" href="tokens_8h_source.html#l00032">PIPE</a>, <a class="el" href="tokens_8h_source.html#l00036">REDIR_APPEND</a>, <a class="el" href="tokens_8h_source.html#l00037">REDIR_HEREDOC</a>, <a class="el" href="tokens_8h_source.html#l00034">REDIR_IN</a>, and <a class="el" href="tokens_8h_source.html#l00035">REDIR_OUT</a>.</p>
+<p class="reference">References <a class="el" href="tokeniser_8c_source.html#l00088">append_token()</a>, <a class="el" href="tokeniser_8c_source.html#l00067">new_token()</a>, <a class="el" href="tokens_8h_source.html#l00032">PIPE</a>, <a class="el" href="tokens_8h_source.html#l00036">REDIR_APPEND</a>, <a class="el" href="tokens_8h_source.html#l00037">REDIR_HEREDOC</a>, <a class="el" href="tokens_8h_source.html#l00034">REDIR_IN</a>, and <a class="el" href="tokens_8h_source.html#l00035">REDIR_OUT</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="tokeniser_8c_source.html#l00022">tokenise()</a>.</p>
 <div class="dynheader">
@@ -530,27 +530,30 @@ Here is the caller graph for this function:</div>
 <p class="definition">Definition at line <a class="el" href="tokeniser_8c_source.html#l00067">67</a> of file <a class="el" href="tokeniser_8c_source.html">tokeniser.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
 <div class="line"><span class="lineno">   69</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *token;</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    token = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__token.html">t_token</a>));</div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (!token)</div>
-<div class="line"><span class="lineno">   73</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   74</span>    token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a> = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(value);</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span> (!token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>)</div>
-<div class="line"><span class="lineno">   76</span>    {</div>
-<div class="line"><span class="lineno">   77</span>        free(token);</div>
-<div class="line"><span class="lineno">   78</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   79</span>    }</div>
-<div class="line"><span class="lineno">   80</span>    token-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> = type;</div>
-<div class="line"><span class="lineno">   81</span>    token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a> = NULL;</div>
-<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">return</span> (token);</div>
-<div class="line"><span class="lineno">   83</span>}</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">char</span>    *tmp;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    token = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__token.html">t_token</a>));</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span> (!token)</div>
+<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   75</span>    tmp = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(value);</div>
+<div class="line"><span class="lineno">   76</span>    token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a> = tmp;</div>
+<div class="line"><span class="lineno">   77</span>    free(tmp);</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (!token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>)</div>
+<div class="line"><span class="lineno">   79</span>    {</div>
+<div class="line"><span class="lineno">   80</span>        free(token);</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="line"><span class="lineno">   83</span>    token-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> = type;</div>
+<div class="line"><span class="lineno">   84</span>    token-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a> = NULL;</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> (token);</div>
+<div class="line"><span class="lineno">   86</span>}</div>
 <div class="ttc" id="alibft_8h_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00023">ft_strdup.c:23</a></div></div>
 <div class="ttc" id="astructs__token_html_a350680c70abb7e7173240477e92dc0a3"><div class="ttname"><a href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">s_token::type</a></div><div class="ttdeci">t_token_type type</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00043">tokens.h:43</a></div></div>
 <div class="ttc" id="astructs__token_html_afe30f6c413b34095d2a562e112a52e9a"><div class="ttname"><a href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">s_token::data</a></div><div class="ttdeci">char * data</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00044">tokens.h:44</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="tokens_8h_source.html#l00044">s_token::data</a>, <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>, <a class="el" href="tokens_8h_source.html#l00045">s_token::next</a>, and <a class="el" href="tokens_8h_source.html#l00043">s_token::type</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="tokeniser_8c_source.html#l00085">append_token()</a>, <a class="el" href="tokeniser__helpers_8c_source.html#l00047">append_word_if_valid()</a>, <a class="el" href="loc__env__var__handler__heredoc_8c_source.html#l00074">finalize_token()</a>, <a class="el" href="tokeniser_8c_source.html#l00039">handle_special_chars()</a>, and <a class="el" href="loc__env__var__handler__heredoc_8c_source.html#l00058">process_single_token()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="tokeniser_8c_source.html#l00088">append_token()</a>, <a class="el" href="tokeniser__helpers_8c_source.html#l00047">append_word_if_valid()</a>, <a class="el" href="loc__env__var__handler__heredoc_8c_source.html#l00074">finalize_token()</a>, <a class="el" href="tokeniser_8c_source.html#l00039">handle_special_chars()</a>, and <a class="el" href="loc__env__var__handler__heredoc_8c_source.html#l00058">process_single_token()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -664,10 +667,10 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   35</span>    }</div>
 <div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> (tokens);</div>
 <div class="line"><span class="lineno">   37</span>}</div>
-<div class="ttc" id="atokeniser_8c_html_a15b35aa8e16c073fa7edc3e2bed0a04e"><div class="ttname"><a href="tokeniser_8c.html#a15b35aa8e16c073fa7edc3e2bed0a04e">handle_phrase</a></div><div class="ttdeci">char * handle_phrase(char *str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00100">tokeniser.c:100</a></div></div>
+<div class="ttc" id="atokeniser_8c_html_a15b35aa8e16c073fa7edc3e2bed0a04e"><div class="ttname"><a href="tokeniser_8c.html#a15b35aa8e16c073fa7edc3e2bed0a04e">handle_phrase</a></div><div class="ttdeci">char * handle_phrase(char *str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00103">tokeniser.c:103</a></div></div>
 <div class="ttc" id="atokeniser_8c_html_a84594605a20a4ec90b22aa168439fb7d"><div class="ttname"><a href="tokeniser_8c.html#a84594605a20a4ec90b22aa168439fb7d">handle_special_chars</a></div><div class="ttdeci">char * handle_special_chars(char *str, t_token **tokens)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00039">tokeniser.c:39</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ft__strchr_8c_source.html#l00025">ft_strchr()</a>, <a class="el" href="tokeniser_8c_source.html#l00100">handle_phrase()</a>, and <a class="el" href="tokeniser_8c_source.html#l00039">handle_special_chars()</a>.</p>
+<p class="reference">References <a class="el" href="ft__strchr_8c_source.html#l00025">ft_strchr()</a>, <a class="el" href="tokeniser_8c_source.html#l00103">handle_phrase()</a>, and <a class="el" href="tokeniser_8c_source.html#l00039">handle_special_chars()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00050">main_loop()</a>.</p>
 <div class="dynheader">

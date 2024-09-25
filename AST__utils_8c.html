@@ -179,18 +179,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="AST__utils_8c_source.html#l00088">88</a> of file <a class="el" href="AST__utils_8c_source.html">AST_utils.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>{</div>
-<div class="line"><span class="lineno">   90</span>    <span class="keywordtype">int</span> i;</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>    i = 0;</div>
-<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">while</span> (current &amp;&amp; current-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a>)</div>
-<div class="line"><span class="lineno">   94</span>    {</div>
-<div class="line"><span class="lineno">   95</span>        i++;</div>
-<div class="line"><span class="lineno">   96</span>        current = current-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
-<div class="line"><span class="lineno">   97</span>    }</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">return</span> (i);</div>
-<div class="line"><span class="lineno">   99</span>}</div>
+<p class="definition">Definition at line <a class="el" href="AST__utils_8c_source.html#l00091">91</a> of file <a class="el" href="AST__utils_8c_source.html">AST_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordtype">int</span> i;</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    i = 0;</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">while</span> (current &amp;&amp; current-&gt;<a class="code hl_variable" href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">type</a> == <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a>)</div>
+<div class="line"><span class="lineno">   97</span>    {</div>
+<div class="line"><span class="lineno">   98</span>        i++;</div>
+<div class="line"><span class="lineno">   99</span>        current = current-&gt;<a class="code hl_variable" href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">next</a>;</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> (i);</div>
+<div class="line"><span class="lineno">  102</span>}</div>
 <div class="ttc" id="astructs__token_html_a350680c70abb7e7173240477e92dc0a3"><div class="ttname"><a href="structs__token.html#a350680c70abb7e7173240477e92dc0a3">s_token::type</a></div><div class="ttdeci">t_token_type type</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00043">tokens.h:43</a></div></div>
 <div class="ttc" id="astructs__token_html_a5dae434205818bfc83a61809d4a34a29"><div class="ttname"><a href="structs__token.html#a5dae434205818bfc83a61809d4a34a29">s_token::next</a></div><div class="ttdeci">struct s_token * next</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00045">tokens.h:45</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a></div><div class="ttdeci">@ PHRASE</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00031">tokens.h:31</a></div></div>
@@ -482,22 +482,25 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
 <div class="line"><span class="lineno">   74</span>    <a class="code hl_struct" href="structs__ast.html">t_ast</a>       *command_node;</div>
 <div class="line"><span class="lineno">   75</span>    <span class="keywordtype">int</span>         cmd_arg_count;</div>
-<div class="line"><span class="lineno">   76</span> </div>
-<div class="line"><span class="lineno">   77</span>    command_node = <a class="code hl_function" href="tokens_8h.html#a0b22eb86149eb3af1029122cd9c62485">new_ast_node</a>();</div>
-<div class="line"><span class="lineno">   78</span>    command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441">type</a> = <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a>;</div>
-<div class="line"><span class="lineno">   79</span>    cmd_arg_count = <a class="code hl_function" href="AST__utils_8c.html#a3cecce4de2e1886bf7ee78598c79d4e4">cmd_arg_len</a>(*tokens);</div>
-<div class="line"><span class="lineno">   80</span>    command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a> = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *) * (cmd_arg_count + 1));</div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">if</span> (!command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>)</div>
-<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   83</span>    <a class="code hl_function" href="tokens_8h.html#ab5f23ff7ab59a241fa7476e6fca458cf">set_command_args</a>(command_node, tokens, cmd_arg_count);</div>
-<div class="line"><span class="lineno">   84</span>    <a class="code hl_function" href="tokens_8h.html#ae75b1ee73be065ece94dc8bf097a04d1">post_process_command_args</a>(command_node, cmd_arg_count, data);</div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">return</span> (command_node);</div>
-<div class="line"><span class="lineno">   86</span>}</div>
-<div class="ttc" id="aAST__utils_8c_html_a3cecce4de2e1886bf7ee78598c79d4e4"><div class="ttname"><a href="AST__utils_8c.html#a3cecce4de2e1886bf7ee78598c79d4e4">cmd_arg_len</a></div><div class="ttdeci">int cmd_arg_len(t_token *current)</div><div class="ttdef"><b>Definition</b> <a href="AST__utils_8c_source.html#l00088">AST_utils.c:88</a></div></div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordtype">char</span>        **tmp_args;</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    command_node = <a class="code hl_function" href="tokens_8h.html#a0b22eb86149eb3af1029122cd9c62485">new_ast_node</a>();</div>
+<div class="line"><span class="lineno">   79</span>    command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ad1cd2bc8f77d3bbac46e3fdddff8b441">type</a> = <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a>;</div>
+<div class="line"><span class="lineno">   80</span>    cmd_arg_count = <a class="code hl_function" href="AST__utils_8c.html#a3cecce4de2e1886bf7ee78598c79d4e4">cmd_arg_len</a>(*tokens);</div>
+<div class="line"><span class="lineno">   81</span>    tmp_args = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *) * (cmd_arg_count + 1));</div>
+<div class="line"><span class="lineno">   82</span>    command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a> = tmp_args;</div>
+<div class="line"><span class="lineno">   83</span>    free(tmp_args);</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">if</span> (!command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>)</div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_function" href="tokens_8h.html#ab5f23ff7ab59a241fa7476e6fca458cf">set_command_args</a>(command_node, tokens, cmd_arg_count);</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_function" href="tokens_8h.html#ae75b1ee73be065ece94dc8bf097a04d1">post_process_command_args</a>(command_node, cmd_arg_count, data);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">return</span> (command_node);</div>
+<div class="line"><span class="lineno">   89</span>}</div>
+<div class="ttc" id="aAST__utils_8c_html_a3cecce4de2e1886bf7ee78598c79d4e4"><div class="ttname"><a href="AST__utils_8c.html#a3cecce4de2e1886bf7ee78598c79d4e4">cmd_arg_len</a></div><div class="ttdeci">int cmd_arg_len(t_token *current)</div><div class="ttdef"><b>Definition</b> <a href="AST__utils_8c_source.html#l00091">AST_utils.c:91</a></div></div>
 <div class="ttc" id="atokens_8h_html_ab5f23ff7ab59a241fa7476e6fca458cf"><div class="ttname"><a href="tokens_8h.html#ab5f23ff7ab59a241fa7476e6fca458cf">set_command_args</a></div><div class="ttdeci">void set_command_args(t_ast *command_node, t_token **tokens, int arg_count)</div><div class="ttdef"><b>Definition</b> <a href="AST_8c_source.html#l00048">AST.c:48</a></div></div>
 <div class="ttc" id="atokens_8h_html_ae75b1ee73be065ece94dc8bf097a04d1"><div class="ttname"><a href="tokens_8h.html#ae75b1ee73be065ece94dc8bf097a04d1">post_process_command_args</a></div><div class="ttdeci">void post_process_command_args(t_ast *command_node, int arg_count, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler_8c_source.html#l00018">loc_env_var_handler.c:18</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tokens_8h_source.html#l00052">s_ast::args</a>, <a class="el" href="AST__utils_8c_source.html#l00088">cmd_arg_len()</a>, <a class="el" href="AST_8c_source.html#l00089">new_ast_node()</a>, <a class="el" href="tokens_8h_source.html#l00031">PHRASE</a>, <a class="el" href="loc__env__var__handler_8c_source.html#l00018">post_process_command_args()</a>, <a class="el" href="AST_8c_source.html#l00048">set_command_args()</a>, and <a class="el" href="tokens_8h_source.html#l00051">s_ast::type</a>.</p>
+<p class="reference">References <a class="el" href="tokens_8h_source.html#l00052">s_ast::args</a>, <a class="el" href="AST__utils_8c_source.html#l00091">cmd_arg_len()</a>, <a class="el" href="AST_8c_source.html#l00089">new_ast_node()</a>, <a class="el" href="tokens_8h_source.html#l00031">PHRASE</a>, <a class="el" href="loc__env__var__handler_8c_source.html#l00018">post_process_command_args()</a>, <a class="el" href="AST_8c_source.html#l00048">set_command_args()</a>, and <a class="el" href="tokens_8h_source.html#l00051">s_ast::type</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="AST_8c_source.html#l00020">manage_redirs()</a>.</p>
 <div class="dynheader">

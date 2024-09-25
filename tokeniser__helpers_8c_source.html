@@ -152,19 +152,23 @@ $(document).ready(function(){initNavTree('tokeniser__helpers_8c_source.html','')
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="tokens_8h.html#a794df33f59bbab3194911bc3eab90871">   47</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="tokeniser__helpers_8c.html#a794df33f59bbab3194911bc3eab90871">append_word_if_valid</a>(<span class="keywordtype">char</span> *start, <span class="keywordtype">char</span> *str, <a class="code hl_struct" href="structs__token.html">t_token</a> **tokens)</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">char</span>    *word;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (str &gt; start)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        word = <a class="code hl_function" href="libft_8h.html#a2d5f42a11a38830b809bced1fc209c20">ft_strndup</a>(start, str - start);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">if</span> (word)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(word, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a>));</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            free(word);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;Error: unable to allocate memory for token\n&quot;</span>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_struct" href="structs__token.html">t_token</a> *tmp_token;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">if</span> (str &gt; start)</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        word = <a class="code hl_function" href="libft_8h.html#a2d5f42a11a38830b809bced1fc209c20">ft_strndup</a>(start, str - start);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">if</span> (word)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            tmp_token = <a class="code hl_function" href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a>(word, <a class="code hl_enumvalue" href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <a class="code hl_function" href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a>(tokens, tmp_token);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            free(word);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            free(tmp_token-&gt;<a class="code hl_variable" href="structs__token.html#afe30f6c413b34095d2a562e112a52e9a">data</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            free(tmp_token);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;Error: unable to allocate memory for token\n&quot;</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
 </div>
 <div class="ttc" id="alibft_8h_html_a1ee8ae8a80a7d9141ea5339af8565f2e"><div class="ttname"><a href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a></div><div class="ttdeci">int ft_printf(const char *format,...)</div><div class="ttdef"><b>Definition</b> <a href="ft__printf_8c_source.html#l00037">ft_printf.c:37</a></div></div>
 <div class="ttc" id="alibft_8h_html_a2d5f42a11a38830b809bced1fc209c20"><div class="ttname"><a href="libft_8h.html#a2d5f42a11a38830b809bced1fc209c20">ft_strndup</a></div><div class="ttdeci">char * ft_strndup(const char *s, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strndup_8c_source.html#l00023">ft_strndup.c:23</a></div></div>
@@ -178,7 +182,7 @@ $(document).ready(function(){initNavTree('tokeniser__helpers_8c_source.html','')
 <div class="ttc" id="atokeniser__helpers_8c_html_ad94865c00a75c9e291be70bbad2d3b7a"><div class="ttname"><a href="tokeniser__helpers_8c.html#ad94865c00a75c9e291be70bbad2d3b7a">print_ast_args</a></div><div class="ttdeci">void print_ast_args(t_ast *node)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser__helpers_8c_source.html#l00035">tokeniser_helpers.c:35</a></div></div>
 <div class="ttc" id="atokens_8h_html"><div class="ttname"><a href="tokens_8h.html">tokens.h</a></div></div>
 <div class="ttc" id="atokens_8h_html_a07793427f42bd19d0f4ea6771441be99"><div class="ttname"><a href="tokens_8h.html#a07793427f42bd19d0f4ea6771441be99">new_token</a></div><div class="ttdeci">t_token * new_token(char *value, t_token_type type)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00067">tokeniser.c:67</a></div></div>
-<div class="ttc" id="atokens_8h_html_a6c482f0c73f7263b3253aaa8e1bd4fb6"><div class="ttname"><a href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a></div><div class="ttdeci">void append_token(t_token **tokens, t_token *new_token)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00085">tokeniser.c:85</a></div></div>
+<div class="ttc" id="atokens_8h_html_a6c482f0c73f7263b3253aaa8e1bd4fb6"><div class="ttname"><a href="tokens_8h.html#a6c482f0c73f7263b3253aaa8e1bd4fb6">append_token</a></div><div class="ttdeci">void append_token(t_token **tokens, t_token *new_token)</div><div class="ttdef"><b>Definition</b> <a href="tokeniser_8c_source.html#l00088">tokeniser.c:88</a></div></div>
 <div class="ttc" id="atokens_8h_html_a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099"><div class="ttname"><a href="tokens_8h.html#a76a354e93d720f05344590ec8aa222dea46ac44ddfb231d3c8f76820d4624c099">PHRASE</a></div><div class="ttdeci">@ PHRASE</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00031">tokens.h:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

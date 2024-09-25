@@ -914,38 +914,38 @@ Here is the caller graph for this function:</div>
 </li>
 </ul>
 
-<p class="definition">Definition at line <a class="el" href="utils__1_8c_source.html#l00033">33</a> of file <a class="el" href="utils__1_8c_source.html">utils_1.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>{</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">char</span>    **path;</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordtype">char</span>    *tmp_full_path;</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordtype">int</span>     i;</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    path = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(<a class="code hl_function" href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a>(envp, <span class="stringliteral">&quot;PATH&quot;</span>), <span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><span class="lineno">   40</span>    i = -1;</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">while</span> (path[++i] != NULL)</div>
-<div class="line"><span class="lineno">   42</span>    {</div>
-<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(cmd, <span class="stringliteral">&quot;/&quot;</span>, 1) != 0)</div>
-<div class="line"><span class="lineno">   44</span>            <a class="code hl_function" href="utils__1_8c.html#ac48357d68e0cbc48befd5e157c67c0d6">relative_path_handle</a>(cmd, path[i], &amp;tmp_full_path);</div>
-<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   46</span>            tmp_full_path = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(cmd);</div>
-<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">if</span> (access(tmp_full_path, F_OK) == 0)</div>
-<div class="line"><span class="lineno">   48</span>        {</div>
-<div class="line"><span class="lineno">   49</span>            <a class="code hl_function" href="execute_8h.html#a5d9d8b46bb6c3dbbc91e99b69bb63e9d">ft_free_2d_arr</a>(path);</div>
-<div class="line"><span class="lineno">   50</span>            <span class="keywordflow">return</span> (tmp_full_path);</div>
-<div class="line"><span class="lineno">   51</span>        }</div>
-<div class="line"><span class="lineno">   52</span>        free(tmp_full_path);</div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="line"><span class="lineno">   54</span>    <a class="code hl_function" href="execute_8h.html#a5d9d8b46bb6c3dbbc91e99b69bb63e9d">ft_free_2d_arr</a>(path);</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><span class="lineno">   56</span>}</div>
+<p class="definition">Definition at line <a class="el" href="utils__1_8c_source.html#l00032">32</a> of file <a class="el" href="utils__1_8c_source.html">utils_1.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordtype">char</span>    **path;</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">char</span>    *tmp_full_path;</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordtype">int</span>     i;</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    path = <a class="code hl_function" href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a>(<a class="code hl_function" href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a>(envp, <span class="stringliteral">&quot;PATH&quot;</span>), <span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><span class="lineno">   39</span>    i = -1;</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">while</span> (path[++i] != NULL)</div>
+<div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a>(cmd, <span class="stringliteral">&quot;/&quot;</span>, 1) != 0)</div>
+<div class="line"><span class="lineno">   43</span>            <a class="code hl_function" href="utils__1_8c.html#ac48357d68e0cbc48befd5e157c67c0d6">relative_path_handle</a>(cmd, path[i], &amp;tmp_full_path);</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   45</span>            tmp_full_path = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(cmd);</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> (access(tmp_full_path, F_OK) == 0)</div>
+<div class="line"><span class="lineno">   47</span>        {</div>
+<div class="line"><span class="lineno">   48</span>            <a class="code hl_function" href="execute_8h.html#a5d9d8b46bb6c3dbbc91e99b69bb63e9d">ft_free_2d_arr</a>(path);</div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">return</span> (tmp_full_path);</div>
+<div class="line"><span class="lineno">   50</span>        }</div>
+<div class="line"><span class="lineno">   51</span>        free(tmp_full_path);</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="line"><span class="lineno">   53</span>    <a class="code hl_function" href="execute_8h.html#a5d9d8b46bb6c3dbbc91e99b69bb63e9d">ft_free_2d_arr</a>(path);</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 <div class="ttc" id="aenv_8h_html_a41133e0ba7230727a51eedce713a225c"><div class="ttname"><a href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a></div><div class="ttdeci">char * get_env(t_env *envp, const char *key)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00059">env.c:59</a></div></div>
 <div class="ttc" id="aexecute_8h_html_a5d9d8b46bb6c3dbbc91e99b69bb63e9d"><div class="ttname"><a href="execute_8h.html#a5d9d8b46bb6c3dbbc91e99b69bb63e9d">ft_free_2d_arr</a></div><div class="ttdeci">void ft_free_2d_arr(char **arr)</div><div class="ttdef"><b>Definition</b> <a href="ft__free__2d__arr_8c_source.html#l00015">ft_free_2d_arr.c:15</a></div></div>
 <div class="ttc" id="alibft_8h_html_a9d2fe792187aa4ed08e5864fb2c4d6dc"><div class="ttname"><a href="libft_8h.html#a9d2fe792187aa4ed08e5864fb2c4d6dc">ft_strncmp</a></div><div class="ttdeci">int ft_strncmp(const char *s1, const char *s2, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strncmp_8c_source.html#l00024">ft_strncmp.c:24</a></div></div>
 <div class="ttc" id="alibft_8h_html_aa65c9de65051c8c589286cf133c4a1f4"><div class="ttname"><a href="libft_8h.html#aa65c9de65051c8c589286cf133c4a1f4">ft_split</a></div><div class="ttdeci">char ** ft_split(char const *s, char c)</div><div class="ttdef"><b>Definition</b> <a href="ft__split_8c_source.html#l00095">ft_split.c:95</a></div></div>
 <div class="ttc" id="alibft_8h_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00023">ft_strdup.c:23</a></div></div>
-<div class="ttc" id="autils__1_8c_html_ac48357d68e0cbc48befd5e157c67c0d6"><div class="ttname"><a href="utils__1_8c.html#ac48357d68e0cbc48befd5e157c67c0d6">relative_path_handle</a></div><div class="ttdeci">static void relative_path_handle(char *cmd, char *path, char **tmp_full_path)</div><div class="ttdef"><b>Definition</b> <a href="utils__1_8c_source.html#l00058">utils_1.c:58</a></div></div>
+<div class="ttc" id="autils__1_8c_html_ac48357d68e0cbc48befd5e157c67c0d6"><div class="ttname"><a href="utils__1_8c.html#ac48357d68e0cbc48befd5e157c67c0d6">relative_path_handle</a></div><div class="ttdeci">static void relative_path_handle(char *cmd, char *path, char **tmp_full_path)</div><div class="ttdef"><b>Definition</b> <a href="utils__1_8c_source.html#l00057">utils_1.c:57</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="ft__free__2d__arr_8c_source.html#l00015">ft_free_2d_arr()</a>, <a class="el" href="ft__split_8c_source.html#l00095">ft_split()</a>, <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>, <a class="el" href="ft__strncmp_8c_source.html#l00024">ft_strncmp()</a>, <a class="el" href="env_2env_8c_source.html#l00059">get_env()</a>, and <a class="el" href="utils__1_8c_source.html#l00058">relative_path_handle()</a>.</p>
+<p class="reference">References <a class="el" href="ft__free__2d__arr_8c_source.html#l00015">ft_free_2d_arr()</a>, <a class="el" href="ft__split_8c_source.html#l00095">ft_split()</a>, <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>, <a class="el" href="ft__strncmp_8c_source.html#l00024">ft_strncmp()</a>, <a class="el" href="env_2env_8c_source.html#l00059">get_env()</a>, and <a class="el" href="utils__1_8c_source.html#l00057">relative_path_handle()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="execute__child_8c_source.html#l00067">child_process()</a>.</p>
 <div class="dynheader">
@@ -1063,7 +1063,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   24</span>    free(arr);</div>
 <div class="line"><span class="lineno">   25</span>}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="utils__1_8c_source.html#l00033">ft_find_path()</a>, and <a class="el" href="loc__env__var__handler__heredoc_8c_source.html#l00027">process_and_reassemble()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="utils__1_8c_source.html#l00032">ft_find_path()</a>, and <a class="el" href="loc__env__var__handler__heredoc_8c_source.html#l00027">process_and_reassemble()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
