@@ -191,25 +191,25 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="loc__env__var__handler_8c_source.html#l00070">70</a> of file <a class="el" href="loc__env__var__handler_8c_source.html">loc_env_var_handler.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>{</div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordtype">char</span>    *tmp;</div>
-<div class="line"><span class="lineno">   74</span>    <span class="keywordtype">char</span>    *tmp_2;</div>
-<div class="line"><span class="lineno">   75</span> </div>
-<div class="line"><span class="lineno">   76</span>    tmp = <a class="code hl_function" href="libft_8h.html#ab0fe1cca4e90bf149332304b54a45c80">ft_strjoin_free</a>(processed_arg, expanded_var);</div>
-<div class="line"><span class="lineno">   77</span>    tmp_ad = <a class="code hl_function" href="tokens_8h.html#ab7717c7264552321522c4d3f53319bd9">tmp_adj</a>(tmp);</div>
-<div class="line"><span class="lineno">   78</span>    free(expanded_var);</div>
-<div class="line"><span class="lineno">   79</span>    tmp_2 = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(tmp_ad);</div>
-<div class="line"><span class="lineno">   80</span>    free(tmp_ad);</div>
-<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">return</span> (tmp_2);</div>
-<div class="line"><span class="lineno">   82</span>}</div>
+<p class="definition">Definition at line <a class="el" href="loc__env__var__handler_8c_source.html#l00067">67</a> of file <a class="el" href="loc__env__var__handler_8c_source.html">loc_env_var_handler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordtype">char</span>    *tmp;</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordtype">char</span>    *tmp_2;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    tmp = <a class="code hl_function" href="libft_8h.html#ab0fe1cca4e90bf149332304b54a45c80">ft_strjoin_free</a>(processed_arg, expanded_var);</div>
+<div class="line"><span class="lineno">   74</span>    tmp_ad = <a class="code hl_function" href="tokens_8h.html#ab7717c7264552321522c4d3f53319bd9">tmp_adj</a>(tmp);</div>
+<div class="line"><span class="lineno">   75</span>    free(expanded_var);</div>
+<div class="line"><span class="lineno">   76</span>    tmp_2 = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(tmp_ad);</div>
+<div class="line"><span class="lineno">   77</span>    free(tmp_ad);</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> (tmp_2);</div>
+<div class="line"><span class="lineno">   79</span>}</div>
 <div class="ttc" id="alibft_8h_html_ab0fe1cca4e90bf149332304b54a45c80"><div class="ttname"><a href="libft_8h.html#ab0fe1cca4e90bf149332304b54a45c80">ft_strjoin_free</a></div><div class="ttdeci">char * ft_strjoin_free(char *s1, char *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strjoin__free_8c_source.html#l00015">ft_strjoin_free.c:15</a></div></div>
 <div class="ttc" id="alibft_8h_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00023">ft_strdup.c:23</a></div></div>
 <div class="ttc" id="atokens_8h_html_ab7717c7264552321522c4d3f53319bd9"><div class="ttname"><a href="tokens_8h.html#ab7717c7264552321522c4d3f53319bd9">tmp_adj</a></div><div class="ttdeci">char * tmp_adj(char *arg)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler__utils__utils__utils_8c_source.html#l00051">loc_env_var_handler_utils_utils_utils.c:51</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>, <a class="el" href="ft__strjoin__free_8c_source.html#l00015">ft_strjoin_free()</a>, and <a class="el" href="loc__env__var__handler__utils__utils__utils_8c_source.html#l00051">tmp_adj()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="loc__env__var__handler_8c_source.html#l00084">process_argument()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="loc__env__var__handler_8c_source.html#l00081">process_argument()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -291,27 +291,27 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="loc__env__var__handler_8c_source.html#l00048">48</a> of file <a class="el" href="loc__env__var__handler_8c_source.html">loc_env_var_handler.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordtype">char</span>    *p;</div>
-<div class="line"><span class="lineno">   51</span>    <span class="keywordtype">int</span>     valid_var;</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    p = arg;</div>
-<div class="line"><span class="lineno">   54</span>    valid_var = 1;</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (arg[0] != <span class="charliteral">&#39;=&#39;</span> &amp;&amp; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(arg, <span class="charliteral">&#39;=&#39;</span>))</div>
-<div class="line"><span class="lineno">   56</span>    {</div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">while</span> (p &lt; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(arg, <span class="charliteral">&#39;=&#39;</span>))</div>
-<div class="line"><span class="lineno">   58</span>        {</div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a9c2c3821ea43ebdf97de07b123503f8b">ft_isalnum</a>(*p++))</div>
-<div class="line"><span class="lineno">   60</span>            {</div>
-<div class="line"><span class="lineno">   61</span>                valid_var = 0;</div>
-<div class="line"><span class="lineno">   62</span>                break ;</div>
-<div class="line"><span class="lineno">   63</span>            }</div>
-<div class="line"><span class="lineno">   64</span>        }</div>
-<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">if</span> (valid_var)</div>
-<div class="line"><span class="lineno">   66</span>            <a class="code hl_function" href="env_8h.html#a8508df71f808894b44abb69527998a0c">handle_add_set_shell_variable</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">shell_variables</a>, arg);</div>
-<div class="line"><span class="lineno">   67</span>    }</div>
-<div class="line"><span class="lineno">   68</span>}</div>
+<p class="definition">Definition at line <a class="el" href="loc__env__var__handler_8c_source.html#l00045">45</a> of file <a class="el" href="loc__env__var__handler_8c_source.html">loc_env_var_handler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordtype">char</span>    *p;</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordtype">int</span>     valid_var;</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    p = arg;</div>
+<div class="line"><span class="lineno">   51</span>    valid_var = 1;</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">if</span> (arg[0] != <span class="charliteral">&#39;=&#39;</span> &amp;&amp; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(arg, <span class="charliteral">&#39;=&#39;</span>))</div>
+<div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">while</span> (p &lt; <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(arg, <span class="charliteral">&#39;=&#39;</span>))</div>
+<div class="line"><span class="lineno">   55</span>        {</div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">if</span> (!<a class="code hl_function" href="libft_8h.html#a9c2c3821ea43ebdf97de07b123503f8b">ft_isalnum</a>(*p++))</div>
+<div class="line"><span class="lineno">   57</span>            {</div>
+<div class="line"><span class="lineno">   58</span>                valid_var = 0;</div>
+<div class="line"><span class="lineno">   59</span>                break ;</div>
+<div class="line"><span class="lineno">   60</span>            }</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (valid_var)</div>
+<div class="line"><span class="lineno">   63</span>            <a class="code hl_function" href="env_8h.html#a8508df71f808894b44abb69527998a0c">handle_add_set_shell_variable</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">shell_variables</a>, arg);</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>}</div>
 <div class="ttc" id="aenv_8h_html_a8508df71f808894b44abb69527998a0c"><div class="ttname"><a href="env_8h.html#a8508df71f808894b44abb69527998a0c">handle_add_set_shell_variable</a></div><div class="ttdeci">int handle_add_set_shell_variable(t_env **shell_var, char *line)</div><div class="ttdef"><b>Definition</b> <a href="shell__variables_8c_source.html#l00024">shell_variables.c:24</a></div></div>
 <div class="ttc" id="alibft_8h_html_a9c2c3821ea43ebdf97de07b123503f8b"><div class="ttname"><a href="libft_8h.html#a9c2c3821ea43ebdf97de07b123503f8b">ft_isalnum</a></div><div class="ttdeci">int ft_isalnum(int c)</div><div class="ttdef"><b>Definition</b> <a href="ft__isalnum_8c_source.html#l00015">ft_isalnum.c:15</a></div></div>
 <div class="ttc" id="alibft_8h_html_aa6d0c2d180f32ee585485e1a1ce3d55d"><div class="ttname"><a href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a></div><div class="ttdeci">char * ft_strchr(const char *s, int c)</div><div class="ttdef"><b>Definition</b> <a href="ft__strchr_8c_source.html#l00025">ft_strchr.c:25</a></div></div>
@@ -421,39 +421,36 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
 <div class="line"><span class="lineno">   21</span>    <span class="keywordtype">int</span>     i;</div>
 <div class="line"><span class="lineno">   22</span>    <span class="keywordtype">char</span>    *processed_arg;</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">char</span>    *tmp;</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    i = 0;</div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">while</span> (i &lt; arg_count)</div>
-<div class="line"><span class="lineno">   27</span>    {</div>
-<div class="line"><span class="lineno">   28</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="tokens_8h.html#ab9e7dbb1fddf5450fe90e1d6db89d6d9">is_in_single_quotes</a>(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]))</div>
-<div class="line"><span class="lineno">   29</span>        {</div>
-<div class="line"><span class="lineno">   30</span>            <a class="code hl_function" href="loc__env__var__handler_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a>(data, command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]);</div>
-<div class="line"><span class="lineno">   31</span>            processed_arg = <a class="code hl_function" href="loc__env__var__handler_8c.html#af891fe2f7e0a7383e331ef4950f2bb6c">process_argument</a>(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i], data);</div>
-<div class="line"><span class="lineno">   32</span>        }</div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   34</span>        {</div>
-<div class="line"><span class="lineno">   35</span>            processed_arg = <a class="code hl_function" href="libft_8h.html#a78c402cbf3d55b1374693c3b7d34f71d">ft_substr</a>(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i], 1,</div>
-<div class="line"><span class="lineno">   36</span>                    <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]) - 2);</div>
-<div class="line"><span class="lineno">   37</span>        }</div>
-<div class="line"><span class="lineno">   38</span>        free(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]);</div>
-<div class="line"><span class="lineno">   39</span>        tmp = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(processed_arg);</div>
-<div class="line"><span class="lineno">   40</span>        command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i] = tmp;</div>
-<div class="line"><span class="lineno">   41</span>        free(tmp);</div>
-<div class="line"><span class="lineno">   42</span>        free(processed_arg);</div>
-<div class="line"><span class="lineno">   43</span>        i++;</div>
-<div class="line"><span class="lineno">   44</span>    }</div>
-<div class="line"><span class="lineno">   45</span>    <a class="code hl_function" href="tokens_8h.html#ae3d20c67cbbca937f7d28de35ab7888b">final_quote_removal</a>(arg_count, command_node);</div>
-<div class="line"><span class="lineno">   46</span>}</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    i = 0;</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">while</span> (i &lt; arg_count)</div>
+<div class="line"><span class="lineno">   26</span>    {</div>
+<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="tokens_8h.html#ab9e7dbb1fddf5450fe90e1d6db89d6d9">is_in_single_quotes</a>(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]))</div>
+<div class="line"><span class="lineno">   28</span>        {</div>
+<div class="line"><span class="lineno">   29</span>            <a class="code hl_function" href="loc__env__var__handler_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a>(data, command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]);</div>
+<div class="line"><span class="lineno">   30</span>            processed_arg = <a class="code hl_function" href="loc__env__var__handler_8c.html#af891fe2f7e0a7383e331ef4950f2bb6c">process_argument</a>(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i], data);</div>
+<div class="line"><span class="lineno">   31</span>        }</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   33</span>        {</div>
+<div class="line"><span class="lineno">   34</span>            processed_arg = <a class="code hl_function" href="libft_8h.html#a78c402cbf3d55b1374693c3b7d34f71d">ft_substr</a>(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i], 1,</div>
+<div class="line"><span class="lineno">   35</span>                    <a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]) - 2);</div>
+<div class="line"><span class="lineno">   36</span>        }</div>
+<div class="line"><span class="lineno">   37</span>        free(command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i]);</div>
+<div class="line"><span class="lineno">   38</span>        command_node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[i] = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(processed_arg);</div>
+<div class="line"><span class="lineno">   39</span>        free(processed_arg);</div>
+<div class="line"><span class="lineno">   40</span>        i++;</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="tokens_8h.html#ae3d20c67cbbca937f7d28de35ab7888b">final_quote_removal</a>(arg_count, command_node);</div>
+<div class="line"><span class="lineno">   43</span>}</div>
 <div class="ttc" id="alibft_8h_html_a78c402cbf3d55b1374693c3b7d34f71d"><div class="ttname"><a href="libft_8h.html#a78c402cbf3d55b1374693c3b7d34f71d">ft_substr</a></div><div class="ttdeci">char * ft_substr(char const *s, unsigned int start, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="ft__substr_8c_source.html#l00027">ft_substr.c:27</a></div></div>
 <div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
-<div class="ttc" id="aloc__env__var__handler_8c_html_a75d9ab1c7aa7b65a9233367c05aa0b04"><div class="ttname"><a href="loc__env__var__handler_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a></div><div class="ttdeci">void handle_local_vars(t_ms_data *data, char *arg)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler_8c_source.html#l00048">loc_env_var_handler.c:48</a></div></div>
-<div class="ttc" id="aloc__env__var__handler_8c_html_af891fe2f7e0a7383e331ef4950f2bb6c"><div class="ttname"><a href="loc__env__var__handler_8c.html#af891fe2f7e0a7383e331ef4950f2bb6c">process_argument</a></div><div class="ttdeci">char * process_argument(char *arg, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler_8c_source.html#l00084">loc_env_var_handler.c:84</a></div></div>
+<div class="ttc" id="aloc__env__var__handler_8c_html_a75d9ab1c7aa7b65a9233367c05aa0b04"><div class="ttname"><a href="loc__env__var__handler_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a></div><div class="ttdeci">void handle_local_vars(t_ms_data *data, char *arg)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler_8c_source.html#l00045">loc_env_var_handler.c:45</a></div></div>
+<div class="ttc" id="aloc__env__var__handler_8c_html_af891fe2f7e0a7383e331ef4950f2bb6c"><div class="ttname"><a href="loc__env__var__handler_8c.html#af891fe2f7e0a7383e331ef4950f2bb6c">process_argument</a></div><div class="ttdeci">char * process_argument(char *arg, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler_8c_source.html#l00081">loc_env_var_handler.c:81</a></div></div>
 <div class="ttc" id="astructs__ast_html_ab62d177d86a1908cf5bbdb5cf6e978f8"><div class="ttname"><a href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">s_ast::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00052">tokens.h:52</a></div></div>
 <div class="ttc" id="atokens_8h_html_ab9e7dbb1fddf5450fe90e1d6db89d6d9"><div class="ttname"><a href="tokens_8h.html#ab9e7dbb1fddf5450fe90e1d6db89d6d9">is_in_single_quotes</a></div><div class="ttdeci">int is_in_single_quotes(char *arg)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler__utils__utils__utils_8c_source.html#l00028">loc_env_var_handler_utils_utils_utils.c:28</a></div></div>
 <div class="ttc" id="atokens_8h_html_ae3d20c67cbbca937f7d28de35ab7888b"><div class="ttname"><a href="tokens_8h.html#ae3d20c67cbbca937f7d28de35ab7888b">final_quote_removal</a></div><div class="ttdeci">void final_quote_removal(int arg_count, t_ast *command_node)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler__utils__utils_8c_source.html#l00021">loc_env_var_handler_utils_utils.c:21</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tokens_8h_source.html#l00052">s_ast::args</a>, <a class="el" href="loc__env__var__handler__utils__utils_8c_source.html#l00021">final_quote_removal()</a>, <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>, <a class="el" href="ft__strlen_8c_source.html#l00015">ft_strlen()</a>, <a class="el" href="ft__substr_8c_source.html#l00027">ft_substr()</a>, <a class="el" href="loc__env__var__handler_8c_source.html#l00048">handle_local_vars()</a>, <a class="el" href="loc__env__var__handler__utils__utils__utils_8c_source.html#l00028">is_in_single_quotes()</a>, and <a class="el" href="loc__env__var__handler_8c_source.html#l00084">process_argument()</a>.</p>
+<p class="reference">References <a class="el" href="tokens_8h_source.html#l00052">s_ast::args</a>, <a class="el" href="loc__env__var__handler__utils__utils_8c_source.html#l00021">final_quote_removal()</a>, <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>, <a class="el" href="ft__strlen_8c_source.html#l00015">ft_strlen()</a>, <a class="el" href="ft__substr_8c_source.html#l00027">ft_substr()</a>, <a class="el" href="loc__env__var__handler_8c_source.html#l00045">handle_local_vars()</a>, <a class="el" href="loc__env__var__handler__utils__utils__utils_8c_source.html#l00028">is_in_single_quotes()</a>, and <a class="el" href="loc__env__var__handler_8c_source.html#l00081">process_argument()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="AST__utils_8c_source.html#l00072">manage_commands()</a>.</p>
 <div class="dynheader">
@@ -615,38 +612,38 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="loc__env__var__handler_8c_source.html#l00084">84</a> of file <a class="el" href="loc__env__var__handler_8c_source.html">loc_env_var_handler.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span>{</div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordtype">char</span>    *start;</div>
-<div class="line"><span class="lineno">   87</span>    <span class="keywordtype">char</span>    *processed_arg;</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordtype">char</span>    *tmp_ad;</div>
-<div class="line"><span class="lineno">   89</span>    <span class="keywordtype">char</span>    *expanded_var;</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    tmp_ad = NULL;</div>
-<div class="line"><span class="lineno">   92</span>    processed_arg = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><span class="lineno">   93</span>    start = arg;</div>
-<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">while</span> (*start != <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><span class="lineno">   95</span>    {</div>
-<div class="line"><span class="lineno">   96</span>        <span class="keywordflow">if</span> (*start == <span class="charliteral">&#39;$&#39;</span>)</div>
-<div class="line"><span class="lineno">   97</span>        {</div>
-<div class="line"><span class="lineno">   98</span>            expanded_var = <a class="code hl_function" href="tokens_8h.html#aa226ea4e8134ae07604293522c08bcc2">expand_variable</a>(&amp;start, data);</div>
-<div class="line"><span class="lineno">   99</span>            <span class="keywordflow">if</span> (expanded_var != NULL)</div>
-<div class="line"><span class="lineno">  100</span>            {</div>
-<div class="line"><span class="lineno">  101</span>                processed_arg = <a class="code hl_function" href="loc__env__var__handler_8c.html#a95d2d14be71f664a712c2eb9191309e0">append_expanded_var</a>(processed_arg, \</div>
-<div class="line"><span class="lineno">  102</span>                                    tmp_ad, expanded_var);</div>
-<div class="line"><span class="lineno">  103</span>                free(tmp_ad);</div>
-<div class="line"><span class="lineno">  104</span>            }</div>
-<div class="line"><span class="lineno">  105</span>        }</div>
-<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  107</span>            processed_arg = <a class="code hl_function" href="tokens_8h.html#a807c63b78dacc4103cf352ff25af8e84">append_literal</a>(&amp;start, processed_arg);</div>
-<div class="line"><span class="lineno">  108</span>    }</div>
-<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">return</span> (processed_arg);</div>
-<div class="line"><span class="lineno">  110</span>}</div>
-<div class="ttc" id="aloc__env__var__handler_8c_html_a95d2d14be71f664a712c2eb9191309e0"><div class="ttname"><a href="loc__env__var__handler_8c.html#a95d2d14be71f664a712c2eb9191309e0">append_expanded_var</a></div><div class="ttdeci">char * append_expanded_var(char *processed_arg, char *tmp_ad, char *expanded_var)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler_8c_source.html#l00070">loc_env_var_handler.c:70</a></div></div>
+<p class="definition">Definition at line <a class="el" href="loc__env__var__handler_8c_source.html#l00081">81</a> of file <a class="el" href="loc__env__var__handler_8c_source.html">loc_env_var_handler.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>{</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordtype">char</span>    *start;</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordtype">char</span>    *processed_arg;</div>
+<div class="line"><span class="lineno">   85</span>    <span class="keywordtype">char</span>    *tmp_ad;</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordtype">char</span>    *expanded_var;</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>    tmp_ad = NULL;</div>
+<div class="line"><span class="lineno">   89</span>    processed_arg = <a class="code hl_function" href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">   90</span>    start = arg;</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">while</span> (*start != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">   92</span>    {</div>
+<div class="line"><span class="lineno">   93</span>        <span class="keywordflow">if</span> (*start == <span class="charliteral">&#39;$&#39;</span>)</div>
+<div class="line"><span class="lineno">   94</span>        {</div>
+<div class="line"><span class="lineno">   95</span>            expanded_var = <a class="code hl_function" href="tokens_8h.html#aa226ea4e8134ae07604293522c08bcc2">expand_variable</a>(&amp;start, data);</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">if</span> (expanded_var != NULL)</div>
+<div class="line"><span class="lineno">   97</span>            {</div>
+<div class="line"><span class="lineno">   98</span>                processed_arg = <a class="code hl_function" href="loc__env__var__handler_8c.html#a95d2d14be71f664a712c2eb9191309e0">append_expanded_var</a>(processed_arg, \</div>
+<div class="line"><span class="lineno">   99</span>                                    tmp_ad, expanded_var);</div>
+<div class="line"><span class="lineno">  100</span>                free(tmp_ad);</div>
+<div class="line"><span class="lineno">  101</span>            }</div>
+<div class="line"><span class="lineno">  102</span>        }</div>
+<div class="line"><span class="lineno">  103</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  104</span>            processed_arg = <a class="code hl_function" href="tokens_8h.html#a807c63b78dacc4103cf352ff25af8e84">append_literal</a>(&amp;start, processed_arg);</div>
+<div class="line"><span class="lineno">  105</span>    }</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> (processed_arg);</div>
+<div class="line"><span class="lineno">  107</span>}</div>
+<div class="ttc" id="aloc__env__var__handler_8c_html_a95d2d14be71f664a712c2eb9191309e0"><div class="ttname"><a href="loc__env__var__handler_8c.html#a95d2d14be71f664a712c2eb9191309e0">append_expanded_var</a></div><div class="ttdeci">char * append_expanded_var(char *processed_arg, char *tmp_ad, char *expanded_var)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler_8c_source.html#l00067">loc_env_var_handler.c:67</a></div></div>
 <div class="ttc" id="atokens_8h_html_a807c63b78dacc4103cf352ff25af8e84"><div class="ttname"><a href="tokens_8h.html#a807c63b78dacc4103cf352ff25af8e84">append_literal</a></div><div class="ttdeci">char * append_literal(char **start, char *processed_arg)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler__utils__utils__utils_8c_source.html#l00074">loc_env_var_handler_utils_utils_utils.c:74</a></div></div>
 <div class="ttc" id="atokens_8h_html_aa226ea4e8134ae07604293522c08bcc2"><div class="ttname"><a href="tokens_8h.html#aa226ea4e8134ae07604293522c08bcc2">expand_variable</a></div><div class="ttdeci">char * expand_variable(char **start, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler__utils_8c_source.html#l00040">loc_env_var_handler_utils.c:40</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="loc__env__var__handler_8c_source.html#l00070">append_expanded_var()</a>, <a class="el" href="loc__env__var__handler__utils__utils__utils_8c_source.html#l00074">append_literal()</a>, <a class="el" href="loc__env__var__handler__utils_8c_source.html#l00040">expand_variable()</a>, and <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>.</p>
+<p class="reference">References <a class="el" href="loc__env__var__handler_8c_source.html#l00067">append_expanded_var()</a>, <a class="el" href="loc__env__var__handler__utils__utils__utils_8c_source.html#l00074">append_literal()</a>, <a class="el" href="loc__env__var__handler__utils_8c_source.html#l00040">expand_variable()</a>, and <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="loc__env__var__handler_8c_source.html#l00018">post_process_command_args()</a>.</p>
 <div class="dynheader">
