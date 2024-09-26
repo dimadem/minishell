@@ -197,53 +197,66 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
 <div class="line"><span class="lineno">   26</span>    <span class="keywordtype">char</span>    *key;</div>
 <div class="line"><span class="lineno">   27</span>    <span class="keywordtype">char</span>    *value;</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    key = NULL;</div>
-<div class="line"><span class="lineno">   30</span>    value = NULL;</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (*shell_var == NULL)</div>
-<div class="line"><span class="lineno">   32</span>        <a class="code hl_function" href="env_8h.html#ab32bcb3d1f003ae49a92b8bcc1359aad">add_shell_var_node</a>(shell_var, line);</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   34</span>    {</div>
-<div class="line"><span class="lineno">   35</span>        key = <a class="code hl_function" href="env_8h.html#a67c3dca975ac3373851ded9534701bf5">ft_strcdup</a>(line, <span class="charliteral">&#39;=&#39;</span>);</div>
-<div class="line"><span class="lineno">   36</span>        value = <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(line, <span class="charliteral">&#39;=&#39;</span>) + 1;</div>
-<div class="line"><span class="lineno">   37</span>        <a class="code hl_function" href="env_8h.html#a5a7ec7cdb3ac1f6c230d9499a155b89e">set_shell_var</a>(shell_var, key, value);</div>
-<div class="line"><span class="lineno">   38</span>        free(key);</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><span class="lineno">   41</span>}</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">char</span>    *nq_value;</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>    key = NULL;</div>
+<div class="line"><span class="lineno">   31</span>    value = NULL;</div>
+<div class="line"><span class="lineno">   32</span>    nq_value = NULL;</div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span> (*shell_var == NULL)</div>
+<div class="line"><span class="lineno">   34</span>        <a class="code hl_function" href="env_8h.html#ab32bcb3d1f003ae49a92b8bcc1359aad">add_shell_var_node</a>(shell_var, line);</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>        key = <a class="code hl_function" href="env_8h.html#a67c3dca975ac3373851ded9534701bf5">ft_strcdup</a>(line, <span class="charliteral">&#39;=&#39;</span>);</div>
+<div class="line"><span class="lineno">   38</span>        value = <a class="code hl_function" href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a>(line, <span class="charliteral">&#39;=&#39;</span>) + 1;</div>
+<div class="line"><span class="lineno">   39</span>        nq_value = <a class="code hl_function" href="libft_8h.html#a97abc72aaca7c1d4e6262ee81d1f1915">ft_remove_quotes</a>(value, <span class="charliteral">&#39;\&quot;&#39;</span>);</div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_function" href="env_8h.html#a5a7ec7cdb3ac1f6c230d9499a155b89e">set_shell_var</a>(shell_var, key, nq_value);</div>
+<div class="line"><span class="lineno">   41</span>        free(nq_value);</div>
+<div class="line"><span class="lineno">   42</span>        free(key);</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   45</span>}</div>
 <div class="ttc" id="aenv_8h_html_a5a7ec7cdb3ac1f6c230d9499a155b89e"><div class="ttname"><a href="env_8h.html#a5a7ec7cdb3ac1f6c230d9499a155b89e">set_shell_var</a></div><div class="ttdeci">void set_shell_var(t_env **shell_var, const char *key, const char *value)</div><div class="ttdef"><b>Definition</b> <a href="shell__variables__utils_8c_source.html#l00053">shell_variables_utils.c:53</a></div></div>
 <div class="ttc" id="aenv_8h_html_a67c3dca975ac3373851ded9534701bf5"><div class="ttname"><a href="env_8h.html#a67c3dca975ac3373851ded9534701bf5">ft_strcdup</a></div><div class="ttdeci">char * ft_strcdup(const char *s, int c)</div><div class="ttdef"><b>Definition</b> <a href="env_2utils_8c_source.html#l00052">utils.c:52</a></div></div>
 <div class="ttc" id="aenv_8h_html_ab32bcb3d1f003ae49a92b8bcc1359aad"><div class="ttname"><a href="env_8h.html#ab32bcb3d1f003ae49a92b8bcc1359aad">add_shell_var_node</a></div><div class="ttdeci">void add_shell_var_node(t_env **shell_var, const char *line)</div><div class="ttdef"><b>Definition</b> <a href="shell__variables__utils_8c_source.html#l00026">shell_variables_utils.c:26</a></div></div>
+<div class="ttc" id="alibft_8h_html_a97abc72aaca7c1d4e6262ee81d1f1915"><div class="ttname"><a href="libft_8h.html#a97abc72aaca7c1d4e6262ee81d1f1915">ft_remove_quotes</a></div><div class="ttdeci">char * ft_remove_quotes(char *str, char quote_type)</div><div class="ttdef"><b>Definition</b> <a href="ft__remove__quotes_8c_source.html#l00015">ft_remove_quotes.c:15</a></div></div>
 <div class="ttc" id="alibft_8h_html_aa6d0c2d180f32ee585485e1a1ce3d55d"><div class="ttname"><a href="libft_8h.html#aa6d0c2d180f32ee585485e1a1ce3d55d">ft_strchr</a></div><div class="ttdeci">char * ft_strchr(const char *s, int c)</div><div class="ttdef"><b>Definition</b> <a href="ft__strchr_8c_source.html#l00025">ft_strchr.c:25</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="shell__variables__utils_8c_source.html#l00026">add_shell_var_node()</a>, <a class="el" href="env_2utils_8c_source.html#l00052">ft_strcdup()</a>, <a class="el" href="ft__strchr_8c_source.html#l00025">ft_strchr()</a>, and <a class="el" href="shell__variables__utils_8c_source.html#l00053">set_shell_var()</a>.</p>
+<p class="reference">References <a class="el" href="shell__variables__utils_8c_source.html#l00026">add_shell_var_node()</a>, <a class="el" href="ft__remove__quotes_8c_source.html#l00015">ft_remove_quotes()</a>, <a class="el" href="env_2utils_8c_source.html#l00052">ft_strcdup()</a>, <a class="el" href="ft__strchr_8c_source.html#l00025">ft_strchr()</a>, and <a class="el" href="shell__variables__utils_8c_source.html#l00053">set_shell_var()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="loc__env__var__handler_8c_source.html#l00045">handle_local_vars()</a>, and <a class="el" href="initialise_8c_source.html#l00020">init_ms_data()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="loc__env__var__handler__utils_8c_source.html#l00069">handle_local_vars()</a>, and <a class="el" href="initialise_8c_source.html#l00020">init_ms_data()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="shell__variables_8c_a8508df71f808894b44abb69527998a0c_cgraph.png" border="0" usemap="#ashell__variables_8c_a8508df71f808894b44abb69527998a0c_cgraph" alt=""/></div>
 <map name="ashell__variables_8c_a8508df71f808894b44abb69527998a0c_cgraph" id="ashell__variables_8c_a8508df71f808894b44abb69527998a0c_cgraph">
-<area shape="rect" title=" " alt="" coords="5,73,152,113"/>
-<area shape="rect" href="shell__variables__utils_8c.html#ab32bcb3d1f003ae49a92b8bcc1359aad" title=" " alt="" coords="200,55,336,80"/>
-<area shape="poly" title=" " alt="" coords="152,80,184,76,185,81,152,86"/>
+<area shape="rect" title=" " alt="" coords="5,99,152,140"/>
+<area shape="rect" href="shell__variables__utils_8c.html#ab32bcb3d1f003ae49a92b8bcc1359aad" title=" " alt="" coords="200,107,336,132"/>
+<area shape="poly" title=" " alt="" coords="152,117,184,117,184,122,152,122"/>
 <area shape="rect" href="env_2utils_8c.html#a67c3dca975ac3373851ded9534701bf5" title=" " alt="" coords="384,5,463,31"/>
-<area shape="poly" title=" " alt="" coords="120,69,158,53,199,40,288,24,368,17,369,22,288,29,200,45,160,58,122,74"/>
+<area shape="poly" title=" " alt="" coords="121,96,199,65,288,41,368,24,369,30,289,46,201,70,123,101"/>
 <area shape="rect" href="ft__strchr_8c.html#aa6d0c2d180f32ee585485e1a1ce3d55d" title=" " alt="" coords="389,56,458,82"/>
-<area shape="poly" title=" " alt="" coords="152,95,240,97,336,90,374,82,375,87,336,95,240,102,152,101"/>
-<area shape="rect" href="shell__variables__utils_8c.html#a5a7ec7cdb3ac1f6c230d9499a155b89e" title=" " alt="" coords="219,156,317,182"/>
-<area shape="poly" title=" " alt="" coords="132,111,220,147,218,152,130,116"/>
-<area shape="poly" title=" " alt="" coords="310,51,369,33,370,38,312,57"/>
-<area shape="poly" title=" " alt="" coords="336,65,373,66,373,71,336,71"/>
-<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="388,105,460,131"/>
-<area shape="poly" title=" " alt="" coords="311,78,374,99,372,104,309,83"/>
-<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="511,81,586,107"/>
-<area shape="poly" title=" " alt="" coords="460,109,496,102,497,107,461,114"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="514,131,583,156"/>
-<area shape="poly" title=" " alt="" coords="461,123,500,131,499,136,460,128"/>
-<area shape="poly" title=" " alt="" coords="309,153,372,132,374,137,311,158"/>
-<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="386,156,462,182"/>
-<area shape="poly" title=" " alt="" coords="318,166,370,166,370,172,318,172"/>
+<area shape="poly" title=" " alt="" coords="151,100,199,92,373,70,374,76,200,97,152,106"/>
+<area shape="rect" href="ft__remove__quotes_8c.html#a97abc72aaca7c1d4e6262ee81d1f1915" title=" " alt="" coords="205,156,331,182"/>
+<area shape="poly" title=" " alt="" coords="153,136,202,149,200,154,151,141"/>
+<area shape="rect" href="shell__variables__utils_8c.html#a5a7ec7cdb3ac1f6c230d9499a155b89e" title=" " alt="" coords="219,205,317,231"/>
+<area shape="poly" title=" " alt="" coords="111,138,153,165,201,192,212,197,210,202,198,197,150,170,108,143"/>
+<area shape="poly" title=" " alt="" coords="288,104,388,37,391,42,291,108"/>
+<area shape="poly" title=" " alt="" coords="309,104,374,82,375,87,311,109"/>
+<area shape="rect" href="ft__strdup_8c.html#aebe73f27c70c56ac5053f860ef5436c9" title=" " alt="" coords="388,107,460,132"/>
+<area shape="poly" title=" " alt="" coords="336,117,372,117,372,122,336,122"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="511,107,586,132"/>
+<area shape="poly" title=" " alt="" coords="460,117,496,117,496,122,460,122"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="514,156,583,182"/>
+<area shape="poly" title=" " alt="" coords="459,131,501,147,499,152,457,135"/>
+<area shape="poly" title=" " alt="" coords="310,153,372,133,374,138,312,158"/>
+<area shape="poly" title=" " alt="" coords="317,180,386,192,425,194,463,192,499,183,500,189,464,197,425,199,385,197,316,185"/>
+<area shape="rect" href="ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="384,156,463,182"/>
+<area shape="poly" title=" " alt="" coords="331,166,368,166,368,172,331,172"/>
+<area shape="poly" title=" " alt="" coords="457,153,499,136,501,141,459,158"/>
+<area shape="poly" title=" " alt="" coords="464,166,499,166,499,172,464,172"/>
+<area shape="poly" title=" " alt="" coords="314,202,335,192,349,180,359,168,382,142,385,139,388,143,386,145,363,172,353,184,337,196,317,207"/>
+<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="386,257,462,283"/>
+<area shape="poly" title=" " alt="" coords="309,229,372,250,370,255,308,234"/>
 </map>
 </div>
 <div class="dynheader">
@@ -251,30 +264,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="shell__variables_8c_a8508df71f808894b44abb69527998a0c_icgraph.png" border="0" usemap="#ashell__variables_8c_a8508df71f808894b44abb69527998a0c_icgraph" alt=""/></div>
 <map name="ashell__variables_8c_a8508df71f808894b44abb69527998a0c_icgraph" id="ashell__variables_8c_a8508df71f808894b44abb69527998a0c_icgraph">
-<area shape="rect" title=" " alt="" coords="1453,74,1600,115"/>
-<area shape="rect" href="loc__env__var__handler_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04" title=" " alt="" coords="1280,56,1405,82"/>
-<area shape="poly" title=" " alt="" coords="1438,85,1406,80,1406,75,1438,79"/>
-<area shape="rect" href="initialise_8c.html#aa1ca669071f7e15d575af6920bfb616c" title=" " alt="" coords="1087,107,1182,132"/>
-<area shape="poly" title=" " alt="" coords="1438,103,1183,119,1182,114,1437,97"/>
-<area shape="rect" href="loc__env__var__handler_8c.html#ae75b1ee73be065ece94dc8bf097a04d1" title=" " alt="" coords="1037,56,1232,82"/>
-<area shape="poly" title=" " alt="" coords="1265,72,1232,72,1232,66,1265,66"/>
-<area shape="rect" href="AST__utils_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad" title=" " alt="" coords="850,56,989,82"/>
-<area shape="poly" title=" " alt="" coords="1021,72,989,72,989,66,1021,66"/>
-<area shape="rect" href="AST_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="696,56,802,82"/>
-<area shape="poly" title=" " alt="" coords="835,72,803,72,803,66,835,66"/>
-<area shape="rect" href="AST__utils_8c.html#a45cf67e5b11b527f76f1f90ce1e44814" title=" " alt="" coords="525,5,648,31"/>
-<area shape="poly" title=" " alt="" coords="690,53,629,34,631,29,692,48"/>
-<area shape="rect" href="AST__utils_8c.html#a04b3327a8c7b3dd801cc78e14a574a81" title=" " alt="" coords="378,12,477,38"/>
-<area shape="poly" title=" " alt="" coords="680,65,524,46,476,38,477,32,525,41,681,60"/>
-<area shape="poly" title=" " alt="" coords="509,33,477,34,477,28,509,28"/>
-<area shape="poly" title=" " alt="" coords="492,11,524,9,524,15,492,16"/>
-<area shape="rect" href="AST__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="231,24,330,50"/>
-<area shape="poly" title=" " alt="" coords="363,33,331,35,330,30,363,27"/>
-<area shape="rect" href="main_8c.html#a8e466c920a519eb4139b4f1348f3af7a" title=" " alt="" coords="103,31,183,56"/>
-<area shape="poly" title=" " alt="" coords="216,43,184,44,183,39,215,37"/>
-<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,81,55,107"/>
-<area shape="poly" title=" " alt="" coords="100,66,56,86,54,81,98,61"/>
-<area shape="poly" title=" " alt="" coords="1071,122,751,122,279,122,153,114,55,101,56,96,153,109,279,117,751,117,1071,117"/>
+<area shape="rect" title=" " alt="" coords="276,23,422,64"/>
+<area shape="rect" href="loc__env__var__handler__utils_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04" title=" " alt="" coords="103,5,228,31"/>
+<area shape="poly" title=" " alt="" coords="260,34,228,29,229,24,261,29"/>
+<area shape="rect" href="initialise_8c.html#aa1ca669071f7e15d575af6920bfb616c" title=" " alt="" coords="118,55,213,80"/>
+<area shape="poly" title=" " alt="" coords="261,58,214,64,213,59,260,52"/>
+<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,55,55,80"/>
+<area shape="poly" title=" " alt="" coords="102,70,55,70,55,65,102,65"/>
 </map>
 </div>
 
@@ -306,22 +302,22 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shell__variables_8c_source.html#l00043">43</a> of file <a class="el" href="shell__variables_8c_source.html">shell_variables.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordtype">char</span>    *value;</div>
-<div class="line"><span class="lineno">   46</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *shell_var;</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    shell_var = data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">shell_variables</a>;</div>
-<div class="line"><span class="lineno">   49</span>    value = <a class="code hl_function" href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a>(shell_var, key);</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (value)</div>
-<div class="line"><span class="lineno">   51</span>    {</div>
-<div class="line"><span class="lineno">   52</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(value, data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a>);</div>
-<div class="line"><span class="lineno">   53</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(<span class="stringliteral">&quot;\n&quot;</span>, data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a>);</div>
-<div class="line"><span class="lineno">   54</span>        free(value);</div>
-<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">return</span> (0);</div>
-<div class="line"><span class="lineno">   56</span>    }</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><span class="lineno">   58</span>}</div>
+<p class="definition">Definition at line <a class="el" href="shell__variables_8c_source.html#l00047">47</a> of file <a class="el" href="shell__variables_8c_source.html">shell_variables.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordtype">char</span>    *value;</div>
+<div class="line"><span class="lineno">   50</span>    <a class="code hl_struct" href="structs__env.html">t_env</a>   *shell_var;</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    shell_var = data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">shell_variables</a>;</div>
+<div class="line"><span class="lineno">   53</span>    value = <a class="code hl_function" href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a>(shell_var, key);</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (value)</div>
+<div class="line"><span class="lineno">   55</span>    {</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(value, data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a>);</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(<span class="stringliteral">&quot;\n&quot;</span>, data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a>);</div>
+<div class="line"><span class="lineno">   58</span>        free(value);</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span>    <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><span class="lineno">   62</span>}</div>
 <div class="ttc" id="aenv_8h_html_a41133e0ba7230727a51eedce713a225c"><div class="ttname"><a href="env_8h.html#a41133e0ba7230727a51eedce713a225c">get_env</a></div><div class="ttdeci">char * get_env(t_env *envp, const char *key)</div><div class="ttdef"><b>Definition</b> <a href="env_2env_8c_source.html#l00059">env.c:59</a></div></div>
 <div class="ttc" id="alibft_8h_html_acefce9ac519f8f8b7d3fde33dbafe469"><div class="ttname"><a href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a></div><div class="ttdeci">void ft_putstr_fd(char *s, int fd)</div><div class="ttdef"><b>Definition</b> <a href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd.c:20</a></div></div>
 <div class="ttc" id="astructs__env_html"><div class="ttname"><a href="structs__env.html">s_env</a></div><div class="ttdef"><b>Definition</b> <a href="env_8h_source.html#l00016">env.h:17</a></div></div>
@@ -330,7 +326,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd()</a>, <a class="el" href="env_2env_8c_source.html#l00059">get_env()</a>, <a class="el" href="shell_8h_source.html#l00025">s_ms_data::shell_variables</a>, and <a class="el" href="shell_8h_source.html#l00027">s_ms_data::std_out</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="shell__variables_8c_source.html#l00060">handle_shell_variable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="shell__variables_8c_source.html#l00064">handle_shell_variable()</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -386,18 +382,18 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shell__variables_8c_source.html#l00060">60</a> of file <a class="el" href="shell__variables_8c_source.html">shell_variables.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{</div>
-<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span> (node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> &amp;&amp; node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> == NULL)</div>
-<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="shell__variables_8c.html#a689cc0f6374a9730a0628c44f2f5bf2c">handle_get_shell_variable</a>(data, node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[0]));</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-<div class="ttc" id="ashell__variables_8c_html_a689cc0f6374a9730a0628c44f2f5bf2c"><div class="ttname"><a href="shell__variables_8c.html#a689cc0f6374a9730a0628c44f2f5bf2c">handle_get_shell_variable</a></div><div class="ttdeci">int handle_get_shell_variable(t_ms_data *data, const char *key)</div><div class="ttdef"><b>Definition</b> <a href="shell__variables_8c_source.html#l00043">shell_variables.c:43</a></div></div>
+<p class="definition">Definition at line <a class="el" href="shell__variables_8c_source.html#l00064">64</a> of file <a class="el" href="shell__variables_8c_source.html">shell_variables.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span>{</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">if</span> (node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a> &amp;&amp; node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> == NULL)</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="shell__variables_8c.html#a689cc0f6374a9730a0628c44f2f5bf2c">handle_get_shell_variable</a>(data, node-&gt;<a class="code hl_variable" href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">args</a>[0]));</div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+<div class="ttc" id="ashell__variables_8c_html_a689cc0f6374a9730a0628c44f2f5bf2c"><div class="ttname"><a href="shell__variables_8c.html#a689cc0f6374a9730a0628c44f2f5bf2c">handle_get_shell_variable</a></div><div class="ttdeci">int handle_get_shell_variable(t_ms_data *data, const char *key)</div><div class="ttdef"><b>Definition</b> <a href="shell__variables_8c_source.html#l00047">shell_variables.c:47</a></div></div>
 <div class="ttc" id="astructs__ast_html_ab62d177d86a1908cf5bbdb5cf6e978f8"><div class="ttname"><a href="structs__ast.html#ab62d177d86a1908cf5bbdb5cf6e978f8">s_ast::args</a></div><div class="ttdeci">char ** args</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00052">tokens.h:52</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac2c9513b20e9351e45d9bc6361095f7b"><div class="ttname"><a href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">s_ast::right</a></div><div class="ttdeci">struct s_ast * right</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00054">tokens.h:54</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac3be51aa6a7ae13bd16b6ad0c7ac843c"><div class="ttname"><a href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">s_ast::left</a></div><div class="ttdeci">struct s_ast * left</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00053">tokens.h:53</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tokens_8h_source.html#l00052">s_ast::args</a>, <a class="el" href="shell__variables_8c_source.html#l00043">handle_get_shell_variable()</a>, <a class="el" href="tokens_8h_source.html#l00053">s_ast::left</a>, and <a class="el" href="tokens_8h_source.html#l00054">s_ast::right</a>.</p>
+<p class="reference">References <a class="el" href="tokens_8h_source.html#l00052">s_ast::args</a>, <a class="el" href="shell__variables_8c_source.html#l00047">handle_get_shell_variable()</a>, <a class="el" href="tokens_8h_source.html#l00053">s_ast::left</a>, and <a class="el" href="tokens_8h_source.html#l00054">s_ast::right</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -445,15 +441,15 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="shell__variables_8c_source.html#l00067">67</a> of file <a class="el" href="shell__variables_8c_source.html">shell_variables.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordtype">char</span>    *status_str;</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7">exit_status</a> = status;</div>
-<div class="line"><span class="lineno">   72</span>    status_str = <a class="code hl_function" href="libft_8h.html#a8a6ea3765dfd826eabfc00d36e28ea38">ft_itoa</a>(status);</div>
-<div class="line"><span class="lineno">   73</span>    <a class="code hl_function" href="env_8h.html#a5a7ec7cdb3ac1f6c230d9499a155b89e">set_shell_var</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">shell_variables</a>, <span class="stringliteral">&quot;?&quot;</span>, status_str);</div>
-<div class="line"><span class="lineno">   74</span>    free(status_str);</div>
-<div class="line"><span class="lineno">   75</span>}</div>
+<p class="definition">Definition at line <a class="el" href="shell__variables_8c_source.html#l00071">71</a> of file <a class="el" href="shell__variables_8c_source.html">shell_variables.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>{</div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordtype">char</span>    *status_str;</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7">exit_status</a> = status;</div>
+<div class="line"><span class="lineno">   76</span>    status_str = <a class="code hl_function" href="libft_8h.html#a8a6ea3765dfd826eabfc00d36e28ea38">ft_itoa</a>(status);</div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_function" href="env_8h.html#a5a7ec7cdb3ac1f6c230d9499a155b89e">set_shell_var</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a6cd50b5e5a842a418a4399dac7e76064">shell_variables</a>, <span class="stringliteral">&quot;?&quot;</span>, status_str);</div>
+<div class="line"><span class="lineno">   78</span>    free(status_str);</div>
+<div class="line"><span class="lineno">   79</span>}</div>
 <div class="ttc" id="alibft_8h_html_a8a6ea3765dfd826eabfc00d36e28ea38"><div class="ttname"><a href="libft_8h.html#a8a6ea3765dfd826eabfc00d36e28ea38">ft_itoa</a></div><div class="ttdeci">char * ft_itoa(int n)</div><div class="ttdef"><b>Definition</b> <a href="ft__itoa_8c_source.html#l00040">ft_itoa.c:40</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_a2d3fc4d4c5f229fd50f00571565c3cb7"><div class="ttname"><a href="structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7">s_ms_data::exit_status</a></div><div class="ttdeci">int exit_status</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00030">shell.h:30</a></div></div>
 </div><!-- fragment -->

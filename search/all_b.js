@@ -17,5 +17,5 @@ var searchData=
   ['loc_5fenv_5fvar_5fhandler_5futils_2ec_14',['loc_env_var_handler_utils.c',['../loc__env__var__handler__utils_8c.html',1,'']]],
   ['loc_5fenv_5fvar_5fhandler_5futils_5futils_2ec_15',['loc_env_var_handler_utils_utils.c',['../loc__env__var__handler__utils__utils_8c.html',1,'']]],
   ['loc_5fenv_5fvar_5fhandler_5futils_5futils_5futils_2ec_16',['loc_env_var_handler_utils_utils_utils.c',['../loc__env__var__handler__utils__utils__utils_8c.html',1,'']]],
-  ['loop_5fcleanup_17',['loop_cleanup',['../tokens_8h.html#a1d908f158e803cacfa7af11107a1e32d',1,'loop_cleanup(t_loop_data *loop_data, t_token *tokens_head):&#160;clean_general.c'],['../clean__general_8c.html#a1d908f158e803cacfa7af11107a1e32d',1,'loop_cleanup(t_loop_data *loop_data, t_token *tokens_head):&#160;clean_general.c']]]
+  ['loop_5fcleanup_17',['loop_cleanup',['../tokens_8h.html#a1d908f158e803cacfa7af11107a1e32d',1,'loop_cleanup(t_loop_data *loop_data, t_token *tokens_head):&#160;clean.c'],['../clean_8c.html#a1d908f158e803cacfa7af11107a1e32d',1,'loop_cleanup(t_loop_data *loop_data, t_token *tokens_head):&#160;clean.c']]]
 ];

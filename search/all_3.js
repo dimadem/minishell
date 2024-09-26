@@ -7,7 +7,7 @@ var searchData=
   ['check_5foperators_4',['check_operators',['../input__checker_8c.html#acee15121aebfc0611c307a7e1754309f',1,'input_checker.c']]],
   ['check_5fredirections_5',['check_redirections',['../input__checker_8c.html#a14192775dab0da87a5d66b050331bf14',1,'input_checker.c']]],
   ['child_5fprocess_6',['child_process',['../execute__child_8c.html#abd380229cf835d0933f70ad7e67d197d',1,'execute_child.c']]],
-  ['clean_5fgeneral_2ec_7',['clean_general.c',['../clean__general_8c.html',1,'']]],
+  ['clean_2ec_7',['clean.c',['../clean_8c.html',1,'']]],
   ['clean_5futils_2ec_8',['clean_utils.c',['../clean__utils_8c.html',1,'']]],
   ['clear_5fhistory_5ffile_9',['clear_history_file',['../exit_8c.html#ae4f8b36cbb1f05fe340559054097482a',1,'clear_history_file(void):&#160;exit.c'],['../tokens_8h.html#ae4f8b36cbb1f05fe340559054097482a',1,'clear_history_file(void):&#160;exit.c']]],
   ['close_5ffds_10',['close_fds',['../execute_8h.html#ab9bcddf9275f12cc49348081000beb62',1,'close_fds(int in, int out):&#160;utils_0.c'],['../utils__0_8c.html#ab9bcddf9275f12cc49348081000beb62',1,'close_fds(int in, int out):&#160;utils_0.c']]],

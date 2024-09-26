@@ -113,18 +113,27 @@ $(document).ready(function(){initNavTree('ft__print__2d__arr_8c_source.html','')
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="libft_8h.html">libft.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="libft_8h.html#a60b444a8e1e351074ad6fe96780b3848">   15</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="ft__print__2d__arr_8c.html#a60b444a8e1e351074ad6fe96780b3848">ft_print_2d_arr</a>(<span class="keywordtype">char</span> **arr)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="libft_8h.html#a62d79cc90f29a3061bfb29a78958c424">   15</a></span><span class="keywordtype">void</span>    <a class="code hl_function" href="ft__print__2d__arr_8c.html#a62d79cc90f29a3061bfb29a78958c424">ft_print_2d_arr</a>(<span class="keywordtype">char</span> **arr, <span class="keywordtype">char</span> *name)</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> i;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    i = -1;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">while</span> (arr[++i] != NULL)</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<span class="stringliteral">&quot;arr[%d]: %s      at add: %p  \n&quot;</span>, i, arr[i], arr[i]);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    i = 0;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a>(name) &gt; 0)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<a class="code hl_define" href="libft_8h.html#aea69ffbacdcdf16c21b8c9961df84448">GRN</a><span class="stringliteral">&quot;-----         %s[]        -----\n&quot;</span><a class="code hl_define" href="libft_8h.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a>, name);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">while</span> (arr &amp;&amp; arr[i])</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_function" href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a>(<a class="code hl_define" href="libft_8h.html#aea69ffbacdcdf16c21b8c9961df84448">GRN</a><span class="stringliteral">&quot;arr[%d]:  %s      at add: %p  \n&quot;</span><a class="code hl_define" href="libft_8h.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a>, \</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            i, arr[i], arr[i]);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        i++;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 </div>
-<div class="ttc" id="aft__print__2d__arr_8c_html_a60b444a8e1e351074ad6fe96780b3848"><div class="ttname"><a href="ft__print__2d__arr_8c.html#a60b444a8e1e351074ad6fe96780b3848">ft_print_2d_arr</a></div><div class="ttdeci">void ft_print_2d_arr(char **arr)</div><div class="ttdef"><b>Definition</b> <a href="ft__print__2d__arr_8c_source.html#l00015">ft_print_2d_arr.c:15</a></div></div>
+<div class="ttc" id="aft__print__2d__arr_8c_html_a62d79cc90f29a3061bfb29a78958c424"><div class="ttname"><a href="ft__print__2d__arr_8c.html#a62d79cc90f29a3061bfb29a78958c424">ft_print_2d_arr</a></div><div class="ttdeci">void ft_print_2d_arr(char **arr, char *name)</div><div class="ttdef"><b>Definition</b> <a href="ft__print__2d__arr_8c_source.html#l00015">ft_print_2d_arr.c:15</a></div></div>
 <div class="ttc" id="alibft_8h_html"><div class="ttname"><a href="libft_8h.html">libft.h</a></div></div>
 <div class="ttc" id="alibft_8h_html_a1ee8ae8a80a7d9141ea5339af8565f2e"><div class="ttname"><a href="libft_8h.html#a1ee8ae8a80a7d9141ea5339af8565f2e">ft_printf</a></div><div class="ttdeci">int ft_printf(const char *format,...)</div><div class="ttdef"><b>Definition</b> <a href="ft__printf_8c_source.html#l00037">ft_printf.c:37</a></div></div>
+<div class="ttc" id="alibft_8h_html_ab702106cf3b3e96750b6845ded4e0299"><div class="ttname"><a href="libft_8h.html#ab702106cf3b3e96750b6845ded4e0299">RESET</a></div><div class="ttdeci">#define RESET</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00111">libft.h:111</a></div></div>
+<div class="ttc" id="alibft_8h_html_abbb8c6c4ed85d892e7f1509f65f5768a"><div class="ttname"><a href="libft_8h.html#abbb8c6c4ed85d892e7f1509f65f5768a">ft_strlen</a></div><div class="ttdeci">size_t ft_strlen(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="ttc" id="alibft_8h_html_aea69ffbacdcdf16c21b8c9961df84448"><div class="ttname"><a href="libft_8h.html#aea69ffbacdcdf16c21b8c9961df84448">GRN</a></div><div class="ttdeci">#define GRN</div><div class="ttdef"><b>Definition</b> <a href="libft_8h_source.html#l00115">libft.h:115</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
