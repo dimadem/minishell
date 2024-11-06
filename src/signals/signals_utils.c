@@ -16,12 +16,27 @@
 #include <unistd.h>
 #include "libft.h"
 
-void handle_sigint_heredoc(int signo)
+void	handle_sigint_heredoc(int signo)
 {
-    (void)signo;
-    g_heredoc_interrupted = 1;
-    // write(1, "\n", 1);
-    // rl_replace_line("", 0);
-    // rl_on_new_line();
-    // rl_redisplay();
+	(void)signo;
+	g_heredoc_interrupted = 1;
+}
+
+t_signal_context	*get_context(t_ms_data *data)
+{
+	static t_signal_context	*context;
+
+    printf("data at least exists. Exit code: %d\n", data->exit_status);
+	context = NULL;
+	if (data != NULL)
+	{
+		if (!context)
+		{
+			context = malloc(sizeof(t_signal_context));
+			if (!context)
+				return (NULL);
+		}
+		context->data_cxt = data;
+	}
+	return (context);
 }

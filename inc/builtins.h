@@ -24,4 +24,6 @@ int	builtin_export(t_ms_data *data);
 int	builtin_pwd(t_ms_data *data);
 int	builtin_unset(t_ms_data *data);
 
+void	free_signal_context(void);
+
 #endif

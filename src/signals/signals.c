@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   signals.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dmdemirk <dmdemirk@student.42london.c      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/17 13:59:59 by dmdemirk          #+#    #+#             */
-/*   Updated: 2024/09/09 12:32:04 by dmdemirk         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   signals.c										  :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: dmdemirk <dmdemirk@student.42london.c	  +#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2024/07/17 13:59:59 by dmdemirk		  #+#	#+#			 */
+/*   Updated: 2024/09/09 12:32:04 by dmdemirk		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "signals.h"
@@ -22,8 +22,6 @@ void	set_signals_interactive(t_ms_data *data);
 void	signal_print_newline(int signal);
 void	sigquit_ignore(void);
 void	set_signals_noninteractive(void);
-
-
 
 void	signal_print_newline(int signal)
 {
@@ -42,61 +40,52 @@ void	sigquit_ignore(void)
 	sigaction(SIGQUIT, &a, NULL);
 }
 
-t_signal_context *get_context(t_ms_data *data) {
-    static t_signal_context *context = NULL;
-
-    if (data != NULL) {
-        if (!context) {
-            context = malloc(sizeof(t_signal_context));
-            if (!context)
-                return NULL;
-        }
-        context->data_cxt = data;
-    }
-
-    return context;
-}
-
-void set_signals_interactive(t_ms_data *data)
+void	set_signals_interactive(t_ms_data *data)
 {
-    t_signal_context *context = get_context(data);
-    if (!context)
-        return;
+	t_signal_context	*context;
+	struct sigaction	sa;
 
-    struct sigaction sa;
-    sa.sa_sigaction = signal_reset_prompt;
-    sa.sa_flags = SA_RESTART | SA_SIGINFO;
-    sigemptyset(&sa.sa_mask);
-
-    sigaction(SIGINT, &sa, NULL);
+	printf("we get into signals interactive at least right??\n");
+	context = get_context(data);
+	if (!context)
+		return ;
+	printf("and get context works\n");
+	sa.sa_sigaction = signal_reset_prompt;
+	sa.sa_flags = SA_RESTART | SA_SIGINFO;
+	sigemptyset(&sa.sa_mask);
+	sigaction(SIGINT, &sa, NULL);
 }
 
-void signal_reset_prompt(int signo, siginfo_t *info, void *ucontext)
+void	signal_reset_prompt(int signo, siginfo_t *info, void *ucontext)
 {
-    t_signal_context *context;
-    
-    (void)signo;
-    (void)info;
-    (void)ucontext;
-    context = get_context(NULL);
-    if (!rl_line_buffer || rl_line_buffer[0] == '\0')
-    {
-        if (context && context->data_cxt)
-        {
-            printf("\n");
-            handle_exit(context->data_cxt, 0);
-        }
-    }
-    write(1, "\n", 1);
-    rl_on_new_line();
-    rl_replace_line("", 0);
-    rl_redisplay();
+	t_signal_context	*context;
+
+	(void)signo;
+	(void)info;
+	(void)ucontext;
+	context = get_context(NULL);
+	if (!rl_line_buffer || rl_line_buffer[0] == '\0')
+	{
+		printf("do we even get into signal_rseet_prompt?\n");
+		if (context && context->data_cxt)
+		{
+			printf("\n");
+			// printf("do we even get into signal_rseet_prompt?\n");
+			handle_exit(context->data_cxt, 0);
+		}
+	}
+	write(1, "\n", 1);
+	rl_on_new_line();
+	rl_replace_line("", 0);
+	rl_redisplay();
 }
 
-void set_signals_noninteractive(void) {
-    struct sigaction sa;
-    sa.sa_handler = SIG_IGN;
-    sigemptyset(&sa.sa_mask);
-    sa.sa_flags = 0;
-    sigaction(SIGQUIT, &sa, NULL);
+void	set_signals_noninteractive(void)
+{
+	struct sigaction	sa;
+
+	sa.sa_handler = SIG_IGN;
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = 0;
+	sigaction(SIGQUIT, &sa, NULL);
 }
