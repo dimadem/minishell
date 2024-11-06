@@ -88,7 +88,7 @@ static int	open_and_redirect(t_ast *node, t_ms_data *data)
 int	redirect_out(t_ast *node, t_ms_data *data)
 {
 	pid_t	pid;
-	int		status;
+	int		exit_status;
 
 	pid = fork();
 	if (pid == -1)
@@ -100,6 +100,6 @@ int	redirect_out(t_ast *node, t_ms_data *data)
 		execute_ast(node->left, data);
 		exit(0);
 	}
-	waitpid(pid, &status, 0);
-	return (WEXITSTATUS(status));
+	waitpid(pid, &exit_status, 0);
+	return (WEXITSTATUS(exit_status));
 }
