@@ -6,5 +6,6 @@ var builtins_8h =
     [ "builtin_exit", "builtins_8h.html#a4178e67f38b6049c1778b1d470fd3bba", null ],
     [ "builtin_export", "builtins_8h.html#af769fa05852c4852c6d064d88ee9ea61", null ],
     [ "builtin_pwd", "builtins_8h.html#a42c3233709760074e11fb0fccba213e9", null ],
-    [ "builtin_unset", "builtins_8h.html#a4bd04cc81f319fd2b866b8a164069d72", null ]
+    [ "builtin_unset", "builtins_8h.html#a4bd04cc81f319fd2b866b8a164069d72", null ],
+    [ "free_signal_context", "builtins_8h.html#ade9fe5a5e78e22e2352484f1c779eb1e", null ]
 ];

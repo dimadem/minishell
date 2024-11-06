@@ -151,10 +151,118 @@ Include dependency graph for signals_utils.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:af23071a32b0de3689d383196ed9a1525" id="r_af23071a32b0de3689d383196ed9a1525"><td class="memItemLeft" align="right" valign="top"><a class="el" href="signals_8h.html#ac0579114e11be6ccde22f9bfa9c54e8e">t_signal_context</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signals__utils_8c.html#af23071a32b0de3689d383196ed9a1525">get_context</a> (<a class="el" href="shell_8h.html#ac2ad4684aec6733ad84ec1416727ccde">t_ms_data</a> *data)</td></tr>
+<tr class="separator:af23071a32b0de3689d383196ed9a1525"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b8855b2d9161a878e137041a1c85d59" id="r_a6b8855b2d9161a878e137041a1c85d59"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="signals__utils_8c.html#a6b8855b2d9161a878e137041a1c85d59">handle_sigint_heredoc</a> (int signo)</td></tr>
 <tr class="separator:a6b8855b2d9161a878e137041a1c85d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="af23071a32b0de3689d383196ed9a1525" name="af23071a32b0de3689d383196ed9a1525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af23071a32b0de3689d383196ed9a1525">&#9670;&#160;</a></span>get_context()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="signals_8h.html#ac0579114e11be6ccde22f9bfa9c54e8e">t_signal_context</a> * get_context </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="shell_8h.html#ac2ad4684aec6733ad84ec1416727ccde">t_ms_data</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="signals__utils_8c_source.html#l00020">20</a> of file <a class="el" href="signals__utils_8c_source.html">signals_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structs__signal__context.html">t_signal_context</a> *context = NULL;</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">if</span> (data != NULL)</div>
+<div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">if</span> (!context)</div>
+<div class="line"><span class="lineno">   27</span>        {</div>
+<div class="line"><span class="lineno">   28</span>            context = malloc(<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structs__signal__context.html">t_signal_context</a>));</div>
+<div class="line"><span class="lineno">   29</span>            <span class="keywordflow">if</span> (!context)</div>
+<div class="line"><span class="lineno">   30</span>                <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><span class="lineno">   31</span>        }</div>
+<div class="line"><span class="lineno">   32</span>        context-&gt;<a class="code hl_variable" href="structs__signal__context.html#a69210c610ba243aef733ff015a28efb7">data_cxt</a> = data;</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> (context);</div>
+<div class="line"><span class="lineno">   35</span>}</div>
+<div class="ttc" id="astructs__signal__context_html"><div class="ttname"><a href="structs__signal__context.html">s_signal_context</a></div><div class="ttdef"><b>Definition</b> <a href="signals_8h_source.html#l00022">signals.h:23</a></div></div>
+<div class="ttc" id="astructs__signal__context_html_a69210c610ba243aef733ff015a28efb7"><div class="ttname"><a href="structs__signal__context.html#a69210c610ba243aef733ff015a28efb7">s_signal_context::data_cxt</a></div><div class="ttdeci">t_ms_data * data_cxt</div><div class="ttdef"><b>Definition</b> <a href="signals_8h_source.html#l00024">signals.h:24</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="signals_8h_source.html#l00024">s_signal_context::data_cxt</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="builtins__utils_8c_source.html#l00023">free_signal_context()</a>, <a class="el" href="signals_8c_source.html#l00043">set_signals_interactive()</a>, and <a class="el" href="signals_8c_source.html#l00057">signal_reset_prompt()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="signals__utils_8c_af23071a32b0de3689d383196ed9a1525_icgraph.png" border="0" usemap="#asignals__utils_8c_af23071a32b0de3689d383196ed9a1525_icgraph" alt=""/></div>
+<map name="asignals__utils_8c_af23071a32b0de3689d383196ed9a1525_icgraph" id="asignals__utils_8c_af23071a32b0de3689d383196ed9a1525_icgraph">
+<area shape="rect" title=" " alt="" coords="1932,43,2021,69"/>
+<area shape="rect" href="builtins__utils_8c.html#ade9fe5a5e78e22e2352484f1c779eb1e" title=" " alt="" coords="1751,94,1884,120"/>
+<area shape="poly" title=" " alt="" coords="1920,77,1861,96,1859,91,1918,72"/>
+<area shape="rect" href="signals_8c.html#a5515dc3ac60ce2035e779984f8e98ba6" title=" " alt="" coords="1217,43,1355,69"/>
+<area shape="poly" title=" " alt="" coords="1917,59,1356,59,1356,53,1917,53"/>
+<area shape="rect" href="signals_8c.html#ac949ea34f19a6fd2275b41ba6ce2be56" title=" " alt="" coords="1007,18,1161,44"/>
+<area shape="poly" title=" " alt="" coords="1917,45,1784,21,1705,12,1626,8,1453,8,1298,14,1162,25,1161,20,1297,8,1453,3,1626,3,1705,6,1785,16,1918,40"/>
+<area shape="rect" href="exit_8c.html#a73a3d33deb20df13beb55ba6c0c55372" title=" " alt="" coords="1546,94,1703,120"/>
+<area shape="poly" title=" " alt="" coords="1736,109,1703,109,1703,104,1736,104"/>
+<area shape="rect" href="exit_8c.html#a16c892fe103bf5f59b6e2288f974dad1" title=" " alt="" coords="1411,94,1498,120"/>
+<area shape="poly" title=" " alt="" coords="1530,109,1498,109,1498,104,1530,104"/>
+<area shape="rect" href="exit_8c.html#a4178e67f38b6049c1778b1d470fd3bba" title=" " alt="" coords="1043,150,1125,176"/>
+<area shape="poly" title=" " alt="" coords="1438,134,1407,169,1387,185,1364,197,1331,207,1297,212,1228,208,1165,195,1116,179,1118,174,1167,190,1229,203,1297,206,1330,202,1362,192,1384,180,1403,165,1434,130"/>
+<area shape="rect" href="exit_8c.html#afc3b0cdea888092bf0a17f159dcbfa93" title=" " alt="" coords="1214,93,1359,118"/>
+<area shape="poly" title=" " alt="" coords="1396,109,1359,109,1359,103,1396,104"/>
+<area shape="rect" href="exit_8c.html#a5cacd209be28d1be975cb6c67868d3d6" title=" " alt="" coords="1209,142,1363,183"/>
+<area shape="poly" title=" " alt="" coords="1400,127,1350,144,1349,139,1399,122"/>
+<area shape="poly" title=" " alt="" coords="1396,92,1331,72,1332,67,1397,87"/>
+<area shape="rect" href="execute__child_8c.html#af8d573e6493008b3d1affd1091e3fdd7" title="execute distribution function" alt="" coords="892,222,959,248"/>
+<area shape="poly" title=" " alt="" coords="1041,185,957,224,954,219,1039,180"/>
+<area shape="rect" href="main_8c.html#a8e466c920a519eb4139b4f1348f3af7a" title=" " alt="" coords="417,69,498,94"/>
+<area shape="poly" title=" " alt="" coords="1027,156,705,109,498,87,498,82,705,104,1028,151"/>
+<area shape="rect" href="execute_8c.html#a18f57d723990aa716495663fbe9e4610" title="execute Abstract Syntax Tree" alt="" coords="753,294,844,320"/>
+<area shape="poly" title=" " alt="" coords="890,258,824,296,822,291,887,253"/>
+<area shape="rect" href="redirect__heredoc_8c.html#a79ffb6362b8f0c6960e7fe77f93d8888" title=" " alt="" coords="586,470,687,496"/>
+<area shape="poly" title=" " alt="" coords="788,335,756,393,734,424,707,453,677,472,674,467,703,449,729,421,752,390,783,332"/>
+<area shape="rect" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="586,221,687,246"/>
+<area shape="poly" title=" " alt="" coords="760,288,704,260,677,249,679,244,706,255,763,284"/>
+<area shape="rect" href="main_8c.html#ad498ca831454cbba2b28e029317e2b6b" title=" " alt="" coords="568,119,705,145"/>
+<area shape="poly" title=" " alt="" coords="783,281,752,224,729,193,703,166,674,148,677,143,707,162,733,190,756,221,788,279"/>
+<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="580,270,693,296"/>
+<area shape="poly" title=" " alt="" coords="737,309,675,299,676,293,738,304"/>
+<area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title="redirection input in context of executing AST" alt="" coords="596,319,677,345"/>
+<area shape="poly" title=" " alt="" coords="747,326,678,336,677,331,746,321"/>
+<area shape="rect" href="redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047" title=" " alt="" coords="592,369,681,394"/>
+<area shape="poly" title=" " alt="" coords="778,331,706,372,683,381,681,376,704,367,775,327"/>
+<area shape="rect" href="redirect__heredoc_8c.html#af7acc822769ea3cda07222328febe924" title=" " alt="" coords="395,445,520,470"/>
+<area shape="poly" title=" " alt="" coords="571,476,520,469,521,464,571,471"/>
+<area shape="poly" title=" " alt="" coords="535,451,619,437,663,423,704,404,731,385,754,362,787,319,791,322,758,365,734,389,706,409,665,428,620,442,536,456"/>
+<area shape="rect" href="pipe_8c.html#a49a58fe1a0102ba36ade8eecf94bf283" title="execute pipe when | is found in the command" alt="" coords="414,195,501,221"/>
+<area shape="poly" title=" " alt="" coords="571,227,501,217,501,211,571,221"/>
+<area shape="poly" title=" " alt="" coords="515,193,558,188,607,186,658,191,706,206,735,223,760,247,792,292,788,295,755,250,732,228,704,210,657,196,607,191,559,193,516,198"/>
+<area shape="rect" href="pipe__test_8c.html#a449dfac66dec53a70df96bedf109ec59" title=" " alt="" coords="232,195,347,221"/>
+<area shape="poly" title=" " alt="" coords="399,211,348,211,348,205,399,205"/>
+<area shape="rect" href="pipe__test_8c.html#a496f242b556b98e53271f0733b16a77e" title=" " alt="" coords="103,195,184,221"/>
+<area shape="poly" title=" " alt="" coords="216,211,185,211,185,205,216,205"/>
+<area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,195,55,221"/>
+<area shape="poly" title=" " alt="" coords="87,211,55,211,55,205,87,205"/>
+<area shape="poly" title=" " alt="" coords="573,117,497,95,499,90,574,112"/>
+<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="265,69,314,94"/>
+<area shape="poly" title=" " alt="" coords="402,84,315,84,315,79,402,79"/>
+<area shape="poly" title=" " alt="" coords="709,282,760,291,759,296,708,287"/>
+<area shape="poly" title=" " alt="" coords="689,313,752,303,753,308,690,318"/>
+<area shape="poly" title=" " alt="" coords="664,359,704,343,755,318,757,322,706,348,666,364"/>
+<area shape="poly" title=" " alt="" coords="1224,126,1126,154,1125,148,1223,120"/>
+<area shape="poly" title=" " alt="" coords="1194,165,1125,165,1125,160,1194,160"/>
+<area shape="poly" title=" " alt="" coords="1202,48,1161,43,1162,38,1202,43"/>
+<area shape="poly" title=" " alt="" coords="991,36,796,46,568,65,498,76,498,71,567,60,796,40,991,31"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a6b8855b2d9161a878e137041a1c85d59" name="a6b8855b2d9161a878e137041a1c85d59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b8855b2d9161a878e137041a1c85d59">&#9670;&#160;</a></span>handle_sigint_heredoc()</h2>
 
@@ -171,14 +279,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="signals__utils_8c_source.html#l00019">19</a> of file <a class="el" href="signals__utils_8c_source.html">signals_utils.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
-<div class="line"><span class="lineno">   21</span>    (void)signo;</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_variable" href="signals_8h.html#a23ed985cdfe7cabe9e10245918421365">g_heredoc_interrupted</a> = 1;</div>
-<div class="line"><span class="lineno">   23</span>    write(1, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
-<div class="line"><span class="lineno">   24</span>    rl_replace_line(<span class="stringliteral">&quot;&quot;</span>, 0);</div>
-<div class="line"><span class="lineno">   25</span>    rl_redisplay();</div>
-<div class="line"><span class="lineno">   26</span>}</div>
+<p class="definition">Definition at line <a class="el" href="signals__utils_8c_source.html#l00037">37</a> of file <a class="el" href="signals__utils_8c_source.html">signals_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
+<div class="line"><span class="lineno">   39</span>    (void)signo;</div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="signals_8h.html#a23ed985cdfe7cabe9e10245918421365">g_heredoc_interrupted</a> = 1;</div>
+<div class="line"><span class="lineno">   41</span>}</div>
 <div class="ttc" id="asignals_8h_html_a23ed985cdfe7cabe9e10245918421365"><div class="ttname"><a href="signals_8h.html#a23ed985cdfe7cabe9e10245918421365">g_heredoc_interrupted</a></div><div class="ttdeci">volatile sig_atomic_t g_heredoc_interrupted</div><div class="ttdef"><b>Definition</b> <a href="redirect__heredoc_8c_source.html#l00027">redirect_heredoc.c:27</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="redirect__heredoc_8c_source.html#l00027">g_heredoc_interrupted</a>.</p>
