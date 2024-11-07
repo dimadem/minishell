@@ -39,7 +39,11 @@ int	builtin_pipe(t_ast *node, t_ms_data *data)
 	pid_t	pid_2;
 	int		status_1;
 	int		status_2;
+	int		status_1;
+	int		status_2;
 
+	status_1 = 0;
+	status_2 = 0;
 	status_1 = 0;
 	status_2 = 0;
 	pid_2 = -1;
@@ -55,6 +59,15 @@ int	builtin_pipe(t_ast *node, t_ms_data *data)
 		return (WAIT_NEXT_COMMAND);
 	}
 	close_fds(fd[0], fd[1]);
+	if (pid_1 > 0 && waitpid(pid_1, &status_1, 0) == -1)
+		return (ft_perror("waitpid"));
+	if (pid_2 > 0)
+	{
+		if (waitpid(pid_2, &status_2, 0) == -1)
+			return (ft_perror("waitpid"));
+		return (WEXITSTATUS(status_2));
+	}
+	return (WEXITSTATUS(status_1));
 	if (pid_1 > 0 && waitpid(pid_1, &status_1, 0) == -1)
 		return (ft_perror("waitpid"));
 	if (pid_2 > 0)
@@ -80,6 +93,7 @@ pid_t	execute_child(t_ast *node, t_ms_data *data, \
 {
 	pid_t	pid;
 	int		status;
+	int		status;
 
 	pid = fork();
 	if (pid == -1)
@@ -92,7 +106,7 @@ pid_t	execute_child(t_ast *node, t_ms_data *data, \
 			dup2(fd[0], STDIN_FILENO);
 		close_fds(fd[0], fd[1]);
 		status = execute_ast(node, data);
-		exit(status);
+\		exit(status);
 	}
 	return (pid);
 }
