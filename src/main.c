@@ -18,16 +18,19 @@
 #include "exit_status.h"
 #include "builtins.h"
 
-int		status_handler(int status, \
+int	status_handler(int status, \
 				t_loop_data *loop_data, t_token *token_head);
+void	process_ast_and_io(t_ms_data *data, \
 void	process_ast_and_io(t_ms_data *data, \
 				t_loop_data *loop_data, t_token *tokens_head);
 void	main_loop(t_ms_data *data, t_loop_data *loop_data);
-int		main(int argc, char **argv, char **envp);
+int			main(int argc, char **argv, char **envp);
 
+int	status_handler(int status, \
 int	status_handler(int status, \
 				t_loop_data *loop_data, t_token *tokens_head)
 {
+	if (status == EXIT_FAILURE)
 	if (status == EXIT_FAILURE)
 	{
 		loop_cleanup(loop_data, tokens_head);
@@ -37,11 +40,13 @@ int	status_handler(int status, \
 }
 
 void	process_ast_and_io(t_ms_data *data, \
+void	process_ast_and_io(t_ms_data *data, \
 				t_loop_data *loop_data, t_token *tokens_head)
 {
 	int	status;
 
 	status = execute_ast(loop_data->tree, data);
+	printf("execute ast exit status -> %d\n", status);
 	data->exit_status = status;
 	set_shell_var_handler(data);
 	if (status_handler(status, loop_data, tokens_head))
@@ -51,6 +56,7 @@ void	process_ast_and_io(t_ms_data *data, \
 	}
 }
 
+void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 {
 	t_token	*tokens_start;
@@ -72,6 +78,7 @@ void	main_loop(t_ms_data *data, t_loop_data *loop_data)
 		loop_data->tokens = tokenise(loop_data->trimmed_input);
 		tokens_start = loop_data->tokens;
 		loop_data->tree = parse_tokens(&loop_data->tokens, data);
+		print_ast_root(loop_data->tree);
 		print_ast_root(loop_data->tree);
 		process_ast_and_io(data, loop_data, tokens_start);
 	}

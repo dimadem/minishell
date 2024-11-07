@@ -22,12 +22,27 @@ int		builtin_pipe(t_ast *node, t_ms_data *data);
 pid_t	execute_child(t_ast *node, t_ms_data *data, \
 		int fd[2], int direction);
 
-static int	setup_pipe_processes(t_ast *node, t_ms_data *data, \
-			pid_t *pid_1, pid_t *pid_2)
-{
-	int	fd[2];
+/**
+- @brief execute pipe when | is found in the command
+- 
+- @param node current node in the AST
+- @param data minishell structure data
+- @return int return status:
+- 				- 0: success
+- 				- 1: error
+ */
 
-	*pid_2 = -1;
+int	builtin_pipe(t_ast *node, t_ms_data *data)
+{
+	int		fd[2];
+	pid_t	pid_1;
+	pid_t	pid_2;
+	int		status_1;
+	int		status_2;
+
+	status_1 = 0;
+	status_2 = 0;
+	pid_2 = -1;
 	if (pipe(fd) == -1)
 		return (ft_perror("pipe"));
 	*pid_1 = execute_child(node->left, data, fd, 0);
@@ -40,22 +55,6 @@ static int	setup_pipe_processes(t_ast *node, t_ms_data *data, \
 		return (WAIT_NEXT_COMMAND);
 	}
 	close_fds(fd[0], fd[1]);
-	return (EXIT_SUCCESS);
-}
-
-int	builtin_pipe(t_ast *node, t_ms_data *data)
-{
-	pid_t	pid_1;
-	pid_t	pid_2;
-	int		status_1;
-	int		status_2;
-	int		setup_result;
-
-	status_1 = 0;
-	status_2 = 0;
-	setup_result = setup_pipe_processes(node, data, &pid_1, &pid_2);
-	if (setup_result == WAIT_NEXT_COMMAND)
-		return (WAIT_NEXT_COMMAND);
 	if (pid_1 > 0 && waitpid(pid_1, &status_1, 0) == -1)
 		return (ft_perror("waitpid"));
 	if (pid_2 > 0)
