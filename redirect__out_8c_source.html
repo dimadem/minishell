@@ -106,7 +106,7 @@ $(document).ready(function(){initNavTree('redirect__out_8c_source.html',''); ini
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">/*   By: dmdemirk &lt;dmdemirk@student.42london.c      +#+  +:+       +#+        */</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">/*   Created: 2024/07/11 14:32:59 by dmdemirk          #+#    #+#             */</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2024/09/09 13:39:13 by dmdemirk         ###   ########.fr       */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/*   Updated: 2024/11/07 19:41:36 by dmdemirk         ###   ########.fr       */</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/*                                                                            */</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
@@ -120,94 +120,60 @@ $(document).ready(function(){initNavTree('redirect__out_8c_source.html',''); ini
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">static</span> <span class="keywordtype">int</span>  <a class="code hl_function" href="redirect__out_8c.html#ac9129329ca64835e87f55cb7e7e69585">open_and_redirect</a>(<a class="code hl_struct" href="structs__ast.html">t_ast</a> *node, <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">int</span>         <a class="code hl_function" href="redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047">redirect_out</a>(<a class="code hl_struct" href="structs__ast.html">t_ast</a> *node, <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">   int  redirect_out(t_ast *node, t_ms_data *data)</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">   {</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">   pid_t    pid;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">   int      status;</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">   int      fd;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"></span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">   pid = fork();</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">   if (pid == -1)</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">   return (1);</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">   if (pid == 0)</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">   {</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">   if (data-&gt;std_out == -1)</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">   {</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">   data-&gt;std_out = open_file(node-&gt;right, &quot;&gt;&quot;);</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">   if (data-&gt;std_out == -1)</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">   return (1);</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">   }</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">   else</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">   {</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">   fd = open_file(node-&gt;right, &quot;&gt;&quot;);</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">   if (fd == -1)</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">   return (1);</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">   dup2(fd, STDOUT_FILENO);</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">   close(fd);</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">   }</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">   execute_ast(node-&gt;left, data);</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">   exit(0);</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">   }</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">   waitpid(pid, &amp;status, 0);</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">   return (WEXITSTATUS(status));</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">   }</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"> */</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="redirect__out_8c.html#ac9129329ca64835e87f55cb7e7e69585">   67</a></span><span class="keyword">static</span> <span class="keywordtype">int</span>  <a class="code hl_function" href="redirect__out_8c.html#ac9129329ca64835e87f55cb7e7e69585">open_and_redirect</a>(<a class="code hl_struct" href="structs__ast.html">t_ast</a> *node, <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">int</span> fd;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> == -1)</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> = <a class="code hl_function" href="redirection_8h.html#a2fe566529f8c7046fe274f2b3a35b39b">open_file</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a>, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> == -1)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        fd = <a class="code hl_function" href="redirection_8h.html#a2fe566529f8c7046fe274f2b3a35b39b">open_file</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a>, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keywordflow">if</span> (fd == -1)</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        dup2(fd, STDOUT_FILENO);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        close(fd);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a>);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="redirect__out_8c.html#ac9129329ca64835e87f55cb7e7e69585">   33</a></span><span class="keyword">static</span> <span class="keywordtype">int</span>  <a class="code hl_function" href="redirect__out_8c.html#ac9129329ca64835e87f55cb7e7e69585">open_and_redirect</a>(<a class="code hl_struct" href="structs__ast.html">t_ast</a> *node, <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">int</span> fd;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> == -1)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> = <a class="code hl_function" href="redirection_8h.html#a2fe566529f8c7046fe274f2b3a35b39b">open_file</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a>, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a> == -1)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        fd = <a class="code hl_function" href="redirection_8h.html#a2fe566529f8c7046fe274f2b3a35b39b">open_file</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a>, <span class="stringliteral">&quot;&gt;&quot;</span>);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">if</span> (fd == -1)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        dup2(fd, STDOUT_FILENO);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        close(fd);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
 </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="redirection_8h.html#ab4b10d0e1f60df696e259ba2c2b59047">   88</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047">redirect_out</a>(<a class="code hl_struct" href="structs__ast.html">t_ast</a> *node, <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data)</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    pid_t   pid;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">int</span>     exec_status;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">int</span>   status;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    pid = fork();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (pid == -1)</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">if</span> (pid == 0)</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="redirect__out_8c.html#ac9129329ca64835e87f55cb7e7e69585">open_and_redirect</a>(node, data) != 0)</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>            exit(<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        exec_status = <a class="code hl_function" href="execute_8h.html#a18f57d723990aa716495663fbe9e4610">execute_ast</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a>, data);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        exit(exec_status);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    }</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">if</span> (waitpid(pid, &amp;status, 0) == -1)</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordflow">if</span> (WIFSIGNALED(status))</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> (128 + WTERMSIG(status));</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span> (WEXITSTATUS(status));</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="redirection_8h.html#ab4b10d0e1f60df696e259ba2c2b59047">   54</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047">redirect_out</a>(<a class="code hl_struct" href="structs__ast.html">t_ast</a> *node, <a class="code hl_struct" href="structs__ms__data.html">t_ms_data</a> *data)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    pid_t   pid;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">int</span>     exec_status;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">int</span>     status;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    pid = fork();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">if</span> (pid == -1)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (pid == 0)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="redirect__out_8c.html#ac9129329ca64835e87f55cb7e7e69585">open_and_redirect</a>(node, data) != 0)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            exit(<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        exec_status = <a class="code hl_function" href="execute_8h.html#a18f57d723990aa716495663fbe9e4610">execute_ast</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a>, data);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        exit(exec_status);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (waitpid(pid, &amp;status, 0) == -1)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">if</span> (WIFSIGNALED(status))</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">return</span> (128 + WTERMSIG(status));</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> (WEXITSTATUS(status));</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
 </div>
 <div class="ttc" id="aexecute_8h_html"><div class="ttname"><a href="execute_8h.html">execute.h</a></div></div>
 <div class="ttc" id="aexecute_8h_html_a18f57d723990aa716495663fbe9e4610"><div class="ttname"><a href="execute_8h.html#a18f57d723990aa716495663fbe9e4610">execute_ast</a></div><div class="ttdeci">int execute_ast(t_ast *node, t_ms_data *data)</div><div class="ttdoc">execute Abstract Syntax Tree</div><div class="ttdef"><b>Definition</b> <a href="execute_8c_source.html#l00038">execute.c:38</a></div></div>
 <div class="ttc" id="aexit__status_8h_html_a687984f47d8cce148d1b914d2b79612a"><div class="ttname"><a href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a></div><div class="ttdeci">#define EXIT_SUCCESS</div><div class="ttdef"><b>Definition</b> <a href="exit__status_8h_source.html#l00016">exit_status.h:16</a></div></div>
 <div class="ttc" id="aexit__status_8h_html_a73efe787c131b385070f25d18b7c9aa4"><div class="ttname"><a href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a></div><div class="ttdeci">#define EXIT_FAILURE</div><div class="ttdef"><b>Definition</b> <a href="exit__status_8h_source.html#l00017">exit_status.h:17</a></div></div>
 <div class="ttc" id="apipe_8h_html"><div class="ttname"><a href="pipe_8h.html">pipe.h</a></div></div>
-<div class="ttc" id="aredirect__out_8c_html_ab4b10d0e1f60df696e259ba2c2b59047"><div class="ttname"><a href="redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047">redirect_out</a></div><div class="ttdeci">int redirect_out(t_ast *node, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="redirect__out_8c_source.html#l00088">redirect_out.c:88</a></div></div>
-<div class="ttc" id="aredirect__out_8c_html_ac9129329ca64835e87f55cb7e7e69585"><div class="ttname"><a href="redirect__out_8c.html#ac9129329ca64835e87f55cb7e7e69585">open_and_redirect</a></div><div class="ttdeci">static int open_and_redirect(t_ast *node, t_ms_data *data)</div><div class="ttdoc">redirect out &quot;&gt;&quot; to the file output</div><div class="ttdef"><b>Definition</b> <a href="redirect__out_8c_source.html#l00067">redirect_out.c:67</a></div></div>
+<div class="ttc" id="aredirect__out_8c_html_ab4b10d0e1f60df696e259ba2c2b59047"><div class="ttname"><a href="redirect__out_8c.html#ab4b10d0e1f60df696e259ba2c2b59047">redirect_out</a></div><div class="ttdeci">int redirect_out(t_ast *node, t_ms_data *data)</div><div class="ttdef"><b>Definition</b> <a href="redirect__out_8c_source.html#l00054">redirect_out.c:54</a></div></div>
+<div class="ttc" id="aredirect__out_8c_html_ac9129329ca64835e87f55cb7e7e69585"><div class="ttname"><a href="redirect__out_8c.html#ac9129329ca64835e87f55cb7e7e69585">open_and_redirect</a></div><div class="ttdeci">static int open_and_redirect(t_ast *node, t_ms_data *data)</div><div class="ttdoc">redirect out &quot;&gt;&quot; to the file output</div><div class="ttdef"><b>Definition</b> <a href="redirect__out_8c_source.html#l00033">redirect_out.c:33</a></div></div>
 <div class="ttc" id="aredirection_8h_html"><div class="ttname"><a href="redirection_8h.html">redirection.h</a></div></div>
 <div class="ttc" id="aredirection_8h_html_a2fe566529f8c7046fe274f2b3a35b39b"><div class="ttname"><a href="redirection_8h.html#a2fe566529f8c7046fe274f2b3a35b39b">open_file</a></div><div class="ttdeci">int open_file(t_ast *node, char *direction)</div><div class="ttdoc">open file in the context of redirection</div><div class="ttdef"><b>Definition</b> <a href="redirection_2utils_8c_source.html#l00034">utils.c:34</a></div></div>
 <div class="ttc" id="ashell_8h_html"><div class="ttname"><a href="shell_8h.html">shell.h</a></div></div>
