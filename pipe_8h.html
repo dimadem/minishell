@@ -252,36 +252,43 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   37</span>    <span class="keywordtype">int</span>     fd[2];</div>
 <div class="line"><span class="lineno">   38</span>    pid_t   pid_1;</div>
 <div class="line"><span class="lineno">   39</span>    pid_t   pid_2;</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">int</span>     status;</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    pid_2 = -1;</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (pipe(fd) == -1)</div>
-<div class="line"><span class="lineno">   44</span>        <a class="code hl_function" href="execute_8h.html#aedc550f2251badad69cf4b6dfda183ef">ft_perror</a>(<span class="stringliteral">&quot;pipe&quot;</span>);</div>
-<div class="line"><span class="lineno">   45</span>    pid_1 = <a class="code hl_function" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8">execute_child</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a>, data, fd, 0);</div>
-<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> != NULL)</div>
-<div class="line"><span class="lineno">   47</span>        pid_2 = <a class="code hl_function" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8">execute_child</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a>, data, fd, 1);</div>
-<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   49</span>    {</div>
-<div class="line"><span class="lineno">   50</span>        close(fd[1]);</div>
-<div class="line"><span class="lineno">   51</span>        data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae8d3099bc1be72bf3921ffadb2452ddd">std_in</a> = fd[0];</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="pipe_8h.html#a816f42487cd607fbdb7df660a0d913fc">WAIT_NEXT_COMMAND</a>);</div>
-<div class="line"><span class="lineno">   53</span>    }</div>
-<div class="line"><span class="lineno">   54</span>    <a class="code hl_function" href="execute_8h.html#ab9bcddf9275f12cc49348081000beb62">close_fds</a>(fd[0], fd[1]);</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (pid_1 &gt; 0)</div>
-<div class="line"><span class="lineno">   56</span>        waitpid(pid_1, &amp;status, 0);</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> != NULL &amp;&amp; pid_2 &gt; 0)</div>
-<div class="line"><span class="lineno">   58</span>        waitpid(pid_2, &amp;status, 0);</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> (WEXITSTATUS(status));</div>
-<div class="line"><span class="lineno">   60</span>}</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordtype">int</span>     status_1;</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordtype">int</span>     status_2;</div>
+<div class="line"><span class="lineno">   42</span> </div>
+<div class="line"><span class="lineno">   43</span>    status_1 = 0;</div>
+<div class="line"><span class="lineno">   44</span>    status_2 = 0;</div>
+<div class="line"><span class="lineno">   45</span>    pid_2 = -1;</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">if</span> (pipe(fd) == -1)</div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_function" href="execute_8h.html#aedc550f2251badad69cf4b6dfda183ef">ft_perror</a>(<span class="stringliteral">&quot;pipe&quot;</span>);</div>
+<div class="line"><span class="lineno">   48</span>    pid_1 = <a class="code hl_function" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8">execute_child</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a>, data, fd, 0);</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a> != NULL)</div>
+<div class="line"><span class="lineno">   50</span>        pid_2 = <a class="code hl_function" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8">execute_child</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">right</a>, data, fd, 1);</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   52</span>    {</div>
+<div class="line"><span class="lineno">   53</span>        close(fd[1]);</div>
+<div class="line"><span class="lineno">   54</span>        data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae8d3099bc1be72bf3921ffadb2452ddd">std_in</a> = fd[0];</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="pipe_8h.html#a816f42487cd607fbdb7df660a0d913fc">WAIT_NEXT_COMMAND</a>);</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_function" href="execute_8h.html#ab9bcddf9275f12cc49348081000beb62">close_fds</a>(fd[0], fd[1]);</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">if</span> (pid_1 &gt; 0 &amp;&amp; waitpid(pid_1, &amp;status_1, 0) == -1)</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">return</span> (<a class="code hl_function" href="execute_8h.html#aedc550f2251badad69cf4b6dfda183ef">ft_perror</a>(<span class="stringliteral">&quot;waitpid&quot;</span>));</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span> (pid_2 &gt; 0)</div>
+<div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (waitpid(pid_2, &amp;status_2, 0) == -1)</div>
+<div class="line"><span class="lineno">   63</span>            <span class="keywordflow">return</span> (<a class="code hl_function" href="execute_8h.html#aedc550f2251badad69cf4b6dfda183ef">ft_perror</a>(<span class="stringliteral">&quot;waitpid&quot;</span>));</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> (WEXITSTATUS(status_2));</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">return</span> (WEXITSTATUS(status_1));</div>
+<div class="line"><span class="lineno">   67</span>}</div>
 <div class="ttc" id="aexecute_8h_html_ab9bcddf9275f12cc49348081000beb62"><div class="ttname"><a href="execute_8h.html#ab9bcddf9275f12cc49348081000beb62">close_fds</a></div><div class="ttdeci">void close_fds(int in, int out)</div><div class="ttdoc">close two file descriptors</div><div class="ttdef"><b>Definition</b> <a href="utils__0_8c_source.html#l00028">utils_0.c:28</a></div></div>
 <div class="ttc" id="aexecute_8h_html_aedc550f2251badad69cf4b6dfda183ef"><div class="ttname"><a href="execute_8h.html#aedc550f2251badad69cf4b6dfda183ef">ft_perror</a></div><div class="ttdeci">int ft_perror(char *str)</div><div class="ttdef"><b>Definition</b> <a href="exit__status__utils_8c_source.html#l00018">exit_status_utils.c:18</a></div></div>
-<div class="ttc" id="apipe_8c_html_a469087fc10539c580fe08400173ab4b8"><div class="ttname"><a href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8">execute_child</a></div><div class="ttdeci">pid_t execute_child(t_ast *node, t_ms_data *data, int fd[2], int direction)</div><div class="ttdoc">execute child process in the pipe context</div><div class="ttdef"><b>Definition</b> <a href="pipe_8c_source.html#l00071">pipe.c:71</a></div></div>
+<div class="ttc" id="apipe_8c_html_a469087fc10539c580fe08400173ab4b8"><div class="ttname"><a href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8">execute_child</a></div><div class="ttdeci">pid_t execute_child(t_ast *node, t_ms_data *data, int fd[2], int direction)</div><div class="ttdoc">execute child process in the pipe context</div><div class="ttdef"><b>Definition</b> <a href="pipe_8c_source.html#l00078">pipe.c:78</a></div></div>
 <div class="ttc" id="apipe_8h_html_a816f42487cd607fbdb7df660a0d913fc"><div class="ttname"><a href="pipe_8h.html#a816f42487cd607fbdb7df660a0d913fc">WAIT_NEXT_COMMAND</a></div><div class="ttdeci">#define WAIT_NEXT_COMMAND</div><div class="ttdef"><b>Definition</b> <a href="pipe_8h_source.html#l00019">pipe.h:19</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac2c9513b20e9351e45d9bc6361095f7b"><div class="ttname"><a href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">s_ast::right</a></div><div class="ttdeci">struct s_ast * right</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00054">tokens.h:54</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac3be51aa6a7ae13bd16b6ad0c7ac843c"><div class="ttname"><a href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">s_ast::left</a></div><div class="ttdeci">struct s_ast * left</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00053">tokens.h:53</a></div></div>
 <div class="ttc" id="astructs__ms__data_html_ae8d3099bc1be72bf3921ffadb2452ddd"><div class="ttname"><a href="structs__ms__data.html#ae8d3099bc1be72bf3921ffadb2452ddd">s_ms_data::std_in</a></div><div class="ttdeci">int std_in</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00026">shell.h:26</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="utils__0_8c_source.html#l00028">close_fds()</a>, <a class="el" href="pipe_8c_source.html#l00071">execute_child()</a>, <a class="el" href="exit__status__utils_8c_source.html#l00018">ft_perror()</a>, <a class="el" href="tokens_8h_source.html#l00053">s_ast::left</a>, <a class="el" href="tokens_8h_source.html#l00054">s_ast::right</a>, <a class="el" href="shell_8h_source.html#l00026">s_ms_data::std_in</a>, and <a class="el" href="pipe_8h_source.html#l00019">WAIT_NEXT_COMMAND</a>.</p>
+<p class="reference">References <a class="el" href="utils__0_8c_source.html#l00028">close_fds()</a>, <a class="el" href="pipe_8c_source.html#l00078">execute_child()</a>, <a class="el" href="exit__status__utils_8c_source.html#l00018">ft_perror()</a>, <a class="el" href="tokens_8h_source.html#l00053">s_ast::left</a>, <a class="el" href="tokens_8h_source.html#l00054">s_ast::right</a>, <a class="el" href="shell_8h_source.html#l00026">s_ms_data::std_in</a>, and <a class="el" href="pipe_8h_source.html#l00019">WAIT_NEXT_COMMAND</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="pipe__test_8c_source.html#l00032">builtin_pipe_test()</a>, and <a class="el" href="execute_8c_source.html#l00038">execute_ast()</a>.</p>
 <div class="dynheader">
@@ -455,7 +462,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="457,221,394,221,394,216,457,216"/>
 <area shape="rect" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="294,55,394,80"/>
 <area shape="poly" title=" " alt="" coords="499,193,462,143,438,117,411,94,392,83,394,79,414,89,442,113,466,139,503,190"/>
-<area shape="rect" href="main_8c.html#ad498ca831454cbba2b28e029317e2b6b" title=" " alt="" coords="275,255,412,280"/>
+<area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="275,255,412,280"/>
 <area shape="poly" title=" " alt="" coords="458,238,393,257,391,251,457,233"/>
 <area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="287,304,400,330"/>
 <area shape="poly" title=" " alt="" coords="501,244,462,276,414,307,402,313,400,308,411,302,459,272,497,240"/>
@@ -467,7 +474,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="278,212,227,204,228,199,279,206"/>
 <area shape="poly" title=" " alt="" coords="243,185,325,185,413,190,472,202,471,207,412,195,325,190,243,191"/>
 <area shape="poly" title=" " alt="" coords="409,65,624,66,624,71,409,70"/>
-<area shape="rect" href="main_8c.html#a8e466c920a519eb4139b4f1348f3af7a" title=" " alt="" coords="125,255,205,280"/>
+<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="125,255,205,280"/>
 <area shape="poly" title=" " alt="" coords="260,270,205,270,205,265,260,265"/>
 <area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,255,55,280"/>
 <area shape="poly" title=" " alt="" coords="109,270,55,270,55,265,109,265"/>

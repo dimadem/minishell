@@ -424,7 +424,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="822,164,1026,164,1026,169,822,169"/>
 <area shape="rect" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="548,55,649,80"/>
 <area shape="poly" title=" " alt="" coords="733,145,702,118,666,94,643,83,645,78,668,89,705,114,737,141"/>
-<area shape="rect" href="main_8c.html#ad498ca831454cbba2b28e029317e2b6b" title=" " alt="" coords="530,5,667,31"/>
+<area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="530,5,667,31"/>
 <area shape="poly" title=" " alt="" coords="743,141,712,92,690,66,665,44,647,34,650,29,669,40,694,63,716,89,748,138"/>
 <area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="542,104,655,130"/>
 <area shape="poly" title=" " alt="" coords="699,159,621,133,623,128,701,154"/>
@@ -441,7 +441,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="216,169,185,169,185,164,216,164"/>
 <area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,153,55,179"/>
 <area shape="poly" title=" " alt="" coords="87,169,55,169,55,164,87,164"/>
-<area shape="rect" href="main_8c.html#a8e466c920a519eb4139b4f1348f3af7a" title=" " alt="" coords="398,5,479,31"/>
+<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="398,5,479,31"/>
 <area shape="poly" title=" " alt="" coords="514,21,479,21,479,16,514,16"/>
 <area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="265,5,314,31"/>
 <area shape="poly" title=" " alt="" coords="383,21,315,21,315,16,383,16"/>
@@ -507,11 +507,12 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   53</span>    unlink(<span class="stringliteral">&quot;/tmp/heredoc&quot;</span>);</div>
 <div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="redirect__heredoc_8c.html#a23ed985cdfe7cabe9e10245918421365">g_heredoc_interrupted</a> = 0;</div>
 <div class="line"><span class="lineno">   55</span>    sigaction(SIGINT, sa_old, NULL);</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> (1);</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
 <div class="line"><span class="lineno">   57</span>}</div>
+<div class="ttc" id="aexit__status_8h_html_a73efe787c131b385070f25d18b7c9aa4"><div class="ttname"><a href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a></div><div class="ttdeci">#define EXIT_FAILURE</div><div class="ttdef"><b>Definition</b> <a href="exit__status_8h_source.html#l00017">exit_status.h:17</a></div></div>
 <div class="ttc" id="aredirect__heredoc_8c_html_a23ed985cdfe7cabe9e10245918421365"><div class="ttname"><a href="redirect__heredoc_8c.html#a23ed985cdfe7cabe9e10245918421365">g_heredoc_interrupted</a></div><div class="ttdeci">volatile sig_atomic_t g_heredoc_interrupted</div><div class="ttdef"><b>Definition</b> <a href="redirect__heredoc_8c_source.html#l00027">redirect_heredoc.c:27</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="redirect__heredoc_8c_source.html#l00027">g_heredoc_interrupted</a>.</p>
+<p class="reference">References <a class="el" href="exit__status_8h_source.html#l00017">EXIT_FAILURE</a>, and <a class="el" href="redirect__heredoc_8c_source.html#l00027">g_heredoc_interrupted</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="redirect__heredoc_8c_source.html#l00089">redirect_here_doc()</a>.</p>
 <div class="dynheader">
@@ -528,7 +529,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="748,192,717,123,694,86,665,52,637,34,640,29,669,48,698,82,722,121,753,190"/>
 <area shape="rect" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="548,107,649,132"/>
 <area shape="poly" title=" " alt="" coords="733,197,702,170,666,146,643,135,645,130,668,141,705,166,737,193"/>
-<area shape="rect" href="main_8c.html#ad498ca831454cbba2b28e029317e2b6b" title=" " alt="" coords="530,156,667,182"/>
+<area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="530,156,667,182"/>
 <area shape="poly" title=" " alt="" coords="701,203,642,185,644,180,702,198"/>
 <area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="542,205,655,231"/>
 <area shape="poly" title=" " alt="" coords="699,230,656,229,656,224,699,224"/>
@@ -546,7 +547,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="216,97,185,97,185,92,216,92"/>
 <area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,81,55,107"/>
 <area shape="poly" title=" " alt="" coords="87,97,55,97,55,92,87,92"/>
-<area shape="rect" href="main_8c.html#a8e466c920a519eb4139b4f1348f3af7a" title=" " alt="" coords="398,156,479,182"/>
+<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="398,156,479,182"/>
 <area shape="poly" title=" " alt="" coords="514,172,479,172,479,166,514,166"/>
 <area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="265,156,314,182"/>
 <area shape="poly" title=" " alt="" coords="383,172,315,172,315,166,383,166"/>
@@ -608,8 +609,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  110</span>    file_fd = <a class="code hl_function" href="redirection_8h.html#a72c740f6128f4eba12c1d6c18513bde1">open_tmp_file</a>(<span class="stringliteral">&quot;r&quot;</span>);</div>
 <div class="line"><span class="lineno">  111</span>    <a class="code hl_function" href="redirect__heredoc_8c.html#a79ffb6362b8f0c6960e7fe77f93d8888">execute_child</a>(node-&gt;<a class="code hl_variable" href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">left</a>, data, &amp;file_fd);</div>
 <div class="line"><span class="lineno">  112</span>    unlink(<span class="stringliteral">&quot;/tmp/heredoc&quot;</span>);</div>
-<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><span class="lineno">  113</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a>);</div>
 <div class="line"><span class="lineno">  114</span>}</div>
+<div class="ttc" id="aexit__status_8h_html_a687984f47d8cce148d1b914d2b79612a"><div class="ttname"><a href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a></div><div class="ttdeci">#define EXIT_SUCCESS</div><div class="ttdef"><b>Definition</b> <a href="exit__status_8h_source.html#l00016">exit_status.h:16</a></div></div>
 <div class="ttc" id="alibft_8h_html_aebe73f27c70c56ac5053f860ef5436c9"><div class="ttname"><a href="libft_8h.html#aebe73f27c70c56ac5053f860ef5436c9">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="ft__strdup_8c_source.html#l00023">ft_strdup.c:23</a></div></div>
 <div class="ttc" id="aredirect__heredoc_8c_html_a024f35fc76fbbc658216e395cf08dab5"><div class="ttname"><a href="redirect__heredoc_8c.html#a024f35fc76fbbc658216e395cf08dab5">handle_heredoc_interruption</a></div><div class="ttdeci">static int handle_heredoc_interruption(char *line, char *eof, int file_fd, struct sigaction *sa_old)</div><div class="ttdef"><b>Definition</b> <a href="redirect__heredoc_8c_source.html#l00047">redirect_heredoc.c:47</a></div></div>
 <div class="ttc" id="aredirect__heredoc_8c_html_a5319b5e5cc939a431daab11d919629cd"><div class="ttname"><a href="redirect__heredoc_8c.html#a5319b5e5cc939a431daab11d919629cd">setup_sigint_handler</a></div><div class="ttdeci">static void setup_sigint_handler(struct sigaction *sa_old)</div><div class="ttdef"><b>Definition</b> <a href="redirect__heredoc_8c_source.html#l00037">redirect_heredoc.c:37</a></div></div>
@@ -621,7 +623,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="astructs__ast_html_ac2c9513b20e9351e45d9bc6361095f7b"><div class="ttname"><a href="structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b">s_ast::right</a></div><div class="ttdeci">struct s_ast * right</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00054">tokens.h:54</a></div></div>
 <div class="ttc" id="astructs__ast_html_ac3be51aa6a7ae13bd16b6ad0c7ac843c"><div class="ttname"><a href="structs__ast.html#ac3be51aa6a7ae13bd16b6ad0c7ac843c">s_ast::left</a></div><div class="ttdeci">struct s_ast * left</div><div class="ttdef"><b>Definition</b> <a href="tokens_8h_source.html#l00053">tokens.h:53</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="tokens_8h_source.html#l00052">s_ast::args</a>, <a class="el" href="redirect__heredoc_8c_source.html#l00059">execute_child()</a>, <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>, <a class="el" href="redirect__heredoc_8c_source.html#l00027">g_heredoc_interrupted</a>, <a class="el" href="redirect__heredoc_8c_source.html#l00047">handle_heredoc_interruption()</a>, <a class="el" href="tokens_8h_source.html#l00053">s_ast::left</a>, <a class="el" href="redirection_2utils_8c_source.html#l00052">open_tmp_file()</a>, <a class="el" href="loc__env__var__handler__heredoc_8c_source.html#l00027">process_and_reassemble()</a>, <a class="el" href="tokens_8h_source.html#l00054">s_ast::right</a>, <a class="el" href="redirect__heredoc_8c_source.html#l00037">setup_sigint_handler()</a>, and <a class="el" href="redirect__heredoc_8c_source.html#l00076">write_heredoc_lines()</a>.</p>
+<p class="reference">References <a class="el" href="tokens_8h_source.html#l00052">s_ast::args</a>, <a class="el" href="redirect__heredoc_8c_source.html#l00059">execute_child()</a>, <a class="el" href="exit__status_8h_source.html#l00016">EXIT_SUCCESS</a>, <a class="el" href="ft__strdup_8c_source.html#l00023">ft_strdup()</a>, <a class="el" href="redirect__heredoc_8c_source.html#l00027">g_heredoc_interrupted</a>, <a class="el" href="redirect__heredoc_8c_source.html#l00047">handle_heredoc_interruption()</a>, <a class="el" href="tokens_8h_source.html#l00053">s_ast::left</a>, <a class="el" href="redirection_2utils_8c_source.html#l00052">open_tmp_file()</a>, <a class="el" href="loc__env__var__handler__heredoc_8c_source.html#l00027">process_and_reassemble()</a>, <a class="el" href="tokens_8h_source.html#l00054">s_ast::right</a>, <a class="el" href="redirect__heredoc_8c_source.html#l00037">setup_sigint_handler()</a>, and <a class="el" href="redirect__heredoc_8c_source.html#l00076">write_heredoc_lines()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="execute_8c_source.html#l00038">execute_ast()</a>.</p>
 <div class="dynheader">
@@ -777,7 +779,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="748,192,717,123,694,86,665,52,637,34,640,29,669,48,698,82,722,121,753,190"/>
 <area shape="rect" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="548,107,649,132"/>
 <area shape="poly" title=" " alt="" coords="733,197,702,170,666,146,643,135,645,130,668,141,705,166,737,193"/>
-<area shape="rect" href="main_8c.html#ad498ca831454cbba2b28e029317e2b6b" title=" " alt="" coords="530,156,667,182"/>
+<area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="530,156,667,182"/>
 <area shape="poly" title=" " alt="" coords="701,203,642,185,644,180,702,198"/>
 <area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="542,205,655,231"/>
 <area shape="poly" title=" " alt="" coords="699,230,656,229,656,224,699,224"/>
@@ -795,7 +797,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="216,97,185,97,185,92,216,92"/>
 <area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,81,55,107"/>
 <area shape="poly" title=" " alt="" coords="87,97,55,97,55,92,87,92"/>
-<area shape="rect" href="main_8c.html#a8e466c920a519eb4139b4f1348f3af7a" title=" " alt="" coords="398,156,479,182"/>
+<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="398,156,479,182"/>
 <area shape="poly" title=" " alt="" coords="514,172,479,172,479,166,514,166"/>
 <area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="265,156,314,182"/>
 <area shape="poly" title=" " alt="" coords="383,172,315,172,315,166,383,166"/>
@@ -869,7 +871,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="748,192,717,123,694,86,665,52,637,34,640,29,669,48,698,82,722,121,753,190"/>
 <area shape="rect" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="548,107,649,132"/>
 <area shape="poly" title=" " alt="" coords="733,197,702,170,666,146,643,135,645,130,668,141,705,166,737,193"/>
-<area shape="rect" href="main_8c.html#ad498ca831454cbba2b28e029317e2b6b" title=" " alt="" coords="530,156,667,182"/>
+<area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="530,156,667,182"/>
 <area shape="poly" title=" " alt="" coords="701,203,642,185,644,180,702,198"/>
 <area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="542,205,655,231"/>
 <area shape="poly" title=" " alt="" coords="699,230,656,229,656,224,699,224"/>
@@ -887,7 +889,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="216,97,185,97,185,92,216,92"/>
 <area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,81,55,107"/>
 <area shape="poly" title=" " alt="" coords="87,97,55,97,55,92,87,92"/>
-<area shape="rect" href="main_8c.html#a8e466c920a519eb4139b4f1348f3af7a" title=" " alt="" coords="398,156,479,182"/>
+<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="398,156,479,182"/>
 <area shape="poly" title=" " alt="" coords="514,172,479,172,479,166,514,166"/>
 <area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="265,156,314,182"/>
 <area shape="poly" title=" " alt="" coords="383,172,315,172,315,166,383,166"/>
@@ -988,7 +990,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="748,192,717,123,694,86,665,52,637,34,640,29,669,48,698,82,722,121,753,190"/>
 <area shape="rect" href="pipe_8c.html#a469087fc10539c580fe08400173ab4b8" title="execute child process in the pipe context" alt="" coords="548,107,649,132"/>
 <area shape="poly" title=" " alt="" coords="733,197,702,170,666,146,643,135,645,130,668,141,705,166,737,193"/>
-<area shape="rect" href="main_8c.html#ad498ca831454cbba2b28e029317e2b6b" title=" " alt="" coords="530,156,667,182"/>
+<area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="530,156,667,182"/>
 <area shape="poly" title=" " alt="" coords="701,203,642,185,644,180,702,198"/>
 <area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="542,205,655,231"/>
 <area shape="poly" title=" " alt="" coords="699,230,656,229,656,224,699,224"/>
@@ -1006,7 +1008,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="216,97,185,97,185,92,216,92"/>
 <area shape="rect" href="test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,81,55,107"/>
 <area shape="poly" title=" " alt="" coords="87,97,55,97,55,92,87,92"/>
-<area shape="rect" href="main_8c.html#a8e466c920a519eb4139b4f1348f3af7a" title=" " alt="" coords="398,156,479,182"/>
+<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="398,156,479,182"/>
 <area shape="poly" title=" " alt="" coords="514,172,479,172,479,166,514,166"/>
 <area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="265,156,314,182"/>
 <area shape="poly" title=" " alt="" coords="383,172,315,172,315,166,383,166"/>
