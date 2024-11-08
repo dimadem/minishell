@@ -611,7 +611,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   44</span>    status = <a class="code hl_function" href="execute_8h.html#a18f57d723990aa716495663fbe9e4610">execute_ast</a>(loop_data-&gt;<a class="code hl_variable" href="structs__loop__data.html#ac27fcff1e53a529b5f6a27dd21a28a91">tree</a>, data);</div>
 <div class="line"><span class="lineno">   45</span>    data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a2d3fc4d4c5f229fd50f00571565c3cb7">exit_status</a> = status;</div>
 <div class="line"><span class="lineno">   46</span>    <a class="code hl_function" href="exit__status_8h.html#aaba65d0061083091e69b12ed2868d84b">set_shell_var_handler</a>(data);</div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="main_8c.html#ab3baaf88408ef96fc54970edbbfd7575">status_handler</a>(status, loop_data, tokens_head))</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="main_8c.html#ab3baaf88408ef96fc54970edbbfd7575">status_handler</a>(status, loop_data, tokens_head) == 0)</div>
 <div class="line"><span class="lineno">   48</span>    {</div>
 <div class="line"><span class="lineno">   49</span>        <a class="code hl_function" href="execute_8h.html#ab311184a8278ddd2630e643a3ad7a8e6">handle_io_fd</a>(data);</div>
 <div class="line"><span class="lineno">   50</span>        <a class="code hl_function" href="tokens_8h.html#a1d908f158e803cacfa7af11107a1e32d">loop_cleanup</a>(loop_data, tokens_head);</div>
@@ -815,16 +815,16 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00028">28</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
-<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (status == <a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>)</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordflow">if</span> (status == <a class="code hl_define" href="pipe_8h.html#a816f42487cd607fbdb7df660a0d913fc">WAIT_NEXT_COMMAND</a>)</div>
 <div class="line"><span class="lineno">   32</span>    {</div>
 <div class="line"><span class="lineno">   33</span>        <a class="code hl_function" href="tokens_8h.html#a1d908f158e803cacfa7af11107a1e32d">loop_cleanup</a>(loop_data, tokens_head);</div>
 <div class="line"><span class="lineno">   34</span>        <span class="keywordflow">return</span> (0);</div>
 <div class="line"><span class="lineno">   35</span>    }</div>
 <div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> (1);</div>
 <div class="line"><span class="lineno">   37</span>}</div>
-<div class="ttc" id="aexit__status_8h_html_a73efe787c131b385070f25d18b7c9aa4"><div class="ttname"><a href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a></div><div class="ttdeci">#define EXIT_FAILURE</div><div class="ttdef"><b>Definition</b> <a href="exit__status_8h_source.html#l00017">exit_status.h:17</a></div></div>
+<div class="ttc" id="apipe_8h_html_a816f42487cd607fbdb7df660a0d913fc"><div class="ttname"><a href="pipe_8h.html#a816f42487cd607fbdb7df660a0d913fc">WAIT_NEXT_COMMAND</a></div><div class="ttdeci">#define WAIT_NEXT_COMMAND</div><div class="ttdef"><b>Definition</b> <a href="pipe_8h_source.html#l00019">pipe.h:19</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="exit__status_8h_source.html#l00017">EXIT_FAILURE</a>, and <a class="el" href="clean_8c_source.html#l00067">loop_cleanup()</a>.</p>
+<p class="reference">References <a class="el" href="clean_8c_source.html#l00067">loop_cleanup()</a>, and <a class="el" href="pipe_8h_source.html#l00019">WAIT_NEXT_COMMAND</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00039">process_ast_and_io()</a>.</p>
 <div class="dynheader">
