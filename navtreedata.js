@@ -53,7 +53,7 @@ var NAVTREEINDEX =
 "AST_8c.html",
 "ft__memmove_8c_source.html",
 "libft_8h.html#aa7c4f303aebd3737b7cc180a9e7608f1",
-"tokeniser_8c.html#a84594605a20a4ec90b22aa168439fb7d"
+"tokeniser_8c_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

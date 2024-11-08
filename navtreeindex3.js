@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"tokeniser_8c.html#a84594605a20a4ec90b22aa168439fb7d":[1,0,2,1,2,2],
 "tokeniser_8c_source.html":[1,0,2,1,2],
 "tokeniser__helpers_8c.html":[1,0,2,1,3],
 "tokeniser__helpers_8c.html#a794df33f59bbab3194911bc3eab90871":[1,0,2,1,3,0],

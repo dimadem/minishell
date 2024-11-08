@@ -17,7 +17,7 @@ var searchData=
   ['print_5ftokens_14',['print_tokens',['../tokens_8h.html#aa5f2c9d493b4c8be2ece1be562606ea8',1,'print_tokens(t_token *tokens, char *name):&#160;tokeniser_helpers.c'],['../tokeniser__helpers_8c.html#aa5f2c9d493b4c8be2ece1be562606ea8',1,'print_tokens(t_token *tokens, char *name):&#160;tokeniser_helpers.c']]],
   ['process_5fand_5freassemble_15',['process_and_reassemble',['../redirection_8h.html#a5eb6c7ca159bb89055f788a8bf0e0594',1,'process_and_reassemble(char *line, t_ms_data *data):&#160;loc_env_var_handler_heredoc.c'],['../loc__env__var__handler__heredoc_8c.html#a5eb6c7ca159bb89055f788a8bf0e0594',1,'process_and_reassemble(char *line, t_ms_data *data):&#160;loc_env_var_handler_heredoc.c']]],
   ['process_5fargument_16',['process_argument',['../tokens_8h.html#af891fe2f7e0a7383e331ef4950f2bb6c',1,'process_argument(char *arg, t_ms_data *data):&#160;loc_env_var_handler.c'],['../loc__env__var__handler_8c.html#af891fe2f7e0a7383e331ef4950f2bb6c',1,'process_argument(char *arg, t_ms_data *data):&#160;loc_env_var_handler.c']]],
-  ['process_5fast_5fand_5fio_17',['process_ast_and_io',['../main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93',1,'main.c']]],
+  ['process_5fcommand_17',['process_command',['../main_8c.html#a58ec4cbe311c0444bad2ee2b780c2068',1,'main.c']]],
   ['process_5fsingle_5ftoken_18',['process_single_token',['../loc__env__var__handler__heredoc_8c.html#a7a560281684ddbe91b2f3f7a550e02c0',1,'loc_env_var_handler_heredoc.c']]],
   ['process_5ftokens_19',['process_tokens',['../loc__env__var__handler__heredoc_8c.html#a12a2fc138766370fc857d8e5e31fac36',1,'loc_env_var_handler_heredoc.c']]]
 ];
