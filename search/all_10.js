@@ -17,6 +17,7 @@ var searchData=
   ['redirect_5fout_2ec_14',['redirect_out.c',['../redirect__out_8c.html',1,'']]],
   ['redirection_2eh_15',['redirection.h',['../redirection_8h.html',1,'']]],
   ['relative_5fpath_5fhandle_16',['relative_path_handle',['../utils__1_8c.html#ac48357d68e0cbc48befd5e157c67c0d6',1,'utils_1.c']]],
-  ['reset_17',['RESET',['../libft_8h.html#ab702106cf3b3e96750b6845ded4e0299',1,'libft.h']]],
-  ['right_18',['right',['../structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b',1,'s_ast']]]
+  ['remove_5fquotes_17',['remove_quotes',['../utils__utils_8c.html#ac0fd955e99d63c9c325d871c81b6a7e1',1,'utils_utils.c']]],
+  ['reset_18',['RESET',['../libft_8h.html#ab702106cf3b3e96750b6845ded4e0299',1,'libft.h']]],
+  ['right_19',['right',['../structs__ast.html#ac2c9513b20e9351e45d9bc6361095f7b',1,'s_ast']]]
 ];
