@@ -155,6 +155,10 @@ Functions</h2></td></tr>
 <tr class="separator:aa226ea4e8134ae07604293522c08bcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75d9ab1c7aa7b65a9233367c05aa0b04" id="r_a75d9ab1c7aa7b65a9233367c05aa0b04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loc__env__var__handler__utils_8c.html#a75d9ab1c7aa7b65a9233367c05aa0b04">handle_local_vars</a> (<a class="el" href="shell_8h.html#ac2ad4684aec6733ad84ec1416727ccde">t_ms_data</a> *data, char *arg)</td></tr>
 <tr class="separator:a75d9ab1c7aa7b65a9233367c05aa0b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb5fbbaec0413ed6f197513a4834d90" id="r_afdb5fbbaec0413ed6f197513a4834d90"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loc__env__var__handler__utils_8c.html#afdb5fbbaec0413ed6f197513a4834d90">ft_add_segment</a> (char **result, char *start, size_t length, int *count)</td></tr>
+<tr class="separator:afdb5fbbaec0413ed6f197513a4834d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2787e5ca094016f043de10813d0db4dd" id="r_a2787e5ca094016f043de10813d0db4dd"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="loc__env__var__handler__utils_8c.html#a2787e5ca094016f043de10813d0db4dd">ft_split_preserve_quotes</a> (char *str, char delimiter)</td></tr>
+<tr class="separator:a2787e5ca094016f043de10813d0db4dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="abe7e3bf4b595494caef712eec185a6a5" name="abe7e3bf4b595494caef712eec185a6a5"></a>
@@ -534,6 +538,208 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="530,109,478,97,480,92,531,104"/>
 <area shape="poly" title=" " alt="" coords="833,366,874,349,917,324,954,298,957,303,920,328,877,354,835,371"/>
 <area shape="poly" title=" " alt="" coords="836,416,874,398,904,374,930,347,968,299,973,302,934,351,907,378,877,403,839,420"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afdb5fbbaec0413ed6f197513a4834d90" name="afdb5fbbaec0413ed6f197513a4834d90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb5fbbaec0413ed6f197513a4834d90">&#9670;&#160;</a></span>ft_add_segment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ** ft_add_segment </td>
+          <td>(</td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="loc__env__var__handler__utils_8c_source.html#l00091">91</a> of file <a class="el" href="loc__env__var__handler__utils_8c_source.html">loc_env_var_handler_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>{</div>
+<div class="line"><span class="lineno">   93</span>    result = realloc(result, (*count + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *));</div>
+<div class="line"><span class="lineno">   94</span>    result[*count] = <a class="code hl_function" href="libft_8h.html#a2d5f42a11a38830b809bced1fc209c20">ft_strndup</a>(start, length);</div>
+<div class="line"><span class="lineno">   95</span>    (*count)++;</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">return</span> (result);</div>
+<div class="line"><span class="lineno">   97</span>}</div>
+<div class="ttc" id="alibft_8h_html_a2d5f42a11a38830b809bced1fc209c20"><div class="ttname"><a href="libft_8h.html#a2d5f42a11a38830b809bced1fc209c20">ft_strndup</a></div><div class="ttdeci">char * ft_strndup(const char *s, size_t n)</div><div class="ttdef"><b>Definition</b> <a href="ft__strndup_8c_source.html#l00023">ft_strndup.c:23</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="ft__strndup_8c_source.html#l00023">ft_strndup()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="loc__env__var__handler__utils_8c_source.html#l00099">ft_split_preserve_quotes()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="loc__env__var__handler__utils_8c_afdb5fbbaec0413ed6f197513a4834d90_cgraph.png" border="0" usemap="#aloc__env__var__handler__utils_8c_afdb5fbbaec0413ed6f197513a4834d90_cgraph" alt=""/></div>
+<map name="aloc__env__var__handler__utils_8c_afdb5fbbaec0413ed6f197513a4834d90_cgraph" id="aloc__env__var__handler__utils_8c_afdb5fbbaec0413ed6f197513a4834d90_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,120,56"/>
+<area shape="rect" href="ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="168,31,247,56"/>
+<area shape="poly" title=" " alt="" coords="120,41,152,41,152,46,120,46"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="295,5,369,31"/>
+<area shape="poly" title=" " alt="" coords="247,33,279,26,280,31,248,38"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="298,55,366,80"/>
+<area shape="poly" title=" " alt="" coords="248,49,283,55,282,61,247,54"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="loc__env__var__handler__utils_8c_afdb5fbbaec0413ed6f197513a4834d90_icgraph.png" border="0" usemap="#aloc__env__var__handler__utils_8c_afdb5fbbaec0413ed6f197513a4834d90_icgraph" alt=""/></div>
+<map name="aloc__env__var__handler__utils_8c_afdb5fbbaec0413ed6f197513a4834d90_icgraph" id="aloc__env__var__handler__utils_8c_afdb5fbbaec0413ed6f197513a4834d90_icgraph">
+<area shape="rect" title=" " alt="" coords="1641,31,1755,56"/>
+<area shape="rect" href="loc__env__var__handler__utils_8c.html#a2787e5ca094016f043de10813d0db4dd" title=" " alt="" coords="1429,31,1593,56"/>
+<area shape="poly" title=" " alt="" coords="1625,46,1593,46,1593,41,1625,41"/>
+<area shape="rect" href="loc__env__var__handler_8c.html#a7e14d96031e118339fd4ed8874b9c6b2" title=" " alt="" coords="1280,31,1381,56"/>
+<area shape="poly" title=" " alt="" coords="1414,46,1382,46,1382,41,1414,41"/>
+<area shape="rect" href="loc__env__var__handler_8c.html#ae75b1ee73be065ece94dc8bf097a04d1" title=" " alt="" coords="1037,31,1232,56"/>
+<area shape="poly" title=" " alt="" coords="1264,46,1232,46,1232,41,1264,41"/>
+<area shape="rect" href="AST__utils_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad" title=" " alt="" coords="850,31,989,56"/>
+<area shape="poly" title=" " alt="" coords="1021,46,989,46,989,41,1021,41"/>
+<area shape="rect" href="AST_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="696,31,802,56"/>
+<area shape="poly" title=" " alt="" coords="835,46,803,46,803,41,835,41"/>
+<area shape="rect" href="AST__utils_8c.html#a45cf67e5b11b527f76f1f90ce1e44814" title=" " alt="" coords="525,5,648,31"/>
+<area shape="poly" title=" " alt="" coords="680,35,648,30,649,25,681,30"/>
+<area shape="rect" href="AST__utils_8c.html#a04b3327a8c7b3dd801cc78e14a574a81" title=" " alt="" coords="378,5,477,31"/>
+<area shape="poly" title=" " alt="" coords="681,51,605,52,524,46,470,34,471,29,525,41,606,46,681,45"/>
+<area shape="poly" title=" " alt="" coords="509,30,477,29,477,24,509,24"/>
+<area shape="poly" title=" " alt="" coords="492,7,524,7,524,12,492,12"/>
+<area shape="rect" href="AST__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="231,5,330,31"/>
+<area shape="poly" title=" " alt="" coords="363,21,331,21,331,16,363,16"/>
+<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="103,5,183,31"/>
+<area shape="poly" title=" " alt="" coords="215,21,184,21,184,16,215,16"/>
+<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2787e5ca094016f043de10813d0db4dd" name="a2787e5ca094016f043de10813d0db4dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2787e5ca094016f043de10813d0db4dd">&#9670;&#160;</a></span>ft_split_preserve_quotes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ** ft_split_preserve_quotes </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>delimiter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="loc__env__var__handler__utils_8c_source.html#l00099">99</a> of file <a class="el" href="loc__env__var__handler__utils_8c_source.html">loc_env_var_handler_utils.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>{</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordtype">char</span>    **result;</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordtype">int</span>     count;</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">int</span>     in_quotes;</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordtype">char</span>    *start;</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    result = NULL;</div>
+<div class="line"><span class="lineno">  107</span>    count = 0;</div>
+<div class="line"><span class="lineno">  108</span>    in_quotes = 0;</div>
+<div class="line"><span class="lineno">  109</span>    start = str;</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">while</span> (*str)</div>
+<div class="line"><span class="lineno">  111</span>    {</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">if</span> (*str == <span class="charliteral">&#39;&quot;&#39;</span> || *str == <span class="charliteral">&#39;\&#39;&#39;</span>)</div>
+<div class="line"><span class="lineno">  113</span>            in_quotes = !in_quotes;</div>
+<div class="line"><span class="lineno">  114</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*str == delimiter &amp;&amp; !in_quotes)</div>
+<div class="line"><span class="lineno">  115</span>        {</div>
+<div class="line"><span class="lineno">  116</span>            result = <a class="code hl_function" href="loc__env__var__handler__utils_8c.html#afdb5fbbaec0413ed6f197513a4834d90">ft_add_segment</a>(result, start, str - start, &amp;count);</div>
+<div class="line"><span class="lineno">  117</span>            start = str + 1;</div>
+<div class="line"><span class="lineno">  118</span>        }</div>
+<div class="line"><span class="lineno">  119</span>        str++;</div>
+<div class="line"><span class="lineno">  120</span>    }</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span> (str != start)</div>
+<div class="line"><span class="lineno">  122</span>        result = <a class="code hl_function" href="loc__env__var__handler__utils_8c.html#afdb5fbbaec0413ed6f197513a4834d90">ft_add_segment</a>(result, start, str - start, &amp;count);</div>
+<div class="line"><span class="lineno">  123</span>    result[count] = NULL;</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> (result);</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+<div class="ttc" id="aloc__env__var__handler__utils_8c_html_afdb5fbbaec0413ed6f197513a4834d90"><div class="ttname"><a href="loc__env__var__handler__utils_8c.html#afdb5fbbaec0413ed6f197513a4834d90">ft_add_segment</a></div><div class="ttdeci">char ** ft_add_segment(char **result, char *start, size_t length, int *count)</div><div class="ttdef"><b>Definition</b> <a href="loc__env__var__handler__utils_8c_source.html#l00091">loc_env_var_handler_utils.c:91</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="loc__env__var__handler__utils_8c_source.html#l00091">ft_add_segment()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="loc__env__var__handler_8c_source.html#l00029">split_loc_vars()</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="loc__env__var__handler__utils_8c_a2787e5ca094016f043de10813d0db4dd_cgraph.png" border="0" usemap="#aloc__env__var__handler__utils_8c_a2787e5ca094016f043de10813d0db4dd_cgraph" alt=""/></div>
+<map name="aloc__env__var__handler__utils_8c_a2787e5ca094016f043de10813d0db4dd_cgraph" id="aloc__env__var__handler__utils_8c_a2787e5ca094016f043de10813d0db4dd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,169,56"/>
+<area shape="rect" href="loc__env__var__handler__utils_8c.html#afdb5fbbaec0413ed6f197513a4834d90" title=" " alt="" coords="217,31,331,56"/>
+<area shape="poly" title=" " alt="" coords="169,41,201,41,201,46,169,46"/>
+<area shape="rect" href="ft__strndup_8c.html#a2d5f42a11a38830b809bced1fc209c20" title=" " alt="" coords="379,31,458,56"/>
+<area shape="poly" title=" " alt="" coords="331,41,363,41,363,46,331,46"/>
+<area shape="rect" href="ft__strlcpy_8c.html#aa053827b3a2ea3d0118783d6fb59d178" title=" " alt="" coords="506,5,581,31"/>
+<area shape="poly" title=" " alt="" coords="458,33,491,26,492,31,460,38"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="509,55,578,80"/>
+<area shape="poly" title=" " alt="" coords="460,49,495,55,494,61,458,54"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="loc__env__var__handler__utils_8c_a2787e5ca094016f043de10813d0db4dd_icgraph.png" border="0" usemap="#aloc__env__var__handler__utils_8c_a2787e5ca094016f043de10813d0db4dd_icgraph" alt=""/></div>
+<map name="aloc__env__var__handler__utils_8c_a2787e5ca094016f043de10813d0db4dd_icgraph" id="aloc__env__var__handler__utils_8c_a2787e5ca094016f043de10813d0db4dd_icgraph">
+<area shape="rect" title=" " alt="" coords="1429,31,1593,56"/>
+<area shape="rect" href="loc__env__var__handler_8c.html#a7e14d96031e118339fd4ed8874b9c6b2" title=" " alt="" coords="1280,31,1381,56"/>
+<area shape="poly" title=" " alt="" coords="1414,46,1382,46,1382,41,1414,41"/>
+<area shape="rect" href="loc__env__var__handler_8c.html#ae75b1ee73be065ece94dc8bf097a04d1" title=" " alt="" coords="1037,31,1232,56"/>
+<area shape="poly" title=" " alt="" coords="1264,46,1232,46,1232,41,1264,41"/>
+<area shape="rect" href="AST__utils_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad" title=" " alt="" coords="850,31,989,56"/>
+<area shape="poly" title=" " alt="" coords="1021,46,989,46,989,41,1021,41"/>
+<area shape="rect" href="AST_8c.html#a9efa4d57dd89fa07cc567b31639ae20c" title=" " alt="" coords="696,31,802,56"/>
+<area shape="poly" title=" " alt="" coords="835,46,803,46,803,41,835,41"/>
+<area shape="rect" href="AST__utils_8c.html#a45cf67e5b11b527f76f1f90ce1e44814" title=" " alt="" coords="525,5,648,31"/>
+<area shape="poly" title=" " alt="" coords="680,35,648,30,649,25,681,30"/>
+<area shape="rect" href="AST__utils_8c.html#a04b3327a8c7b3dd801cc78e14a574a81" title=" " alt="" coords="378,5,477,31"/>
+<area shape="poly" title=" " alt="" coords="681,51,605,52,524,46,470,34,471,29,525,41,606,46,681,45"/>
+<area shape="poly" title=" " alt="" coords="509,30,477,29,477,24,509,24"/>
+<area shape="poly" title=" " alt="" coords="492,7,524,7,524,12,492,12"/>
+<area shape="rect" href="AST__utils_8c.html#a2fc6d65494ea98e85fda590e7c727f93" title=" " alt="" coords="231,5,330,31"/>
+<area shape="poly" title=" " alt="" coords="363,21,331,21,331,16,363,16"/>
+<area shape="rect" href="main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2" title=" " alt="" coords="103,5,183,31"/>
+<area shape="poly" title=" " alt="" coords="215,21,184,21,184,16,215,16"/>
+<area shape="rect" href="main_8c.html#a647f21a28344e1d9c643f4115516d7c9" title=" " alt="" coords="5,5,55,31"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
 </map>
 </div>
 

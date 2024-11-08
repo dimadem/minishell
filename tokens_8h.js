@@ -41,6 +41,8 @@ var tokens_8h =
     [ "free_ast", "tokens_8h.html#a0a4196019426e41a9f5ec36835396e81", null ],
     [ "free_ms_data", "tokens_8h.html#af17ea5ac006f519b05a1631127f7aebc", null ],
     [ "free_stack", "tokens_8h.html#aea956fb83b5f5930d3ac2d3f9f8f3c36", null ],
+    [ "ft_add_segment", "tokens_8h.html#afdb5fbbaec0413ed6f197513a4834d90", null ],
+    [ "ft_split_preserve_quotes", "tokens_8h.html#a2787e5ca094016f043de10813d0db4dd", null ],
     [ "generate_prompt", "tokens_8h.html#a9f5d4b27dda19ba9bdc223940f648db5", null ],
     [ "handle_local_vars", "tokens_8h.html#a75d9ab1c7aa7b65a9233367c05aa0b04", null ],
     [ "handle_quotes", "tokens_8h.html#a8dc56ed3b3d3adfc475248b748d77e33", null ],
