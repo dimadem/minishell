@@ -282,7 +282,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="947,248,915,297,893,323,868,346,849,356,847,352,865,341,889,319,911,294,943,245"/>
 <area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="729,5,866,31"/>
 <area shape="poly" title=" " alt="" coords="947,193,917,124,893,86,865,52,836,34,839,29,868,48,898,83,922,121,952,191"/>
-<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="741,157,854,183"/>
+<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title=" " alt="" coords="741,157,854,183"/>
 <area shape="poly" title=" " alt="" coords="898,212,821,186,822,181,900,207"/>
 <area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title=" " alt="" coords="757,207,838,232"/>
 <area shape="poly" title=" " alt="" coords="899,231,839,230,839,225,899,226"/>
@@ -330,32 +330,41 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="echo_8c_source.html#l00022">22</a> of file <a class="el" href="echo_8c_source.html">echo.c</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>{</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">int</span> newline;</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">int</span> i;</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    newline = 1;</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[1] &amp;&amp; (<a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[1], <span class="stringliteral">&quot;-n&quot;</span>) == 0))</div>
-<div class="line"><span class="lineno">   29</span>    {</div>
-<div class="line"><span class="lineno">   30</span>        newline = 0;</div>
-<div class="line"><span class="lineno">   31</span>        data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>++;</div>
-<div class="line"><span class="lineno">   32</span>    }</div>
-<div class="line"><span class="lineno">   33</span>    i = 0;</div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">while</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[++i])</div>
-<div class="line"><span class="lineno">   35</span>    {</div>
-<div class="line"><span class="lineno">   36</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[i], STDOUT_FILENO);</div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[i + 1])</div>
-<div class="line"><span class="lineno">   38</span>            <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(<span class="stringliteral">&quot; &quot;</span>, STDOUT_FILENO);</div>
+<p class="definition">Definition at line <a class="el" href="echo_8c_source.html#l00023">23</a> of file <a class="el" href="echo_8c_source.html">echo.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{</div>
+<div class="line"><span class="lineno">   25</span>    <span class="keywordtype">int</span>     newline;</div>
+<div class="line"><span class="lineno">   26</span>    <span class="keywordtype">int</span>     i;</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">char</span>    **args;</div>
+<div class="line"><span class="lineno">   28</span> </div>
+<div class="line"><span class="lineno">   29</span>    newline = 1;</div>
+<div class="line"><span class="lineno">   30</span>    i = 1;</div>
+<div class="line"><span class="lineno">   31</span>    args = data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span> (!data || !data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a> || !data-&gt;<a class="code hl_variable" href="structs__ms__data.html#ae0f3cfd0ab25ca9b6a5c9c1697e1692a">args</a>[0])</div>
+<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>);</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_function" href="execute_8h.html#a4ca13c70d2243aeaef674c33758ad09a">handle_std_io</a>(&amp;data-&gt;<a class="code hl_variable" href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">std_out</a>, STDOUT_FILENO);</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">if</span> (args[1] &amp;&amp; <a class="code hl_function" href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a>(args[1], <span class="stringliteral">&quot;-n&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>        newline = 0;</div>
+<div class="line"><span class="lineno">   38</span>        i = 2;</div>
 <div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">if</span> (newline)</div>
-<div class="line"><span class="lineno">   41</span>        write(STDOUT_FILENO, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a>);</div>
-<div class="line"><span class="lineno">   43</span>}</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">while</span> (args[i])</div>
+<div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>        <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(args[i], STDOUT_FILENO);</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">if</span> (args[i + 1])</div>
+<div class="line"><span class="lineno">   44</span>            <a class="code hl_function" href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a>(<span class="stringliteral">&quot; &quot;</span>, STDOUT_FILENO);</div>
+<div class="line"><span class="lineno">   45</span>        i++;</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">if</span> (newline)</div>
+<div class="line"><span class="lineno">   48</span>        <a class="code hl_function" href="libft_8h.html#a8ee15a511946c1397bd2bdea4aed6aee">ft_putchar_fd</a>(<span class="charliteral">&#39;\n&#39;</span>, STDOUT_FILENO);</div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> (<a class="code hl_define" href="exit__status_8h.html#a687984f47d8cce148d1b914d2b79612a">EXIT_SUCCESS</a>);</div>
+<div class="line"><span class="lineno">   50</span>}</div>
+<div class="ttc" id="aexecute_8h_html_a4ca13c70d2243aeaef674c33758ad09a"><div class="ttname"><a href="execute_8h.html#a4ca13c70d2243aeaef674c33758ad09a">handle_std_io</a></div><div class="ttdeci">void handle_std_io(int *std_io, int std_fileno)</div><div class="ttdef"><b>Definition</b> <a href="utils__0_8c_source.html#l00050">utils_0.c:50</a></div></div>
 <div class="ttc" id="alibft_8h_html_a1f2ff2312e5994560c9537cd9173be94"><div class="ttname"><a href="libft_8h.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a></div><div class="ttdeci">int ft_strcmp(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="ft__strcmp_8c_source.html#l00024">ft_strcmp.c:24</a></div></div>
+<div class="ttc" id="alibft_8h_html_a8ee15a511946c1397bd2bdea4aed6aee"><div class="ttname"><a href="libft_8h.html#a8ee15a511946c1397bd2bdea4aed6aee">ft_putchar_fd</a></div><div class="ttdeci">void ft_putchar_fd(char c, int fd)</div><div class="ttdef"><b>Definition</b> <a href="ft__putchar__fd_8c_source.html#l00020">ft_putchar_fd.c:20</a></div></div>
 <div class="ttc" id="alibft_8h_html_acefce9ac519f8f8b7d3fde33dbafe469"><div class="ttname"><a href="libft_8h.html#acefce9ac519f8f8b7d3fde33dbafe469">ft_putstr_fd</a></div><div class="ttdeci">void ft_putstr_fd(char *s, int fd)</div><div class="ttdef"><b>Definition</b> <a href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd.c:20</a></div></div>
+<div class="ttc" id="astructs__ms__data_html_a68d87458c3e4250e56a66c8ece61d5a5"><div class="ttname"><a href="structs__ms__data.html#a68d87458c3e4250e56a66c8ece61d5a5">s_ms_data::std_out</a></div><div class="ttdeci">int std_out</div><div class="ttdef"><b>Definition</b> <a href="shell_8h_source.html#l00027">shell.h:27</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_ms_data::args</a>, <a class="el" href="exit__status_8h_source.html#l00016">EXIT_SUCCESS</a>, <a class="el" href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd()</a>, and <a class="el" href="ft__strcmp_8c_source.html#l00024">ft_strcmp()</a>.</p>
+<p class="reference">References <a class="el" href="shell_8h_source.html#l00023">s_ms_data::args</a>, <a class="el" href="exit__status_8h_source.html#l00017">EXIT_FAILURE</a>, <a class="el" href="exit__status_8h_source.html#l00016">EXIT_SUCCESS</a>, <a class="el" href="ft__putchar__fd_8c_source.html#l00020">ft_putchar_fd()</a>, <a class="el" href="ft__putstr__fd_8c_source.html#l00020">ft_putstr_fd()</a>, <a class="el" href="ft__strcmp_8c_source.html#l00024">ft_strcmp()</a>, <a class="el" href="utils__0_8c_source.html#l00050">handle_std_io()</a>, and <a class="el" href="shell_8h_source.html#l00027">s_ms_data::std_out</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="execute__child_8c_source.html#l00040">execute()</a>.</p>
 <div class="dynheader">
@@ -363,13 +372,17 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="builtins_8h_aad8cf30ea2aff3ab849f3f9cc156bc65_cgraph.png" border="0" usemap="#abuiltins_8h_aad8cf30ea2aff3ab849f3f9cc156bc65_cgraph" alt=""/></div>
 <map name="abuiltins_8h_aad8cf30ea2aff3ab849f3f9cc156bc65_cgraph" id="abuiltins_8h_aad8cf30ea2aff3ab849f3f9cc156bc65_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,96,56"/>
-<area shape="rect" href="ft__putstr__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="144,5,231,31"/>
-<area shape="poly" title=" " alt="" coords="96,33,128,26,129,32,97,38"/>
-<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="149,55,226,80"/>
-<area shape="poly" title=" " alt="" coords="97,49,135,56,134,61,96,54"/>
-<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="279,5,347,31"/>
-<area shape="poly" title=" " alt="" coords="231,16,264,16,264,21,231,21"/>
+<area shape="rect" title=" " alt="" coords="5,80,96,106"/>
+<area shape="rect" href="ft__putchar__fd_8c.html#a8ee15a511946c1397bd2bdea4aed6aee" title=" " alt="" coords="146,5,243,31"/>
+<area shape="poly" title=" " alt="" coords="74,77,142,40,150,36,153,41,145,45,77,82"/>
+<area shape="rect" href="ft__putstr__fd_8c.html#acefce9ac519f8f8b7d3fde33dbafe469" title=" " alt="" coords="151,55,238,80"/>
+<area shape="poly" title=" " alt="" coords="96,82,135,75,136,80,97,88"/>
+<area shape="rect" href="ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94" title=" " alt="" coords="156,104,233,130"/>
+<area shape="poly" title=" " alt="" coords="97,98,141,105,140,111,96,103"/>
+<area shape="rect" href="utils__0_8c.html#a4ca13c70d2243aeaef674c33758ad09a" title=" " alt="" coords="144,153,245,179"/>
+<area shape="poly" title=" " alt="" coords="78,104,145,140,153,144,150,149,142,145,75,109"/>
+<area shape="rect" href="ft__strlen_8c.html#abbb8c6c4ed85d892e7f1509f65f5768a" title=" " alt="" coords="293,55,361,80"/>
+<area shape="poly" title=" " alt="" coords="239,65,277,65,277,70,239,70"/>
 </map>
 </div>
 <div class="dynheader">
@@ -388,7 +401,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="947,248,915,297,893,323,868,346,849,356,847,352,865,341,889,319,911,294,943,245"/>
 <area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="729,5,866,31"/>
 <area shape="poly" title=" " alt="" coords="947,193,917,124,893,86,865,52,836,34,839,29,868,48,898,83,922,121,952,191"/>
-<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="741,157,854,183"/>
+<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title=" " alt="" coords="741,157,854,183"/>
 <area shape="poly" title=" " alt="" coords="898,212,821,186,822,181,900,207"/>
 <area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title=" " alt="" coords="757,207,838,232"/>
 <area shape="poly" title=" " alt="" coords="899,231,839,230,839,225,899,226"/>
@@ -552,7 +565,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="947,248,915,297,893,323,868,346,849,356,847,352,865,341,889,319,911,294,943,245"/>
 <area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="729,5,866,31"/>
 <area shape="poly" title=" " alt="" coords="947,193,917,124,893,86,865,52,836,34,839,29,868,48,898,83,922,121,952,191"/>
-<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="741,157,854,183"/>
+<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title=" " alt="" coords="741,157,854,183"/>
 <area shape="poly" title=" " alt="" coords="898,212,821,186,822,181,900,207"/>
 <area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title=" " alt="" coords="757,207,838,232"/>
 <area shape="poly" title=" " alt="" coords="899,231,839,230,839,225,899,226"/>
@@ -728,7 +741,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="945,227,913,169,891,138,865,110,835,92,838,88,868,106,895,135,918,166,949,224"/>
 <area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="729,362,866,388"/>
 <area shape="poly" title=" " alt="" coords="943,279,910,317,868,353,847,364,845,359,865,349,907,313,939,276"/>
-<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="741,214,854,240"/>
+<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title=" " alt="" coords="741,214,854,240"/>
 <area shape="poly" title=" " alt="" coords="898,254,835,243,836,238,899,249"/>
 <area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title=" " alt="" coords="757,264,838,289"/>
 <area shape="poly" title=" " alt="" coords="907,271,839,281,838,276,906,266"/>
@@ -929,7 +942,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="947,248,915,297,893,323,868,346,849,356,847,352,865,341,889,319,911,294,943,245"/>
 <area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="729,5,866,31"/>
 <area shape="poly" title=" " alt="" coords="947,193,917,124,893,86,865,52,836,34,839,29,868,48,898,83,922,121,952,191"/>
-<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="741,157,854,183"/>
+<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title=" " alt="" coords="741,157,854,183"/>
 <area shape="poly" title=" " alt="" coords="898,212,821,186,822,181,900,207"/>
 <area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title=" " alt="" coords="757,207,838,232"/>
 <area shape="poly" title=" " alt="" coords="899,231,839,230,839,225,899,226"/>
@@ -1022,7 +1035,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="947,248,915,297,893,323,868,346,849,356,847,352,865,341,889,319,911,294,943,245"/>
 <area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="729,5,866,31"/>
 <area shape="poly" title=" " alt="" coords="947,193,917,124,893,86,865,52,836,34,839,29,868,48,898,83,922,121,952,191"/>
-<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="741,157,854,183"/>
+<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title=" " alt="" coords="741,157,854,183"/>
 <area shape="poly" title=" " alt="" coords="898,212,821,186,822,181,900,207"/>
 <area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title=" " alt="" coords="757,207,838,232"/>
 <area shape="poly" title=" " alt="" coords="899,231,839,230,839,225,899,226"/>
@@ -1119,7 +1132,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="947,248,915,297,893,323,868,346,849,356,847,352,865,341,889,319,911,294,943,245"/>
 <area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="729,5,866,31"/>
 <area shape="poly" title=" " alt="" coords="947,193,917,124,893,86,865,52,836,34,839,29,868,48,898,83,922,121,952,191"/>
-<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="741,157,854,183"/>
+<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title=" " alt="" coords="741,157,854,183"/>
 <area shape="poly" title=" " alt="" coords="898,212,821,186,822,181,900,207"/>
 <area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title=" " alt="" coords="757,207,838,232"/>
 <area shape="poly" title=" " alt="" coords="899,231,839,230,839,225,899,226"/>
@@ -1220,7 +1233,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="922,276,865,247,839,237,841,232,867,242,924,271"/>
 <area shape="rect" href="main_8c.html#aef13cdce9a1ccd7697bee00798d8ca93" title=" " alt="" coords="729,107,866,132"/>
 <area shape="poly" title=" " alt="" coords="945,269,913,212,891,181,865,154,835,135,838,131,868,149,895,177,917,209,949,266"/>
-<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title="redirect append &quot;&gt;&gt;&quot; to the end of the file output" alt="" coords="741,257,854,283"/>
+<area shape="rect" href="redirect__append_8c.html#ae321b86988fd0e2a4802f9f36285b9a7" title=" " alt="" coords="741,257,854,283"/>
 <area shape="poly" title=" " alt="" coords="899,297,836,286,837,281,899,291"/>
 <area shape="rect" href="redirect__in_8c.html#ace080e6e30ddaabcc74045dbbccb9284" title=" " alt="" coords="757,307,838,332"/>
 <area shape="poly" title=" " alt="" coords="908,313,839,324,838,318,907,308"/>
