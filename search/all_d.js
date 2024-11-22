@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['new_5fast_5fnode_0',['new_ast_node',['../tokens_8h.html#a0b22eb86149eb3af1029122cd9c62485',1,'new_ast_node(void):&#160;AST.c'],['../AST_8c.html#a0b22eb86149eb3af1029122cd9c62485',1,'new_ast_node(void):&#160;AST.c']]],
-  ['new_5fprocess_1',['new_process',['../execute__child_8c.html#ab14e094344a3a3583cf1ef7d86ac05f2',1,'execute_child.c']]],
-  ['new_5ftoken_2',['new_token',['../tokens_8h.html#a07793427f42bd19d0f4ea6771441be99',1,'new_token(char *value, t_token_type type):&#160;tokeniser.c'],['../tokeniser_8c.html#a07793427f42bd19d0f4ea6771441be99',1,'new_token(char *value, t_token_type type):&#160;tokeniser.c']]],
-  ['next_3',['next',['../structs__env.html#a3caf3df6eb72714ffcd4e22f9c94ecf2',1,'s_env::next'],['../structs__token.html#a5dae434205818bfc83a61809d4a34a29',1,'s_token::next']]],
-  ['none_4',['NONE',['../tokens_8h.html#a76a354e93d720f05344590ec8aa222deac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'tokens.h']]],
-  ['not_5fvalid_5fidentifier_5',['NOT_VALID_IDENTIFIER',['../exit__status_8h.html#a479c3dd3bb6522c8e3f74ba0e27fc22f',1,'exit_status.h']]],
-  ['numeric_5frequired_6',['NUMERIC_REQUIRED',['../exit__status_8h.html#a1ad749793bda23d52d705cdf9273c98f',1,'exit_status.h']]]
+  ['mag_0',['MAG',['../libft_8h.html#af54a5a977c0c499323d656315f008ee0',1,'libft.h']]],
+  ['main_1',['main',['../main_8c.html#a647f21a28344e1d9c643f4115516d7c9',1,'main(int argc, char **argv, char **envp):&#160;main.c'],['../test_2main_8c.html#a647f21a28344e1d9c643f4115516d7c9',1,'main(int argc, char **argv, char **envp):&#160;main.c']]],
+  ['main_2ec_2',['main.c',['../main_8c.html',1,'(Global Namespace)'],['../test_2main_8c.html',1,'(Global Namespace)']]],
+  ['main_5floop_3',['main_loop',['../main_8c.html#ae986e796a7fe43365ca3cbb2cd3c5ea2',1,'main.c']]],
+  ['make_5fhistory_4',['make_history',['../tokens_8h.html#a94ee21f550bbf6448142ec3102526dde',1,'make_history(char *line):&#160;aux.c'],['../aux_8c.html#a94ee21f550bbf6448142ec3102526dde',1,'make_history(char *line):&#160;aux.c']]],
+  ['manage_5fcommands_5',['manage_commands',['../tokens_8h.html#ae2a4de1cf25f90010b8dff7ba69719ad',1,'manage_commands(t_token **tokens, t_ms_data *data):&#160;AST_utils.c'],['../AST__utils_8c.html#ae2a4de1cf25f90010b8dff7ba69719ad',1,'manage_commands(t_token **tokens, t_ms_data *data):&#160;AST_utils.c']]],
+  ['manage_5fpipe_6',['manage_pipe',['../tokens_8h.html#a04b3327a8c7b3dd801cc78e14a574a81',1,'manage_pipe(t_token **tokens, t_ms_data *data):&#160;AST_utils.c'],['../AST__utils_8c.html#a04b3327a8c7b3dd801cc78e14a574a81',1,'manage_pipe(t_token **tokens, t_ms_data *data):&#160;AST_utils.c']]],
+  ['manage_5fredirs_7',['manage_redirs',['../tokens_8h.html#a9efa4d57dd89fa07cc567b31639ae20c',1,'manage_redirs(t_token **tokens, t_ms_data *data):&#160;AST.c'],['../AST_8c.html#a9efa4d57dd89fa07cc567b31639ae20c',1,'manage_redirs(t_token **tokens, t_ms_data *data):&#160;AST.c']]],
+  ['maxishell_8',['maxishell',['../index.html',1,'']]],
+  ['minishell_20project_20🐚_9',['42 Minishell Project 🐚',['../index.html#autotoc_md0',1,'']]]
 ];

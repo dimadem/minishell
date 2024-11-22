@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['valid_5foperator_0',['valid_operator',['../tokens_8h.html#a04ef790ab9a9ed430a25b0a6d6cc95b5',1,'valid_operator(const char **str):&#160;input_checker_helpers.c'],['../input__checker__helpers_8c.html#a04ef790ab9a9ed430a25b0a6d6cc95b5',1,'valid_operator(const char **str):&#160;input_checker_helpers.c']]],
-  ['value_1',['value',['../structs__env.html#aeed22f6fb6689d3a190d64d3e11d989f',1,'s_env']]],
-  ['visualiser_2ec_2',['visualiser.c',['../visualiser_8c.html',1,'']]],
-  ['visualize_5fast_3',['visualize_ast',['../tokens_8h.html#ae8b05b0e17b569e0876e8b6d3fbc06fb',1,'tokens.h']]]
+  ['unknown_5fcommand_0',['UNKNOWN_COMMAND',['../exit__status_8h.html#ac5f4cf1c989af592617184f7a7e5c372',1,'exit_status.h']]],
+  ['unset_2ec_1',['unset.c',['../unset_8c.html',1,'']]],
+  ['unset_5fenv_2',['unset_env',['../env_8h.html#a0854396366b7055e0df29e25f8e520d3',1,'unset_env(t_env **env, const char *name):&#160;env.c'],['../env_2env_8c.html#a0854396366b7055e0df29e25f8e520d3',1,'unset_env(t_env **env, const char *name):&#160;env.c']]],
+  ['usage_3',['Installation and Usage',['../index.html#autotoc_md2',1,'']]],
+  ['utils_2ec_4',['utils.c',['../builtins_2utils_8c.html',1,'(Global Namespace)'],['../env_2utils_8c.html',1,'(Global Namespace)'],['../redirection_2utils_8c.html',1,'(Global Namespace)']]],
+  ['utils_5f0_2ec_5',['utils_0.c',['../utils__0_8c.html',1,'']]],
+  ['utils_5f1_2ec_6',['utils_1.c',['../utils__1_8c.html',1,'']]],
+  ['utils_5futils_2ec_7',['utils_utils.c',['../utils__utils_8c.html',1,'']]]
 ];

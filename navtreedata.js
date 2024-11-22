@@ -25,6 +25,11 @@
 var NAVTREE =
 [
   [ "maxishell", "index.html", [
+    [ "42 Minishell Project 🐚", "index.html#autotoc_md0", [
+      [ "Features", "index.html#autotoc_md1", null ],
+      [ "Installation and Usage", "index.html#autotoc_md2", null ],
+      [ "Conclusion", "index.html#autotoc_md3", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -52,8 +57,8 @@ var NAVTREEINDEX =
 [
 "AST_8c.html",
 "ft__memmove_8c_source.html",
-"libft_8h.html#aa7c4f303aebd3737b7cc180a9e7608f1",
-"tokeniser_8c.html"
+"libft_8h.html#a9ec94737cff3a7dc5111d45f16a24e8e",
+"test_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
